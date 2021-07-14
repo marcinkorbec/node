@@ -61,7 +61,7 @@ const tab = [1, 2, 3, 4, 5, 6];
 
 const evenNumbers = tab.filter(el => el % 2 === 0);
 
-console.log(evenNumbers); 
+console.log(evenNumbers);
 
 
 
