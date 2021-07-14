@@ -32,11 +32,42 @@
 
 //----------------------------------------------------------------
 
-const numbers = [1, 2, 3];
+// const numbers = [1, 2, 3];
+//
+// const newNumbers = numbers.map((number) => {
+//  return number + 2;
+// });
+//
+// console.log(newNumbers);
+// console.log(numbers);
 
-const newNumbers = numbers.map((number) => {
- return number + 2;
-});
+//----------------------------------------------------------------
 
-console.log(newNumbers);
-console.log(numbers);
+//
+// const numbers = [1, 2, 3];
+//
+// const newNumbers = numbers.filter((element) => {
+//  return true;
+// });
+//
+// console.log(newNumbers);
+// console.log(numbers);
+
+
+
+
+
+const tab = [1, 2, 3, 4, 5, 6];
+
+const evenNumbers = tab.filter(el => el % 2 === 0);
+
+console.log(evenNumbers); 
+
+
+
+
+
+
+
+
+
