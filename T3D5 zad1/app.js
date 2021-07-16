@@ -1,3 +1,7 @@
+//-----------------------------------------------------------------------------------
+//       COUNTER OF CLICKS
+//-----------------------------------------------------------------------------------
+
 {
   const btn1 = document.querySelector('.first-btn');
   const btn2 = document.querySelector('.second-btn');
@@ -75,4 +79,35 @@
     localStorage.setItem('feelingInfo', JSON.stringify(parseDataObj));
   })
 
+}
+//----------------------------------------------------------------------------------
+//      3. ARRAY IN LOCALSTORAGE, SUM AND GETTING ITEMS FROM ARRAY TO HTML
+//----------------------------------------------------------------------------------
+{
+  const btn = document.querySelector('.last-btn');
+  const output = document.querySelector('.sum');
+  const numbersInput = document.querySelector('.array')
+  let numberInfoArray = JSON.parse(localStorage.getItem('numbers-info')) || new Array();
+
+  function getArray() {
+    numbersInput.innerText = ` ${numberInfoArray}`;
+  }
+  getArray();
+
+  function sumCounts() {
+    let sum = 0;
+    numberInfoArray.forEach(num => sum+=Number(num));
+    output.innerText = sum;
+  };
+  sumCounts();
+
+  function getNumber() {
+    const newNumber = prompt('Podaj Liczbę!');
+    numberInfoArray.push(newNumber);
+    localStorage.setItem('numbers-info', JSON.stringify(numberInfoArray));
+    sumCounts();
+    getArray();
+  }
+
+  btn.addEventListener('click', getNumber)
 }
