@@ -22,8 +22,10 @@ localStorage.getItem('courseName');
 //Get last visit date
 const lastSavedVisitDate = localStorage.getItem('last-visit');
 
-if () {
-
+if ( lastSavedVisitDate === null) {
+  console.log('You are first time here!');
+} else {
+  console.log('You were here on ' + lastSavedVisitDate)
 }
 
 //Set last visit date
