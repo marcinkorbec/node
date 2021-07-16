@@ -14,6 +14,8 @@ btn.addEventListener('click', () => {
   document.querySelector('h1').innerText = click;
 });
 
+const date = new Date();
 
+localStorage.setItem('courseName', 'Mega Kurs');
+localStorage.getItem('courseName');
 
-//localStorage
