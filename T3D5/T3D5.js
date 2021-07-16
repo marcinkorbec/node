@@ -35,16 +35,28 @@
 // localStorage.setItem('last-visit', dateString);
 
 //----------------------------------------------------------------------------------------------
+
+const person = {
+  name: 'Marcin',
+  surname: 'Korbecki',
+  lifeEvents: ['1991', '2001', '2077'],
+  isAlive: true,
+};
+
+
+console.log(JSON.stringify(person));
+
+//----------------------------------------------------------------------------------------------
 //   ZADANIE
 //----------------------------------------------------------------------------------------------
 
-const btn = document.querySelector('.btn-toggle-color');
-const h1 = document.querySelector('h1');
-
-let click = Number(localStorage.getItem('counter'));
-h1.innerText = click;
-btn.addEventListener('click', () => {
-  let counter = ++click;
-  h1.innerText = counter;
-  localStorage.setItem('counter', String(counter));
-});
+// const btn = document.querySelector('.btn-toggle-color');
+// const h1 = document.querySelector('h1');
+//
+// let click = Number(localStorage.getItem('counter'));
+// h1.innerText = click;
+// btn.addEventListener('click', () => {
+//   let counter = ++click;
+//   h1.innerText = counter;
+//   localStorage.setItem('counter', String(counter));
+// });
