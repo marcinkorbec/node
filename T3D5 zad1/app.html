@@ -23,7 +23,7 @@
             padding: 25px;
             width: 80%;
             max-width: 502px;
-            margin: auto;
+            margin: 30px auto;
             box-shadow: 2px 2px 25px #000;
         }
 
@@ -36,28 +36,46 @@
             text-align: left;
         }
         button {
-            width: 248px;
+            width: 49%;
             height: 40px;
         }
          h3 {
              text-align: center;
          }
+         .last-btn {
+             width: 100%;
+         }
+
+          h3 span {
+             font-weight: bold;
+         }
     </style>
 </head>
 
 <body>
-<div>
-    <h1>Jak się czujesz?</h1>
-    <button class="first-btn"> DOBRZE</button>
-    <button class="second-btn"> ŹLE</button>
+    <div>
+        <h1>Jak się czujesz?</h1>
+        <button class="first-btn"> DOBRZE</button>
+        <button class="second-btn"> ŹLE</button>
 
-    <h3>Ilość razy dobrze: <span class="good"></span></h3>
-     <h3>Ilość razy źle: <span class="bad"></span></h3>
-<div>
-    <h3>Wyświetlanie z obiektu jako string:</h3>
-    <p class="text"></p>
-</div>
-</div>
+        <h3>Ilość razy dobrze: <span class="good"></span></h3>
+         <h3>Ilość razy źle: <span class="bad"></span></h3>
+    </div>
+    <div>
+        <h1>Jak się czujesz?</h1>
+        <button class="btn-3"> DOBRZE</button>
+        <button class="btn-4"> ŹLE</button>
+
+        <h3>Ilość razy dobrze: <span class="moodGood"></span></h3>
+        <h3>Ilość razy źle: <span class="moodBad"></span></h3>
+    </div>
+    <div>
+        <h1>Kliknij i podaj liczbę:</h1>
+        <button class="last-btn"> DOBRZE</button>
+
+        <h3>Podane liczby to: <span class="good"></span></h3>
+        <h3>Suma: <span class="bad"></span></h3>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
