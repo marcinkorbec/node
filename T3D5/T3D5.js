@@ -51,7 +51,7 @@ const string = '{"name":"Marcin","surname":"Korbecki","lifeEvents":["1991","2001
 console.log(JSON.parse(string));
 
 //----------------------------------------------------------------------------------------------
-//   ZADANIE
+//                                          ZADANIE
 //----------------------------------------------------------------------------------------------
 
 // const btn = document.querySelector('.btn-toggle-color');
