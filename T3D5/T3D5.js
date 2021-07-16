@@ -46,6 +46,10 @@ const person = {
 
 console.log(JSON.stringify(person));
 
+const string = '{"name":"Marcin","surname":"Korbecki","lifeEvents":["1991","2001","2077"],"isAlive":true}';
+
+console.log(JSON.parse(string));
+
 //----------------------------------------------------------------------------------------------
 //   ZADANIE
 //----------------------------------------------------------------------------------------------
