@@ -14,8 +14,20 @@ btn.addEventListener('click', () => {
   document.querySelector('h1').innerText = click;
 });
 
-const date = new Date();
 
 localStorage.setItem('courseName', 'Mega Kurs');
 localStorage.getItem('courseName');
 
+
+//Get last visit date
+const lastSavedVisitDate = localStorage.getItem('last-visit');
+
+if () {
+
+}
+
+//Set last visit date
+const date = new Date();
+const dateString = date.toString();
+
+localStorage.setItem('last-visit', dateString);
