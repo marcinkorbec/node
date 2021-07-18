@@ -25,7 +25,11 @@ const showUsers = (users) => {
   const resultArea = document.querySelector('.user-list');
   users.forEach((user) => {
     console.log(user);
-    const item = document
+    const item = document.createElement('div');
+    item.className = 'user';
+    item.innerHTML = `
+    div class="user_name">${user.name.title.toUppercase()} ${user.name.first.toUppercase()} ${user.name.last.toUppercase()}</div>
+    <img class="user_image" src=${user.}>`
   });
 }
 document.querySelector('.generator').addEventListener('submit',getUsers);
