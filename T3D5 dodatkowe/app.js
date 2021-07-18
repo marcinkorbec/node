@@ -19,17 +19,21 @@ const getUsers = (e) => {
     })
     .then(json => console.log(json.results))
     .catch(err => console.log(err))
+    
 }
 
 const showUsers = (users) => {
   const resultArea = document.querySelector('.user-list');
-  users.forEach((user) => {
+  users.forEach(user => {
     console.log(user);
     const item = document.createElement('div');
     item.className = 'user';
     item.innerHTML = `
     div class="user_name">${user.name.title.toUppercase()} ${user.name.first.toUppercase()} ${user.name.last.toUppercase()}</div>
-    <img class="user_image" src=${user.}>`
+    <img class="user_image" src=${user.picture.medium}>`
+    console.log(item)
+    resultArea.appendChild(item);
   });
 }
-document.querySelector('.generator').addEventListener('submit',getUsers);
+document.querySelector('.generator').addEventListener('submit', getUsers);
+document.querySelector('.generator').addEventListener('submit', showUsers);
