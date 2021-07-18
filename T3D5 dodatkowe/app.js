@@ -17,8 +17,15 @@ const getUsers = (e) => {
         return response.json(); // fetch API = json() z body wyodrębnia json
       }
     })
-    .then(json => console.log(json))
+    .then(json => console.log(json.results))
     .catch(err => console.log(err))
 }
 
+const showUsers = (users) => {
+  const resultArea = document.querySelector('.user-list');
+  users.forEach((user) => {
+    console.log(user);
+    const item = document
+  });
+}
 document.querySelector('.generator').addEventListener('submit',getUsers);
