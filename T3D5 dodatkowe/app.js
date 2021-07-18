@@ -1,11 +1,10 @@
 const getUsers = (e) => {
   e.preventDefault();
 
-  const usersNumber = document.querySelector('[name="users-number"]').value;
+  const usersNumber = document.querySelector('[name = "users-number"]').value;
   const usersGender = document.querySelector('[name="gender"]').value;
-  console.log(usersNumber, usersGender);
   const url = `https://randomuser.me/api/?results=${usersNumber}&de&gender=${usersGender === "both" ? "male,female" : usersGender}`;
-
+ if (usersNumber >= 1) {
   fetch(url)//obietnica - oczekujący (pending)
     //obietnica - rozstrzygnięta (spełnione | odrzucone)
     //wykonuje się then - pozytywnie
@@ -17,9 +16,9 @@ const getUsers = (e) => {
         return response.json(); // fetch API = json() z body wyodrębnia json
       }
     })
-    .then(json => console.log(json.results))
+    .then(json => showUsers(json.results))
     .catch(err => console.log(err))
-    
+  }  
 }
 
 const showUsers = (users) => {
@@ -28,12 +27,11 @@ const showUsers = (users) => {
     console.log(user);
     const item = document.createElement('div');
     item.className = 'user';
-    item.innerHTML = `
-    div class="user_name">${user.name.title.toUppercase()} ${user.name.first.toUppercase()} ${user.name.last.toUppercase()}</div>
-    <img class="user_image" src=${user.picture.medium}>`
+    item.innerHTML = `<img class="user_image" src=${user.picture.medium}>
+    <div class="user_name">${user.name.title.toUpperCase()} ${user.name.first.toUpperCase()} ${user.name.last.toUpperCase()}</div>
+    `
     console.log(item)
     resultArea.appendChild(item);
   });
 }
 document.querySelector('.generator').addEventListener('submit', getUsers);
-document.querySelector('.generator').addEventListener('submit', showUsers);
