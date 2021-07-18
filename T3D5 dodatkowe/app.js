@@ -1,5 +1,10 @@
-const getUsers = () => {
-  const url = 'https://randomuser.me/api/?results=500&nat=es,de';
+const getUsers = (e) => {
+  e.preventDefault();
+
+  const usersNumber = document.querySelector('[name="users-number"]').value;
+  const usersGender = document.querySelector('[name="gender"]').value;
+  console.log(usersNumber, usersGender);
+  const url = `https://randomuser.me/api/?results=${usersNumber}&de&gender=${usersGender === "both" ? "male,female" : usersGender}`;
 
   fetch(url)//obietnica - oczekujący (pending)
     //obietnica - rozstrzygnięta (spełnione | odrzucone)
@@ -16,4 +21,4 @@ const getUsers = () => {
     .catch(err => console.log(err))
 }
 
-document.querySelector('button').addEventListener('click',getUsers);
+document.querySelector('.generator').addEventListener('submit',getUsers);
