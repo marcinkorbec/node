@@ -1,12 +1,13 @@
 class Basket {
   constructor() {
     this.items = [];
+    this.basketValue = 0;
   }
   add(item) {
     this.items.push(item);
   }
   getTotalValue() {
-    return this.items.reduce((prev, curr) => prev + curr, 0);
+    return this.items.reduce((prev, curr) => prev + curr.price, 0);
   }
 
   //pętla
