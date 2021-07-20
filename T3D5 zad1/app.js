@@ -3,39 +3,48 @@
 //-----------------------------------------------------------------------------------
 
 {
-  const btn1 = document.querySelector('.first-btn');
-  const btn2 = document.querySelector('.second-btn');
+  const goodBtn = document.querySelector('.first-btn');
+  const badBtn = document.querySelector('.second-btn');
 
   const good = document.querySelector('.good');
   const bad = document.querySelector('.bad');
 
 
 //------DOWNLOAD VARIABLE FROM LOCAL STORAGE------------------------------------------
-
-  let click1 = Number(localStorage.getItem('counter-good'));
-  good.innerText = click1;
-
-  let click2 = Number(localStorage.getItem('counter-bad'));
-  bad.innerText = click2;
-
-  if (click1 === null) {
-    good.innerText = 0;
-  } else if (click2 === null) {
-    bad.innerText = 0;
+  let counterGood = Number(localStorage.getItem('counter-good'));
+  let counterBad = Number(localStorage.getItem('counter-bad'));
+  
+  function showInfo() {  
+    good.innerText = counterGood;
+    bad.innerText = counterBad;
+      if (counterGood === null) {
+        good.innerText = 0;
+      } else if (counterBad === null) {
+        bad.innerText = 0;
+      }
+      good.innerText = counterGood;
+      bad.innerText = counterBad;
   }
+
+  function saveInfo() {
+    localStorage.setItem('counter-good', String(counterGood));
+    localStorage.setItem('counter-bad', String(counterBad));
+  }
+  showInfo();
+  
 
 //------SETTING THE LISTENING TO THE BUTTONS------------------------------------------
 
-  btn1.addEventListener('click', () => {
-    let counterGood = ++click1;
-    good.innerText = counterGood;
-    localStorage.setItem('counter-good', String(counterGood));
+  goodBtn.addEventListener('click', () => {
+    ++counterGood;
+    showInfo();
+    saveInfo();
   });
 
-  btn2.addEventListener('click', () => {
-    let counterBad = ++click2;
-    bad.innerText = counterBad;
-    localStorage.setItem('counter-bad', String(counterBad));
+  badBtn.addEventListener('click', () => {
+    ++counterBad;
+    showInfo();
+    saveInfo();
   });
 }
 //-----------------------------------------------------------------------------------
@@ -47,6 +56,7 @@
 
   const good = document.querySelector('.moodGood');
   const bad = document.querySelector('.moodBad');
+  
   const feelingInfo = localStorage.getItem('feelingInfo');
 
   //-----CHECK TYPE OF LOCALSTORAGE FEELING INFO and setting to localstorage---------
@@ -55,28 +65,37 @@
     let dataObj = {
       moodGood: 0,
       moodBad: 0,
-    };
+    }
     good.innerText = dataObj.moodGood.toString();
     bad.innerText = dataObj.moodBad.toString();
     localStorage.setItem('feelingInfo', JSON.stringify(dataObj));
   }
 
   const parseDataObj = JSON.parse(localStorage.getItem('feelingInfo'));
-  good.innerText = parseDataObj.moodGood.toString();
-  bad.innerText = parseDataObj.moodBad.toString();
+
+  function showInfo() {
+    good.innerText = parseDataObj.moodGood.toString();
+    bad.innerText = parseDataObj.moodBad.toString();
+  }
+  showInfo();
+
+  function saveInfo() {
+    localStorage.setItem('feelingInfo', JSON.stringify(parseDataObj));
+  }
+  
 
   //------SETTING THE LISTENING TO THE BUTTONS--------------------------------------
 
   btn1.addEventListener('click', () => {
     parseDataObj.moodGood++;
-    good.innerText = parseDataObj.moodGood.toString();
-    localStorage.setItem('feelingInfo', JSON.stringify(parseDataObj));
+    showInfo();
+    saveInfo();
   })
 
   btn2.addEventListener('click', () => {
     parseDataObj.moodBad++;
-    bad.innerText = parseDataObj.moodBad.toString();
-    localStorage.setItem('feelingInfo', JSON.stringify(parseDataObj));
+    showInfo();
+    saveInfo();
   })
 
 }
