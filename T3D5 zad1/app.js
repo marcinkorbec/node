@@ -13,7 +13,8 @@
 //------DOWNLOAD VARIABLE FROM LOCAL STORAGE------------------------------------------
   let counterGood = Number(localStorage.getItem('counter-good'));
   let counterBad = Number(localStorage.getItem('counter-bad'));
-  
+
+//-------SHOW AND SAVE INFO-----------------------------------------------------------
   function showInfo() {  
     good.innerText = counterGood;
     bad.innerText = counterBad;
@@ -22,8 +23,6 @@
       } else if (counterBad === null) {
         bad.innerText = 0;
       }
-      good.innerText = counterGood;
-      bad.innerText = counterBad;
   }
 
   function saveInfo() {
@@ -51,49 +50,49 @@
 //        2. OBJECT IN LOCALSTORAGE VERSION
 //-----------------------------------------------------------------------------------
 {
-  const btn1 = document.querySelector('.btn-3');
-  const btn2 = document.querySelector('.btn-4');
+  const goodBtn = document.querySelector('.btn-3');
+  const badBtn = document.querySelector('.btn-4');
 
-  const good = document.querySelector('.moodGood');
-  const bad = document.querySelector('.moodBad');
+  const goodSpan = document.querySelector('.moodGood');
+  const badSpan = document.querySelector('.moodBad');
   
   const feelingInfo = localStorage.getItem('feelingInfo');
 
   //-----CHECK TYPE OF LOCALSTORAGE FEELING INFO and setting to localstorage---------
 
   if (feelingInfo === null) {
-    let dataObj = {
+    let counter = {
       moodGood: 0,
       moodBad: 0,
     }
-    good.innerText = dataObj.moodGood.toString();
-    bad.innerText = dataObj.moodBad.toString();
-    localStorage.setItem('feelingInfo', JSON.stringify(dataObj));
+    goodSpan.innerText = counter.moodGood.toString();
+    badSpan.innerText = counter.moodBad.toString();
+    localStorage.setItem('feelingInfo', JSON.stringify(counter));
   }
 
-  const parseDataObj = JSON.parse(localStorage.getItem('feelingInfo'));
+  const counterFromLocalStorage = JSON.parse(localStorage.getItem('feelingInfo'));
 
   function showInfo() {
-    good.innerText = parseDataObj.moodGood.toString();
-    bad.innerText = parseDataObj.moodBad.toString();
-  }
+    goodSpan.innerText = counterFromLocalStorage.moodGood.toString();
+    badSpan.innerText = counterFromLocalStorage.moodBad.toString();
+  };
   showInfo();
 
   function saveInfo() {
-    localStorage.setItem('feelingInfo', JSON.stringify(parseDataObj));
+    localStorage.setItem('feelingInfo', JSON.stringify(counterFromLocalStorage));
   }
   
 
   //------SETTING THE LISTENING TO THE BUTTONS--------------------------------------
 
-  btn1.addEventListener('click', () => {
-    parseDataObj.moodGood++;
+  goodBtn.addEventListener('click', () => {
+    counterFromLocalStorage.moodGood++;
     showInfo();
     saveInfo();
   })
 
-  btn2.addEventListener('click', () => {
-    parseDataObj.moodBad++;
+  badBtn.addEventListener('click', () => {
+    counterFromLocalStorage.moodBad++;
     showInfo();
     saveInfo();
   })
