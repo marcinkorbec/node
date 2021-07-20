@@ -1,28 +1,29 @@
 class Basket {
   constructor() {
     this.items = [];
-    this.basketValue = 0;
   }
   add(item) {
     this.items.push(item);
   }
   getTotalValue() {
-    return this.items.reduce((prev, curr) => prev + curr.price, 0);
+    return this.items.reduce((prev, product) => prev + product.price, 0);
   }
 
-  //pętla
-//   getTotalValue() {
-//     let sum = 0;
-//     for (const product of this.items) {
-//       sum += product.price;
-//     }
-//   }
+  showBasket() {
+    this.items
+      .map((product, i) => `${i + 1} - ${product.name} - ${product.price.toFixed(2)}zł`)
+      .forEach(line => console.log(line));
+  }
+
+  remove(no) {
+    this.items.splice(no - 1, 1)
+  }
 }
 
 class Product {
   constructor(productName, productPrice) {
     this.name = productName;
-    this.price =productPrice;
+    this.price = productPrice;
   }
   setNewPrice(newPrice) {
     this.price = newPrice;
@@ -37,5 +38,12 @@ const cucumbers = new Product('Ogórki LUZ',4.99);
 
 shopBasket.add(cucumbers);
 shopBasket.add(cucumbers);
+shopBasket.add(oranges);
 
 console.log(shopBasket);
+console.log(shopBasket.getTotalValue());
+shopBasket.showBasket();
+shopBasket.remove(2);
+console.log(shopBasket);
+shopBasket.showBasket();
+console.log(shopBasket.getTotalValue());
