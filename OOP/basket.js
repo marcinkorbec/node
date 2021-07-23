@@ -31,19 +31,3 @@ class Product {
 }
 
 
-const shopBasket = new Basket();
-
-const oranges = new Product('Pomarańcze LUZ', 7.55);
-const cucumbers = new Product('Ogórki LUZ',4.99);
-
-shopBasket.add(cucumbers);
-shopBasket.add(cucumbers);
-shopBasket.add(oranges);
-
-console.log(shopBasket);
-console.log(shopBasket.getTotalValue());
-shopBasket.showBasket();
-shopBasket.remove(2);
-console.log(shopBasket);
-shopBasket.showBasket();
-console.log(shopBasket.getTotalValue());
