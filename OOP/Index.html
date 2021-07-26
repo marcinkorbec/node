@@ -22,7 +22,7 @@
       }
 
       div {
-          background-color: silver;
+          background-color: snow;
           border-radius: 10px;
           padding: 25px;
           width: 80%;
@@ -39,10 +39,7 @@
       p {
           text-align: left;
       }
-      .button {
-          width: 100%;
-          margin-top: 20px;
-      }
+
       h3 {
           text-align: center;
       }
@@ -58,43 +55,22 @@
           margin-right: 1px;
           line-height: 2.5em;
       }
-      .number-of-people {
-          width: 50px;
-          height: 30px;
-      }
 
-      .user_name {
-          border-radius: 0;
-          max-width: 45%;
-          box-shadow: none;
-          display: flex;
-          flex-wrap: wrap;
-          padding: 2px;
-          margin: 3px 3px;
-          background-color: #eee;
-          align-self: center;
-      }
-      .user {
-          box-shadow: 2px 2px 5px #000;
-          flex-basis: 50%;
-          display: flex;
-          background-color: #eee;
-      }
-      .generator_select {
-          height: 30px;
-      }
       .user-list {
           min-height: 240px;
       }
        .products {
           line-height: 3.5em;
       }
+       .image-bgc {
+           background-color: black;
+       }
   </style>
 </head>
 <body>
 <div>
   <h1>MEGA SKLEP.</h1>
-  <section>
+  <section class="image-bgc">
   <img src="https://static1.s123-cdn-static-a.com/uploads/5191798/400_609bb5e2d9a39.png" alt="">
   </section>
 </div>
@@ -111,9 +87,12 @@
     <ul class="basket-list"></ul>
     <button class="btn btn btn-primary last-btn" disabled="true">Złóż zamówienie</button>
   </section>
+</div>
+<div>
   <section class="add-admin-product">
-    <form action="">
-      
+    <h1>Administracja dodaj produkt</h1>
+    <form>
+      <input type="text" placeholder="Podaj nazwę" required>
     </form>
   </section>
 </div>
