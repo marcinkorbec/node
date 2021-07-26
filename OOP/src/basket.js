@@ -10,9 +10,8 @@ class Basket {
   }
 
   getBasketSummary() {
-    this.items
+    return this.items
       .map((product, i) => `${i + 1} - ${product.name} - ${product.price.toFixed(2)}zł`)
-      .forEach(line => console.log(line));
   }
 
   remove(no) {
