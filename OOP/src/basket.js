@@ -2,6 +2,13 @@ class Basket {
   constructor() {
     this.items = [];
   }
+
+  clear() {
+    this.items.length = 0;
+    //this.items.splice(0);
+    //this.items = [];
+  }
+
   add(item) {
     this.items.push(item);
   }
