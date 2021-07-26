@@ -9,7 +9,7 @@ function addProductToBasket (event) {
   const newProduct = new Product(name, price);
   basket.add(newProduct)
   console.log(basket)
-  basket.showBasket()
+  basket.getBasketSummary()
 }
 
 for (const buyBtn of buyBtns) {
