@@ -9,6 +9,14 @@ function addProductToShop(event) {
 
   const name = nameInput.value;
   const price = Number(priceInput.value);
+  const newLi = document.createElement('li');
+  const newStrong = document.createElement('strong');
+  newStrong.innerText = name;
+  const newPriceText = document.createTextNode(`${price.toFixed(2)}`);
+
+  newLi.appendChild(newStrong);
+  newLi.appendChild(newPriceText);
+  basketUl.appendChild(newLi).innerText = oneProductInfo.text;
 }
 
 addProductForm.addEventListener('submit', addProductToShop)
