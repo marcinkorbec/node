@@ -7,10 +7,12 @@ class Basket {
     this.items.length = 0;
     //this.items.splice(0);
     //this.items = [];
+    this.saveToLocalStorage();
   }
 
   add(item) {
     this.items.push(item);
+    this.saveToLocalStorage()
   }
   getTotalValue() {
     return this.items.reduce((prev, product) => prev + product.price, 0);
@@ -27,9 +29,24 @@ class Basket {
   }
 
   remove(no) {
-    this.items.splice(no - 1, 1)
+    this.items.splice(no - 1, 1);
+    this.saveToLocalStorage();
+  }
+
+  saveToLocalStorage() {
+    localStorage.setItem('basket-items', JSON.stringify(this.items))
+  }
+
+  loadFromLocalStorage() {
+    const jsonItem = localStorage.getItem('basket-items');
+    if (jsonItem === null) {
+      return []
+    } else {
+      return JSON.parse(jsonItem);
+    }
   }
 }
+
 
 class Product {
   constructor(productName, productPrice) {
