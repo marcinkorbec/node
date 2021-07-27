@@ -12,12 +12,15 @@ function addProductToShop(event) {
   const newButton = document.createElement('button');
   newButton.innerText = 'Kup Teraz!';
   newButton.classList.add('btn-buy', 'btn', 'btn-primary');
+  newButton.dataset.name = name;
+  newButton.dataset.price = String(price);
   newStrong.innerText = name;
   const newPriceText = document.createTextNode(` - ${price.toFixed(2)}zł `);
   newLi.appendChild(newStrong);
   newLi.appendChild(newPriceText);
   newLi.appendChild(newButton);
   productsList.appendChild(newLi);
+  newButton.addEventListener('click', addProductToBasket);
 }
 
 addProductForm.addEventListener('submit', addProductToShop);
