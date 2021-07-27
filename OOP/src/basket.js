@@ -1,6 +1,6 @@
 class Basket {
   constructor() {
-    this.items = [];
+    this.items = this.loadFromLocalStorage();
   }
 
   clear() {
@@ -14,6 +14,7 @@ class Basket {
     this.items.push(item);
     this.saveToLocalStorage()
   }
+
   getTotalValue() {
     return this.items.reduce((prev, product) => prev + product.price, 0);
   }
