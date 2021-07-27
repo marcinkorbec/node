@@ -3,7 +3,6 @@ const basketUl = document.querySelector('.basket-list')
 const buyAllBtn = document.querySelector('.buy-all')
 
 
-console.log(buyAllBtn)
 const basket = new Basket();
 
 function createBasketUi() {
@@ -14,12 +13,12 @@ function createBasketUi() {
   }
 
   const basketTotalValue = basket.getTotalValue();
-  
+
   if (basketTotalValue > 0){
-    buyAllBtn.removeAttribute('disabled');
+    buyAllBtn.disabled = false;
     buyAllBtn.innerText = `Złóż zamówienie na kwotę ${basketTotalValue.toFixed(2)} zł.`
   } else {
-    buyAllBtn.setAttribute('disabled', true);
+    buyAllBtn.disabled = true;
     buyAllBtn.innerText = 'Złóż zamówienie.';
   }
 }
@@ -33,6 +32,15 @@ function addProductToBasket (event) {
   createBasketUi();
 }
 
+function buyAllProducts() {
+  const basketTotalValue = basket.getTotalValue();
+  alert(`Zakupiono produkty o wartości ${basketTotalValue}`)
+  basket.clear();
+  createBasketUi();
+}
+
 for (const buyBtn of buyBtns) {
   buyBtn.addEventListener('click', addProductToBasket);
 };
+
+buyAllBtn.addEventListener('click', buyAllProducts);
