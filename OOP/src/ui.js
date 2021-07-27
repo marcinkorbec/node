@@ -11,6 +11,7 @@ function createBasketUi() {
   for (const oneProductInfo of basket.getBasketSummary()) {
 
     const newLi = document.createElement('li');
+    newLi.classList.add('li-item')
     newLi.addEventListener('click', removeItem)
     newLi.dataset.id = oneProductInfo.id;
     basketUl.appendChild(newLi).innerText = oneProductInfo.text;
@@ -43,13 +44,10 @@ function buyAllProducts() {
   createBasketUi();
 }
 
-function removeItem() {
- liDeleteItems = [...liItems];
-  console.log(liDeleteItems);
-
-  for (const lideleteitem of liDeleteItems) {
-    lideleteitem.innerHTML = '';
-  }
+function removeItem(event) {
+ const id = Number(event.target.dataset.id);
+ basket.remove(id);
+ createBasketUi();
 }
 
 
