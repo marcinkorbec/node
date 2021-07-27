@@ -1,14 +1,12 @@
 const buyBtns = [...document.querySelectorAll('[data-name]')];
 const basketUl = document.querySelector('.basket-list')
 const buyAllBtn = document.querySelector('.buy-all')
-const liItems = document.querySelectorAll('li-item');
 
 const basket = new Basket();
 
 function createBasketUi() {
  basketUl.innerText = '';
   for (const oneProductInfo of basket.getBasketSummary()) {
-
     const newLi = document.createElement('li');
     newLi.classList.add('li-item')
     newLi.addEventListener('click', removeItem)
@@ -30,7 +28,6 @@ function createBasketUi() {
 function addProductToBasket (event) {
   const name = event.target.dataset.name;
   const price = Number(event.target.dataset.price);
-
   const newProduct = new Product(name, price);
   basket.add(newProduct)
   createBasketUi();
@@ -55,7 +52,3 @@ for (const buyBtn of buyBtns) {
 };
 
 buyAllBtn.addEventListener('click', buyAllProducts);
-
-// for(liItem of liItems) {
-//   liItem.addEventListener('click', removeItem());
-// }
