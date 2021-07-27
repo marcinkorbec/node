@@ -1,15 +1,19 @@
 const buyBtns = [...document.querySelectorAll('[data-name]')];
 const basketUl = document.querySelector('.basket-list')
 const buyAllBtn = document.querySelector('.buy-all')
+const liItems = document.querySelectorAll('li-item');
 
-
+console.log(liItems);
 const basket = new Basket();
 
 function createBasketUi() {
  basketUl.innerText = '';
   for (const oneProductInfo of basket.getBasketSummary()) {
+
     const newLi = document.createElement('li');
-    basketUl.appendChild(newLi).innerText = oneProductInfo;
+    newLi.addEventListener('click', removeItem)
+    newLi.dataset.id = oneProductInfo.id;
+    basketUl.appendChild(newLi).innerText = oneProductInfo.text;
   }
 
   const basketTotalValue = basket.getTotalValue();
@@ -39,8 +43,22 @@ function buyAllProducts() {
   createBasketUi();
 }
 
+function removeItem() {
+ liDeleteItems = [...liItems];
+  console.log(liDeleteItems);
+
+  for (const lideleteitem of liDeleteItems) {
+    lideleteitem.innerHTML = '';
+  }
+}
+
+
 for (const buyBtn of buyBtns) {
   buyBtn.addEventListener('click', addProductToBasket);
 };
 
 buyAllBtn.addEventListener('click', buyAllProducts);
+
+// for(liItem of liItems) {
+//   liItem.addEventListener('click', removeItem());
+// }
