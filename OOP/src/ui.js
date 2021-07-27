@@ -3,7 +3,6 @@ const basketUl = document.querySelector('.basket-list')
 const buyAllBtn = document.querySelector('.buy-all')
 const liItems = document.querySelectorAll('li-item');
 
-console.log(liItems);
 const basket = new Basket();
 
 function createBasketUi() {

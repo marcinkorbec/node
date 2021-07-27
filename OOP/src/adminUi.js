@@ -11,9 +11,8 @@ function addProductToShop(event) {
   const price = Number(priceInput.value);
   const newLi = document.createElement('li');
   const newStrong = document.createElement('strong');
-  const newSpace = document.createElement('')
   newStrong.innerText = name;
-  const newPriceText = document.createTextNode(`${price.toFixed(2)}`);
+  const newPriceText = document.createTextNode(` - ${price.toFixed(2)}`);
 
   newLi.appendChild(newStrong);
   newLi.appendChild(newPriceText);
