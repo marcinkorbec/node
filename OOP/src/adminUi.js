@@ -3,6 +3,11 @@ const nameInput = document.querySelector('[name="product-name"]');
 const priceInput = document.querySelector('[name="product-price"]');
 const productsList = document.querySelector('.product-ol');
 
+function saveProductsToLocalStorage(name, price) {
+  const oldProductsList = JSON.parse(localStorage.getItem('shop-products')) ?? [];
+  oldProductsList.push({name, price})
+}
+
 function addProductToShop(event) {
   event.preventDefault();
   const name = nameInput.value;

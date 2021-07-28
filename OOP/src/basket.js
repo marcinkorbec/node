@@ -1,6 +1,12 @@
 class Basket {
   constructor() {
     this.items = this.loadFromLocalStorage();
+
+    //const ls = this.loadFromLocalStorage();
+    //this.items = ls ? ls : []; ---OPERATOR TRÓJRGUMENTOWY ZAMIAST IF
+    //this.items = ls || [];  ---SKRÓCONA WERSJA ZAMIAST OPERATORA TRÓJARGUMENTOWEGO
+    //this.items = this.loadFromLocalstorage() || []; ZAPIS BEZ ZMIENNEJ LS ŻEBY BYŁO KRÓCEJ
+    //this.items = this.loadFromLocalstorage() ?? []; NULLISH OPERATOR - SPRAWDZA
   }
 
   clear() {
