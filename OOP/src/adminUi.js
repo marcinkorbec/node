@@ -3,11 +3,12 @@ const nameInput = document.querySelector('[name="product-name"]');
 const priceInput = document.querySelector('[name="product-price"]');
 const productsList = document.querySelector('.product-ol');
 
-function saveProductsToLocalStorage(name, price) {
+const saveProductsToLocalStorage = (name, price) => {
   const oldProductsList = JSON.parse(localStorage.getItem('shop-products')) ?? [];
+  console.log(oldProductsList)
   oldProductsList.push({name, price});
-  localStorage.setItem('shop-products', JSON.stringify(productsList));
-}
+  localStorage.setItem('shop-products', JSON.stringify(oldProductsList));
+};
 
 function addProductToShop (name, price) {
   const newLi = document.createElement('li');
@@ -25,14 +26,14 @@ function addProductToShop (name, price) {
   productsList.appendChild(newLi);
   newButton.addEventListener('click', addProductToBasket);
   saveProductsToLocalStorage(name, price);
-}
+};
 
 function handleAddProductFormSubmit(event) {
   event.preventDefault();
-  const name = nameInput.value;
-  const price = Number(priceInput.value);
-  addProductToShop(name, price);
-}
+  const nameFromInput = nameInput.value;
+  const priceFromInput = Number(priceInput.value);
+  addProductToShop(nameFromInput, priceFromInput);
+};
 
 addProductForm.addEventListener('submit', handleAddProductFormSubmit);
 
