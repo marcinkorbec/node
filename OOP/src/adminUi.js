@@ -36,18 +36,3 @@ function handleAddProductFormSubmit(event) {
 
 addProductForm.addEventListener('submit', handleAddProductFormSubmit);
 
-//const newLi = document.createElement('li');
-// const newStrong = document.createElement('strong');
-// const newButton = document.createElement('button');
-// newButton.innerText = 'Kup Teraz!';
-// newButton.classList.add('btn-buy', 'btn', 'btn-primary');
-// newButton.dataset.name = name;
-// newButton.dataset.price = String(price);
-// newStrong.innerText = name;
-// const newPriceText = document.createTextNode(` - ${price.toFixed(2)}zł `);
-// newLi.appendChild(newStrong);
-// newLi.appendChild(newPriceText);
-// newLi.appendChild(newButton);
-// productsList.appendChild(newLi);
-// newButton.addEventListener('click', addProductToBasket);
-// saveProductsToLocalStorage(name, price);
