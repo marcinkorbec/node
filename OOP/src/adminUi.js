@@ -31,7 +31,7 @@ function handleAddProductFormSubmit(event) {
   event.preventDefault();
   const name = nameInput.value;
   const price = Number(priceInput.value);
-
+  addProductToShop(name, price);
 }
 
 addProductForm.addEventListener('submit', handleAddProductFormSubmit);
