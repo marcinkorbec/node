@@ -5,10 +5,17 @@ const productsList = document.querySelector('.product-ol');
 
 const saveProductsToLocalStorage = (name, price) => {
   const oldProductsList = JSON.parse(localStorage.getItem('shop-products')) ?? [];
-  console.log(oldProductsList)
+  console.log(oldProductsList);
   oldProductsList.push({name, price});
   localStorage.setItem('shop-products', JSON.stringify(oldProductsList));
 };
+
+const loadProductsFromLocalStorage = (name, price) => {
+  const oldProductsList = JSON.parse(localStorage.getItem('shop-products')) ?? [];
+  for (const oldProduct of oldProductsList) {
+    addProductToShop(oldProduct.name, oldProduct.price);
+  }
+}
 
 function addProductToShop (name, price) {
   const newLi = document.createElement('li');
@@ -37,3 +44,4 @@ function handleAddProductFormSubmit(event) {
 
 addProductForm.addEventListener('submit', handleAddProductFormSubmit);
 
+loadProductsFromLocalStorage();
