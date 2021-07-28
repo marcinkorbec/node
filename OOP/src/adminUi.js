@@ -5,13 +5,11 @@ const productsList = document.querySelector('.product-ol');
 
 function saveProductsToLocalStorage(name, price) {
   const oldProductsList = JSON.parse(localStorage.getItem('shop-products')) ?? [];
-  oldProductsList.push({name, price})
+  oldProductsList.push({name, price});
+  localStorage.setItem('shop-products', JSON.stringify(productsList));
 }
 
-function addProductToShop(event) {
-  event.preventDefault();
-  const name = nameInput.value;
-  const price = Number(priceInput.value);
+function addProductToShop (name, price) {
   const newLi = document.createElement('li');
   const newStrong = document.createElement('strong');
   const newButton = document.createElement('button');
@@ -26,6 +24,30 @@ function addProductToShop(event) {
   newLi.appendChild(newButton);
   productsList.appendChild(newLi);
   newButton.addEventListener('click', addProductToBasket);
+  saveProductsToLocalStorage(name, price);
 }
 
-addProductForm.addEventListener('submit', addProductToShop);
+function handleAddProductFormSubmit(event) {
+  event.preventDefault();
+  const name = nameInput.value;
+  const price = Number(priceInput.value);
+
+}
+
+addProductForm.addEventListener('submit', handleAddProductFormSubmit);
+
+//const newLi = document.createElement('li');
+// const newStrong = document.createElement('strong');
+// const newButton = document.createElement('button');
+// newButton.innerText = 'Kup Teraz!';
+// newButton.classList.add('btn-buy', 'btn', 'btn-primary');
+// newButton.dataset.name = name;
+// newButton.dataset.price = String(price);
+// newStrong.innerText = name;
+// const newPriceText = document.createTextNode(` - ${price.toFixed(2)}zł `);
+// newLi.appendChild(newStrong);
+// newLi.appendChild(newPriceText);
+// newLi.appendChild(newButton);
+// productsList.appendChild(newLi);
+// newButton.addEventListener('click', addProductToBasket);
+// saveProductsToLocalStorage(name, price);
