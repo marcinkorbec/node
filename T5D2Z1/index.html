@@ -43,8 +43,8 @@
       h3 {
           text-align: center;
       }
-      .last-btn {
-          width: 100%;
+      button {
+          width: 24%;
       }
 
       h3 span {
@@ -75,17 +75,27 @@
            margin-right: 10px;
        }
 
-       .li-item:hover {
-           cursor: pointer;
-       }
   </style>
 </head>
 <body>
 <div>
   <h1>Kalkulator</h1>
-  
-  
+  <section>
+  <input type="number" class="a" placeholder="Wpisz pierwszą liczbę">
+  <input type="number" class="b" placeholder="Wpisz drugą liczbę">
+  <button type="submit" class="add btn btn-warning"><strong>+</strong></button>
+  <button type="submit" class="subtract btn btn-warning"><strong>-</strong></button>
+  <button type="submit" class="divide btn btn-warning"><strong>/</strong></button>
+  <button type="submit" class="multiply btn btn-warning"><strong>*</strong></button>
   </section>
+  <section>
+    <h3> Wynik: </h3>
+    <div>
+      <p class="result"></p>
+    </div>
+  </section>
+
+
 </div>
 
 
