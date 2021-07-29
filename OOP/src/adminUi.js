@@ -32,7 +32,6 @@ function addProductToShop (name, price) {
   newLi.appendChild(newButton);
   productsList.appendChild(newLi);
   newButton.addEventListener('click', addProductToBasket);
-  saveProductsToLocalStorage(name, price);
 };
 
 function handleAddProductFormSubmit(event) {
@@ -40,6 +39,7 @@ function handleAddProductFormSubmit(event) {
   const nameFromInput = nameInput.value;
   const priceFromInput = Number(priceInput.value);
   addProductToShop(nameFromInput, priceFromInput);
+  saveProductsToLocalStorage(nameFromInput, priceFromInput);
 };
 
 addProductForm.addEventListener('submit', handleAddProductFormSubmit);
