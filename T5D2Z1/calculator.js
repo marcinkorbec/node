@@ -1,7 +1,13 @@
+const btnAdd = document.querySelector('.add');
+const btnSubstract = document.querySelector('.add');
+const btnDivide = document.querySelector('.add');
+const btnMultiply = document.querySelector('.add');
+
+
 class Calculator {
   constructor(a, b) {
-    this.a = a;
-    this.b = b;
+    this.a = document.querySelector('.a').value;
+    this.b = document.querySelector('.b').value;
     if (Number.isNaN(a) || Number.isNaN(b)) {
       try {
         alert('Przynajmniej jedna z wartości nie jest liczbą!');
@@ -21,11 +27,11 @@ class Calculator {
     return this.items = this.a + this.b;
   }
 
-  substract(a, b) {
+  substract() {
      return this.items = this.a - this.b;
   }
 
-  divide(a , b) {
+  divide() {
     if (b === 0){
       try{
         alert('Próbujesz podzielić przez 0!');
@@ -36,9 +42,14 @@ class Calculator {
     return this.items = this.a / this.b;
   }
 
-  multiply(a, b) {
+  multiply() {
     return this.items = this.a * this.b;
   }
 }
 
-const a =
+const calc = new Calculator(a,b);
+
+btnAdd.addEventListener('submit', function(){
+
+  console.log(a)
+})
