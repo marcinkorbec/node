@@ -6,25 +6,18 @@ const result = document.querySelector('.result');
 
 class Calculator {
   constructor(a, b) {
-    this.a = a;
-    this.b = b;
     if (Number.isNaN(a) || Number.isNaN(b)) {
-      try {
-        alert('Przynajmniej jedna z wartości nie jest liczbą!');
-      } finally {
-        alert('Koniec programu!');
-      }
+      throw Error('Pierwsza lub druga wartość nie jest liczbą!');
     } else if (a==='' || b==='') {
-      try {
-        alert('Nie wpisałeś liczby!')
-      } finally {
-        alert('Koniec programu!')
-      }
+        throw Error('Nie wpisałeś liczby!');
+    } else {
+      this.a = a;
+      this.b = b;
     }
   }
-
   add(a, b) {
     return this.items = this.a + this.b;
+    
   }
 
   substract(a, b) {
@@ -47,12 +40,19 @@ class Calculator {
   }
 }
 
-function addToDiv(){
-  document.createElement('p')
-}
-
-
-
+  // const a = Number(prompt('Wpisz pierwszą liczbę'));
+  // const b = Number(prompt('Wpisz drugą liczbę'));
+  // const calc = new Calculator(a,b);
+  // calc.add();
+  // console.log(calc.items);
+  // calc.divide();
+  // console.log(calc.items);
+  // calc.multiply();
+  // console.log(calc.items);
+  // calc.substract();
+  // console.log(calc.items);
+  
+    
 
 btnAdd.addEventListener('click', () => {
   result.innerText = '';
