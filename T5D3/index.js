@@ -5,11 +5,12 @@ function f() {
 }
 
 
+
 class G {
   constructor() {
+    debugger;
     this.name = 'name';
   }
 }
 
-f();
-G();
+const obj = new G();
