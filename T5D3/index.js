@@ -1,6 +1,6 @@
 "use strict";
 
-function f() {
+function F() {
   this.name = 'name';
 }
 
@@ -8,7 +8,6 @@ function f() {
 
 class G {
   constructor() {
-    debugger;
     this.name = 'name';
   }
 }
