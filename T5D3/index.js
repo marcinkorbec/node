@@ -5,10 +5,25 @@ class Warrior {
     this.life = life;
   }
 
+  setLife(life) {
+    this.life = life;
+  }
+
+  getLife() {
+    return this.life;
+  }
+
+  getHitPoints() {
+    return this.hitPoints;
+  }
+
   getName() {
     return this.name;
   }
-  
+
+  levelUp() {
+    this.hitPoints *= 1.1;
+  }
 }
 
 
