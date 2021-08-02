@@ -26,6 +26,14 @@ class Warrior {
   }
 }
 
+class Arena {
+  constructor(warrior1, warrior2) {
+    this.warrior1 = warrior1;
+    this.warrior2 = warrior2;
+  }
+}
+
+const arena = new Arena()
 
 const fighter1 = new Warrior('Baba Yaga', 9, 120);
 const fighter2 = new Warrior('Yanosik', 7, 140);
