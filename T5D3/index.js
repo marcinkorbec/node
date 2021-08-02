@@ -37,6 +37,12 @@ class Arena {
     this.warrior1 = warrior1;
     this.warrior2 = warrior2;
   }
+
+  fight() {
+    const attackingHitPoints = this.warrior1.getHitPoints();
+    const attackedHitPoints = this.warrior2.getLife();
+    const attackedNewHitPoints = attackedHitPoints - attackingHitPoints;
+  }
 }
 
 const arena = new Arena()
