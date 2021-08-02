@@ -46,8 +46,13 @@ class Arena {
     const attackedHitPoints = attacked.getLife();
     const attackedNewHitPoints = attackedHitPoints - attackingHitPoints;
     console.log(attacker.getName(), 'is attacking', attacked.getName(), 'and how he has', attackedNewHitPoints, 'hit points');
-    attacked.set(attackedNewHitPoints);
+    attacked.setLife(attackedNewHitPoints);
     this.activeWarrior = this.activeWarrior === 1 ? 2 : 1;
+    if (attackedNewHitPoints <= 0) {
+      console.log(attacked.getName(), ' Umarł');
+      return attacker;
+    }
+    return null;
   }
 }
 
