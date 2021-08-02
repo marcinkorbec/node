@@ -4,6 +4,11 @@ class Warrior {
     this.hitPoints = hitPoints;
     this.life = life;
   }
+
+  getName() {
+    return this.name;
+  }
+  
 }
 
 
