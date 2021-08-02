@@ -28,6 +28,12 @@ class Warrior {
 
 class Arena {
   constructor(warrior1, warrior2) {
+    if (!(warrior1 instanceof Warrior)) {
+      throw new Error('warrior1 must be an instance of Warrior class!');
+    }
+    if (!(warrior2 instanceof Warrior)) {
+      throw new Error('warrior2 must be an instance of Warrior class!');
+    }
     this.warrior1 = warrior1;
     this.warrior2 = warrior2;
   }
