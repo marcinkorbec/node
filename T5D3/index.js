@@ -36,12 +36,18 @@ class Arena {
     }
     this.warrior1 = warrior1;
     this.warrior2 = warrior2;
+    this.activeWarrior = 1;
   }
 
   fight() {
-    const attackingHitPoints = this.warrior1.getHitPoints();
-    const attackedHitPoints = this.warrior2.getLife();
+    const attacker = this.activeWarrior === 1 ? this.warrior1 : this.warrior2;
+    const attacked = this.activeWarrior === 1 ? this.warrior2 : this.warrior1;
+    const attackingHitPoints = attacker.getHitPoints();
+    const attackedHitPoints = attacked.getLife();
     const attackedNewHitPoints = attackedHitPoints - attackingHitPoints;
+    console.log(attacker.getName(), 'is attacking', attacked.getName(), 'and how he has', attackedNewHitPoints, 'hit points');
+    attacked.set(attackedNewHitPoints);
+    this.activeWarrior = this.activeWarrior === 1 ? 2 : 1;
   }
 }
 
