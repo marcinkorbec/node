@@ -55,7 +55,7 @@ class Arena {
     return null;
   }
 }
-a =1;
+
 const fighter1 = new Warrior('Baba Yaga', 9, 120);
 const fighter2 = new Warrior('Yanosik', 7, 140);
 console.log(fighter1, fighter2);

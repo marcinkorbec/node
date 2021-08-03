@@ -1,0 +1,9 @@
+{
+    "editor.suggest.showConstants": false,
+    "editor.suggest.showSnippets": false,
+    "editor.autoClosingBrackets": "always",
+    "editor.codeActionsOnSave": null,
+    "editor.cursorBlinking": "expand",
+    "editor.tabSize": 2,
+    "editor.mouseWheelZoom": true
+}
