@@ -22,6 +22,8 @@ const timer = () => {
 const reset = () => {
   time = 0;
   panel.textContent = '---';
+  active = false;
+  startStopBtn.textContent = 'Start';
   clearInterval(idI);
 }
 
