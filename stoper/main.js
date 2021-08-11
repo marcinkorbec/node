@@ -5,25 +5,24 @@ const resetBtn = document.querySelector('.reset')
 const panel = document.querySelector('.time div');
 let time = 0;
 let active = false;
+let idI;
 
 const timer = () => {
  if (active === false) {
    active = true;
    startStopBtn.textContent = 'Pauza';
-   setInterval(start ,10)
+   idI = setInterval(start ,10)
  } else {
    active = false;
    startStopBtn.textContent = 'Start';
+   clearInterval(idI)
  }
- //  startStopBtn.classList.toggle('active');
- //  if (startStopBtn.classList.contains('active')){
- //    startStopBtn.classList.remove('active');
- //    startStopBtn.classList.
- //    startStopBtn.textContent = 'Start';
- //  } else {
- //    startStopBtn.classList.add('active')
- //    startStopBtn.textContent = 'Pauza';
- //  }
+}
+
+const reset = () => {
+  time = 0;
+  panel.textContent = '---';
+  clearInterval(idI);
 }
 
 const start = () => {
@@ -31,4 +30,4 @@ const start = () => {
   panel.textContent = (time / 100).toFixed(2);
 }
 startStopBtn.addEventListener('click', timer);
-//resetBtn.addEventListener('click', reset);
+resetBtn.addEventListener('click', reset);
