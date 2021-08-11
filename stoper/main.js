@@ -1,0 +1,1 @@
+// http://websamuraj.pl/examples/js/projekt11/
