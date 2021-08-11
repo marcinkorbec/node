@@ -10,6 +10,7 @@ const timer = () => {
  if (active === false) {
    active = true;
    startStopBtn.textContent = 'Pauza';
+   setInterval(start ,10)
  } else {
    active = false;
    startStopBtn.textContent = 'Start';
@@ -25,5 +26,9 @@ const timer = () => {
  //  }
 }
 
+const start = () => {
+  time++;
+  panel.textContent = (time / 100).toFixed(2);
+}
 startStopBtn.addEventListener('click', timer);
 //resetBtn.addEventListener('click', reset);
