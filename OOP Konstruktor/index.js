@@ -17,3 +17,28 @@
   console.log(maluch);
   console.log(polonez);
 }
+
+{
+  //PROTOTYP
+
+  const Person = function(name, age) {
+    this.name = name;
+    this.age = age;
+    this.children = [];
+    // this.addChildren = function(name) {
+    //   this.children.push(name);
+    // }
+  }
+  Person.prototype.addChildren = function(name) {
+      this.children.push(name);
+    }
+
+  const arek = new Person('arek', 20);
+  const marta = new Person('marta', 23);
+
+  arek.addChildren('Bartuś')
+
+  console.log(arek);
+  console.log(marta);
+
+}
