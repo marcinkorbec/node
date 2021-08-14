@@ -31,7 +31,7 @@
   }
   Person.prototype.addChildren = function(name) {
       this.children.push(name);
-    }
+  }
 
   const arek = new Person('arek', 20);
   const marta = new Person('marta', 23);
