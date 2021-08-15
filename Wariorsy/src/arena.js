@@ -1,3 +1,4 @@
+const { rand } = require('./utils');
 const { Warrior } = require('./warrior');
 
 class Arena {
@@ -25,7 +26,8 @@ class Arena {
 
     console.log(attacker.getName(),  'is attacking', defender.getName(), 'and now he has', defender.getHitPoints(), 'Hit points.')
     if (defender.getHitPoints() <= 0) {
-      console.log(defender.getName(), 'zdechł marnie');
+      console.log(defender.getName(), 'zdechł marnie.');
+      console.log(attacker.getName(), 'Jest zwycięzcą!')
       return attacker;
     }
     return null;

@@ -1,11 +1,10 @@
+const { rand } = require('./utils');
 const { Warrior } = require('./warrior');
 const { Arena } = require('./arena');
 
-
-
 const arena = new Arena(
-  new Warrior('Zawisza', 10, 100),
-  new Warrior('Hatori Hanzor', 12, 87)
+  new Warrior('Zawisza', rand(5, 10), rand(90, 140)),
+  new Warrior('Hatori Hanzor', rand(4, 10), rand(90, 140)),
 );
 
 let winner;
