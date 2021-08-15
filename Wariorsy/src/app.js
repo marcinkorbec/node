@@ -8,7 +8,8 @@ const arena = new Arena(
   new Warrior('Hatori Hanzor', 12, 87)
 );
 
-console.log(arena.fight());
-console.log(arena.fight());
-console.log(arena.fight());
-console.log(arena.fight());
+let winner;
+
+do{
+  winner = arena.fight();
+} while (winner === null);

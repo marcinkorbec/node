@@ -23,10 +23,12 @@ class Arena {
       this.#warrior2.getHitPoints() - this.#warrior1.getAttack(),
     );
 
+    console.log(attacker.getName(),  'is attacking', defender.getName(), 'and now he has', defender.getHitPoints(), 'Hit points.')
     if (defender.getHitPoints() <= 0) {
       console.log(defender.getName(), 'zdechł marnie');
       return attacker;
     }
+    return null;
   }
 }
 
