@@ -1,14 +1,7 @@
-const { Warrior } = require('./warrior')
+const { Warrior } = require('./warrior');
+const { Arena } = require('./arena');
 
-class Arena {
-  #warrior1;
-  #warrior2;
 
-  constructor(warior1, warior2) {
-    this.#warrior1 = warior1;
-    this.#warrior2 = warior2;
-  }
-}
 
 const arena = new Arena(
   new Warrior('Zawisza', 10, 100),
