@@ -5,36 +5,41 @@
 // -Następnie wykorzystaj util.promisify().
 // -Na końcu spróbuj wykorzystać specjalną wersje dostępną w dns.promises async/await.
 
-// const dns = require('dns');
-//
-// dns.lookup('google.com', 'utf8', (error, data) => {
-//   if (error === null) {
-//     console.log(data);
-//   } else {
-//     console.log('Oh nie!', error)
-//   }
-// });
+const dnsAddress = require('dns');
+const dnsPromises = require('dns').promises;
+const util = require('util');
+const dnsPromised = util.promisify(dnsAddress.lookup)
 
-// const {lookup} = require('dns');
-// const {promisify} = require('util');
-//
-// const dnsPromised = promisify(lookup);
-//
-// dnsPromised('google.com', 'utf8',)
-// .then(data => {
-//   console.log(data);
-// })
-// .catch(error => {
-//   console.log('Oh nie kurwa!', error);
-// })
+//WERSJA Z CALLBACK
+{
+  dnsAddress.lookup('google.com', 'utf8', (error, data) => {
+    if (error === null) {
+      console.log(data);
+    } else {
+      console.log('Oh shit!', error)
+    }
+  });
+}
 
-const {lookup} = require('dns').promises;
+//WERSJA Z util.promisify
+{
+  dnsPromised('google.com', 'utf8',)
+    .then(data => {
+      console.log(data.address);
+    })
+    .catch(error => {
+      console.log('Oh nie kurwa!', error);
+    })
+}
 
-(async () => {
-  try {
-    const data = await lookup('google.com', 'utf8');
-    console.log(data);
-  } catch(err) {
-    console.log('O nie!', err);
-  }
-})();
+//wersja z .promises i async/await
+{
+  (async () => {
+    try {
+      const data = await dnsPromises.lookup('google.com', 'utf8');
+      console.log(data.address);
+    } catch(err) {
+      console.log('O nie!', err);
+    }
+  })();
+}
