@@ -4,3 +4,13 @@
 // -Wykonaj zadanie na callbackach.
 // -Następnie wykorzystaj util.promisify().
 // -Na końcu spróbuj wykorzystać specjalną wersje dostępną w dns.promises async/await.
+
+const {dns} = require('dns');
+
+dns.lookup('google.com', 'utf8', (error, data) => {
+  if (error === null) {
+    console.log(data);
+  } else {
+    console.log('Oh nie!', error)
+  }
+});
