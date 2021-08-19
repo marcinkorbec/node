@@ -6,20 +6,24 @@
 /*  ODCZYT PLIKU
 * Odczyt pliku odbywa się za pomocą asynchrnocznej funckji fs.readfile('nazwa pliku, opcje, funkcja callback).*/
 
-const {readFile} = require('fs');
+// const {readFile} = require('fs');
+//
+// readFile('./index.js', (error, data) => {
+//   if (error === null) {
+//     console.log(data);
+//   } else {
+//     console.log('Oh no!', error);
+//   }
+// })
 
-readFile('./index.js', (error, data) => {
-  if (error === null) {
-    console.log(data);
-  } else {
-    console.log('Oh no!', error);
-  }
-})
+// const {readFile} = require('fs').promises;
+//
+// (async () => {
+//   const data = await readFile('./index.js', {
+//     encoding: 'utf8',
+//   })
+//   console.log(data);
+// })();
 
-const {readFile} = require('fs').promises;
+//ZAPIS PLIKÓW
 
-(async () => {
-  const data = await readFile('./index.js', {
-    encoding: 'utf8',
-  })
-})
