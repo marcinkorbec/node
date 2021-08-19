@@ -27,21 +27,21 @@
 
 //ZAPIS PLIKÓW
 
-// const {writeFile, readFile} = require('fs').promises;
-// const FILE_NAME = './data/hello.txt';
-//
-// (async () => {
-//   try {
-//     const numberFromFile = Number(await readFile(FILE_NAME, 'utf8'));
-//     console.log(numberFromFile)
-//     await writeFile(FILE_NAME, (numberFromFile * 2).toString(), 'utf8');
-//   } catch(error) {
-//     console.log('oh no', error);
-//   }
-// })();
-
 const {writeFile, readFile} = require('fs').promises;
 const FILE_NAME = './data/hello.txt';
+
+(async () => {
+  try {
+    const numberFromFile = Number(await readFile(FILE_NAME, 'utf8'));
+    console.log(numberFromFile)
+    await writeFile(FILE_NAME, (numberFromFile * 2).toString(), 'utf8');
+  } catch(error) {
+    console.log('oh no', error);
+  }
+})();
+//
+// const {writeFile, readFile} = require('fs').promises;
+// const FILE_NAME = './data/hello.txt';
 
 // readFile(FILE_NAME, 'utf8', (error, data) => {
 //   if (error) {
