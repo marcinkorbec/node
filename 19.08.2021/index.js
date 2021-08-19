@@ -15,3 +15,11 @@ readFile('./index.js', (error, data) => {
     console.log('Oh no!', error);
   }
 })
+
+const {readFile} = require('fs').promises;
+
+(async () => {
+  const data = await readFile('./index.js', {
+    encoding: 'utf8',
+  })
+})
