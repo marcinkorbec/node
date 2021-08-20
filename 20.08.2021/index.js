@@ -25,16 +25,45 @@
 
 //------------------------------------------------------------------------------------------------------------
 
+// const {readdir, readFile, stat} = require('fs').promises;
+//
+// async function readFileAndDirectories() {
+//   const fileNames = await readdir('./data');
+//
+//   for(const fileName of fileNames) {
+//     console.log(fileName);
+//     const fileStat = await stat(`./data/${fileName}`);
+//     console.log(fileStat.isFile());
+//   }
+// }
+//
+// readFileAndDirectories();
+
+//-----------------------------------------------------------------------------------------------------
+
+// const {readdir, readFile, stat} = require('fs').promises;
+//
+// async function readFileAndDirectories() {
+//   const fileNames = await readdir('./data');
+//
+//   for(const fileName of fileNames) {
+//     console.log(fileName);
+//     const fileStat = await stat(`./data/${fileName}`);
+//     console.log(fileStat.isFile());
+//   }
+// }
+//
+// readFileAndDirectories();
+
+//----------------------------------------------------------------------------------------------------
+
 const {readdir, readFile, stat} = require('fs').promises;
 
 async function readFileAndDirectories() {
-  const fileNames = await readdir('./data');
-
-  for(const fileName of fileNames) {
-    console.log(fileName);
-    const fileStat = await stat(`./data/${fileName}`);
-    console.log(fileStat);
-  }
+  const fileNames = await readdir('.', {
+    withFileTypes: true,
+  });
+  console.log(fileNames)
 }
 
 readFileAndDirectories();
