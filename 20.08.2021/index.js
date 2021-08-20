@@ -57,13 +57,26 @@
 
 //----------------------------------------------------------------------------------------------------
 
-const {readdir, readFile, stat} = require('fs').promises;
+// const {readdir, readFile, stat} = require('fs').promises;
+//
+// async function readFileAndDirectories() {
+//   const fileNames = await readdir('.', {
+//     withFileTypes: true,
+//   });
+//   console.log(fileNames)
+// }
+//
+// readFileAndDirectories();
 
-async function readFileAndDirectories() {
-  const fileNames = await readdir('.', {
-    withFileTypes: true,
-  });
-  console.log(fileNames)
-}
+//---------------------------------------------------------------------------------------------------
 
-readFileAndDirectories();
+const {exists} = require('fs').promises;
+const FILE_NAME =  './data/hello-world.txt';
+
+(async () => {
+  const fileExist = await exists(FILE_NAME);
+  if (!fileExist) {
+    console.log('This is not available file.')
+  }
+})();
+
