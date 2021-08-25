@@ -96,20 +96,21 @@
 
 //-------------------------------------------------------------------------------------------------------
 
-// const {readFile} = require('fs').promises;
-// const FILE_NAME = './data/hello.txt';
-//
-// (async () => {
-//   try {
-//     const result = await readFile(FILE_NAME, 'utf8');
-//     console.log(result);
-//   } catch (error) {
-//     if (error.code === 'ENOENT') {
-//       console.log('Plik nie istnieje');
-//     } else {
-//       console.log('Nieznany błąd wyskoczył.',error);
-//     }
-//   }
-// })();
+const {readFile} = require('fs').promises;
+const FILE_NAME = './data/hello.txt';
 
-//ZADANIE 1
+(async () => {
+  try {
+    const result = await readFile(FILE_NAME, 'utf8');
+    console.log(result);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.log('Plik nie istnieje');
+    } else {
+      console.log('Nieznany błąd wyskoczył.',error);
+    }
+  }
+})();
+
+
+
