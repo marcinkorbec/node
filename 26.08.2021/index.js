@@ -8,20 +8,18 @@ const { normalize, resolve } = require('path');
 //   .then(r => r.text())
 //   .then(html => console.log(html));
 
-const cityName = 'Rzeszów'; //process.argv[2];
-
 function safeJoin(base, target) {
   const targetPatch = '.' + normalize('/' + target)
   return resolve(base, targetPatch);
 }
 
-const getDataFileName = city => safeJoin('.', `${city}.txt`);
+const getDataFileName = city => safeJoin('./data/', `${city}.txt`);
 
 // fetch('https://danepubliczne.imgw.pl/api/data/synop')
 //   .then(r => r.json())
 //   .then(data => console.log(data));
 
-const processWeatcherData = async data => {
+const processWeatcherData = async (data, cityName) => {
   // const data.find(stationData => {
   //   if (stationData.stacja === cityName) {
   //     return true;
@@ -33,8 +31,8 @@ const processWeatcherData = async data => {
   const foundData = data.find(stationData => stationData.stacja === cityName);
 
   if (!foundData) {
-    console.log('Takiego miasta nasze API nie przewidziało :(');
-    return;
+    throw new Error('Takiego miasta nasze API nie przewidziało :(');
+
   }
   const {
     cisnienie: pressure,
@@ -49,9 +47,21 @@ const processWeatcherData = async data => {
   await appendFile(getDataFileName(cityName), `${dateTimeString}\n${weatherInfo}\n`)
 }
 
-fetch('https://danepubliczne.imgw.pl/api/data/synop')
-  .then(r => r.json())
-  .then(processWeatcherData);
-  .catch(error => {
-  console.log('Error has occured :D', error);
-})
+const checkCityWeather = async cityName => {
+  try {
+    const res = await fetch('https://danepubliczne.imgw.pl/api/data/synop');
+    const data = await res.json();
+    await processWeatcherData(data, cityName);
+  } catch(err) {
+    console.log('Error has occured :D', error);
+  }
+}
+
+checkCityWeather(process.argv[2]);
+
+// fetch('https://danepubliczne.imgw.pl/api/data/synop')
+//   .then(r => r.json())
+//   .then(processWeatcherData);
+//   .catch(error => {
+//     console.log('Error has occured :D', error);
+//   })
