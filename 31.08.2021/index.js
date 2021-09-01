@@ -1,6 +1,18 @@
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
 
-exec('ping 8.8.8.8', (error, stdout, stderr) => {
-  console.log({error, stdout, stderr});
-})
+// exec('dir')
+//   .then(({stdout, stderr}) => {
+//     console.log(data.stdout);
+//   })
+
+(async () => {
+  try {
+    const ip = process.argv[2];
+    const {stdout} = await exec(`ping ${ip}`);
+    console.log(stdout);
+
+  } catch (e) {
+    console.error('Oh no!');
+  }
+})();
