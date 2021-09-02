@@ -62,10 +62,21 @@
 
 //----------------------------------------------------------------------------------------------------------------------
 
-const {normalize, join} = require('path');
+// const {normalize, join} = require('path');
+//
+// const userPath = join(__dirname, process.argv[2]);
+//
+// console.log(userPath);
 
-function safeJoin(base)
+//----------------------------------------------------------------------------------------------------------------------
+const {normalize, join, resolve} = require('path');
 
-const userPath = join(__dirname, process.argv[2]);
+function safeJoin(base, target) {
+  const targetPath = '.' + normalize('/' + target)
+  return resolve(base, targetPath);
+}
 
-console.log(userPath);
+const userPath = safeJoin(__dirname, process.argv[2]); // node index.js ../../../../../../../../../Windows
+console.log(userPath); //C:\Users\marci\OneDrive\Pulpit\udemy\megak\node\24-08-2021\Windows
+
+//-----------------------------------------------------------------------------------------------------------------------
