@@ -1,18 +1,21 @@
-const {readdir} = require('fs').promises;
+// const {readdir} = require('fs').promises;
+//
+// (async() => {
+//
+//   const subDir = process.argv[2];
+//
+//   const files = await readdir('./' + subDir);
+//
+//   console.log(files);
+//
+// })();
+//----------------------------------------------------------------------------------------------------------------------
+// const {} = require('path');
+//
+// console.log(__dirname); //pokazuje całą ścieżkę do pliku C:\Users\marci\OneDrive\Pulpit\udemy\megak\node\24-08-2021
+// console.log(__filename); //pokazuje całą ścieżkę wraz z plikiem C:\Users\marci\OneDrive\Pulpit\udemy\megak\node\24-08-2021\index.js
+//----------------------------------------------------------------------------------------------------------------------
 
-(async() => {
+const {basename} = require('path');
 
-  const oldFile = process.argv[2];
-  const newFile = process.argv[3];
-
-  try {
-    await rename(oldFile, newFile);
-  } catch (e) {
-    if (e.code === 'ENOENT') {
-      console.log(`${oldFile} does not exist.`);
-    } else {
-      
-    }
-  }
-
-})();
+console.log(basename(__filename));
