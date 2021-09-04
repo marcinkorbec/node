@@ -22,9 +22,31 @@
 
 //---------------------------------------------------------------------------------------------------------
 
-const {watch} = require ('chokidar');
+const {normalize, resolve} = require('path');
+const {watch} = require('chokidar');
+const {readFile} = require('fs');
 
-watch('.')
-  .on('all', (event, patch) => {
-    console.log(event, patch);
-  })
+function safeJoin(base, target){
+  const targetPatch = '.' + normalize('/' + target);
+  return resolve (base, targetPatch);
+}
+
+const userPath = safeJoin(__dirname,  process.argv[2] ? process.argv[2] : '.');
+
+console.log('Starting watch: ', resolve(userPath));
+
+watch(`${userPath}/**/*.js`, {
+  ignoreInitial: true,
+  awaitWriteFinish: true,
+})
+  .on('add', path => console.log(`File ${path} has been added.`))
+  .on('unlink', path => console.log(`File ${path} has been removed.`))
+  .on('change', path => console.log(
+    `File ${path} has been changed ${readFile(path, 'utf8', (error, data) => {
+      if (error) {
+        console.log('Oh no', error);
+      } else {
+        console.log(data);
+      }
+    })}.`
+  ))
