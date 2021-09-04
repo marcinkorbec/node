@@ -31,6 +31,7 @@ function safeJoin(base, target){
   return resolve (base, targetPatch);
 }
 
+//hyb
 const userPath = safeJoin(__dirname,  process.argv[2] ? process.argv[2] : '.');
 
 console.log('Starting watch: ', resolve(userPath));
