@@ -31,7 +31,7 @@ function safeJoin(base, target){
   return resolve (base, targetPatch);
 }
 
-//oji aji 
+//oji aji o
 const userPath = safeJoin(__dirname,  process.argv[2] ? process.argv[2] : '.');
 
 console.log('Starting watch: ', resolve(userPath));
