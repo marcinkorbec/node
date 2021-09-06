@@ -1,6 +1,7 @@
 {
   const {promisify} = require('util');
-  const scrypt = promisify(require('crypto').randomBytes);
+  const scrypt = promisify(require('crypto').scrypt);
+  const randomBytes = promisify(require('crypto').randomBytes);
   const {createCipheriv} = require('crypto');
 
   const algorithm = 'aes-192-cbc'; //AES 192
@@ -29,8 +30,8 @@
 
   const algorithm = 'aes-192-cbc';
   const password = 'Password used to generate key';
-  const encrypted = 'eed497f53ea697fa05584c34a54ae04c60d3169d47fabedc04c5fe797550aeed';
-  const ivHex = '976c423614aea8cfad695a735b321255';
+  const encrypted = 'fff1ecd159396550172052bba431c26962ca528e569afb8327144f90258b6bb5';
+  const ivHex = '064a994cb6d42de49e45bff7c144d112';
 
   (async () => {
     //First, we'll generate the key. The key length is dependent on the algorithm.
