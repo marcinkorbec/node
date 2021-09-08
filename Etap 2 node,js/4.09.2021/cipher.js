@@ -1,7 +1,7 @@
 const { promisify } = require('util');
 const scrypt = promisify(require('crypto').scrypt);
 const randomBytes = promisify(require('crypto').randomBytes);
-const { createCipheriv, createDecipheriv } = require('crypto');
+const { createCipheriv, createDecipheriv, createHmac } = require('crypto');
 
 async function  encryptText(text, password, salt) {
   const algorithm = 'aes-192-cbc';
@@ -27,7 +27,16 @@ async function decryptText(text, password, salt, ivHex) {
   decrypted += decipher.final('utf8');
   return decrypted;
 }
+
+function hash(text, salt) {
+  return createHmac('sha512', salt)
+    .update(text)
+    .digest('hex')
+
+}
+
 module.exports = {
   encryptText,
   decryptText,
+  hash,
 };

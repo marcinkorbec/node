@@ -1,5 +1,7 @@
 const SALT = '@#$%^&*((GRCY^uuyg';
+const HASH_SALT = 'avsutahfwebwRCFBK&%$&*';
 
 module.exports = {
-  SALT,
+  ENCRYPTED_SALT: SALT,
+  HASH_SALT,
 }

@@ -1,12 +1,1 @@
-{
-  "name": "4.09.2021",
-  "version": "1.0.0",
-  "main": "cipher.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
-}
+{"encrypted":"68b87daf54559ca94d1e251c7d859eb949bff96a49842ea77577ae0de32923585e943f49080dec296b3150614fdbf6fc118c0ce5fb5448eeb22740e22777f8c89a8a9e3d8708b203503480d3e71155e31e58608d22c753162339a972f80c6fbd78868561b61f8aeb98772de25d15801fabf3cce67cc96f9efc3db75715876a70beacb12a1d86a3d92a1a0f5108a48e2da7e9fe9fc388ae2c60047fcd85f162cc9a203aff861cd5dcc4955237c998c2b3ecda4bfc026c056b4a5ef4e858bdce205ad6d6ce3bd5b87b096b5b9c700620bfaed7f798cfbadb8c1d90352f6e44f277","iv":"47d9cf1c19fdaea02e833bd504ea2fa1","hash":"3de13b6b072b676f6603d3f68a5cc2173b4bfd0790f6f3a0529f4db1fe6bc205fb2d0744b4ce90c33ab3c6212a339cfbed270b68cb41c2943719a0b787a75d44"}
