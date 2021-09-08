@@ -1,5 +1,5 @@
 const {readFile, writeFile} = require('fs').promises;
-const {encryptText} = require('cipher').promises;
+const {encryptText} = require('cipher.js');
 
 const SALT = '@#$%^&*((GRCY^uuyg';
 const [,,fileName, pwd] = process.argv; //destrukturyzacja tablicy
