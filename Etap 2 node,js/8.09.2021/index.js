@@ -6,6 +6,6 @@
 
 const buff = Buffer.alloc(20);
 
-console.log(buff);
-
 buff.write('Hello World!', 'utf8')
+
+console.log(buff);
