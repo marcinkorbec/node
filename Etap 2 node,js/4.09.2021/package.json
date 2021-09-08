@@ -1,16 +1,1 @@
-{
-  "name": "4.09.2021",
-  "version": "1.0.0",
-  "description": "",
-  "main": "cwiczenie.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cipher": "^0.0.0"
-  }
-}
+{"encrypted":"6d0a31c76b96354c2704463bb7cbcb8d17dbc2a72dc0674358fb614af87c4d81d76b5a19634af79d88fea13cdc0976b7321c34b273c028fc952568d7f888f04a1fc2604823551f53c5f435fc994e9ccf74ce0b77882d8a0b7698f5c004a2b683cd6550a254fe8a2ffb3e4b526153f297398ee8c97df6a23701065f65172ca7876cf18daff02bed3aa8747cd1efaccd8fdc40ea077e8edcb2b3d9318fd4cf1c8f2a4a620227da24791aa61a3ae41f11db69dc16ebaaaff0915f0f60385b426f41cd5ebc36dc8eebd367c1e568aac68152d14d7c47a316646ee8806cf3ac5471f7b0c16c1ace696a7bdea66c920f0e4812ad0895a4dc353891b52edf0e02f07a3bf57b4b73584f9ba231bd695fde95c06f9e1ba5bc310c396592925e94e7a7f6a120453359227bcaebce3ccbcd8d524079","iv":"44899fc62f4ef6d5db823ba4518c9c6b"}
