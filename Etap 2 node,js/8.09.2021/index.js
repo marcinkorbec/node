@@ -18,3 +18,5 @@
 // console.log(Buffer.byteLength('ń'));
 // console.log(Buffer.byteLength('😍'));
 // console.log(Buffer.byteLength('字'));
+
+
