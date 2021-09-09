@@ -1,3 +1,8 @@
+const { promisify } = require('util');
+const scrypt = promisify(require('crypto').scrypt);
+const randomBytes = promisify(require('crypto').randomBytes);
+const { createCipheriv, createDecipheriv, createHmac } = require('crypto');
+
 async function  encryptText(text, password, salt) {
   const algorithm = 'aes-192-cbc';
   const key = await scrypt(password, salt, 24);
