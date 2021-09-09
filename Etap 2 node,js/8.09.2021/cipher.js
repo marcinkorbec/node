@@ -17,14 +17,14 @@ async function  encryptBinary(binary, password, salt) {
   };
 }
 
-async function decryptBinary(binary, password, salt, ivHex) {
+async function decryptBinary(text, password, salt, ivHex) {
   const algorithm = 'aes-192-cbc';
   const key = await scrypt(password, salt, 24);
   const iv = Buffer.from(ivHex, 'hex');
 
   const decipher = createDecipheriv(algorithm, key, iv);
-  let decrypted = decipher.update(binary, 'hex', 'binary');
-  decrypted += decipher.final('utf8');
+  let decrypted = decipher.update(text, 'hex', 'binary');
+  decrypted += decipher.final('binary');
   return decrypted;
 }
 

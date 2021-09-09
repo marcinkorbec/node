@@ -19,4 +19,3 @@
 // console.log(Buffer.byteLength('😍'));
 // console.log(Buffer.byteLength('字'));
 
-const

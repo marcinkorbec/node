@@ -14,6 +14,4 @@ const [,,fileName, pwd] = process.argv;
   } else {
     console.error('File is not original');
   }
-
-
 })();
