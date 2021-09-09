@@ -15,5 +15,6 @@ const write = buff.write('Zażółć gęślą jaźń!', 'utf8')
 
 console.log(Buffer.byteLength('Zażółć gęślą jaźń!'));
 console.log(Buffer.byteLength('a'));
-console.log(Buffer.byteLength('ą'));
-console.log(Buffer.byteLength('ć'));
+console.log(Buffer.byteLength('ń'));
+console.log(Buffer.byteLength('😍'));
+console.log(Buffer.byteLength('字'));
