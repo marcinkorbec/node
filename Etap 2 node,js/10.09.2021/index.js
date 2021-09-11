@@ -4,6 +4,6 @@ const {createGzip} = require('zlib');
 
 (async () => {
   await pipeline(
-    createReadStream()
+    createReadStream('')
   );
 })();
