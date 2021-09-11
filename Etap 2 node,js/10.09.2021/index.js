@@ -4,6 +4,10 @@ const {createGzip} = require('zlib');
 
 (async () => {
   await pipeline(
-    createReadStream('')
+    createReadStream('picture.png'),
+    createGzip(),
+    createWriteStream('picture2.png'),
   );
+  console.log('Done!');
 })();
+
