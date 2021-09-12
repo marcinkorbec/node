@@ -1,4 +1,4 @@
-const {createReadStream} = require('fs');
+const {createReadStream, createWriteStream} = require('fs');
 
 const openFileStream = createReadStream('package.json');
-console.log(openFileStream);
+const writeFileStream = createWriteStream('encrypted.json);
