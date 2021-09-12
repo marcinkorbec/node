@@ -1,15 +1,13 @@
 const {createReadStream, createWriteStream} = require('fs');
 const {pipeline} = require('stream').promises;
 
-const openFileStream = createReadStream('package.json');
-const writeFileStream = createWriteStream('encrypted.json');
 
 (async () => {
-  const openFileStream = createReadStream('package.json');
-  const writeFileStream = createWriteStream('encrypted.json');
+  const [,, inputFile, outputFile, pwd] = process.argv;
   await pipeline (
-    openFileStream,
-    writeFileStream,
+    createReadStream(inputFile),
+    //szyfrowanie
+    createWriteStream(outputFile),
   );
 
   console.log('Done!');
