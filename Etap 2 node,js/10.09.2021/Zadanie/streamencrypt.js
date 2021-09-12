@@ -6,8 +6,6 @@ const {createCipher} = require('crypto'); //A w drugim createDecipher
 const {ENCRYPTED_SALT} = require('./constants');
 
 
-
-
 (async () => {
   const [,, inputFile, outputFile, pwd] = process.argv;
   const key = await scrypt(pwd, ENCRYPTED_SALT, 24);
@@ -15,7 +13,6 @@ const {ENCRYPTED_SALT} = require('./constants');
 
   await pipeline (
     createReadStream(inputFile),
-    // let encrypted = cipher.update(text, 'utf8', 'hex');
     createCipher(algorithm, key),
     createWriteStream(outputFile),
   );
