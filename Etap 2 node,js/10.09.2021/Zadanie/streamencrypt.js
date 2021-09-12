@@ -1,9 +1,10 @@
+const {pipeline} = require('stream').promises;
 const { promisify } = require('util');
 const scrypt = promisify(require('crypto').scrypt);
 const {createReadStream, createWriteStream} = require('fs');
-const {pipeline} = require('stream').promises;
-const {ENCRYPTED_SALT} = require('./constants');
 const {createCipher} = require('crypto'); //A w drugim createDecipher
+const {ENCRYPTED_SALT} = require('./constants');
+
 
 
 
@@ -14,8 +15,8 @@ const {createCipher} = require('crypto'); //A w drugim createDecipher
 
   await pipeline (
     createReadStream(inputFile),
-    let encrypted = cipher.update(text, 'utf8', 'hex');
-    const cipher = createCipher(algorithm, key);
+    // let encrypted = cipher.update(text, 'utf8', 'hex');
+    createCipher(algorithm, key),
     createWriteStream(outputFile),
   );
 
