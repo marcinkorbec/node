@@ -16,6 +16,5 @@ const {ENCRYPTED_SALT} = require('./constants');
     createDecipher(algorithm, key),
     createWriteStream(outputFile),
   );
-
   console.log('Done!');
 })();
