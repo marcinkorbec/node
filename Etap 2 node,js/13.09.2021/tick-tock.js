@@ -6,7 +6,6 @@ function tickTock() {
   setInterval(() => {
     ee.emit('secondElapsed', 'test');
   }, 1000);
-
   setInterval(() => {
     ee.emit('fiveSecondElapsed', 'test');
   }, 5000);
