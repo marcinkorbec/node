@@ -9,7 +9,6 @@ function tickTock() {
   setInterval(() => {
     ee.emit('fiveSecondElapsed', 'test');
   }, 5000);
-
   return ee;
 };
 
