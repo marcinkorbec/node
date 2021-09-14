@@ -1,5 +1,5 @@
-const {tickTock} = require('./tick-tock')
-const events = tickTock();
+const {TickTock} = require('./tick-tock')
+const events = new TickTock();
 
 events.on('secondElapsed', data => {
     console.log('1 sec!', data)
