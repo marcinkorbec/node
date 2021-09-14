@@ -1,47 +1,106 @@
 const { EventEmitter } = require('events');
+//const { tablesCount } = require('./index')
 
 class Restaurant extends EventEmitter {
   constructor() {
     super();
-    this.iloscStolikow = this;
   }
 
   open() {
-    this.emit(0 + this.iloscStolikow);
-    console.log(`Restauracje otwarto. Dostepnych stolików:${this.iloscStolikow}`)
+    this.emit('restaurantIsOpen');
+    //console.log(`Restauracje otwarto. Dostepnych stolików:${tablesCount}`)
   }
 
   close() {
-    this.emit(this.iloscStolikow - this.iloscStolikow);
-    console.log(`Zamknięcie restauracji. Dostepnych stolików:${this.iloscStolikow}`)
+    this.emit('restaurantIsClosed');
+    //console.log(`Zamknięcie restauracji. Dostepnych stolików:${tablesCount}`)
   }
 
   reserveTable() {
-    this.emit(this.iloscStolikow - 1);
-    console.log(`Stolik został zarezerowany na teraz. Dostepnych stolików:${this.iloscStolikow}`)
+    this.emit('tableCount', -1);
+    //console.log(`Stolik został zarezerowany na teraz. Dostepnych stolików:${tablesCount}`)
   }
 
   cancelTableReservation() {
-    this.emit(this.iloscStolikow + 1);
-    console.log(`Odwołano rezerwację na stolik. Dostepnych stolików:${this.iloscStolikow}`)
+    this.emit('tableCount', +1);
+    //console.log(`Odwołano rezerwację na stolik. Dostepnych stolików:${tablesCount}`)
   }
 
   takeTableWithoutReservation() {
-    this.emit(this.iloscStolikow - 1);
-    console.log(`Ktoś wziął stolik bez rezerwacji. Dostepnych stolików:${this.iloscStolikow}`)
+    this.emit('tableCount', -1);
+    //console.log(`Ktoś wziął stolik bez rezerwacji. Dostepnych stolików:${tablesCount}`)
   }
 
   markTableAsBroken() {
-    this.emit(this.iloscStolikow - 1);
-    console.log(`Stolik się popsuł, odpadła noga :/ . Dostepnych stolików:${this.iloscStolikow}`)
+    this.emit('tableCount', -1);
+    //console.log(`Stolik się popsuł, odpadła noga :/ . Dostepnych stolików:${tablesCount}`)
   }
 
   cleanupTable() {
-    this.emit(this.iloscStolikow + 1);
-    console.log(`Ktoś skończył jeść, czyścimy stolik i wraca do użytku. Dostepnych stolików:${this.iloscStolikow}`)
+    this.emit('tableCount', +1);
+    //console.log(`Ktoś skończył jeść, czyścimy stolik i wraca do użytku. Dostepnych stolików:${tablesCount}`)
   }
 }
 
 module.exports = {
   Restaurant,
 };
+
+// const { EventEmitter } = require('events');
+//
+// class Restaurant extends EventEmitter {
+//   /**
+//    * Otwarcie restauracji.
+//    */
+//   open() {
+//     this.emit('restaurantIsOpen');
+//   }
+//
+//   /**
+//    * Zamknięcie restauracji.
+//    */
+//   close() {
+//     this.emit('restaurantIsClosed');
+//   }
+//
+//   /**
+//    * Stolik został zarezerowany na teraz.
+//    * Traktuj to jako po prostu 1 stolik mniej.
+//    */
+//   reserveTable() {
+//     this.emit('tableCount', -1);
+//   }
+//
+//   /**
+//    * Odwołano rezerwację na stolik.
+//    * Traktuj to jako po prostu 1 stolik więcej.
+//    */
+//   cancelTableReservation() {
+//     this.emit('tableCount', 1);
+//   }
+//
+//   /**
+//    * Ktoś wziął stolik bez rezerwacji.
+//    */
+//   takeTableWithoutReservation() {
+//     this.emit('tableCount', -1);
+//   }
+//
+//   /**
+//    * Stolik się popsuł, odpadła noga :/
+//    */
+//   markTableAsBroken() {
+//     this.emit('tableCount', -1);
+//   }
+//
+//   /**
+//    * Ktoś skończył jeść, czyścimy stolik i wraca do użytku.
+//    */
+//   cleanupTable() {
+//     this.emit('tableCount', 1);
+//   }
+// }
+//
+// module.exports = {
+//   Restaurant,
+// };
