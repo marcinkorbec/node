@@ -4,12 +4,29 @@ const megaRestaurant = new Restaurant();
 let tablesCount = 25;
 
 megaRestaurant
-  .on('restaurantIsOpen', () => console.log('OPEN'))
-  .on('tableCount', table => {
+  .on('open', () => console.log('Restauracja została otwarta'))
+  .on('reserve', table => {
     tablesCount += table;
-    console.log(`Dostępnych stolików: ${tablesCount}`)
+    console.log(`Stolik został zarezerowany na teraz. Dostepnych stolików: ${tablesCount}`)
   })
-  .on('restaurantIsClosed', () => console.log('CLOSED'))
+  .on('cancelReserve', table => {
+    tablesCount += table;
+    console.log(`Odwołano rezerwację na stolik. Dostepnych stolików: ${tablesCount}`)
+  })
+  .on('withoutNow', table => {
+    tablesCount += table;
+    console.log(`Ktoś wziął stolik bez rezerwacji. Dostepnych stolików: ${tablesCount}`)
+  })
+  .on('markTableAsBroken', table => {
+    tablesCount += table;
+    console.log(`Stolik się popsuł, odpadła noga :/ . Dostepnych stolików: ${tablesCount}`)
+  })
+
+  .on('cleanupTable', table => {
+    tablesCount += table;
+    console.log(`Ktoś skończył jeść, czyścimy stolik i wraca do użytku. Dostepnych stolików: ${tablesCount}`)
+  })
+  .on('close', () => console.log('Restauracja została zamknięta.'))
 
 
 
@@ -35,6 +52,3 @@ megaRestaurant.cleanupTable(); // "Dostepnych stolików: 20."
 
 megaRestaurant.close(); // "Zamknięto restaurację."
 
-module.exports = {
-  tablesCount,
-}
