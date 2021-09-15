@@ -4,28 +4,11 @@ const megaRestaurant = new Restaurant();
 let tablesCount = 25;
 
 megaRestaurant
-  .on('open', () => console.log('Restauracja została otwarta'))
-  .on('tableCount', message, table => {
+  .on('open', (message) => console.log(`Restauracja została otwarta, Dostępnych stolików: ${tablesCount}, ${message}`))
+  .on('tableCount', (message, table) => {
     tablesCount += table;
     console.log(`${message} Dostępnych stolików: ${tablesCount}`)
   })
-  // .on('cancelReserve', table => {
-  //   tablesCount += table;
-  //   console.log(` Dostepnych stolików: ${tablesCount}`)
-  // })
-  // .on('withoutNow', table => {
-  //   tablesCount += table;
-  //   console.log(`Dostepnych stolików: ${tablesCount}`)
-  // })
-  // .on('markTableAsBroken', table => {
-  //   tablesCount += table;
-  //   console.log(`Dostepnych stolików: ${tablesCount}`)
-  // })
-
-  // .on('cleanupTable', table => {
-  //   tablesCount += table;
-  //   console.log(`Dostepnych stolików: ${tablesCount}`)
-  // })
   .on('close', () => console.log('Restauracja została zamknięta.'))
 
 
