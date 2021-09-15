@@ -9,7 +9,7 @@ megaRestaurant
     tablesCount += table;
     console.log(`${message} Dostępnych stolików: ${tablesCount}`)
   })
-  .on('close', () => console.log('Restauracja została zamknięta.'))
+  .on('close', (message) => console.log(`Restauracja została zamknięta. ${message}`))
 
 
 
