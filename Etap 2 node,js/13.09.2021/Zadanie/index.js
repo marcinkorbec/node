@@ -5,27 +5,27 @@ let tablesCount = 25;
 
 megaRestaurant
   .on('open', () => console.log('Restauracja została otwarta'))
-  .on('reserve', table => {
+  .on('tableCount', message, table => {
     tablesCount += table;
-    console.log(`Stolik został zarezerowany na teraz. Dostepnych stolików: ${tablesCount}`)
+    console.log(`${message} Dostępnych stolików: ${tablesCount}`)
   })
-  .on('cancelReserve', table => {
-    tablesCount += table;
-    console.log(`Odwołano rezerwację na stolik. Dostepnych stolików: ${tablesCount}`)
-  })
-  .on('withoutNow', table => {
-    tablesCount += table;
-    console.log(`Ktoś wziął stolik bez rezerwacji. Dostepnych stolików: ${tablesCount}`)
-  })
-  .on('markTableAsBroken', table => {
-    tablesCount += table;
-    console.log(`Stolik się popsuł, odpadła noga :/ . Dostepnych stolików: ${tablesCount}`)
-  })
+  // .on('cancelReserve', table => {
+  //   tablesCount += table;
+  //   console.log(` Dostepnych stolików: ${tablesCount}`)
+  // })
+  // .on('withoutNow', table => {
+  //   tablesCount += table;
+  //   console.log(`Dostepnych stolików: ${tablesCount}`)
+  // })
+  // .on('markTableAsBroken', table => {
+  //   tablesCount += table;
+  //   console.log(`Dostepnych stolików: ${tablesCount}`)
+  // })
 
-  .on('cleanupTable', table => {
-    tablesCount += table;
-    console.log(`Ktoś skończył jeść, czyścimy stolik i wraca do użytku. Dostepnych stolików: ${tablesCount}`)
-  })
+  // .on('cleanupTable', table => {
+  //   tablesCount += table;
+  //   console.log(`Dostepnych stolików: ${tablesCount}`)
+  // })
   .on('close', () => console.log('Restauracja została zamknięta.'))
 
 

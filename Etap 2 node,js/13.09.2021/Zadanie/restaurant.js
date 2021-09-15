@@ -6,31 +6,31 @@ class Restaurant extends EventEmitter {
   }
 
   open() {
-    this.emit('open');
+    this.emit('open', 'Prosimy mieć maseczki.');
   }
 
   close() {
-    this.emit('close');
+    this.emit('close', 'Możecie już zdjąć maseczki, bo one i tak nic nie dają :D ');
   }
 
   reserveTable() {
-    this.emit('reserve', -1);
+    this.emit('tableCount', 'Stolik został zarezerwowany. ', -1);
   }
 
   cancelTableReservation() {
-    this.emit('cancelReserve', +1);
+    this.emit('tableCount','Odwołano rezerwację na stolik. ', +1);
   }
 
   takeTableWithoutReservation() {
-    this.emit('withoutNow', -1);
+    this.emit('tableCount','Ktoś wziął stolik bez rezerwacji. ', -1);
   }
 
   markTableAsBroken() {
-    this.emit('markTableAsBroken', -1);
+    this.emit('tableCount', 'Stolik się popsuł, odpadła noga :/ . ' -1);
   }
 
   cleanupTable() {
-    this.emit('cleanupTable', +1);
+    this.emit('tableCount', 'Ktoś skończył jeść, czyścimy stolik i wraca do użytku. ', +1);
   }
 }
 
