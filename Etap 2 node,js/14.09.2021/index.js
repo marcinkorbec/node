@@ -20,7 +20,7 @@ const {createServer} = require('http');
 
 const server = createServer();
 server.on('request', (req, res) => {
-  if (req.url === '/') {
+  if (req.url === '/' && req.method === 'GET') {
     res.writeHead(200, {
       'Content-type': 'text/html',
     });
