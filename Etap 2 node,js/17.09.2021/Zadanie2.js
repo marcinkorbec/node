@@ -3,9 +3,9 @@ const {createServer} = require('http');
 const server = createServer();
 
 server.on('request', (req, res) => {
-  console.log(req.url.split(''));
-
-  if (req.url === '') {
+  const [, operation, a, b] = req.url.split('/');
+  console.log(operation, a, b);
+  if (req.url === '/') {
     res.writeHead(200, {
       'conetent-type': 'text/plain',
     });
