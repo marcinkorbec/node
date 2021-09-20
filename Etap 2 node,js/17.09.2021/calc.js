@@ -9,16 +9,42 @@ function calc(operation, a, b) {
   //   return a / b;
   // }
 
+//ALBO: ---------------------------------------------
+
+//   switch (operation) {
+//     case 'add':
+//       return a + b;
+//     case 'multiply':
+//       return a * b;
+//     case 'substract':
+//       return a - b;
+//     case 'divide':
+//       return a / b;
+//   }
+// }
+
+//ALBO: --------------------------------------------
+
+  let result;
+
   switch (operation) {
     case 'add':
-      return a + b;
+      result= a + b;
+      break;
     case 'multiply':
-      return a * b;
+      result= a * b;
+      break;
     case 'substract':
-      return a - b;
+      result= a - b;
+      break;
     case 'divide':
-      return a / b;
+      result= a / b;
+      break;
+    default:
+      result = 'Operation is not supported!';
+      break;
   }
+  return result;
 }
 
 module.exports = {
