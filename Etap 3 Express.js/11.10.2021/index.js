@@ -1,4 +1,6 @@
 const express = require('express');
 const {readFile, writeFile} = require('fs').promises;
 
-const
+const app = express();
+
+app.use(express.json());
