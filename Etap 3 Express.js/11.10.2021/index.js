@@ -8,7 +8,7 @@ app.use(express.static('public'));
 
 app.post('/book', (req, res) => {
   console.log(req.body);
-  res.send('Ok.')
+  res.send('Ok.');
 });
 
 app.listen(3000);
