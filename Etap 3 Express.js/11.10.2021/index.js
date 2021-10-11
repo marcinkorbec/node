@@ -11,4 +11,4 @@ app.post('/book', (req, res) => {
   res.send('Ok.')
 });
 
-app.listen(3000)
+app.listen(3000);
