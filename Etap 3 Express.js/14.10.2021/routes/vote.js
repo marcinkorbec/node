@@ -1,22 +1,26 @@
 const express = require('express');
 const voteRouter = express.Router();
 
-let votesOnYes = 0;
-let votesOnNo = 0;
-
+const votes = {
+  tak: 0,
+  nie: 0,
+}
+console.log(votes);
 voteRouter
-  .get('/yes', (req, res) => {
-    votesOnYes++;
-    res.send('Dziękujemy za głos!');
+  .get('/check', async (req, res) => {
+    const info = Object.entries(votes).map(ar => `Głos na ${ar[0]}: ${ar[1]}`).join('<br>');
+    res.send(info);
   })
 
-  .get('/no', (req, res) => {
-    votesOnNo++;
-    res.send('Dziękujemy za głos!')
-  })
+  .get('/:voteName', async (req, res) => {
+    const {voteName} = req.params;
+    if (typeof votes[voteName] === 'undefined') {
+      votes[voteName] = 0;
+    }
+    votes[voteName]++;
+    res.send(`Dziękujemy za głos!`);
 
-  .get('/check', (req, res) => {
-    res.send(`<p>Głosy na tak: ${votesOnYes}, głosy na nie: ${votesOnNo}.</p>`)
+    console.log(votes);
   })
 
 module.exports = {

@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static('public'));
-app.use('/name', voteRouter);
+app.use('/vote', voteRouter);
 
 app.listen(3000, 'localhost');
 
