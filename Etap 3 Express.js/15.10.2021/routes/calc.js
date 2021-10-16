@@ -11,7 +11,7 @@ calcRouter
     //   divider = false;
     // }
 
-    const divider = numberA % numberB === 0? true : false;
+    const divider = numberA % numberB === 0; // wczesniej by operator trojargumentowy a to jest uproszczone przez webstorma
 
     res.json({divider});
   })
