@@ -8,16 +8,17 @@ form.addEventListener('submit', async event => {
   const numberA = Number(numberAInput.value);
   const numberB = Number(numberBInput.value);
 
-  const res = fetch('/calc/check', {
+  const res = await fetch('/calc/check', {
     method: 'POST',
     body: JSON.stringify({
       numberA,
       numberB,
     }),
     headers: {
-      'Content-type': 'application/json',
+      'Content-Type': 'application/json',
     }
   });
   const data = await res.json();
   console.log(data);
+
 });
