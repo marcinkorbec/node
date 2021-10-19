@@ -1,5 +1,10 @@
+const express = require('express');
+const taskRouter = express.Router();
 
-
-app.get('/hi', (req, res) => {
+taskRouter.get('/', (req, res) => {
   res.render('home');
 });
+
+module.exports = {
+  taskRouter,
+}
