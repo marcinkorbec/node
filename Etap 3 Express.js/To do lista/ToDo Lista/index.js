@@ -3,11 +3,13 @@ const hbs = require('express-handlebars');
 const {taskRouter} = require('./routes/task');
 const app = express();
 
-app.engine('.hbs', hbs({extname:'.hbs'}));
-app.set('view engine', '.hbs');
+
 app.use(express.json());
 app.use(express.static('views'));
-app.use('/routes', taskRouter);
+app.use('/', taskRouter);
+app.engine('.hbs', hbs({extname:'.hbs'}));
+app.set('view engine', '.hbs');
+
 
 console.log('Program działa.')
 
