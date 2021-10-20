@@ -3,8 +3,8 @@ const hbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const app = express();
 const { homeRouter } = require('./routes/home');
-const {configuratorRouter} = require("./routes/configurator");
-const {orderRouter} = require("./routes/order");
+const { configuratorRouter } = require("./routes/configurator");
+const { orderRouter } = require("./routes/order");
 
 app.use(express.json());
 app.use(express.static('public'));
