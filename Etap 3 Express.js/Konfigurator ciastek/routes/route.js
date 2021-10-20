@@ -1,7 +1,13 @@
 const express = require('express');
 const appRouter = express.Router();
 
-appRouter.get('/', (req, res) => {
+appRouter
+  .post('/set', (req, res) => {
+    const {name} = req.body;
+    res.cookie()
+  })
+
+  .get('/', (req, res) => {
   res.render('home');
 });
 
