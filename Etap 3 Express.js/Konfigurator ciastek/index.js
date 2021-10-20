@@ -7,6 +7,7 @@ const { appRouter } = require('./routes/route');
 app.use(express.json());
 app.use(express.static('views'));
 app.use(cookieParser());
+app.use('/', appRouter);
 app.engine('.hbs', hbs({extname:'.hbs'}));
 app.set('view engine', '.hbs');
 

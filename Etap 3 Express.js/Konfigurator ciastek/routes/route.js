@@ -1,8 +1,8 @@
 const express = require('express');
 const appRouter = express.Router();
 
-app.get('/', (req, res) => {
-  res.send('home');
+appRouter.get('/', (req, res) => {
+  res.render('home');
 });
 
 module.exports = {
