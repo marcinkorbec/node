@@ -13,4 +13,4 @@ app.set('view engine', '.hbs');
 
 console.log('Program działa.')
 
-app.listen(3000, 'localhost');
+app.listen(3000);
