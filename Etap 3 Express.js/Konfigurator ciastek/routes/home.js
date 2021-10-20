@@ -1,7 +1,7 @@
 const express = require('express');
-const appRouter = express.Router();
+const homeRouter = express.Router();
 
-appRouter
+homeRouter
   .post('/set', (req, res) => {
     const {name} = req.body;
     res.cookie()
@@ -12,5 +12,5 @@ appRouter
 });
 
 module.exports = {
-  appRouter,
+  homeRouter,
 }
