@@ -1,11 +1,19 @@
-
 <div class="container">
     <h1>Skonfiguruj ciasteczko!</h1>
 </div>
 <div class="container">
-    <h2>Wybierz bazę:</h2>
+    <div class="container">
+        <h2>Wybierz bazę:</h2>
         {{#each bases}}
-          <button> Ciastko {{this.[0]}}: {{this.[1]}}zł</li></button>
+            <button  onclick="location.href='/views/configurator/base-selected'" class="btn btn-primary"> Ciastko {{this.[0]}}: {{this.[1]}}zł</li></button>
         {{/each}}
+    </div>
+    <div class="container">
+        <h2>Wybierz dodatek:</h2>
+        {{#each addons}}
+            <button  onclick="location.href='/views/configurator/add-ons'" class="btn btn-primary"> Dodatek: {{this.[0]}}: {{this.[1]}}zł</li></button>
+        {{/each}}
+    </div>
     {{> cookie-preview }}
 </div>
+

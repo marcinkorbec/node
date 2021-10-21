@@ -10,8 +10,10 @@ homeRouter
 				base: 'light',
 				addons: ['coconut', 'honey',],
 			},
-			bases: Object.entries(COOKIE_BASES) // Tutaj zmieniamy to w tablice dwuwymiarowa zeby nie uzywac kluczy lecz samego indeksu
-			// addonses: Object.entries(COOKIE_ADDONS)
+			bases: Object.entries(COOKIE_BASES), // Tutaj zmieniamy to w tablice dwuwymiarowa zeby nie uzywac kluczy lecz samego indeksu
+			addons: Object.entries(COOKIE_ADDONS),
+			// @TODO: Potrzebujemy wiedzieć jakie są ceny wybranych baz i dodatków
+
 		});
 	});
 
