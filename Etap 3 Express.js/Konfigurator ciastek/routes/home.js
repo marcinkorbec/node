@@ -7,7 +7,7 @@ homeRouter
     res.render('home/index.hbs', {
       cookie: {
         base: 'light',
-        addons: ['coconut'],
+        addons: ['coconut', 'honey',],
       },
     });
   });
