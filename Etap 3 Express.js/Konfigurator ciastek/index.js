@@ -13,10 +13,12 @@ app.use(cookieParser()); // aplikacja używa: modułu odczytywania ciastek
 app.use('/', homeRouter); // aplikacja używa: scieżkowacza strony głównej
 app.use('/configurator', configuratorRouter); // aplikacja używa: moduł configuratorRouter
 app.use('/order', orderRouter); // aplikacja używa:
+
 app.engine('.hbs', hbs({
 	extname:'.hbs',
 	helpers: handlebarsHelpers
 })); // silnik aplikacji: handlebars
+
 app.set('view engine', '.hbs'); //aplikacja ustaw: silnik widoków .hbs
 
 app.listen(3000); // aplikacja nasłuchuje na porcie 3000
