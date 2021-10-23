@@ -28,3 +28,7 @@ body {
     opacity: 1;
     transition: .2s;
 }
+
+li {
+    list-style-type: none;
+}
