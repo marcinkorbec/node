@@ -8,7 +8,7 @@ homeRouter
 		res.render('home/index.hbs', {
 			cookie: {
 				base: 'jasne',
-				addons: ['coconut', 'honey',],
+				addons: ['kokos', 'czekolada', 'miód'],
 			},
 			bases: Object.entries(COOKIE_BASES), // Tutaj zmieniamy to w tablice dwuwymiarowa zeby nie uzywac kluczy lecz samego indeksu
 			addons: Object.entries(COOKIE_ADDONS),
