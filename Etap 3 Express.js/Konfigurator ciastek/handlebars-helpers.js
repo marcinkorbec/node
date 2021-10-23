@@ -1,9 +1,22 @@
 const handlebarsHelpers = {
 	upper: function (str) {
-		str.toUpperCase();
+		return str.toUpperCase();
 	},
 	lower: (str) => {
-		str.toLowerCase();
+		return str.toLowerCase();
+	},
+	"find-price" : (entries, selectedItem) => {
+
+		const found = entries.find(el => {
+			return el[0] === selectedItem;
+		});
+
+		if (!found) {
+			throw new Error(`Nie można znaleźć ceny dla ${selectedItem},`)
+		}
+
+		const [, price] = found;
+		return price;
 	}
 };
 
