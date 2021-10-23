@@ -7,7 +7,7 @@ homeRouter
 	.get('/', (req, res) => {
 		res.render('home/index.hbs', {
 			cookie: {
-				base: 'light',
+				base: 'jasne',
 				addons: ['coconut', 'honey',],
 			},
 			bases: Object.entries(COOKIE_BASES), // Tutaj zmieniamy to w tablice dwuwymiarowa zeby nie uzywac kluczy lecz samego indeksu
