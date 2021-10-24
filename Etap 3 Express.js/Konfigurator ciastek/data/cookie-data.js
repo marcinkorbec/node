@@ -6,8 +6,8 @@ const COOKIE_BASES = {
 const COOKIE_ADDONS = {
 	czekolada: 5,
 	posypka: 3,
-	miod: 6,
-	zurawina: 4,
+	miód: 6,
+	żurawina: 4,
 	kokos: 10,
 }
 

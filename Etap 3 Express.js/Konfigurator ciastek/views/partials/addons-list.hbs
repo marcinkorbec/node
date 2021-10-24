@@ -1,9 +1,13 @@
-<h3>Wybrane ciastko:</h3>
-<ul>
-    <li>Baza: {{cookie.base}} - {{find-price bases cookie.base}}zł</li>
-</ul>
+<section class="summary">
+    <h3>Wybrane ciastko:</h3>
+    <ul>
+        <li>{{cookie.base}} - {{find-price bases cookie.base}}zł</li>
+    </ul>
 
-<h3>Wybrane dodatki:</h3>
-<ul>
-    <li>Dodatki: {{cookie.addons}} {{find-price addons cookie.addons}}</li>
-</ul>
+    <h3>Wybrane dodatki:</h3>
+    <ul>
+        {{#each cookie.addons}}
+            <li>{{this}} {{find-price @root.addons this}}zł</li>
+        {{/each}}
+    </ul>
+</section>
