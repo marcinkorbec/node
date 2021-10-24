@@ -6,7 +6,7 @@ configuratorRouter
         const {baseName} = req.params;
 
         res
-            .cookie('cookie-base', baseName)
+            .cookie('cookieBase', baseName)
             .render('configurator/base-selected.hbs', {
                 baseName,
             })
