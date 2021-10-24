@@ -11,8 +11,8 @@ app.use(express.json()); // aplikacja używa:
 app.use(express.static('public')); // aplikacja używa: folder statyczny public
 app.use(cookieParser()); // aplikacja używa: modułu odczytywania ciastek
 app.use('/', homeRouter); // aplikacja używa: scieżkowacza strony głównej
-app.use('/configurator', configuratorRouter); // aplikacja używa: moduł configuratorRouter
-app.use('/order', orderRouter); // aplikacja używa:
+app.use('/', configuratorRouter); // aplikacja używa: moduł configuratorRouter
+app.use('/', orderRouter); // aplikacja używa:
 
 app.engine('.hbs', hbs({
 	extname:'.hbs',
