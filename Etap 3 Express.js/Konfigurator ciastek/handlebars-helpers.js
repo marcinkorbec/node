@@ -5,7 +5,7 @@ const handlebarsHelpers = {
 	lower: (str) => {
 		return str.toLowerCase();
 	},
-	"find-price" : (entries, selectedItem) => {
+	findPrice : (entries, selectedItem) => {
 		console.log({entries, selectedItem})
 		const found = entries.find(el => {
 			return el[0] === selectedItem;
@@ -17,7 +17,8 @@ const handlebarsHelpers = {
 
 		const [, price] = found;
 		return price;
-	}
+	},
+	pricify: price => price.toFixed(2),
 };
 
 module.exports = {
