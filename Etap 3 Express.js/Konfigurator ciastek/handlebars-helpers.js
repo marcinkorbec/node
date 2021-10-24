@@ -6,7 +6,6 @@ const handlebarsHelpers = {
 		return str.toLowerCase();
 	},
 	findPrice : (entries, selectedItem) => {
-		console.log({entries, selectedItem})
 		const found = entries.find(el => {
 			return el[0] === selectedItem;
 		});

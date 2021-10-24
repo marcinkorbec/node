@@ -6,13 +6,16 @@ const homeRouter = express.Router();
 
 homeRouter
 	.get('/', (req, res) => {
-		const sum = handlebarsHelpers.findPrice(Object.entries(COOKIE_BASES), 'jasne')
+		const {cookieBase} = req.cookies;
+		console.log(cookieBase)
+
+		const sum = handlebarsHelpers.findPrice(Object.entries(COOKIE_BASES), cookieBase)
 					+ ['kokos', 'czekolada', 'miód'].reduce((prev, curr) => {
 						return prev + handlebarsHelpers.findPrice(Object.entries(COOKIE_ADDONS), curr)
 			}, 0);
 		res.render('home/index.hbs', {
 			cookie: {
-				base: 'jasne',
+				base: cookieBase,
 				addons: ['kokos', 'czekolada', 'miód'],
 			},
 			bases: Object.entries(COOKIE_BASES), // Tutaj zmieniamy to w tablice dwuwymiarowa zeby nie uzywac kluczy lecz samego indeksu

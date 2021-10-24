@@ -15,11 +15,15 @@
             <button  onclick="location.href='/views/configurator/add-ons'" class="btn btn-warning">{{this.[0]}}: {{this.[1]}}zł</li></button>
         {{/each}}
     </div>
+    {{#if cookie.base}}
     <div class="container">
         {{> cookie-preview }}
     </div>
     <div class="container">
         {{> addons-list }}
     </div>
+    {{else}}
+        <p>Aby zobaczyć podgląd ciastka, wybierz jego bazę.</p>
+    {{/if}}
 </div>
 
