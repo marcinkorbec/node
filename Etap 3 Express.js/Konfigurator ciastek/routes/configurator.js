@@ -16,12 +16,20 @@ configuratorRouter
     .get('/select-addon/:addonName', (req, res) => {
         const {addonName} = req.params;
 
-        if(!COOKIE_ADDONS[addonName]) {
-            // return res.send('Nu nu nunu!')
-            return res.render('errors/error.hbs');
+        if(!COOKIE_ADDONS[addonName]) { //sprawdzanie czy taki dodatek już istnieje
+            return res.render('errors/error.hbs', {
+                description: `${addonName} nie istnieje w bazie!!!`
+            });
         }
 
         const addons = getAddonsFromReq(req);
+
+        if(addons.includes(addonName)) {
+            return res.render('errors/error.hbs', {
+                desription: `Dodatek ${addonName} został już dodany!!!`
+            });
+        }
+
         addons.push(addonName)
         res
             .cookie('cookieAddons', JSON.stringify(addons))
