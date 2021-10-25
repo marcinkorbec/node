@@ -17,17 +17,13 @@ configuratorRouter
         const {addonName} = req.params;
 
         if(!COOKIE_ADDONS[addonName]) { //sprawdzanie czy taki dodatek już istnieje
-            return res.render('errors/error.hbs', {
-                description: `${addonName} nie istnieje w bazie!!!`
-            });
+            return
         }
 
         const addons = getAddonsFromReq(req);
 
         if(addons.includes(addonName)) { //sprawdzanie zy dodatek został już dodany
-            return res.render('errors/error.hbs', {
-                description: `Dodatek ${addonName} został już dodany!!!`
-            });
+            return
         }
 
         addons.push(addonName)
