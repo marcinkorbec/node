@@ -21,6 +21,17 @@ configuratorRouter
             .render('configurator/add-ons.hbs', {
                 addonName,
             })
+    })
+
+    .get('/delete-addon/:addonName', (req, res) => {
+        const {addonName} = req.params;
+        const addons = getAddonsFromReq(req).filter(addon => addon !== addonName);
+        addons.splice(addonName)
+        res
+            .cookie('cookieAddons', JSON.stringify(addons))
+            .render('configurator/add-ons.hbs', {
+                addonName,
+            })
     });
 
 module.exports = {
