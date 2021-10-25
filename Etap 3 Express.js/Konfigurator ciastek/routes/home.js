@@ -1,22 +1,21 @@
 const express = require('express');
 const {COOKIE_BASES, COOKIE_ADDONS} = require("../data/cookie-data");
-const {handlebarsHelpers} = require("../handlebars-helpers");
+const {handlebarsHelpers} = require("../utils/handlebars-helpers");
 const homeRouter = express.Router();
-
 
 homeRouter
 	.get('/', (req, res) => {
-		const {cookieBase} = req.cookies;
-		console.log(cookieBase)
+		const {cookieBase, cookieAddons} = req.cookies;
+		const addons = cookieAddons ? JSON.parse(cookieAddons) : [];
 
 		const sum = ( cookieBase ? handlebarsHelpers.findPrice(Object.entries(COOKIE_BASES), cookieBase) : 0)
-					+ ['kokos', 'czekolada', 'miód'].reduce((prev, curr) => {
+					+ addons.reduce((prev, curr) => {
 						return prev + handlebarsHelpers.findPrice(Object.entries(COOKIE_ADDONS), curr)
 			}, 0);
 		res.render('home/index.hbs', {
 			cookie: {
 				base: cookieBase,
-				addons: ['kokos', 'czekolada', 'miód'],
+				addons: addons,
 			},
 			bases: Object.entries(COOKIE_BASES), // Tutaj zmieniamy to w tablice dwuwymiarowa zeby nie uzywac kluczy lecz samego indeksu
 			addons: Object.entries(COOKIE_ADDONS),

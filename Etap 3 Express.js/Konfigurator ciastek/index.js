@@ -5,7 +5,7 @@ const app = express(); //tworzymy nową aplikację express
 const { homeRouter } = require('./routes/home'); // pobieramy customowy moduł homeRouter czyli ścieżka strony głównej
 const { configuratorRouter } = require("./routes/configurator"); // pobieramy customowy moduł configuratorRouter czyli ścieżka konfiguratora
 const { orderRouter } = require("./routes/order"); // pobieramy customowy moduł orderRouter czyli ścieżka order/zamówienie
-const { handlebarsHelpers } = require("./handlebars-helpers");
+const { handlebarsHelpers } = require("./utils/handlebars-helpers");
 
 app.use(express.json()); // aplikacja używa:
 app.use(express.static('public')); // aplikacja używa: folder statyczny public
