@@ -1,6 +1,7 @@
 const express = require('express');
 const { getAddonsFromReq } = require('../utils/get-addons-from-req')
 const {COOKIE_ADDONS} = require("../data/cookie-data");
+const {errorRenderingNotExistInDatabase, errorRenderingAlreadyWasAdded} = require("../utils/error-rendering");
 const configuratorRouter = express.Router();
 
 configuratorRouter
@@ -17,13 +18,13 @@ configuratorRouter
         const {addonName} = req.params;
 
         if(!COOKIE_ADDONS[addonName]) { //sprawdzanie czy taki dodatek już istnieje
-            return
+            return res.render(errorRenderingNotExistInDatabase(addonName));
         }
 
         const addons = getAddonsFromReq(req);
 
         if(addons.includes(addonName)) { //sprawdzanie zy dodatek został już dodany
-            return
+            return res.render(errorRenderingAlreadyWasAdded(addonName));
         }
 
         addons.push(addonName)
