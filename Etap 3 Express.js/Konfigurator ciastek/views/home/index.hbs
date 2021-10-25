@@ -12,7 +12,9 @@
     <div class="container section">
         <h2>Wybierz dodatek:</h2>
         {{#each addons}}
-            <button  onclick="location.href='/select-addon/{{this.[0]}}'" class="btn btn-warning">{{this.[0]}}: {{this.[1]}}zł</li></button>
+            {{#if (isNotOnArray @root.cookie.addons this.[0])}}
+                <button  onclick="location.href='/select-addon/{{this.[0]}}'" class="btn btn-warning">{{this.[0]}}: {{this.[1]}}zł</li></button>
+            {{/if}}
         {{/each}}
     </div>
     {{#if cookie.base}}
