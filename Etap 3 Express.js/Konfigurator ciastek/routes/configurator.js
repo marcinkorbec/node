@@ -24,9 +24,9 @@ configuratorRouter
 
         const addons = getAddonsFromReq(req);
 
-        if(addons.includes(addonName)) {
+        if(addons.includes(addonName)) { //sprawdzanie zy dodatek został już dodany
             return res.render('errors/error.hbs', {
-                desription: `Dodatek ${addonName} został już dodany!!!`
+                description: `Dodatek ${addonName} został już dodany!!!`
             });
         }
 
@@ -44,7 +44,7 @@ configuratorRouter
         //addons.splice(addonName)
         res
             .cookie('cookieAddons', JSON.stringify(addons))
-            .render('configurator/add-ons.hbs', {
+            .render('configurator/deleted.hbs', {
                 addonName,
             })
     });
