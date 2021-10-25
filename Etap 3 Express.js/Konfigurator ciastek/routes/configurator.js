@@ -17,7 +17,8 @@ configuratorRouter
         const {addonName} = req.params;
 
         if(!COOKIE_ADDONS[addonName]) {
-            return res.send('Nu nu nu!');
+            // return res.send('Nu nu nunu!')
+            return res.render('errors/error.hbs');
         }
 
         const addons = getAddonsFromReq(req);

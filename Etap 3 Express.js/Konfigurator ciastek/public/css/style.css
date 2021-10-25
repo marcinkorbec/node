@@ -51,3 +51,8 @@ body {
 .btn-warning {
     border: 1px solid black;
 }
+
+.error {
+    border: 3px solid red;
+    background: #fab4b4;
+}
