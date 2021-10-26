@@ -7,8 +7,10 @@
     <h3>Wybrane dodatki:</h3>
     <ul>
         {{#each cookie.addons}}
-            <li>{{this}} {{pricify (findPrice @root.addons this)}}zł <a href="/delete-addon/{{this}}">usuń</a></li>
-
+            <li>{{this}} {{pricify (findPrice @root.addons this)}}zł
+                {{#if ...deleteBtn}}
+                    <a href="/delete-addon/{{this}}">usuń</a></li>
+                {{/if}}
         {{/each}}
     </ul>
     {{log sum}}
