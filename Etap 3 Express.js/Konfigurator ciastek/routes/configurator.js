@@ -1,17 +1,23 @@
 const express = require('express');
 const { getAddonsFromReq } = require('../utils/get-addons-from-req')
-const {COOKIE_ADDONS} = require("../data/cookie-data");
+const {COOKIE_ADDONS, COOKIE_BASES} = require("../data/cookie-data");
 const {renderError} = require("../utils/error-rendering");
 const configuratorRouter = express.Router();
 
 configuratorRouter
     .get('/select-base/:baseName', (req, res) => {
         const {baseName} = req.params;
-        res
-            .cookie('cookieBase', baseName)
-            .render('configurator/base-selected.hbs', {
-                baseName,
-            })
+        console.log(COOKIE_BASES[baseName])
+
+        if(!COOKIE_BASES[baseName]) {
+            renderError(res, 'Wybrałeś bazę, która nie istnieje!')
+        } else {
+            res
+                .cookie('cookieBase', baseName)
+                .render('configurator/base-selected.hbs', {
+                    baseName,
+                })
+        }
     })
 
     .get('/select-addon/:addonName', (req, res) => {
@@ -38,12 +44,18 @@ configuratorRouter
 
     .get('/delete-addon/:addonName', (req, res) => {
         const {addonName} = req.params;
-        const addons = getAddonsFromReq(req).filter(addon => addon !== addonName);
-        res
-            .cookie('cookieAddons', JSON.stringify(addons))
-            .render('configurator/deleted.hbs', {
-                addonName,
-            })
+        const oldAddons = getAddonsFromReq(req); // .filter(addon => addon !== addonName);
+
+        if (!oldAddons.includes(addonName)) {
+            renderError(res, 'Próbujesz usunąć dodatek, który nie był dodany!')
+        } else {
+            const addons = getAddonsFromReq(req).filter(addon => addon !== addonName);
+            res
+                .cookie('cookieAddons', JSON.stringify(addons))
+                .render('configurator/deleted.hbs', {
+                    addonName,
+                })
+        }
     });
 
 module.exports = {
