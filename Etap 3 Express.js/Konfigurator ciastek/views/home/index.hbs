@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container section">
     <h1>Skonfiguruj {{upper "ciasteczko!"}}</h1>
 </div>
 
-<div class="container">
+
     <div class="container section">
         <h2>Wybierz bazę:</h2>
         {{#each bases}}
@@ -18,7 +18,7 @@
         {{/each}}
     </div>
     {{#if cookie.base}}
-    <div class="container">
+    <div class="container section">
         {{> cookie-preview }}
     </div>
     <div class="container section">
@@ -30,5 +30,5 @@
             <p>Aby zobaczyć podgląd ciastka, wybierz jego bazę.</p>
         </div>
     {{/if}}
-</div>
+
 
