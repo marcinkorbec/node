@@ -26,14 +26,11 @@ configuratorRouter
 
         if(!COOKIE_ADDONS[addonName]) { //sprawdzanie czy taki dodatek już istnieje
             renderError(res, `Składnik ${addonName} został wybrany`);
-        }
 
-        else if (addons.includes(addonName)) { //sprawdzanie czy dodatek został już dodany
+        } else if (addons.includes(addonName)) { //sprawdzanie czy dodatek został już dodany
             renderError(res, `Składnik ${addonName} został już wybrany`);
-        }
 
-        else {
-        addons.push(addonName)
+        } else { addons.push(addonName)
         res
             .cookie('cookieAddons', JSON.stringify(addons))
             .render('configurator/add-ons.hbs', {
