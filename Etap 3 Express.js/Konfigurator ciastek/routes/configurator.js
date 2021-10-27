@@ -1,7 +1,7 @@
 const express = require('express');
 const { getAddonsFromReq } = require('../utils/get-addons-from-req')
 const {COOKIE_ADDONS, COOKIE_BASES} = require("../data/cookie-data");
-const {renderError} = require("../utils/error-rendering");
+const { renderError } = require("../utils/error-rendering");
 const configuratorRouter = express.Router();
 
 configuratorRouter
@@ -44,7 +44,7 @@ configuratorRouter
 
     .get('/delete-addon/:addonName', (req, res) => {
         const {addonName} = req.params;
-        const oldAddons = getAddonsFromReq(req); // .filter(addon => addon !== addonName);
+        const oldAddons = getAddonsFromReq(req);
 
         if (!oldAddons.includes(addonName)) {
             renderError(res, 'Próbujesz usunąć dodatek, który nie był dodany!')
