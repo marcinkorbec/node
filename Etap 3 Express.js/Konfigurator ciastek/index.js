@@ -12,7 +12,7 @@ app.use(express.static('public')); // aplikacja używa: folder statyczny public
 app.use(cookieParser()); // aplikacja używa: modułu odczytywania ciastek
 app.use('/', homeRouter); // aplikacja używa: scieżkowacza strony głównej
 app.use('/', configuratorRouter); // aplikacja używa: moduł configuratorRouter
-app.use('/', orderRouter); // aplikacja używa:
+app.use('/', orderRouter); // aplikacja używa: moduł orderRouter
 
 app.engine('.hbs', hbs({
 	extname:'.hbs',
