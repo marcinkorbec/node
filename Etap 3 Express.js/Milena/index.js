@@ -1,7 +1,7 @@
 const express =require('express');
 const app=express();
 
-const {calcRouter}= require("./calc")
+const {calcRouter}= require("./routes/calc")
 
 app.use(express.static('public'))
 app.use('/calc',calcRouter)

@@ -1,6 +1,10 @@
+<!-- HEADER -->
+
 <div class="container section">
     <h1>Skonfiguruj {{upper "ciasteczko!"}}</h1>
 </div>
+
+<!-- BASE -->
 
 <div class="container section">
     <h2>Wybierz bazę:</h2>
@@ -8,6 +12,8 @@
         <button  onclick="location.href='/select-base/{{this.[0]}}'" class="btn btn-warning"> Ciastko {{this.[0]}}: {{this.[1]}}zł</li></button>
     {{/each}}
 </div>
+
+<!-- ADDONS -->
 
 <div class="container section">
     <h2>Wybierz dodatek:</h2>
@@ -17,6 +23,8 @@
         {{/if}}
     {{/each}}
 </div>
+
+<!-- COOKIE LIST -->
 
 {{#if cookie.base}}
     <div class="container section">
