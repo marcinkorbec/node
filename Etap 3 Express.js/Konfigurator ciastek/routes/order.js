@@ -32,8 +32,8 @@ orderRouter
             }, 0);
 
         res
-            .clearCookie(cookieBase)
-            .clearCookie(cookieAddons)
+            .clearCookie('cookieBase')
+            .clearCookie('cookieAddons')
             .render('order/thanks', {
             sum,
         })
