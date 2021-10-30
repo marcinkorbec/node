@@ -30,7 +30,11 @@ orderRouter
             + addons.reduce((prev, curr) => {
                 return prev + handlebarsHelpers.findPrice(Object.entries(COOKIE_ADDONS), curr)
             }, 0);
-        res.render('order/thanks', {
+
+        res
+            .clearCookie(cookieBase)
+            .clearCookie(cookieAddons)
+            .render('order/thanks', {
             sum,
         })
     }))
