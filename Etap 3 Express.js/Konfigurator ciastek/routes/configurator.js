@@ -7,7 +7,6 @@ const configuratorRouter = express.Router();
 configuratorRouter
     .get('/select-base/:baseName', (req, res) => {
         const {baseName} = req.params;
-        console.log(COOKIE_BASES[baseName])
 
         if(!COOKIE_BASES[baseName]) {
             renderError(res, 'Wybrałeś bazę, która nie istnieje!')
@@ -29,11 +28,11 @@ configuratorRouter
         } else if (addons.includes(addonName)) { //sprawdzanie czy dodatek został już dodany
             renderError(res, `Składnik ${addonName} został już wybrany`);
         } else { addons.push(addonName)
-        res
-            .cookie('cookieAddons', JSON.stringify(addons))
-            .render('configurator/add-ons.hbs', {
-                addonName,
-            })
+            res
+                .cookie('cookieAddons', JSON.stringify(addons))
+                .render('configurator/add-ons.hbs', {
+                    addonName,
+                })
         }
     })
 
