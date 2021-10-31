@@ -1,7 +1,4 @@
 const express = require('express');
-const {COOKIE_BASES, COOKIE_ADDONS} = require("../data/cookie-data");
-const {handlebarsHelpers} = require("../utils/handlebars-helpers");
-const {getAddonsFromReq} = require("../utils/get-addons-from-req");
 const {getCookieSettings} = require("../utils/get-cookie-settings");
 const homeRouter = express.Router();
 
