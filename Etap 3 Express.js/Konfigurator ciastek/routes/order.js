@@ -10,8 +10,8 @@ orderRouter
 				base,
 				addons,
 			},
-			bases: allBases,
-			addons: allAddons,
+			allBases,
+			allAddons,
 			sum,
 		});
 	})
