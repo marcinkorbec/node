@@ -15,11 +15,11 @@
 
 <!-- ADDONS -->
 
-{{#if cookie.allBases}}
+{{#if cookie.base}}
     <div class="container section">
         <h2>Wybierz dodatek:</h2>
         {{#each allAddons}}
-            {{#if (isNotOnArray @root.cookie.allAddons this.[0])}}
+            {{#if (isNotOnArray @root.cookie.addons this.[0])}}
                 <button  onclick="location.href='/select-addon/{{this.[0]}}'" class="btn btn-warning">{{this.[0]}}: {{this.[1]}}zł</li></button>
             {{/if}}
         {{/each}}
@@ -28,7 +28,7 @@
 
 <!-- COOKIE LIST -->
 
-{{#if cookie.allBases}}
+{{#if cookie.base}}
     <div class="container section">
         {{> cookie-preview }}
     </div>
