@@ -9,7 +9,9 @@ const { handlebarsHelpers } = require("./utils/handlebars-helpers");
 class CookieMakerApp {
 
 	constructor() {
-		this.app.set('view engine', '.hbs'); //aplikacja ustaw: silnik widoków .hbs
+		this._configureApp();
+		this._setRoutes();
+		this._run();
 	}
 
 	_configureApp() {
@@ -22,6 +24,7 @@ class CookieMakerApp {
 			extname:'.hbs', //rozszerzenie .hbs
 			helpers: handlebarsHelpers, //plik gdzie znajdują się pomocne pliki dla handlebars
 		})); // silnik aplikacji: handlebars
+		this.app.set('view engine', '.hbs'); //aplikacja ustaw: silnik widoków .hbs
 	}
 
 	_setRoutes() {
