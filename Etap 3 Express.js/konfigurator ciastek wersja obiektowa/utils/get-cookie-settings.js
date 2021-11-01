@@ -1,4 +1,3 @@
-const {getAddonsFromReq} = require("./get-addons-from-req");
 const {COOKIE_BASES, COOKIE_ADDONS} = require("../data/cookie-data");
 const {handlebarsHelpers} = require("./handlebars-helpers");
 

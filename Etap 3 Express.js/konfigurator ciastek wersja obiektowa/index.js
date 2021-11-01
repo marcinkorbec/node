@@ -1,10 +1,10 @@
 const express = require('express'); //pobieramy moduł express
 const hbs = require('express-handlebars'); //pobieramy moduł handlebars
 const cookieParser = require('cookie-parser'); //pobieramy moduł cookie parser
-const { homeRouter } = require('./routes/home'); // pobieramy customowy moduł homeRouter czyli ścieżka strony głównej
-const { configuratorRouter } = require("./routes/configurator"); // pobieramy customowy moduł configuratorRouter czyli ścieżka konfiguratora
-const { orderRouter } = require("./routes/order"); // pobieramy customowy moduł orderRouter czyli ścieżka order/zamówienie
-const { handlebarsHelpers } = require("./utils/handlebars-helpers");
+const { HomeRouter } = require('./routes/home'); // pobieramy customowy moduł homeRouter czyli ścieżka strony głównej
+const { ConfiguratorRouter } = require("./routes/configurator"); // pobieramy customowy moduł configuratorRouter czyli ścieżka konfiguratora
+const { OrderRouter } = require("./routes/order"); // pobieramy customowy moduł orderRouter czyli ścieżka order/zamówienie
+const { handlebarsHelpers } = require("./utils/handlebars-helpers"); //pobieramy moduł z funkcjami pomocnymi dla handlebars
 
 class CookieMakerApp {
 
@@ -12,6 +12,8 @@ class CookieMakerApp {
 		this._configureApp();
 		this._setRoutes();
 		this._run();
+		this.getAddonsFromReq();
+		this.getAddonsFromReq();
 	}
 
 	_configureApp() {
@@ -28,17 +30,26 @@ class CookieMakerApp {
 	}
 
 	_setRoutes() {
-		this.app.use('/', homeRouter); // aplikacja używa: scieżkowacza strony głównej
-		this.app.use('/', configuratorRouter); // aplikacja używa: moduł configuratorRouter
-		this.app.use('/', orderRouter); // aplikacja używa: moduł orderRouter
+		this.app.use('/', new HomeRouter(this).router); // aplikacja używa: scieżkowacza strony głównej
+		this.app.use('/', new ConfiguratorRouter(this).router); // aplikacja używa: moduł configuratorRouter
+		this.app.use('/', new OrderRouter(this).router); // aplikacja używa: moduł orderRouter
 	}
 
 	_run() {
 		this.app.listen(3000); // aplikacja nasłuchuje na porcie 3000
 		console.log('Program działa.')
 	}
+
+	getAddonsFromReq(req) {
+		const {cookieAddons: cookieAddons} = req.cookies;
+		return cookieAddons ? JSON.parse(cookieAddons) : [];
+	}
+
+	renderError(res, description) {
+		return res.render('errors/error.hbs', {
+			description: `${description}`
+		});
+	};
 }
 
-new CookieMakerApp() {
-	
-}
+new CookieMakerApp();
