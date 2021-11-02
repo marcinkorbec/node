@@ -9,6 +9,7 @@ const {COOKIE_BASES, COOKIE_ADDONS} = require("./data/cookie-data");
 
 class CookieMakerApp {
 	constructor() {
+		this._loadData()
 		this._configureApp();
 		this._setRoutes();
 		this._run();

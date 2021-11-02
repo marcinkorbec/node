@@ -10,11 +10,11 @@ class ConfiguratorRouter {
 
     setUpRoutes() {
         this.router.get('/select-base/:baseName', this.selectBase);
-        this.router.get('/add-addon/:addonName', this.addAddon);
+        this.router.get('/select-addon/:addonName', this.addAddon);
         this.router.get('/delete-addon/:addonName', this.deleteAddon);
     }
-    selectBase = (req, res) => {
 
+    selectBase = (req, res) => {
         const {baseName} = req.params;
 
             if(!this.cmapp.data.COOKIE_BASES[baseName]) {
@@ -28,10 +28,8 @@ class ConfiguratorRouter {
             }
     }
 
-    selectAddon = (req, res) => {
-
+    addAddon = (req, res) => {
         const {addonName} = req.params;
-
 
         if(!this.cmapp.data.COOKIE_ADDONS[addonName]) { //sprawdzanie czy taki dodatek już istnieje
             return this.cmapp.renderError(res, `Składnik ${addonName} został wybrany`);

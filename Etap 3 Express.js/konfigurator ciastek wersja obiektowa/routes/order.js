@@ -11,8 +11,8 @@ class OrderRouter {
 	}
 
 	setUpRoutes() {
-		this.router.get('/summary', this.summary);
-		this.router.get('/thanks', this.thanks);
+		this.router.get('/order/summary', this.summary);
+		this.router.get('/order/thanks', this.thanks);
 	}
 
 	summary = (req, res) => {
