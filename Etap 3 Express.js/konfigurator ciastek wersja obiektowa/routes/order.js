@@ -1,6 +1,8 @@
 const express = require('express');
 const orderRouter = express.Router();
 
+function getCookieSettings() {};
+
 class OrderRouter {
 	constructor(cmapp) {
 		this.cmapp = cmapp;
