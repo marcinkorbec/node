@@ -7,24 +7,27 @@ class OrderRouter {
 	constructor(cmapp) {
 		this.cmapp = cmapp;
 		this.router = express.Router();
-		this.orderSummary();
-		this.orderThanks();
+		this.setUpRoutes();
 	}
 
-	orderSummary() {
-	this.router.get('/order/summary', (req, res) => {
-			const {base, addons, sum, allAddons, allBases} = getCookieSettings(req);
-			res.render('order/summary', {
-				cookie: {
-					base,
-					addons,
-				},
-				allBases,
-				allAddons,
-				sum,
-			});
-		})
+	setUpRoutes() {
+		this.router.get('/summary', this.summary);
+		this.router.get('/thanks', this.thanks);
 	}
+
+	summary = (req, res) => {
+		const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
+
+		res.render('order/summary', {
+			cookie: {
+				base,
+				addons,
+			},
+			allBases,
+			allAddons,
+			sum,
+		});
+	};
 
 	orderThanks() {
 	this.router.get('/order/thanks', ((req, res) => {
