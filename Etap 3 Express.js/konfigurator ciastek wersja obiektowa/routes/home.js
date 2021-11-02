@@ -7,26 +7,22 @@ class HomeRouter {
 		this.setUpRoutes();
 	}
 	setUpRoutes() {
-		this.router.get('/', (req, res) => {
-			const {base, addons, sum, allAddons, allBases} = this.cmapp.getCookieSettings(req);
-			res.render('home/index.hbs', {
-				cookie: {
-					base,
-					addons,
-				},
-				allBases,
-				allAddons,
-				sum,
-			});
-		});
+		this.router.get('/', this.home);
 	}
+	home = (req, res) => {
+		const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
+
+		res.render('home/index.hbs', {
+			cookie: {
+				base,
+				addons,
+			},
+			allBases,
+			allAddons,
+			sum,
+		});
+	};
 }
-
-const home = new HomeRouter();
-console.log(home);
-
-
-
 
 module.exports = {
 	HomeRouter,
