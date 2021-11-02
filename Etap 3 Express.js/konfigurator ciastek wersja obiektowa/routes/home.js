@@ -6,9 +6,11 @@ class HomeRouter {
 		this.router = express.Router();
 		this.setUpRoutes();
 	}
+
 	setUpRoutes() {
 		this.router.get('/', this.home);
 	}
+
 	home = (req, res) => {
 		const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
 
