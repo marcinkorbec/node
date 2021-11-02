@@ -29,19 +29,17 @@ class OrderRouter {
 		});
 	};
 
-	orderThanks() {
-	this.router.get('/order/thanks', ((req, res) => {
-			const {sum, addons, cookieBase} = getCookieSettings(req);
-			res
-				.clearCookie('cookieBase')
-				.clearCookie('cookieAddons')
-				.render('order/thanks', {
-					cookieBase,
-					addons,
-					sum,
-				})
-		}))
+	thanks = (req, res) => {
+		const {sum} = this.cmapp.getCookieSettings(req);
+
+		res
+			.clearCookie('cookieBase')
+			.clearCookie('cookieAddons')
+			.render('order/thanks', {
+				sum,
+			});
 	}
+
 }
 
 module.exports = {
