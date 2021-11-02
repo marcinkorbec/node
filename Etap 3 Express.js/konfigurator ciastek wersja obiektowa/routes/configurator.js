@@ -12,7 +12,8 @@ class ConfiguratorRouter {
 
     selectBase = () => {
     this.router.get('/select-base/:baseName', (req, res) => {
-            const {baseName} = req.params;
+        console.log(this)
+        const {baseName} = req.params;
 
             if(!COOKIE_BASES[baseName]) {
                 return this.cmapp.renderError(res, 'Wybrałeś bazę, która nie istnieje!')
