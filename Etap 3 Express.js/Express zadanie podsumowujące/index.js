@@ -14,6 +14,10 @@ app.engine('.hbs', hbs({
 }));
 app.set('view engine', '.hbs');
 
+app.get('/', (req, res) => {
+	res.render('test.hbs')
+})
+
 app.listen(3000, '0.0.0.0', () => {
 	console.log('Program działa na porcie http://localhost:3000');
 });
