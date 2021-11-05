@@ -3,6 +3,7 @@ const hbs = require('express-handlebars');
 const {urlencoded} = require("express");
 const {clientRouter} = require("./routers/client");
 const {homeRouter} = require("./routers/home");
+const {db} = require('./utils/db');
 const app = express();
 
 app.use(express.urlencoded({
