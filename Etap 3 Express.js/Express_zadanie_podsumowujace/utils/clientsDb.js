@@ -14,16 +14,24 @@ class Db {
 		console.log(typeof(this._data));
 	}
 
+	_save() {
+		writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8'); //zapisujemy dane czyli tablicę do której linijkę wyżej wepchnęliśmy kolejny obiekt. Metoda ta zapsuje cały Dżejson od nowa.
+	}
+
 	create(obj) {
 		this._data.push({
 			id: uuid(),
 			...obj, //operator rozproszenia , tworzę obiekt i "rozpraszam" żeby móc dodać id
 		}); //wpychamy dane do tablicy
-		writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8'); //zapisujemy dane czyli tablicę do której linijkę wyżej wepchnęliśmy kolejny obiekt. Metoda ta zapsuje cały Dżejson od nowa.
+		this._save();
 	}
 
 	getAll() { // pobierz całą listę
 		return this._data;
+	}
+
+	getOne(id) {
+		return this._data.find(oneObj => oneObj.id === id); //zwróć obiekt , który będzie miał id takie jak szukamy
 	}
 
 	update(id, newObj) {
@@ -37,13 +45,19 @@ class Db {
 				return oneObj; //zwracamy ten sam obiekt
 			}
 		})
-		writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8'); //na koniec zapisujemy plik
+		this._save(); //na koniec zapisujemy plik
+	}
+
+	delete(id) {
+		this._data = this._data.filter(oneObj => oneObj.id !== id);
+		this._save(); //debounce
 	}
 }
+// debounce to np coś takiego że czekamy aż wielu użytkoników dokona jakichś zmian i dopiero wtedy zapisujemy wszystko za jednym razem
 
-const db = new Db('db.json');
+const clientsDb = new Db('db.json');
 
 
 module.exports = {
-	db
+	db: clientsDb
 }

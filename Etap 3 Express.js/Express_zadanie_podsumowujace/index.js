@@ -3,7 +3,7 @@ const hbs = require('express-handlebars');
 const {urlencoded} = require("express");
 const {clientRouter} = require("./routers/client");
 const {homeRouter} = require("./routers/home");
-const {db} = require('./utils/db');
+const {clientsDb} = require('./utils/clientsDb');
 const app = express();
 
 app.use(express.urlencoded({
@@ -20,8 +20,7 @@ app.set('view engine', '.hbs');
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
 app.get('/test', (req, res) => {
-
-	res.send(JSON.stringify(db.getAll()));
+	res.send(db.getOne('3e396670-0707-4912-a97e-c0237041a49f'));
 })
 
 app.listen(3000, '0.0.0.0', () => {
