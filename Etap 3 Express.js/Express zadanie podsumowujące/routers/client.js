@@ -2,7 +2,7 @@ const express = require('express');
 const clientRouter = express.Router();
 
 clientRouter
-	.get('/client', (req, res) => {
+	.get('/', (req, res) => {
 		res.render('layouts/test.hbs');
 	});
 
