@@ -3,7 +3,7 @@ const homeRouter = express.Router();
 
 homeRouter
 	.get('/', (req, res) => {
-		res.redirect('layouts/test.hbs');
+		res.redirect('/client');
 	});
 
 module.exports = {

@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('express-handlebars');
 const {urlencoded} = require("express");
 const {clientRouter} = require("./routers/client");
+const {homeRouter} = require("./routers/home");
 const app = express();
 
 app.use(express.urlencoded({
@@ -16,7 +17,7 @@ app.engine('.hbs', hbs({
 app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);
-app.use('/', clientRouter);
+app.use('/client', clientRouter);
 
 
 app.listen(3000, '0.0.0.0', () => {
