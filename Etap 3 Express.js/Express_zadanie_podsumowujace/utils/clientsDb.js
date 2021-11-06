@@ -4,18 +4,21 @@ const {v4: uuid} = require('uuid'); //bierzemy wersję czwartą z modułu uuid i
 
 class Db {
 	constructor(dbFilename) {
-		this.dbFilename = join(__dirname, '../data', dbFilename); //łączymy ściężkę żeby była zawsze aktualna niezależnie od tego gdzie znajduje sie projekt
+		this.dbFilename = join(__dirname, '../data', dbFilename);
+		//łączymy ściężkę żeby była zawsze aktualna niezależnie od tego gdzie znajduje sie projekt
 		console.log(this.dbFilename);
 		this._load();
 	}
 
 	async _load() {
-		this._data = JSON.parse(await readFile(this.dbFilename,'utf8')); //pobieramy i ładujemy dane z tego jsona i zmieniamy je na obiekt
+		this._data = JSON.parse(await readFile(this.dbFilename,'utf8'));
+		//pobieramy i ładujemy dane z tego jsona i zmieniamy je na obiekt
 		console.log(typeof(this._data));
 	}
 
 	_save() {
-		writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8'); //zapisujemy dane czyli tablicę do której linijkę wyżej wepchnęliśmy kolejny obiekt. Metoda ta zapsuje cały Dżejson od nowa.
+		writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8');
+		//zapisujemy dane czyli tablicę do której linijkę wyżej wepchnęliśmy kolejny obiekt. Metoda ta zapsuje cały Dżejson od nowa.
 	}
 
 	create(obj) {
