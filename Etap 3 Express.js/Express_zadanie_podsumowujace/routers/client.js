@@ -1,9 +1,12 @@
 const express = require('express');
+const {db} = require("../utils/clientsDb");
 const clientRouter = express.Router();
 
 clientRouter
 	.get('/', (req, res) => {
-		res.send('Pobierz Wszystkie');
+		res.render('client/list-all.hbs', {
+			clients: db.getAll(),
+		});
 	})
 
 	.get('/:id', (req, res) => {

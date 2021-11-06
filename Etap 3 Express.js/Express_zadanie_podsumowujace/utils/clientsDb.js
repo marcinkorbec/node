@@ -1,6 +1,6 @@
 const {readFile, writeFile} = require('fs').promises; // bierzemy dwie metody zapis i odczyt pliku z modułu fs. wersja promisowa
 const {join} = require('path'); //bierzemy metodę join z modułu path
-const {v4: uuid} = require('uuid'); //bierzemy wersję czwartą z modułu uuid i destrukturyzuję ją na uuid
+const {v4: uuid} = require('uuid'); //bierzemy wersję czwartą z modułu uuid i destrukturyzujemy ją na uuid
 
 class Db {
 	constructor(dbFilename) {
