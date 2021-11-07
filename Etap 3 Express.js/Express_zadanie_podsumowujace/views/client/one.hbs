@@ -21,6 +21,16 @@
                     {{client.next}}
                 </td>
             </tr>
+        {{#if client.notes}}
+            <tr>
+                <th>
+                    Notatka:
+                </th>
+                <td>
+                    {{client.notes}}
+                </td>
+            </tr>
+        {{/if}}
         </tbody>
     </table>
 </div>
