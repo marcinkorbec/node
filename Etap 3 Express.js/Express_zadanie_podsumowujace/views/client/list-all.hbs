@@ -1,7 +1,8 @@
-<h2>Lista Klientów</h2>
+<h2>Lista Klientów:</h2>
 
-<table>
-    <thead>
+<div class="container">
+    <table>
+        <thead>
         <tr>
             <th>
                 Email:
@@ -13,20 +14,21 @@
                 Data następnego kontaktu:
             </th>
         </tr>
-    </thead>
-    <tbody>
-    {{#each clients}}
-        <tr>
-            <th>
-                {{this.mail}}
-            </th>
-            <td>
-                {{this.name}}
-            </td>
-            <td>
-                {{this.next}}
-            </td>
-        </tr>
-    {{/each}}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        {{#each clients}}
+            <tr>
+                <th>
+                    {{this.mail}}
+                </th>
+                <td>
+                    {{this.name}}
+                </td>
+                <td>
+                    {{this.next}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
