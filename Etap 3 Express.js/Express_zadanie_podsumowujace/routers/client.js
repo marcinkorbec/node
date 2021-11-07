@@ -10,7 +10,9 @@ clientRouter
 	})
 
 	.get('/:id', (req, res) => {
-		res.send('Pobierz pojedynczego!')
+		res.render('client/one.hbs', {
+			client: db.getOne(),
+		})
 	})
 
 	.put('/:id', (req, res) => {
