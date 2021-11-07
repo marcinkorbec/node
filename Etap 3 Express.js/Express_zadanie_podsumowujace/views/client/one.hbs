@@ -1,4 +1,4 @@
-<h2>{{clients.name}}</h2>
+<h2>Klient: {{client.name}}</h2>
 
 <div class="container">
     <table>
@@ -8,9 +8,6 @@
                 Email:
             </th>
             <th>
-                Imię:
-            </th>
-            <th>
                 Data następnego kontaktu:
             </th>
         </tr>
@@ -18,13 +15,10 @@
         <tbody>
             <tr>
                 <th>
-                    <a href="mailto:{{this.mail}}" target="_blank">{{this.mail}}</a>
+                    <a href="mailto:{{client.mail}}" target="_blank">{{client.mail}}</a>
                 </th>
                 <td>
-                    <a href="/client/{{this.id}}">{{this.name}}</a>
-                </td>
-                <td>
-                    {{this.next}}
+                    {{client.next}}
                 </td>
             </tr>
         </tbody>
