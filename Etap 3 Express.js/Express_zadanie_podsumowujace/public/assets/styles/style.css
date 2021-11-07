@@ -29,3 +29,12 @@ a {
     text-decoration-color: #04AA6D;
     color:black;
 }
+
+.one-customer tr:nth-child(even) {
+    background-color: white;
+}
+.one-customer tr:hover {background-color: #ddd;}
+
+.gray-header {
+    background-color: #f2f2f2;
+}
