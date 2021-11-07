@@ -11,7 +11,7 @@ clientRouter
 
 	.get('/:id', (req, res) => {
 		res.render('client/one.hbs', {
-			client: db.getOne(),
+			client: db.getOne(req.params.id),
 		})
 	})
 
