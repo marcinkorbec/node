@@ -25,3 +25,7 @@ thead {
 tr:nth-child(even){background-color: #f2f2f2;}
 tr:hover {background-color: #ddd;}
 
+a {
+    text-decoration-color: #04AA6D;
+    color:black;
+}
