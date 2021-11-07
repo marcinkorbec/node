@@ -25,4 +25,4 @@ app.get('/test', (req, res) => {
 
 app.listen(3000, '0.0.0.0', () => {
 	console.log('Program działa na porcie http://localhost:3000');
-});
+})

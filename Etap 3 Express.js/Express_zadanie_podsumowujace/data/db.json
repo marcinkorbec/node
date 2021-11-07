@@ -1,1 +1,24 @@
-[{"name":"Marcin","mail":"marcinkorbecki.dw@gmail.com"},{"name":"Piotr Korbecki","mail":"korbeckipiotr@gmail.com"},{"id":"fcd21d74-382d-47e3-ac87-067a2f611530","name":"Antoni","mail":"korbeckipiotr@gmail.com"},{"id":"3e396670-0707-4912-a97e-c0237041a49f","name":"Antoni","mail":"antoni@example.com"}]
+[
+  {
+    "name": "Marcin",
+    "mail": "marcinkorbecki.dw@gmail.com",
+    "next": "Jutro"
+  },
+  {
+    "name": "Piotr Korbecki",
+    "mail": "korbeckipiotr@gmail.com",
+    "next": "Wczoraj"
+  },
+  {
+    "id": "fcd21d74-382d-47e3-ac87-067a2f611530",
+    "name": "Antoni",
+    "mail": "korbeckipiotr@gmail.com",
+    "next": "Wczoraj"
+  },
+  {
+    "id": "3e396670-0707-4912-a97e-c0237041a49f",
+    "name": "Antoni",
+    "mail": "antoni@example.com",
+    "next": "Jutro"
+  }
+]
