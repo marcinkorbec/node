@@ -4,10 +4,10 @@
     <thead>
         <tr>
             <th>
-                Imię:
+                Email:
             </th>
             <th>
-                Email:
+                Imię:
             </th>
             <th>
                 Data następnego kontaktu:
@@ -15,9 +15,10 @@
         </tr>
     </thead>
     <tbody>
+    {{#each clients}}
         <tr>
             <th>
-                {{this.email}}
+                {{this.Email}}
             </th>
             <td>
                 {{this.name}}
@@ -26,5 +27,6 @@
                 {{this.next}}
             </td>
         </tr>
+    {{/each}}
     </tbody>
 </table>
