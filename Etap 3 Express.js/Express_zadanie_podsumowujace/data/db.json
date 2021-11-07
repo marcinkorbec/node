@@ -1,13 +1,33 @@
 [
   {
+    "id": "fcd21def74-382d-47e3-ac87-067a2f611530",
     "name": "Marcin",
     "mail": "marcinkorbecki.dw@gmail.com",
     "next": "Jutro"
   },
   {
+    "id": "fcd21d74-382d-47e378c87-067a2f611530",
     "name": "Piotr Korbecki",
     "mail": "korbeckipiotr@gmail.com",
-    "next": "Wczoraj"
+    "next": "Dzisiaj"
+  },
+  {
+    "id": "fcd21d74-382d-47e3-ac87-067f611530",
+    "name": "Jan Korbecki",
+    "mail": "korbeckijan@gmail.com",
+    "next": "Za tydzień"
+  },
+  {
+    "id": "fcd21d74-382d67-47e3-ac87-067a2f611530",
+    "name": "Józef Korbecki",
+    "mail": "korbeckijozef@gmail.com",
+    "next": "Za tydzień"
+  },
+  {
+    "id": "fcd21d74-ui382d-47e3-ac87-067a2f611530",
+    "name": "Janusz Korbecki",
+    "mail": "korbeckijanusz@gmail.com",
+    "next": "Za tydzień"
   },
   {
     "id": "fcd21d74-382d-47e3-ac87-067a2f611530",
@@ -15,11 +35,5 @@
     "mail": "korbeckipiotr@gmail.com",
     "next": "Wczoraj",
     "notes": "lorem ipsum i tak dalej"
-  },
-  {
-    "id": "3e396670-0707-4912-a97e-c0237041a49f",
-    "name": "Antoni",
-    "mail": "antoni@example.com",
-    "next": "Jutro"
   }
 ]

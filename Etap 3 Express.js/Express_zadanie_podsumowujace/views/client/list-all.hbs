@@ -14,6 +14,9 @@
             <th>
                 Data następnego kontaktu:
             </th>
+            <th>
+
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -28,8 +31,18 @@
                 <td>
                     {{this.next}}
                 </td>
+                <td>
+                    <form method="POST" action="/client/deleted/{{this.id}}?_method=DELETE">
+                        <button type="submit" class="btn btn-outline-danger">Usuń</button>
+                    </form>
+                </td>
             </tr>
         {{/each}}
         </tbody>
     </table>
+    <div>
+        <form method="get" action="client/form/add">
+            <button type="submit" class="btn btn-outline-success btn-lg add-new" >Dodaj nowego Klienta</button>
+        </form>
+    </div>
 </div>

@@ -22,19 +22,33 @@ thead {
     color: white;
 }
 
-tr:nth-child(even){background-color: #f2f2f2;}
-tr:hover {background-color: #ddd;}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
 
 a {
     text-decoration-color: #04AA6D;
-    color:black;
+    color: black;
 }
 
 .one-customer tr:nth-child(even) {
     background-color: white;
 }
-.one-customer tr:hover {background-color: #ddd;}
+
+.one-customer tr:hover {
+    background-color: #ddd;
+}
 
 .gray-header {
     background-color: #f2f2f2;
+}
+
+.add-new {
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
 }

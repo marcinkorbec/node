@@ -23,8 +23,9 @@ clientRouter
 		res.send('Dodaj pojedynczego!')
 	})
 
-	.delete('/', (req, res) => {
-		res.send('Usuń pojedynczego!')
+	.delete('/deleted/:id', (req, res) => {
+		db.delete(req.params.id);
+		res.render('client/deleted.hbs')
 	})
 
 module.exports = {
