@@ -6,7 +6,6 @@ class Db {
 	constructor(dbFilename) {
 		this.dbFilename = join(__dirname, '../data', dbFilename);
 		//łączymy ściężkę żeby była zawsze aktualna niezależnie od tego gdzie znajduje sie projekt
-		console.log(this.dbFilename);
 		this._load();
 	}
 
