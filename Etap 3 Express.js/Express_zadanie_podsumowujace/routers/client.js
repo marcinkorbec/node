@@ -28,8 +28,8 @@ clientRouter
 		res.render('client/deleted.hbs')
 	})
 
-	.get('/add/:id', (req, res) => {
-		res.render('client/forms/add.hbs');
+	.get('/form/add', (req, res) => {
+		res.render('./views/client/forms/add.hbs');
 	})
 
 module.exports = {
