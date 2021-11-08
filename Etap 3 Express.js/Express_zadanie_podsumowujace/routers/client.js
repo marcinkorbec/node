@@ -28,6 +28,10 @@ clientRouter
 		res.render('client/deleted.hbs')
 	})
 
+	.get('/add/', (req, res) => {
+		res.render('client/forms/add');
+	})
+
 module.exports = {
 	clientRouter,
 }
