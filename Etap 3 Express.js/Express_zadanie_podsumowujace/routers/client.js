@@ -20,8 +20,10 @@ clientRouter
 	})
 
 	.post('/', (req, res) => {
-		db.create(req.body)
-		res.render('client/added.hbs')
+		const id = db.create(req.body)
+		res.render('client/added.hbs', {
+			id,
+		})
 	})
 
 	.delete('/deleted/:id', (req, res) => {
@@ -31,6 +33,12 @@ clientRouter
 
 	.get('/form/add', (req, res) => {
 		res.render('./client/forms/add.hbs');
+	})
+
+	.get('/form/edit/:id', (req, res) => {
+		res.render('./client/forms/add.hbs', {
+			client: db.getOne(req.params.id)
+		});
 	})
 
 module.exports = {

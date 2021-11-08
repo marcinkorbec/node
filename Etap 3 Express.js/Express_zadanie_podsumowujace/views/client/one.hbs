@@ -1,25 +1,25 @@
 <div class="container">
-<h2 class="gray-header">Klient: {{client.name}}</h2>
+    <h2 class="gray-header">Klient: {{client.name}}</h2>
 </div>
 <div class="container one-customer">
     <table>
         <tbody>
-            <tr>
-                <th class="gray-header">
-                    Email:
-                </th>
-                <td>
-                    <a href="mailto:{{client.mail}}" target="_blank">{{client.mail}}</a>
-                </td>
-            </tr>
-            <tr>
-                <th class="gray-header">
-                    Data następnego kontaktu:
-                </th>
-                <td>
-                    {{client.next}}
-                </td>
-            </tr>
+        <tr>
+            <th class="gray-header">
+                Email:
+            </th>
+            <td>
+                <a href="mailto:{{client.mail}}" target="_blank">{{client.mail}}</a>
+            </td>
+        </tr>
+        <tr>
+            <th class="gray-header">
+                Data następnego kontaktu:
+            </th>
+            <td>
+                {{client.next}}
+            </td>
+        </tr>
         {{#if client.notes}}
             <tr>
                 <th class="gray-header">
@@ -32,4 +32,7 @@
         {{/if}}
         </tbody>
     </table>
+    <div class="form">
+        <a href="/client">Powrót do listy klientów.</a>
+    </div>
 </div>
