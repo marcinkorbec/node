@@ -20,7 +20,9 @@ clientRouter
 	})
 
 	.post('/', (req, res) => {
-		res.send('Dodaj pojedynczego!')
+		db.create(req.body)
+		db._save();
+		res.render('client/added.hbs')
 	})
 
 	.delete('/deleted/:id', (req, res) => {
@@ -29,7 +31,7 @@ clientRouter
 	})
 
 	.get('/form/add', (req, res) => {
-		res.render('./views/client/forms/add.hbs');
+		res.render('./client/forms/add.hbs');
 	})
 
 module.exports = {

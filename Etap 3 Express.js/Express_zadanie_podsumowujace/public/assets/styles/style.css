@@ -52,3 +52,14 @@ a {
     margin-top: 20px;
     width: 100%;
 }
+
+.form {
+    border: 1px solid #ddd;
+    border-radius: 0.2em;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 3px #000;
+}
+
