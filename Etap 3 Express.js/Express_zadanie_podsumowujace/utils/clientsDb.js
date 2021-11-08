@@ -12,7 +12,6 @@ class Db {
 	async _load() {
 		this._data = JSON.parse(await readFile(this.dbFilename,'utf8'));
 		//pobieramy i ładujemy dane z tego jsona i zmieniamy je na obiekt
-		console.log(typeof(this._data));
 	}
 
 	_save() {
