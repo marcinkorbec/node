@@ -21,7 +21,6 @@ clientRouter
 
 	.post('/', (req, res) => {
 		db.create(req.body)
-		db._save();
 		res.render('client/added.hbs')
 	})
 

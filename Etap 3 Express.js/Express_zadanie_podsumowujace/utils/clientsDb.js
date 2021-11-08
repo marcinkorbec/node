@@ -21,11 +21,13 @@ class Db {
 	}
 
 	create(obj) {
+		const id = uuid();
 		this._data.push({
-			id: uuid(),
+			id: id,
 			...obj, //operator rozproszenia , tworzę obiekt i "rozpraszam" żeby móc dodać id
 		}); //wpychamy dane do tablicy
 		this._save();
+		return id;
 	}
 
 	getAll() { // pobierz całą listę

@@ -1,6 +1,7 @@
 h2, h1 {
     text-align: center;
     padding: 15px;
+    text-shadow: 1px 1px 5px grey;
 }
 
 table {
@@ -60,6 +61,13 @@ a {
     text-align: center;
     padding: 20px;
     margin: 0 auto;
-    box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 5px #000;
+    margin-top: 30px;
 }
+
+input, textarea {
+    width: 220px;
+}
+
+
 
