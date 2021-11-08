@@ -21,9 +21,6 @@ app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
-app.get('/test', (req, res) => {
-	res.send(db.getOne('3e396670-0707-4912-a97e-c0237041a49f'));
-})
 
 
 app.listen(3000, '0.0.0.0', () => {

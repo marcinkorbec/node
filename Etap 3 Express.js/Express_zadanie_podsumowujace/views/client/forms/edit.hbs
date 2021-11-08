@@ -1,13 +1,13 @@
 <div class="container">
     <h2 class="gray-header">Edytujesz {{client.name}} o identyfikatorze <small>{{client.id}}</small>.</h2>
-    <form method="put" action="/client">
+    <form method="POST" action="/client/{{client.id}}?_method=PUT">
         <div class="form">
             <label>
                 <p>
                     Email:
                 </p>
                 <p>
-                    <input type="email" name="mail">
+                    <input type="email" name="mail" value="{{client.email}}">
                 </p>
             </label>
             <label for="">
@@ -15,7 +15,7 @@
                     Imię:
                 </p>
                 <p>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="{{client.name}}">
                 </p>
             </label>
             <label for="">
@@ -23,7 +23,7 @@
                     Data następnego kontaktu:
                 </p>
                 <p>
-                    <input type="date" name="next">
+                    <input type="date" name="next" value="{{client.next}}">
                 </p>
             </label>
             <p>

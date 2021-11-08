@@ -16,7 +16,8 @@ clientRouter
 	})
 
 	.put('/:id', (req, res) => {
-		res.send('Zmodyfikuj pojedynczego.')
+		const update = db.update(req.params.id);
+		res.render('Zmodyfikuj pojedynczego.')
 	})
 
 	.post('/', (req, res) => {
@@ -32,11 +33,12 @@ clientRouter
 	})
 
 	.get('/form/add', (req, res) => {
-		res.render('./client/forms/add.hbs');
+		res.render('client/forms/add.hbs');
 	})
 
 	.get('/form/edit/:id', (req, res) => {
-		res.render('./client/forms/edit.hbs', {
+
+		res.render('client/forms/edit.hbs', {
 			client: db.getOne(req.params.id)
 		});
 	})
