@@ -36,7 +36,7 @@ clientRouter
 	})
 
 	.get('/form/edit/:id', (req, res) => {
-		res.render('./client/forms/add.hbs', {
+		res.render('./client/forms/edit.hbs', {
 			client: db.getOne(req.params.id)
 		});
 	})
