@@ -1,5 +1,6 @@
 <div class="container">
-    <h2 class="gray-header">Edytujesz {{client.name}} o identyfikatorze <small>{{client.id}}</small>.</h2>
+    <h2 class="gray-header">Edytujesz: {{client.name}}</h2>
+    <p class="small">id: {{client.id}}</p>
     <form method="POST" action="/client/{{client.id}}?_method=PUT">
         <div class="form">
             <label>

@@ -1,6 +1,8 @@
 const {readFile, writeFile} = require('fs').promises; // bierzemy dwie metody zapis i odczyt pliku z modułu fs. wersja promisowa
 const {join} = require('path'); //bierzemy metodę join z modułu path
-const {v4: uuid} = require('uuid'); //bierzemy wersję czwartą z modułu uuid i destrukturyzujemy ją na uuid
+const {v4: uuid} = require('uuid');
+const {ClientRecord} = require("../record/client-record"); //bierzemy wersję czwartą z modułu uuid i destrukturyzujemy ją na uuid
+
 
 class Db {
 	constructor(dbFilename) {
@@ -10,7 +12,7 @@ class Db {
 	}
 
 	async _load() {
-		this._data = JSON.parse(await readFile(this.dbFilename,'utf8'));
+		this._data = JSON.parse(await readFile(this.dbFilename,'utf8')).map(obj => new ClientRecord(obj));
 		//pobieramy i ładujemy dane z tego jsona i zmieniamy je na obiekt
 	}
 
@@ -21,7 +23,7 @@ class Db {
 
 	create(obj) {
 		const id = uuid();
-		this._data.push({
+		this._data.push(new ClientRecord{
 			id: id,
 			...obj, //operator rozproszenia , tworzę obiekt i "rozpraszam" żeby móc dodać id
 		}); //wpychamy dane do tablicy
@@ -34,7 +36,8 @@ class Db {
 	}
 
 	getOne(id) {
-		return this._data.find(oneObj => oneObj.id === id); //zwróć obiekt , który będzie miał id takie jak szukamy
+		return this._data.find(oneObj => oneObj.id === id);
+		//zwróć obiekt , który będzie miał id takie jak szukamy
 	}
 
 	update(id, newObj) {
@@ -59,6 +62,7 @@ class Db {
 // debounce to np coś takiego że czekamy aż wielu użytkoników dokona jakichś zmian i dopiero wtedy zapisujemy wszystko za jednym razem
 
 const clientsDb = new Db('db.json');
+
 
 
 module.exports = {

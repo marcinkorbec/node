@@ -1,6 +1,7 @@
 const express = require('express');
 const {db} = require("../utils/clientsDb");
 const clientRouter = express.Router();
+const {ClientRecord} = require('../record/client-record')
 
 clientRouter
 	.get('/', (req, res) => {
@@ -10,8 +11,9 @@ clientRouter
 	})
 
 	.get('/:id', (req, res) => {
+		const client = db.getOne(req.params.id);
 		res.render('client/one.hbs', {
-			client: db.getOne(req.params.id),
+			client,
 		})
 	})
 
