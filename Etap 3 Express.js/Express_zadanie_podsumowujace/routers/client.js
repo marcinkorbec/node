@@ -16,8 +16,13 @@ clientRouter
 	})
 
 	.put('/:id', (req, res) => {
-		const update = db.update(req.params.id);
-		res.render('Zmodyfikuj pojedynczego.')
+		const id = req.params.id;
+		const update = db.update(req.params.id, req.body);
+		res.render('client/modified.hbs', {
+			name: req.body.name,
+			update,
+			id
+		})
 	})
 
 	.post('/', (req, res) => {
