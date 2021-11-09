@@ -18,9 +18,9 @@ class ClientRecord {
 			throw new Error('Data następnego kontaktu musi być tekstem!')
 		}
 
-		if (typeof notes !== 'string') {
-			throw new Error('Notatki muszą być tekstem!')
-		}
+		// if (typeof notes !== 'string') {
+		// 	throw new Error('Notatki muszą być tekstem!')
+		// }
 
 		this.id = id;
 		this.name = name;

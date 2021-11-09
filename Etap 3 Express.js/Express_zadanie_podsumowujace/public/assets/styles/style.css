@@ -71,4 +71,8 @@ input, textarea {
     font-size: 0.9rem;
     text-align: center;
 }
-
+ .error {
+     background-color: #fdc5c5;
+     padding: 30px;
+     border: 2px solid red;
+ }

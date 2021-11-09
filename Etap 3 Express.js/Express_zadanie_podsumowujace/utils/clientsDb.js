@@ -23,7 +23,7 @@ class Db {
 
 	create(obj) {
 		const id = uuid();
-		this._data.push(new ClientRecord{
+		this._data.push(new ClientRecord, {
 			id: id,
 			...obj, //operator rozproszenia , tworzę obiekt i "rozpraszam" żeby móc dodać id
 		}); //wpychamy dane do tablicy

@@ -50,6 +50,10 @@ clientRouter
 		});
 	})
 
+	.get('/error/404', (req, res) => {
+		res.render('errors/error.hbs');
+	})
+
 module.exports = {
 	clientRouter,
 }
