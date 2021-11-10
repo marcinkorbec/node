@@ -43,7 +43,13 @@ clientRouter
 	})
 
 	.delete('/deleted/:id', (req, res) => {
-		db.delete(req.params.id);
+		const client = db.getOne(req.params.id);
+
+		if (!client) {
+			throw new NotFoundError()
+		} else {
+			db.delete(req.params.id);
+		}
 		res.render('client/deleted.hbs')
 	})
 
