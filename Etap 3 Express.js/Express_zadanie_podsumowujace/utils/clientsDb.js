@@ -23,10 +23,10 @@ class Db {
 
 	create(obj) {
 		const id = uuid();
-		this._data.push(new ClientRecord, {
+		this._data.push(new ClientRecord({
 			id: id,
 			...obj, //operator rozproszenia , tworzę obiekt i "rozpraszam" żeby móc dodać id
-		}); //wpychamy dane do tablicy
+		})); //wpychamy dane do tablicy
 		this._save();
 		return id;
 	}
@@ -43,10 +43,10 @@ class Db {
 	update(id, newObj) {
 		this._data = this._data.map(oneObj => { //mapujemy obiekt czyli zmieniamy jeden w drugi jakby
 			if (oneObj.id === id) { //jeśli pojedynczy obiekt ma id równe id, którego szukamy
-				return { //zwracamy nowy obiekt w którym
+				return new ClientRecord({ //zwracamy nowy obiekt w którym
 					...oneObj, //zwracamy cały poprzedni obiekt
 					...newObj, //a potem zwracam cały nowy obiekt
-				}
+				})
 			} else {
 				return oneObj; //zwracamy ten sam obiekt
 			}

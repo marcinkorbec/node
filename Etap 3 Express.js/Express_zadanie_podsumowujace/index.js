@@ -5,6 +5,7 @@ const {urlencoded} = require("express");
 const {clientRouter} = require("./routers/client");
 const {homeRouter} = require("./routers/home");
 const {clientsDb} = require('./utils/clientsDb');
+const {handleError} = require("./utils/errors");
 
 const app = express();
 app.use(methodOverride('_method'));
@@ -21,7 +22,7 @@ app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
-app.use
+app.use(handleError);
 
 app.listen(3000, '0.0.0.0', () => {
 	console.log('Program działa na porcie http://localhost:3000');
