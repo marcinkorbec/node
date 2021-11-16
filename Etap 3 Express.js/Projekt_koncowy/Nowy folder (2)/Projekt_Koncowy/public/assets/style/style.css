@@ -33,3 +33,7 @@ td,th {
     width: 80%;
     margin: 5px 0;
 }
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
