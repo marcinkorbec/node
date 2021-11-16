@@ -1,7 +1,7 @@
-const {readFile, writeFile} = require('fs').promises; // bierzemy dwie metody zapis i odczyt pliku z modułu fs. wersja promisowa
-const {join} = require('path'); //bierzemy metodę join z modułu path
-const {v4: uuid} = require('uuid');
-const {ClientRecord} = require("../record/client-record"); //bierzemy wersję czwartą z modułu uuid i destrukturyzujemy ją na uuid
+const { readFile, writeFile } = require('fs').promises; // bierzemy dwie metody zapis i odczyt pliku z modułu fs. wersja promisowa
+const { join } = require('path'); //bierzemy metodę join z modułu path
+const { v4: uuid } = require('uuid'); //bierzemy wersję czwartą z modułu uuid i destrukturyzujemy ją na uuid
+const { ClientRecord } = require("../record/client-record");
 
 
 class Db {
@@ -12,7 +12,7 @@ class Db {
 	}
 
 	async _load() {
-		this._data = JSON.parse(await readFile(this.dbFilename,'utf8')).map(obj => new ClientRecord(obj));
+		this._data = JSON.parse(await readFile(this.dbFilename, 'utf8')).map(obj => new ClientRecord(obj));
 		//pobieramy i ładujemy dane z tego jsona i zmieniamy je na obiekt
 	}
 
