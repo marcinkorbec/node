@@ -1,0 +1,42 @@
+
+html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0EBF8
+}
+
+img {
+    max-width: 500px;
+}
+
+div {
+    background-color: snow;
+    border-radius: 10px;
+    padding: 25px;
+    width: 80%;
+    max-width: 502px;
+    margin: 30px auto;
+    box-shadow: 2px 2px 25px #000;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px grey;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+}
+button {
+    width: 49%;
+    height: 40px;
+}
+h3 {
+    text-align: center;
+}
+.last-btn {
+    width: 100%;
+}
+
+h3 span {
+    font-weight: bold;
+}
