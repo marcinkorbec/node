@@ -32,12 +32,16 @@ class Db{
   }
 
   update(id,newObj){
-    this._data = this._data.map(oldObj => (
-      oldObj.id === id ? {
-        ...oldObj,
-        ...newObj,
-      } : oldObj
-    ))
+    this._data = this._data.map(oneObj => { //mapujemy obiekt czyli zmieniamy jeden w drugi jakby
+      if (oneObj.id === id) { //jeśli pojedynczy obiekt ma id równe id, którego szukamy
+        return new ClientRecord({ //zwracamy nowy obiekt w którym
+          ...oneObj, //zwracamy cały poprzedni obiekt
+          ...newObj, //a potem zwracam cały nowy obiekt
+        })
+      } else {
+        return oneObj; //zwracamy ten sam obiekt
+      }
+    })
     this.save()
   }
 
