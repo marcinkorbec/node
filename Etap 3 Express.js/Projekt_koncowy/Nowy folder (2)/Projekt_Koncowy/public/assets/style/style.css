@@ -1,0 +1,35 @@
+* {
+    font-weight: 300;
+}
+table {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+}
+
+tr {
+    margin: 2px;
+    background-color: #e5e5e5;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: #b8b8b8;
+}
+
+thead th, .header-of-left th {
+    background-color: #8d8d8d;
+    font-weight: bold;
+}
+
+td,th {
+    padding: 6px;
+
+}
+
+.error {
+    background: rgba(255,50,25,0.4);
+    border: red;
+    padding: 10px;
+    width: 80%;
+    margin: 5px 0;
+}
