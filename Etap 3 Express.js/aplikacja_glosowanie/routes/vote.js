@@ -1,11 +1,11 @@
 const express = require('express');
-const homeRouter = express.Router();
+const voteRouter = express.Router();
 
-homeRouter
+voteRouter
 	.get('/', (req, res) => {
-		res.redirect('/vote');
+		res.render('/vote.hbs');
 	});
 
 module.exports = {
-	homeRouter,
+	voteRouter,
 }
