@@ -4,7 +4,6 @@ const clientRouter = express.Router();
 
 clientRouter
   .get('/', (req, res) => {
-
     res.render('client/show-all',{
       clients : DbClient.getAll()
     })
@@ -41,7 +40,7 @@ clientRouter
     })
   })
 
-  .put('/form/edit/:id',(req, res) => {
+  .put('/:id',(req, res) => {
     DbClient.update(req.params.id,req.body)
     res.render('client/get-one',{
       client: DbClient.getOne(req.params.id)

@@ -1,5 +1,5 @@
 <h2>Edytowanie klienta o nazwie {{client.name}}</h2>
-<form method="post" action="/client/form/edit/{{client.id}}?_method=PUT">
+<form method="post" action="/client/{{client.id}}?_method=PUT">
     <label>
         <p>Imię:</p>
         <input type="text" name="name" value="{{client.name}}">
