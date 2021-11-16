@@ -1,1 +1,23 @@
-[{"name":"Tys","id":"f1f15aad-73df-4810-9dae-4e836d7cbaf2","mail":"kiep","notes":"sdsd","nextContactAt":"2021-11-04"},{"name":"123","id":"f15aad-73df-4810-9dae-4e836d7cbaf2","mail":"kiepurek@gmail.com","notes":"sdsd","nextContactAt":"2021-11-04"},{"name":"sds","id":"1f135846-c6f1-4801-a71c-a307332b0b32","mail":"@2sss","notes":"","nextContactAt":"2021-11-04"}]
+[
+  {
+    "name": "Tys",
+    "id": "f1f15aad-73df-4810-9dae-4e836d7cbaf2",
+    "mail": "kiep@qw.pl",
+    "notes": "sdsd",
+    "nextContactAt": "2021-11-04"
+  },
+  {
+    "name": "12",
+    "id": "f15aad-73df-4810-9dae-4e836d7cbaf2",
+    "mail": "kiepurek@gmail.com",
+    "notes": "sdsd",
+    "nextContactAt": "2021-11-04"
+  },
+  {
+    "name": "sds",
+    "id": "1f135846-c6f1-4801-a71c-a307332b0b32",
+    "mail": "@2sss",
+    "notes": "",
+    "nextContactAt": "2021-11-04"
+  }
+]
