@@ -3,7 +3,7 @@ const voteRouter = express.Router();
 
 voteRouter
 	.get('/', (req, res) => {
-		res.render('/vote.hbs');
+		res.render('./vote.hbs');
 	});
 
 module.exports = {
