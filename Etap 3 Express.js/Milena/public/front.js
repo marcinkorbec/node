@@ -9,7 +9,6 @@ const result = fetch('/calc/check', {
         numberB,
     }),
 
-
     headers: {
         'Content-type': 'application/json'
     },
