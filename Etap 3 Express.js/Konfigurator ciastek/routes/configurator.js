@@ -54,4 +54,4 @@ configuratorRouter
 
 module.exports = {
     configuratorRouter,
-}
+}e
