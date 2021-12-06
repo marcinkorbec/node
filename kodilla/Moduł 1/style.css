@@ -1,5 +1,5 @@
 .container {
-    width: 80%;
+    max-width: 500px;
     border: 1px solid #d2cece;
     border-radius: 5px;
     margin: 0 auto;
@@ -7,5 +7,15 @@
 }
 
 h1 {
+    text-align: center;
+}
+
+img {
+    height: 240px;
+    margin: 0 auto;
+}
+
+.picture {
+    margin: 0 auto;
     text-align: center;
 }
