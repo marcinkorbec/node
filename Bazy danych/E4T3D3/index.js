@@ -7,6 +7,7 @@ const mysql = require('mysql2/promise');
 		database: 'megak_cars',
 	});
 
-	connection.execute('SELECT * FROM')
+	const answer = await connection.execute('INSERT INTO `cars` VALUES("SJZ001B", "Mercedes", "C63 AMG","BLACK PEARL" "2021-01-01", 200000)');
+	console.log(answer)
 
 })();
