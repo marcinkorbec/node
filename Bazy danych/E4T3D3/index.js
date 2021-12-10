@@ -5,9 +5,14 @@ const mysql = require('mysql2/promise');
 		host: 'localhost',
 		user: 'root',
 		database: 'megak_cars',
+		decimalNumbers: true,
+		multipleStatements: true,
 	});
 
-	const answer = await connection.execute('INSERT INTO `cars_places`(`carRegistrationNo`, `placeId`) VALUES("SJZ001B", 3)');
-	console.log(answer)
+	const regNo = 'DW21739';
+	console.log(sql);
+
+	const [answer] = await connection.query('SELECT * FROM `cars` WHERE `registrationNo`= ?;', [regNo]);
+	console.log(answer);
 
 })();
