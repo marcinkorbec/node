@@ -1,18 +1,20 @@
 const mysql = require('mysql2/promise');
 
-(async() => {
+(async () => {
 	const connection = await mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
 		database: 'megak_cars',
 		decimalNumbers: true,
-		multipleStatements: true,
 	});
 
-	const regNo = 'DW21739';
-	console.log(sql);
+	const value = 10000;
 
-	const [answer] = await connection.query('SELECT * FROM `cars` WHERE `registrationNo`= ?;', [regNo]);
-	console.log(answer);
-
+	const {affectedRows} = (
+		await connection.execute('UPDATE `cars` SET `price`= `price` + :myValue WHERE `price` > :myValue',
+			{
+				value: value,
+			}
+		)
+	)[0];
 })();
