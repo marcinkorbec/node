@@ -41,7 +41,7 @@ const mysql = require('mysql2/promise');
 	const statement = await connection.prepare('INSERT INTO `cars` VALUES(?, ?, ?, ?, ?, ?)');
 	try {
 		for (const car of cars) {
-			await statement.execute(car);
+			await statement.execute(Object.values(car));
 		}
 		console.log(results)
 	} finally {
