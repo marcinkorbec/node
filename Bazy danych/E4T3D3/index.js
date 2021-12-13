@@ -38,6 +38,14 @@ const mysql = require('mysql2/promise');
 		}
 	];
 
+	const statement = await connection.prepare('select ? + ? as tests');
+	try {
+		const [results] = await statement.execute([1, 2]);
+		console.log(results)
+	} finally {
+		statement.close();
+	}
+
 	const {affectedRows} = (
 		await connection.execute(
 			'UPDATE `cars` SET `price` = `price` + :myValue WHERE `price` > :myValue',
