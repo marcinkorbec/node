@@ -11,7 +11,7 @@ const mysql = require('mysql2/promise');
 
 	const cars = [
 		{
-			registrationNo: 'SJZ7CC6',
+			registrationNo: 'SJZ77C6',
 			brand: 'Jaguar',
 			model: 'X-Type',
 			color: 'White',
@@ -20,7 +20,7 @@ const mysql = require('mysql2/promise');
 		},
 
 		{
-			registrationNo: 'SJZ7CC9',
+			registrationNo: 'RZ2165T',
 			brand: 'BMW',
 			model: 'X3',
 			color: 'black pearl',
@@ -43,18 +43,10 @@ const mysql = require('mysql2/promise');
 		for (const car of cars) {
 			await statement.execute(Object.values(car));
 		}
-		console.log(results)
+		console.log('Działa!')
 	} finally {
 		statement.close();
 	};
 
-	const {affectedRows} = (
-		await connection.execute(
-			'UPDATE `cars` SET `price` = `price` + :myValue WHERE `price` > :myValue',
-			{
-				myValue: value,
-			},
-		)
-	)[0];
-	console.log(affectedRows);
+	
 })();
