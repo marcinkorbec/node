@@ -38,13 +38,13 @@ const mysql = require('mysql2/promise');
 		}
 	];
 
-	const statement = await connection.prepare('select ? + ? as tests');
+	const statement = await connection.prepare('INSERT INTO `cars` VALUES(:registrationNo, :brand, :model, :color, :firstRegistryAt, :price)');
 	try {
 		const [results] = await statement.execute([1, 2]);
 		console.log(results)
 	} finally {
 		statement.close();
-	}
+	};
 
 	const {affectedRows} = (
 		await connection.execute(
