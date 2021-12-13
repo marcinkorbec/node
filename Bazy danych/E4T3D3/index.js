@@ -38,9 +38,11 @@ const mysql = require('mysql2/promise');
 		}
 	];
 
-	const statement = await connection.prepare('INSERT INTO `cars` VALUES(:registrationNo, :brand, :model, :color, :firstRegistryAt, :price)');
+	const statement = await connection.prepare('INSERT INTO `cars` VALUES(?, ?, ?, ?, ?, ?)');
 	try {
-		const [results] = await statement.execute([1, 2]);
+		for (const car of cars) {
+			await statement.execute(car);
+		}
 		console.log(results)
 	} finally {
 		statement.close();
