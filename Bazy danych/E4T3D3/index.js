@@ -10,7 +10,7 @@ const mysql = require('mysql2/promise');
 	});
 
 	const value = 10000;
-	
+
 	const {affectedRows} = (
 		await pool.execute(
 			'UPDATE `cars` SET `price` = `price` + :myValue WHERE `price` > :myValue',
