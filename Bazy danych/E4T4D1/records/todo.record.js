@@ -25,7 +25,13 @@ class TodoRecord {
 	}
 
 	async delete() {
-		await pool.execute('DELETE FROM `todos`')
+		if (!this.id) {
+			throw new Error('Todos, który próbujesz usunąć, nie istnieje!');
+		}
+		await pool.execute('DELETE FROM `todos` WHERE  `id` = :id', {
+			id: this.id,
+			title: this.title,
+		})
 	}
 
 	async update(){

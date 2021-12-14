@@ -5,7 +5,9 @@ const {TodoRecord} = require("./records/todo.record");
 	const firstTodoItem = new TodoRecord({
 		title: 'Zrobić dzień 6 megak',
 	});
-	await firstTodoItem.insert();
-	console.log(firstTodoItem);
+
+	const newId = await firstTodoItem.insert();
+	console.log('New todo item added with ID', newId);
+
 	await pool.end();
 })();
