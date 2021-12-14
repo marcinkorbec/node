@@ -23,7 +23,12 @@ const pool = mysql.createPool({
 	console.log(deletedStudentsUnderGivenAge);
 
 	//4.
-	pool.execute('INSERT INTO `students`(`Name`, `Surname`, `Age`), VALUES(:firstName, :lastName, :age,) ', {firstName: 'Jasia', Surname: 'Korbecka', age: 62})
+	const {insertId} = (await pool.execute('INSERT INTO `students`(`Name`, `Surname`, `Age`) VALUES(:firstName, :lastName, :age) ', {
+		firstName: 'Jasia',
+		lastName: 'Jasiowska',
+		age: 62
+	}))[0];
+	console.log(insertId);
 
 	await pool.end();
 
