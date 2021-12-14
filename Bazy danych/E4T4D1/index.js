@@ -3,8 +3,7 @@ const {TodoRecord} = require("./records/todo.record");
 
 (async() => {
 	const firstTodoItem = new TodoRecord({
-		id: 'xyz',
-		title: 'Zrobić dzień piąty megak',
+		title: 'Zrobić dzień 6 megak',
 	});
 	await firstTodoItem.insert();
 	console.log(firstTodoItem);
