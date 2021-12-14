@@ -1,3 +1,5 @@
+const {pool} = require("../utils/db");
+
 class TodoRecord {
 	constructor(obj) {
 		if (obj.title.trim() < 5) {
@@ -10,4 +12,14 @@ class TodoRecord {
 		this.title = obj.title;
 		this.id = obj.id;
 	}
+	async insert() {
+		await pool.execute('INSERT INTO `todos` VALUES(:id, :title)', {
+			id: this.id,
+			title: this.title
+		});
+	}
+}
+
+module.exports = {
+	TodoRecord,
 }
