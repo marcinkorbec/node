@@ -1,3 +1,5 @@
+const mysql = require('mysql2/promise');
+
 const pool = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
@@ -6,3 +8,7 @@ const pool = mysql.createPool({
 	namedPlaceholders: true,
 	bigNumberStrings: false,
 });
+
+module.exports = {
+	pool,
+};

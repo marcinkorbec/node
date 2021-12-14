@@ -1,1 +1,5 @@
-const mysql = require('mysql2/promise');
+const {pool} = require('./utils/db.js')
+
+(async() => {
+	await pool.end(); 
+})();
