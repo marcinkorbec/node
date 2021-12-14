@@ -22,6 +22,9 @@ const pool = mysql.createPool({
 	const {affectedRows: deletedStudentsUnderGivenAge} = (await pool.execute('DELETE FROM `students` WHERE `age` <:age', {age: 18}))[0];
 	console.log(deletedStudentsUnderGivenAge);
 
+	//4.
+	pool.execute('INSERT INTO `students`(`Name`, `Surname`, `Age`), VALUES(:firstName, :lastName, :age,) ', {firstName: 'Jasia', Surname: 'Korbecka', age: 62})
+
 	await pool.end();
 
 })();
