@@ -11,11 +11,16 @@ const pool = mysql.createPool({
 
 (async () => {
 	//1.
-	const [results] = await pool.execute('SELECT * FROM `courses`');
-	console.log(results);
+	const [courses] = await pool.execute('SELECT * FROM `courses`');
+	console.log(courses);
 
 	//2.
-	pool.execute('SELECT `students`.`id`, `students`.`Name`, `students`.`Surname`, `courses`.`Nazwa Kursu`, WHERE )
+	const [studentsAndCourses] = await pool.execute('SELECT `students`.`id`, `students`.`Name`, `students`.`Surname`, `courses`.`Nazwa Kursu` FROM `students` JOIN `students_courses` ON `students`.`id` = `students_courses`.`studentId` JOIN `courses` ON `students_courses`.`courseName` = `courses`.`Nazwa Kursu` WHERE `students`.`age` >= 18' );
+	console.log(studentsAndCourses);
+
+	//3.
+	const {affectedRows: deletedStudentsUnderGivenAge} = (await pool.execute('DELETE FROM `students` WHERE `age` <:age', {age: 18}))[0];
+	console.log(deletedStudentsUnderGivenAge);
 
 	await pool.end();
 
