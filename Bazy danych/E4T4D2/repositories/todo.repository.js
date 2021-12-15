@@ -1,12 +1,17 @@
 const {v4: uuid} = require("uuid");
 const {pool} = require("../utils/db");
+const {TodoRecord} = require("../records/todo.record");
 
 class TodoRepository {
-	async insert() {
+	static async insert(record) {
+		if (!(record instanceof TodoRecord)) {
+			throw new Error('Tworzony obiekt nie jest instancją klasy TodoRecord.')
+		}
 
 		if (typeof this.id === "undefined") {
 			this.id = uuid();
 		}
+
 		await pool.execute('INSERT INTO `todos` VALUES(:id, :title)', {
 			id: this.id,
 			title: this.title
@@ -15,7 +20,7 @@ class TodoRepository {
 		return this.id
 	}
 
-	async delete() {
+	static async delete() {
 		if (!this.id) {
 			throw new Error('Todos, który próbujesz usunąć, nie istnieje!');
 		}
@@ -32,7 +37,7 @@ class TodoRepository {
 		return new TodoRecord(results[0]);
 	}
 
-	async update(){
+	static async update() {
 		this._validate();
 
 		if (!this.id) {
