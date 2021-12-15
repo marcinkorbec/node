@@ -34,6 +34,14 @@ class TodoRecord {
 		})
 	}
 
+	static async find(id) {
+		const [results] = await pool.execute('SELECT * FROM `todos` WHERE `id` = :id', {
+			id: this.id,
+			title: this.title,
+		});
+		return results;
+	}
+
 	async update(){
 		await pool.execute()
 	}
