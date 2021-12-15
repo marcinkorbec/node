@@ -27,7 +27,7 @@ class TodoRecord {
 			id: this.id,
 			title: this.title
 		});
-		
+
 		return this.id
 	}
 
@@ -50,6 +50,11 @@ class TodoRecord {
 
 	async update(){
 		this._validate();
+
+		if (!this.id) {
+			throw new Error('Todos, który próbujesz usunąć, nie istnieje!');
+		}
+
 		await pool.execute('UPDATE `todos` SET  `title` = :title WHERE `id` = :id', {
 			id: this.id,
 			title: this.title,
