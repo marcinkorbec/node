@@ -9,5 +9,7 @@ const {TodoRecord} = require("./records/todo.record");
 	const newId = await firstTodoItem.insert();
 	console.log('New todo item added with ID', newId);
 
+	// await firstTodoItem.delete();
+
 	await pool.end();
 })();
