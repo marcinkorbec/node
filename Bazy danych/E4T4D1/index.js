@@ -11,8 +11,12 @@ const {TodoRecord} = require("./records/todo.record");
 	//
 	// await firstTodoItem.delete();
 
-	const foundTodo = await TodoRecord.find('a746dabe-68cd-45b1-bf9c-367cc91d0fbe')
-	console.log(foundTodo);
+	// const foundTodo = await TodoRecord.find('xyz');
+	// await foundTodo.delete();
+
+	const foundTodo = await TodoRecord.find('7f01251e-7f82-471b-bba4-136e087c84b2');
+	foundTodo.title = 'Pójść zrobić kupę'
+	await foundTodo.update();
 
 	await pool.end();
 })();
