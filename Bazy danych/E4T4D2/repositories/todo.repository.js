@@ -3,31 +3,43 @@ const {pool} = require("../utils/db");
 const {TodoRecord} = require("../records/todo.record");
 
 class TodoRepository {
-	static async insert(record) {
+	static _checkRecord(record) {
 		if (!(record instanceof TodoRecord)) {
 			throw new Error('Tworzony obiekt nie jest instancją klasy TodoRecord.')
 		}
+	}
 
-		if (typeof this.id === "undefined") {
-			this.id = uuid();
+	static async insert(record) {
+		TodoRepository._checkRecord(record);
+
+		if (typeof record.id === "undefined") {
+			record.id = uuid();
 		}
 
 		await pool.execute('INSERT INTO `todos` VALUES(:id, :title)', {
-			id: this.id,
-			title: this.title
+			id: record.id,
+			title: record.title
 		});
 
-		return this.id
+		return record.id
 	}
 
-	static async delete() {
-		if (!this.id) {
+	static async delete(record) {
+		TodoRepository._checkRecord(record);
+
+		if (!record.id) {
 			throw new Error('Todos, który próbujesz usunąć, nie istnieje!');
 		}
+
 		await pool.execute('DELETE FROM `todos` WHERE  `id` = :id', {
-			id: this.id,
-			title: this.title,
+			id: record.id,
+			title: record.title,
 		})
+	}
+
+	static async findAll() {
+		const [results] = await pool.execute('SELECT * FROM `todos`;');
+		return results.map(result => new TodoRecord(result));
 	}
 
 	static async find(id) {
@@ -37,16 +49,18 @@ class TodoRepository {
 		return new TodoRecord(results[0]);
 	}
 
-	static async update() {
-		this._validate();
+	static async update(record) {
+		TodoRepository._checkRecord(record);
 
-		if (!this.id) {
+		if (!record.id) {
 			throw new Error('Todos, który próbujesz usunąć, nie istnieje!');
 		}
 
+		this._validate();
+
 		await pool.execute('UPDATE `todos` SET  `title` = :title WHERE `id` = :id', {
-			id: this.id,
-			title: this.title,
+			id: record.id,
+			title: record.title,
 		})
 	}
 }
