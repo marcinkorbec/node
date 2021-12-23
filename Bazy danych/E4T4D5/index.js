@@ -4,7 +4,8 @@ const client = new MongoClient('mongodb://localhost:27017', {useNewUrlParser: tr
 
 (async() => {
 	await client.connect();
-	const db = client.db('megak_music');
-	
+	const db = client.db('megak_music2');
+	await db.createCollection('songs');
+
 	await client.close();
 })();
