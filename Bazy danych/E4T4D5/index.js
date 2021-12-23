@@ -5,31 +5,34 @@ const client = new MongoClient('mongodb://localhost:27017', {useNewUrlParser: tr
 (async() => {
 	await client.connect();
 	const db = client.db('megak_music2');
-	await db.createCollection('songs');
+	// await db.createCollection('songs');
 
 	const songs = [
 		{
-			title: 'Długość dźwięku samotności',
+			title: 'Plejada',
 			artist: 'Artur Rojek',
 			length: 350,
 		},
 		{
-			title: 'Beksa',
+			title: 'Inspiracje',
 			artist: 'Artur Rojek',
 			length: 330,
 		},
 		{
-			title: 'Na cały świat',
+			title: 'Raz dwa trzy',
 			artist: 'Sokół',
 			length: 380,
 		},
 		{
-			title: 'Szczęścia milimetr',
+			title: 'O włos od młynarza',
 			artist: 'O.S.T.R.',
 			length: 360,
 		}
 	];
 
 	await db.collection('songs').insertMany(songs);
+	for await (const song of db.collection('songs').find()) {
+		console.log(song);
+	}
 	await client.close();
 })();
