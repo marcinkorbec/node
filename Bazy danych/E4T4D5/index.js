@@ -5,7 +5,10 @@ const client = new mongo.MongoClient('mongodb://localhost:27017', {useNewUrlPars
 (async() => {
 	await client.connect();
 	const db = client.db('megak_music');
-	const songs = await db.collection('songs').find({}).toArray();
-	console.log(songs)
+	const songs = await db.collection('songs');
+	const foundSongs = songs.find();
+	for await (const song of foundSongs) {
+		console.log(song);
+	}
 	await client.close();
 })();
