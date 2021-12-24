@@ -11,8 +11,9 @@ class TodoRepository {
 
 	static async insert(record) {
 		TodoRepository._checkRecord(record);
-		const result = await todos.insertOne(record)
-		console.log(result)
+		const {insertedId} = await todos.insertOne(record);
+		record._id = insertedId;
+		console.log(insertedId)
 	}
 
 	static async delete(record) {

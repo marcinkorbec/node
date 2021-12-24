@@ -6,7 +6,7 @@ const {TodoRecord} = require("./records/todo.record");
 
 	try {
 		const todo = new TodoRecord({
-			title: 'Skończyć projekt MongoDB',
+			title: 'Skończyć 2 projekt MongoDB',
 		});
 		await TodoRepository.insert(todo);
 		// console.log(await TodoRepository.findAll());

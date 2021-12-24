@@ -9,7 +9,7 @@ class TodoRecord {
 	}
 
 	_validate() {
-		if (this.title.trim() < 5) {
+		if (this.title.trim().length < 5) {
 			throw new Error('Tytuł Todosa ma mieć tytuł dluższy niż 5 znaków.');
 		}
 
