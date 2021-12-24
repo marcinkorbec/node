@@ -38,8 +38,7 @@ class TodoRepository {
 	}
 
 	static async findAll() {
-		const [results] = await pool.execute('SELECT * FROM `todos`;');
-		return results.map(result => new TodoRecord(result));
+		return (await todos.find())
 	}
 
 	static async find(id) {
