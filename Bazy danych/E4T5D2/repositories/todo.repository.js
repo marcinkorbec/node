@@ -38,7 +38,7 @@ class TodoRepository {
 	}
 
 	static async findAll() {
-		return (await todos.find())
+		return (await todos.find()).toArray();
 	}
 
 	static async find(id) {

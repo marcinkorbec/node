@@ -1,5 +1,6 @@
-const {db} = require('./utils/db')
+const {db} = require('./utils/db');
+const {TodoRepository} = require('./repositories/todo.repository')
 
 (async() => {
-	db.collection('xyz').find();
+	console.log(await TodoRepository.findAll());
 })();
