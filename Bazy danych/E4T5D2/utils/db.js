@@ -9,4 +9,5 @@ const todos = db.collection('todos');
 module.exports = {
 	db,
 	todos,
+	client,
 }
