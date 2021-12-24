@@ -4,7 +4,7 @@ const {v4: uuid} = require('uuid')
 class TodoRecord {
 	constructor(obj) {
 		this.title = obj.title;
-		this.id = obj.id;
+		this._id = obj._id;
 		this._validate();
 	}
 
