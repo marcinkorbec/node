@@ -1,5 +1,5 @@
 const {v4: uuid} = require("uuid");
-const {pool} = require("../utils/db");
+const {pool, todos} = require("../utils/db");
 const {TodoRecord} = require("../records/todo.record");
 
 class TodoRepository {
