@@ -11,17 +11,8 @@ class TodoRepository {
 
 	static async insert(record) {
 		TodoRepository._checkRecord(record);
-
-		if (typeof record.id === "undefined") {
-			record.id = uuid();
-		}
-
-		await pool.execute('INSERT INTO `todos` VALUES(:id, :title)', {
-			id: record.id,
-			title: record.title
-		});
-
-		return record.id
+		const result = await todos.insertOne(record)
+		console.log(result)
 	}
 
 	static async delete(record) {
