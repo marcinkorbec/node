@@ -5,12 +5,13 @@ const {ObjectId} = require("mongodb");
 
 (async() => {
 	try {
-		const todo = new TodoRecord({
-			title: 'Skończyć 2 projekt MongoDB',
-			_id: '61c61f67c82843560b6af652',
-		});
-		await TodoRepository.insert(todo);
+		// const todo = new TodoRecord({
+		// 	title: 'Skończyć 2 projekt MongoDB',
+		// 	_id: '61c61f67c82843560b6af652',
+		// });
+		// await TodoRepository.insert(todo);
 		// console.log(await TodoRepository.findAll());
+		console.log(await TodoRepository.find('61c61d2682532f5af6aa7188'));
 	}
 	finally {
 		await client.close();

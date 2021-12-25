@@ -1,6 +1,7 @@
 const {v4: uuid} = require("uuid");
 const {pool, todos} = require("../utils/db");
 const {TodoRecord} = require("../records/todo.record");
+const {ObjectId} = require("mongodb");
 
 class TodoRepository {
 	static _checkRecord(record) {
@@ -34,7 +35,10 @@ class TodoRepository {
 	}
 
 	static async find(id) {
-		return await todos.findOne({_id: id});
+		// if(!(id instanceof ObjectId)) {
+		// 	throw new Error('Id powinno być instancją ObjectId');
+		// }
+		return await todos.findOne({_id: ObjectId(String(id))});
 	}
 
 	static async update(record) {
