@@ -43,7 +43,9 @@ class TodoRepository {
 		TodoRepository._checkRecord(record);
 		await todos.replaceOne({
 			_id: record._id,
-		}, record);
+		}, {
+			title: String(record.title),
+		});
 	}
 }
 
