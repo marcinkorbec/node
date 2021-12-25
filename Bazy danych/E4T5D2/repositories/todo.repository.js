@@ -20,13 +20,8 @@ class TodoRepository {
 	static async delete(record) {
 		TodoRepository._checkRecord(record);
 
-		if (!record.id) {
-			throw new Error('Todos, który próbujesz usunąć, nie istnieje!');
-		}
-
-		await pool.execute('DELETE FROM `todos` WHERE  `id` = :id', {
-			id: record.id,
-			title: record.title,
+		await todos.deleteOne({
+			_id: record._id,
 		})
 	}
 
