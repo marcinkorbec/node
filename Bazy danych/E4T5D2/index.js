@@ -16,7 +16,7 @@ const {ObjectId} = require("mongodb");
 		//UPDATOWANIE REKORDU
 		const todo = await TodoRepository.find('61c61d2682532f5af6aa7188');
 		todo.title = 'Siala lala dupa jasia chorągiewka';
-		todo.cokolwiek = 'xdxdxdxdxd';
+		
 		await TodoRepository.update(todo);
 		console.log(await TodoRepository.find('61c61d2682532f5af6aa7188'));
 
