@@ -35,25 +35,12 @@ class TodoRepository {
 	}
 
 	static async find(id) {
-		// if(!(id instanceof ObjectId)) {
-		// 	throw new Error('Id powinno być instancją ObjectId');
-		// }
-		return await todos.findOne({_id: ObjectId(String(id))});
+		const item = await todos.findOne({_id: ObjectId(String(id))});
+		return item === null ? null: new TodoRecord(item);
 	}
 
 	static async update(record) {
-		TodoRepository._checkRecord(record);
-
-		if (!record.id) {
-			throw new Error('Todos, który próbujesz usunąć, nie istnieje!');
-		}
-
-		this._validate();
-
-		await pool.execute('UPDATE `todos` SET  `title` = :title WHERE `id` = :id', {
-			id: record.id,
-			title: record.title,
-		})
+		
 	}
 }
 
