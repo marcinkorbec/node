@@ -16,7 +16,7 @@ const {ObjectId} = require("mongodb");
 		//UPDATOWANIE REKORDU
 		const todo = await TodoRepository.find('61c61d2682532f5af6aa7188');
 		todo.title = {
-			$date: '133'
+			$date: '1334'
 		}
 
 		await TodoRepository.update(todo);
