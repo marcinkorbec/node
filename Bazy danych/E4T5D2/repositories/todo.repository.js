@@ -40,7 +40,10 @@ class TodoRepository {
 	}
 
 	static async update(record) {
-		
+		TodoRepository._checkRecord(record);
+		await todos.replaceOne({
+			_id: record._id,
+		}, record);
 	}
 }
 
