@@ -6,7 +6,7 @@ const {ObjectId} = require("mongodb");
 (async() => {
 	try {
 		DODAWANIE REKORDU
-		// const todo = new TodoRecord({
+		const todo = new TodoRecord({
 		// 	title: 'Skończyć 2 projekt MongoDB',
 		// 	_id: '61c61f67c82843560b6af652',
 		// });
