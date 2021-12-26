@@ -22,7 +22,7 @@ const {ObjectId} = require("mongodb");
 		// USUWANIE REKORDU
 		// const todo = await TodoRepository.find('61c61d2682532f5af6aa7188');
 		// todo.title = 'Coś zwykłego'
-		await TodoRepository.delete(todo);
+		// await TodoRepository.delete(todo);
 		console.log(await TodoRepository.find('61c61d2682532f5af6aa7188'));
 
 	}
