@@ -7,7 +7,7 @@ const {ObjectId} = require("mongodb");
 	try {
 		DODAWANIE REKORDU
 		const todo = new TodoRecord({
-		// 	title: 'Skończyć 2 projekt MongoDB',
+			title: 'Skończyć 2 projekt MongoDB',
 		// 	_id: '61c61f67c82843560b6af652',
 		// });
 		// await TodoRepository.insert(todo);
