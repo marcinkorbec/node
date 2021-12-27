@@ -19,23 +19,23 @@ class TodoRecord {
 		}
 	}
 
-	static async insert(record) {
-		TodoRepository._checkRecord(record);
-		const {insertedId} = await todos.insertOne(record);
-		record._id = insertedId;
+	async insert() {
+		const {insertedId} = await todos.insertOne({
+			title: String(this.title),
+			_id: this._id
+		});
+		this._id = insertedId;
 		console.log(insertedId)
 	}
 
-	static async delete(record) {
-		TodoRepository._checkRecord(record);
-
+	async delete() {
 		await todos.deleteOne({
-			_id: record._id,
+			_id: this._id,
 		})
 	}
 
 	static async findAll() {
-		return (await todos.find()).toArray();
+		return (await(await todos.find()).toArray()).map(obj => new TodoRecord(obj));
 	}
 
 	static async find(id) {
@@ -43,12 +43,11 @@ class TodoRecord {
 		return item === null ? null: new TodoRecord(item);
 	}
 
-	static async update(record) {
-		TodoRepository._checkRecord(record);
+	async update() {
 		await todos.replaceOne({
-			_id: record._id,
+			_id: this._id,
 		}, {
-			title: String(record.title),
+			title: String(this.title),
 		});
 	}
 }
