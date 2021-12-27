@@ -38,6 +38,10 @@ class TodoRecord {
 		return (await(await todos.find()).toArray()).map(obj => new TodoRecord(obj));
 	}
 
+	static async findAllWithCursor() {
+		return /*await*/ todos.find();
+	}
+
 	static async find(id) {
 		const item = await todos.findOne({_id: ObjectId(String(id))});
 		return item === null ? null: new TodoRecord(item);
