@@ -3,6 +3,8 @@ const methodOverride = require('method-override');
 const app = express();
 const hbs = require('express-handlebars');
 const {handleError} = require("./utils/error");
+const {homeRouter} = require("./routers/home");
+const {childRouter} = require("./routers/child");
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({
@@ -15,11 +17,8 @@ app.engine('.hbs', hbs.engine({
     helpers: 'handlebarsHelpers',
 }));
 app.set('view engine', '.hbs');
-
-app.get('/', (req, res) => {
-    res.send('<h1>Hello World</h1>');
-});
-
+app.use('/', homeRouter);
+app.use('/child', childRouter)
 app.use(handleError);
 
 app.listen(3002, '0.0.0.0', () => {
