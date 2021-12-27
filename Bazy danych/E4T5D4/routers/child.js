@@ -6,8 +6,11 @@ const childRouter = Router();
 childRouter
 	.get('/', (req, res) => {
 		const childrenList = ChildRecord.listAll();
+		const giftsList = GiftRecord.listAll();
+
 		res.render('children/children-list.hbs', {
 			childrenList,
+			giftsList,
 		});
 	});
 
