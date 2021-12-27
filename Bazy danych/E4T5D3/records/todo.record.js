@@ -19,12 +19,6 @@ class TodoRecord {
 		}
 	}
 
-	static _checkRecord(record) {
-		if (!(record instanceof TodoRecord)) {
-			throw new Error('Tworzony obiekt nie jest instancją klasy TodoRecord.')
-		}
-	}
-
 	static async insert(record) {
 		TodoRepository._checkRecord(record);
 		const {insertedId} = await todos.insertOne(record);
