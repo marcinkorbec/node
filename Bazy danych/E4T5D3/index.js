@@ -28,7 +28,7 @@ const {ObjectId} = require("mongodb");
 			console.log(await TodoRecord.findAll());
 		}
 
-
+		console.log('dupa');
 
 	}
 	finally {
