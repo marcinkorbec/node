@@ -8,7 +8,7 @@ class GiftRecord {
 			throw new ValidationError('Nazwa prezentu musi mieć od 3 do 55 znaków.')
 		}
 
-		if (!obj.count || obj.count.length < 1 || obj.count > 9999999) {
+		if (!obj.count || obj.count < 1 || obj.count > 9999999) {
 			throw new ValidationError('Liczba szt. prezentu powinna  się mieścić w przedziale 1 - 999999.')
 		}
 
