@@ -10,6 +10,10 @@ class GiftRecord {
 		if (!obj.count || obj.count.length < 1 || obj.count > 9999999) {
 			throw new ValidationError('Liczba szt. prezentu powinna  się mieścić w przedziale 1 - 999999.')
 		}
+
+		this.name = obj.name;
+		this.count = obj.count;
+		this.id = obj.id;
 	}
 
 	static async listAll() {
