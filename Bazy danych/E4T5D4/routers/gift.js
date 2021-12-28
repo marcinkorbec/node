@@ -21,9 +21,7 @@ giftRouter
 		const newGift = new GiftRecord(data);
 		await newGift.insert();
 
-		// res.render('gift/gift-list.hbs', {
-		// 	giftsList,
-		// });
+		res.redirect('/gift');
 	});
 
 module.exports = {
