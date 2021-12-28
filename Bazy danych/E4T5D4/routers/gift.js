@@ -10,6 +10,20 @@ giftRouter
 		res.render('gift/gift-list.hbs', {
 			giftsList,
 		});
+	})
+
+	.post('/', async (req, res) => {
+		const data = {
+			...req.body,
+			count: Number(req.body.count),
+		};
+
+		const newGift = new GiftRecord(data);
+		await newGift.insert();
+
+		// res.render('gift/gift-list.hbs', {
+		// 	giftsList,
+		// });
 	});
 
 module.exports = {

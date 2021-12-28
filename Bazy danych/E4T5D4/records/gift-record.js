@@ -28,7 +28,7 @@ class GiftRecord {
 			count: this.count,
 		});
 
-		return this.id; 
+		return this.id;
 	}
 
 	static async listAll() {
