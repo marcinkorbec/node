@@ -12,6 +12,14 @@ childRouter
 			childrenList,
 			giftsList,
 		});
+	})
+
+	.post('/', async (req, res) => {
+
+		const newChild = new ChildRecord(req.body);
+		await newChild.insert();
+
+		res.redirect('/children');
 	});
 
 module.exports = {
