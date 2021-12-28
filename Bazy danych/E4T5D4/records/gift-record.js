@@ -1,23 +1,6 @@
 class GiftRecord {
-	static listAll() {
-		return [
-			{
-				id: 'abcd',
-				name: 'Cukierki',
-				count: 5,
-			},
-			{
-				id: 'abcde',
-				name: 'Samochód',
-				count: 3,
-			},
-			{
-				id: 'abcdf',
-				name: 'Lalka',
-				count: 2,
-			}
-
-		]
+	static async listAll() {
+		const [results] = await return pool.execute("SELECT * FROM `gifts`");
 	}
 }
 
