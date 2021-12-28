@@ -4,6 +4,7 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: lightgrey;
+    max-width: 500px;
 }
 
 h1 {
