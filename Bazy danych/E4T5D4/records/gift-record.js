@@ -1,5 +1,6 @@
 const {pool} = require("../utils/db");
-const {} = require("../utils/errors");
+const {ValidationError} = require("../utils/errors");
+const {v4: uuid} = require('uuid');
 
 class GiftRecord {
 	constructor(obj) {
@@ -14,6 +15,12 @@ class GiftRecord {
 		this.name = obj.name;
 		this.count = obj.count;
 		this.id = obj.id;
+	}
+
+	async insert() {
+		if (!this.id) {
+			this.id =
+		}
 	}
 
 	static async listAll() {
