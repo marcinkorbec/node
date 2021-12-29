@@ -31,7 +31,7 @@ class ChildRecord {
 	}
 
 	static async getOne(id) {
-		const [results] = await pool.execute("SELECT * FROM `children` WHERE `id`= :id" {
+		const [results] = await pool.execute("SELECT * FROM `children` WHERE `id`= :id", {
 			id,
 		});
 		return results.length === 0 ? null : new ChildRecord(results[0]);

@@ -16,7 +16,7 @@ childRouter
 	})
 
 	.patch('/gift/:childId', async (req, res) => {
-		const child - await ChildRecord.getOne(req.params.childId)
+		const child = await ChildRecord.getOne(req.params.childId)
 
 		if (child === null) {
 			throw new ValidationError('Nie znaleziono dziecka o podanym ID.')
