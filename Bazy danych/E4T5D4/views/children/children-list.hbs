@@ -8,7 +8,7 @@
                     <select name="giftId">
                         <option value="">Brak</option>
                         {{#each ../giftsList}}
-                            <option value="{{this.id}}" {{#if (equals this.id = ../giftId)}}
+                            <option value="{{this.id}}" {{#if (equals this.id ../giftId)}}
                                     selected="selected"{{/if}}>{{this.name}}</option>
                         {{/each}}
                     </select>
@@ -20,7 +20,7 @@
 </ul>
 
 <h2>Dodaj dziecko do listy</h2>
-<form action="/children" method="post">
+<form action="/children"?method="PATCH" method="POST">
     <label for="">
         Imię
         <input type="text">
