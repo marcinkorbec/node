@@ -1,13 +1,15 @@
-const {Router} = require('express');
+const {Router} = require("express");
 const {GiftRecord} = require("../records/gift.record");
+const {ValidationError} = require("../utils/errors");
 
 const giftRouter = Router();
 
 giftRouter
+
 	.get('/', async (req, res) => {
 		const giftsList = await GiftRecord.listAll();
 
-		res.render('gift/list.hbs', {
+		res.render('gift/list', {
 			giftsList,
 		});
 	})
@@ -26,4 +28,4 @@ giftRouter
 
 module.exports = {
 	giftRouter,
-}
+};
