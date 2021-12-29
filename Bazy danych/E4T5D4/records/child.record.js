@@ -25,6 +25,7 @@ class ChildRecord {
 
 		return this.id;
 	}
+	
 	static async listAll() {
 		const [results] = await pool.execute("SELECT * FROM `child` ORDER BY `name` ASC");
 		return results.map(obj => new ChildRecord(obj));
