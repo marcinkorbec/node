@@ -3,7 +3,7 @@
     {{#each childrenList}}
     <li>
         <form action="/child/gift{{this.id}}?_method=PATCH" method="post">
-            <label for="">
+            <label>
                 {{this.name}}
                 <select name="giftId">
                     <option value="">Brak</option>

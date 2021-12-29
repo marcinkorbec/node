@@ -35,7 +35,6 @@ childRouter
 			if (gift.count <= await gift.countGivenGifts()) {
 				throw new ValidationError('Tego prezentu jest za mało.')
 			}
-			console.log();
 		}
 
 		child.giftId = gift === null ? null : gift.id
