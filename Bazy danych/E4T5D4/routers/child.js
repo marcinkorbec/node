@@ -40,7 +40,7 @@ childRouter
 		child.giftId = gift === null ? null : gift.id
 		await child.update();
 
-		res.redirect('/children');
+		res.redirect('/child');
 	});
 
 module.exports = {
