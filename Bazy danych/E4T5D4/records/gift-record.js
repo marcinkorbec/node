@@ -44,7 +44,7 @@ class GiftRecord {
 	}
 
 	async countGivenGifts() {
-		const [[{count}]] = await pool.execute("SELECT COUNT (*) AS `count` FROM `children` WHERE `giftId` = :id", {
+		const [[{count}]] = await pool.execute("SELECT COUNT (*) AS `count` FROM `child` WHERE `giftId` = :id", {
 			id: this.id,
 		});
 		console.log(result);

@@ -7,7 +7,7 @@ giftRouter
 	.get('/', async (req, res) => {
 		const giftsList = await GiftRecord.listAll();
 
-		res.render('gift/gift-list.hbs', {
+		res.render('gift/list.hbs', {
 			giftsList,
 		});
 	})
