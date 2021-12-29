@@ -3,7 +3,7 @@ require('express-async-errors');
 const methodOverride = require('method-override');
 const app = express();
 const hbs = require('express-handlebars');
-const { handleError } = require("./utils/error");
+const { handleError } = require("./utils/errors");
 const { homeRouter } = require("./routers/home");
 const { childRouter } = require("./routers/child");
 const { giftRouter } = require("./routers/gift");

@@ -1,5 +1,5 @@
 const {pool} = require("../utils/db");
-const {ValidationError} = require("../utils/error");
+const {ValidationError} = require("../utils/errors");
 const {v4: uuid} = require('uuid');
 
 class GiftRecord {

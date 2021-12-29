@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const {GiftRecord} = require("../records/gift-record");
+const {GiftRecord} = require("../records/gift.record");
 
 const giftRouter = Router();
 
