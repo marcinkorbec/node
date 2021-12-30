@@ -1,6 +1,5 @@
-const { basename, dirname, extname } = require('path');
+const { normalize, join } = require('path');
+const userPath = normalize(join(__dirname, process.argv[2]));
+console.log(userPath);
 
-const userPath = process.argv[2];
 
-console.log('dirname', dirname(userPath));
-console.log('basename', basename(userPath))
