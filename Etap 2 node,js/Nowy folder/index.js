@@ -38,3 +38,13 @@ const cp = exec('dir', {
 cp.on('close', () => {
     console.log('Finished!');
 })
+
+const { exec } = require('child_process');
+
+const cp = exec('dir', {
+    cwd: 'c:\\Users\\szymo\\Desktop\\MegaKurs\\Node\\'
+});
+cp.on('close', () => {
+    console.log('Finished!');
+})
+
