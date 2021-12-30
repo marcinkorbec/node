@@ -1,9 +1,9 @@
 <h2>Lista prezentów</h2>
 <ul>
     {{#each giftsList}}
-        <li>
-            {{this.name}} ({{this.count}} szt.)
-        </li>
+    <li>
+        {{this.name}} ({{this.count}} szt.)
+    </li>
     {{/each}}
 </ul>
 
@@ -17,5 +17,5 @@
         Ilość [szt.]
         <input name="count" type="number">
     </label>
-    <button class="btn btn-warning">Dodaj</button>
+    <button class="btn btn-light">Dodaj</button>
 </form>
