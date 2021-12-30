@@ -1,12 +1,14 @@
 const { rename } = require('fs').promises;
 (async () => {
+    const oldFile = process.argv[2];
+    const newFile = process.argv[3];
     try {
-        await rename('./megaK/txt/testZmiana.txt', './testPrzeniesienie.txt')
-    } catch (err) {
-        if (err.code === 'ENOENT') {
-            console.log('Given file name does not exist.');
+        await rename(oldFile, newFile)
+    } catch (e) {
+        if (e.code === 'ENOENT') {
+            console.log(`${oldFile} does not exist.`);
         } else {
-            console.log('Oh no!', err);
+            console.log('Unknown error:', e);
         }
     }
 })();
