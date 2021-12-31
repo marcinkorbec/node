@@ -43,10 +43,10 @@
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 
-// (async () => {
-// const data = await exec('ping 8.8.8.8');
-// console.log(data.stdout);
-// })();
+(async () => {
+    const data = await exec('ping 8.8.8.8');
+    console.log(data.stdout);
+})();
 
 const { pbkdf2 } = require('crypto');
 const SALT = 'SDA;FJ4K008191284310923&(!    &^ TFJ: D* Y#j; lrkfaj; lkfj; dlaisdfjm; asiojea; l83uvnhao * (YH & (&@^* !& YF *& ';
