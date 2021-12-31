@@ -9,11 +9,11 @@
 //     .on('error', error => console.log(`Watcher error ${error}`))
 //     .on('ready', () => console.log('Initial scan complete,Ready for changes'));
 
-// watch('.', {
-//     usePolling: true,
-//     awaitWriteFinish: true,
-//     ignoreInitial: true,
-// })
+watch('.', {
+    usePolling: true,
+    awaitWriteFinish: true,
+    ignoreInitial: true,
+})
 
 // const { exec } = require('child_process');
 // const cp = exec('dir');
