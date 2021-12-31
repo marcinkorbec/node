@@ -21,15 +21,15 @@
 //     console.log('Finished!');
 // })
 
-// const { exec } = require('child_process');
-// const cp = exec('dir', {
-//     env: {
-//         PATH: 'c:\\Users\\Marcin\\Desktop\\MegaKurs\\Node\\'
-//     }
-// });
-// cp.on('close', () => {
-//     console.log('Finished!');
-// })
+const { exec } = require('child_process');
+const cp = exec('dir', {
+    env: {
+        PATH: 'c:\\Users\\Marcin\\Desktop\\MegaKurs\\Node\\'
+    }
+});
+cp.on('close', () => {
+    console.log('Finished!');
+})
 
 const { exec } = require('child_process');
 const cp = exec('dir', {
