@@ -5,6 +5,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const config = require('./config');
+const mongoose = require('mongoose');
+
+mongoose.connect(config.db, {useNewUrlParser: true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
 
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
