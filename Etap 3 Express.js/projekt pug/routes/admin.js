@@ -13,20 +13,36 @@ router
 
 	/* GET home page. */
 	.get('/', (req, res) => {
-		const newsData = new News({
-			title: 'Tytuł testowy',
-			description: 'Opis'
-		})
 
-		newsData.save((error) => {
-			console.log(error);
-		});
 		console.log(req.session.admin);
 		res.render('admin/index', {title: 'Admin'});
 	})
 
 	.get('/news/add', (req, res) => {
-		res.render('admin/news-form', {title: 'Dodaj news'});
+		res.render('admin/news-form', {title: 'Dodaj news', body: {}, errors: {} });
+	})
+
+	.post('/news/add', (req, res) => {
+		const body = req.body;
+		const newsData = new News(body)
+		const errors = newsData.validateSync();
+
+		console.log(errors);
+
+		newsData.save((error) => {
+			if (error) {
+				res.render('admin/news-form', {
+					title: 'Dodaj news',
+					errors,
+					body,
+				});
+				return;
+			}
+
+			res.redirect('/admin')
+		});
+
+
 	})
 
 module.exports = router;
