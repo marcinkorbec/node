@@ -3,11 +3,11 @@ const router = express.Router();
 const News = require('../models/news')
 
 router
+	/* THIS Router is first, and always works first before the ones below do */
 	.all('*', (req, res, next) => {
 		if (!req.session.admin) {
 			res.redirect('/login')
 		}
-
 		next();
 	})
 
@@ -32,7 +32,6 @@ router
 		const body = req.body;
 		const newsData = new News(body)
 		const errors = newsData.validateSync();
-
 		console.log(errors);
 
 		newsData.save((error) => {
@@ -44,7 +43,7 @@ router
 				});
 				return;
 			}
-
+			
 			res.redirect('/admin')
 		});
 	})
