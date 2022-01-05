@@ -13,13 +13,17 @@ router
 
 	/* GET home page. */
 	.get('/', (req, res) => {
-
-		console.log(req.session.admin);
-		res.render('admin/index', {title: 'Admin'});
+		const data = News.find({}, (err, data) => {
+			console.log(data)
+			res.render('admin/index', {
+				title: 'Admin',
+				data,
+			});
+		});
 	})
 
 	.get('/news/add', (req, res) => {
-		res.render('admin/news-form', {title: 'Dodaj news', body: {}, errors: {} });
+		res.render('admin/news-form', {title: 'Dodaj news', body: {}, errors: {}});
 	})
 
 	.post('/news/add', (req, res) => {
