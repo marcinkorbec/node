@@ -22,10 +22,12 @@ router
 		});
 	})
 
+	/* GET news add form */
 	.get('/news/add', (req, res) => {
 		res.render('admin/news-form', {title: 'Dodaj news', body: {}, errors: {}});
 	})
 
+	// ADD news to database
 	.post('/news/add', (req, res) => {
 		const body = req.body;
 		const newsData = new News(body)
@@ -45,8 +47,13 @@ router
 
 			res.redirect('/admin')
 		});
+	})
 
-
+	/* DELETE news from database */
+	.get('/news/delete/:id', (req, res) => {
+		News.findByIdAndDelete(req.params.id, (err) => {
+			res.redirect('/admin')
+		})
 	})
 
 module.exports = router;

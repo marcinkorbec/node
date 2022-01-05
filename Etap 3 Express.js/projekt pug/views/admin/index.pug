@@ -2,16 +2,20 @@ extends ../layout
 
 block content
   h1= title
- table
+  nav
+    ul
+      li
+        a(href='/admin/news/add') Dodaj
+  table
    tr
     th id
     th Tytuł
-    th Data Dodania Artykułu
+    th Data Dodania
     th Akcja
-  each item, index in data
-    tr
-      td=index
-      td=item.title
-      td=item.created
-      td
-        a Usuń
+    each item, index in data
+      tr
+        td=index
+        td=item.title
+        td=item.date
+        td
+          a(href=`/admin/news/delete/${item._id}`) Usuń
