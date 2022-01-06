@@ -43,7 +43,6 @@ router
 				});
 				return;
 			}
-
 			res.redirect('/admin')
 		});
 	})
