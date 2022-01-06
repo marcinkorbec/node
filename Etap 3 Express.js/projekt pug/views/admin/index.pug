@@ -11,11 +11,13 @@ block content
     th id
     th Tytuł
     th Data Dodania
+    th Opis
     th Akcja
     each item, index in data
       tr
         td=index
         td=item.title
         td=item.date
+        td=item.description
         td
           a(href=`/admin/news/delete/${item._id}`) Usuń
