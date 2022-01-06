@@ -20,3 +20,11 @@ table, th, td {
 table {
   border-collapse: collapse;
 }
+
+article {
+    border: 1px solid lightgrey;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #eeedf3;
+}
