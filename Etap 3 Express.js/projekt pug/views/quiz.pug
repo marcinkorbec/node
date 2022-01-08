@@ -1,9 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  form(method='post')
+	h1= title
+	form(method='post')
 		p Jaka jest Twoja ulubiona pora roku?
-		ul
+			ul
 			each item in databaseSeasons
-				li
+					li
+						label=item.title
+						input(type='radio' name='quiz' value=item.id)
+			input(type='submit' value='Zagłosuj')
+			p Aby zobaczyć wyniki oddaj głos.
