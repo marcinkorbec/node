@@ -15,7 +15,7 @@ router
 	.post('/', (req, res) => {
 		const dataSend = req.bosy.quiz;
 
-		Quiz.find({}, (error, data) => {
+		Quiz.findOne({_id:}, (error, data) => {
 			res.render('quiz', {title: 'Quiz', data});
 		})
 	})
