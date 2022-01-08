@@ -2,21 +2,30 @@ const express = require('express');
 const router = express.Router();
 const Quiz = require('../models/quiz');
 
-	/* GET quiz page. */
+
 router
+	/* GET quiz page. */
 	.get('/', (req, res) => {
-		Quiz.find({}, (error, databaseSeasons) => {
-			console.log(databaseSeasons);
-			res.render('quiz', {title: 'Quiz', databaseSeasons});
+		const show = !req.session.vote;
+		Quiz.find({}, (error, data) => {
+			let sum = 0;
+			data.forEach((item) => {
+				sum += item.vote;
+			})
+			res.render('quiz', {title: 'Quiz', data, sum});
 		})
 	})
 
-	/* SEND votes to database Seasons. */
+	/* SEND votes from quiz page to database Seasons. */
 	.post('/', (req, res) => {
-		const dataSend = req.bosy.quiz;
+		const id = req.body.quiz;
 
-		Quiz.findOne({_id:}, (error, data) => {
-			res.render('quiz', {title: 'Quiz', data});
+		Quiz.findOne({_id: id}, (error, data) => {
+			data.vote = data.vote + 1;
+			data.save((err) => {
+				req.session.vote = 1;
+				res.redirect('/quiz');
+			});
 		})
 	})
 
