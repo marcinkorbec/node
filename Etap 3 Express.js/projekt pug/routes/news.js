@@ -16,7 +16,6 @@ router
 			console.log(data);
 			res.render('news', {title: 'News', data, search});
 		})
-
 	});
 
 module.exports = router;

@@ -14,7 +14,6 @@ router
 	/* GET home page. */
 	.get('/', (req, res) => {
 		const data = News.find({}, (err, data) => {
-			console.log(data)
 			res.render('admin/index', {
 				title: 'Admin',
 				data,
