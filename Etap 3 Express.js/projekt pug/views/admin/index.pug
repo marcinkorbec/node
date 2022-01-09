@@ -8,14 +8,12 @@ block content
         a(href='/admin/news/add') Dodaj
   table
    tr
-    th id
     th Tytuł
     th Data Dodania
     th Opis
     th Akcja
     each item, index in data
       tr
-        td=index
         td=item.title
         td=item.date
         td=item.description
