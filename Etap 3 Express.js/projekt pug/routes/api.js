@@ -2,18 +2,18 @@ const express = require('express');
 const router = express.Router();
 const News = require('../models/news')
 
-/* GET home page. */
+/* GET api. */
 router.get('/', (req, res ) => {
 	const search =  req.query.search || '';
+	const sort =  req.query.sort || -1;
 
 	const findNews = News
 		.find({ title: new RegExp(search.trim(), 'i') })
-		.sort({ date: -1 })
+		.sort({ date: sort})
 	;
 
 	findNews.exec((err, data) => {
-		console.log(data);
-		res.render('news', { title: 'News', data, search});
+		res.json(data);
 	})
 
 });

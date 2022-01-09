@@ -13,6 +13,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
+const apiRouter = require('./routes/api');
 const newsRouter = require('./routes/news');
 const quizRouter = require('./routes/quiz');
 const loginRouter = require("./routes/login");
@@ -43,6 +44,7 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
+app.use('/api', apiRouter);
 app.use('/news', newsRouter);
 app.use('/quiz', quizRouter);
 app.use('/login', loginRouter);
