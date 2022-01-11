@@ -1,3 +1,5 @@
-const abc: string = 'Hello, World!';
+const abc: string = 'Hello, World!!!!';
 
-console.log(abc);
+function foobar(a, b) {
+    return 2 * a;
+}

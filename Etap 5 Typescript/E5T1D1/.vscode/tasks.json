@@ -1,6 +1,6 @@
 {
-    "$comment": "Ignore the 'auto' declaration eror",
-    "$schema": "http://json-schema.org/draft-07/schema",
+   "$comment": "Ignore the 'auto' declaration eror",
+   "$schema": "http://json-schema.org/draft-07/schema",
     "version": "2.0.0",
     "tasks": [
         {
