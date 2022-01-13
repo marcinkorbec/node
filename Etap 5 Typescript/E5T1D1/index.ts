@@ -37,3 +37,5 @@ const personB: Person = {
     age: 122,
     isDeveloper: true,
 }
+
+console.log(personA.isDeveloper === personB.isDeveloper);
