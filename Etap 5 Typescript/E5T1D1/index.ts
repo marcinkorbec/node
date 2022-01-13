@@ -24,6 +24,8 @@ interface Person {
     age: number;
     isDeveloper: boolean;
     greet(): void;
+    dateOfBirth(): void;
+    myDate: Date = new Date();
 }
 
 
@@ -33,6 +35,10 @@ const personA: Person = {
     isDeveloper: true,
     greet() {
         console.log(`Hello ${this.name}`);
+    },
+    dateOfBirth() {
+        date: new Date()
+        console.log(`Date of birth ${this.name} is ${this.Date}` );        
     }
 };
 
@@ -45,11 +51,7 @@ const personB: Person = {
     }
 }
 
-function greet(person: Person) {
-    console.log(`Hello, ${person.name}`);
-}
 
-greet(personA);
 
 greet({
     name: 'Testerka',
