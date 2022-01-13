@@ -23,6 +23,7 @@ interface Person {
     name: string;
     age: number;
     isDeveloper: boolean;
+    greet(): void;
 }
 
 
@@ -30,12 +31,42 @@ const personA: Person = {
     name: 'Bartek',
     age: 123,
     isDeveloper: true,
+    greet() {
+        console.log(`Hello ${this.name}`);
+    }
 };
 
 const personB: Person = {
     name: 'Kuba',
     age: 122,
     isDeveloper: true,
+    greet: function (): void {
+        console.log(`Hello ${this.name}`);
+    }
 }
 
-console.log(personA.isDeveloper === personB.isDeveloper);
+function greet(person: Person) {
+    console.log(`Hello, ${person.name}`);
+}
+
+greet(personA);
+
+greet({
+    name: 'Testerka',
+    age: 34,
+    isDeveloper: true,
+    greet() {
+        console.log((`Hello ${this.name}`);
+    }
+});
+
+const personC: Person = {
+    name: 'Marta',
+    age: 23,
+    isDeveloper: true,
+    greet() {
+        console.log((`Hello ${this.name}`);
+    }
+}
+
+// console.log(personA.isDeveloper === personB.isDeveloper);
