@@ -18,4 +18,22 @@
 // console.log(add(2, 3));
 // console.log(add('Hello', ' World!'));
 
-const bool 
+
+interface Person {
+    name: string;
+    age: number;
+    isDeveloper: boolean;
+}
+
+
+const personA: Person = {
+    name: 'Bartek',
+    age: 123,
+    isDeveloper: true,
+};
+
+const personB: Person = {
+    name: 'Kuba',
+    age: 122,
+    isDeveloper: true,
+}
