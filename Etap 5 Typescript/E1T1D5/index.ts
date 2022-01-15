@@ -62,8 +62,24 @@ interface Human {
 
 interface HistoryEntry {
     createdAt: Date;
+    event: string;
 }
 
-interface History {
+interface Historic {
     history: HistoryEntry[];
+}
+
+class User implements Human, Historic {
+    length: number;
+    history: HistoryEntry[];
+    name: string;
+    surname: string;
+    age: number;
+
+    constructor(age: number, name: string, surname: string, age: number, ) {
+        this.name = name;
+        this.age = age;
+        this.surname = surname;
+        
+    }
 }
