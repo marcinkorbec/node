@@ -29,22 +29,41 @@
 // console.log(kuba);
 
 
+// interface Human {
+//     name: string;
+//     surname: string;
+//     age: number;
+//     achievements?: string;
+// }
+
+// interface HumanWithRole extends Human {
+//     role: string;
+// }
+
+// class User implements HumanWithRole {
+//     role: string;
+//     name: string;
+//     surname: string;
+//     age: number;
+
+//     constructor(age: number, name: string, role: string) {
+//         this.name = name;
+//         this.age = age;
+//         this.role = role;
+//     }
+// }
+
+
 interface Human {
     name: string;
     surname: string;
     age: number;
-    achievements?: string;
 }
 
-interface HumanWithRole extends Human {
-    role: string;
+interface HistoryEntry {
+    createdAt: Date;
 }
 
-class User implements HumanWithRole {
-    role: string;
-    name: string;
-    surname: string;
-    age: number;
-    achievements?: string;
-
+interface History {
+    history: HistoryEntry[];
 }
