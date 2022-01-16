@@ -94,4 +94,7 @@ class User implements Human, Historic {
 
 const person = new User ('Marcin', 'Kowalski', 34 );
 person.showHistory();
-person.addHistory
+person.addHistory({
+    createdAt: new Date(),
+    event: 'Zalogowano.',
+})
