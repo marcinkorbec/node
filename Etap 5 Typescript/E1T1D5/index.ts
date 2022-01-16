@@ -71,7 +71,7 @@ interface Historic {
 
 class User implements Human, Historic {
     length: number;
-    history: HistoryEntry[];
+    history: HistoryEntry[]; // Coś trzeba będzie z zrobić z tym
     name: string;
     surname: string;
     age: number;
@@ -82,4 +82,14 @@ class User implements Human, Historic {
         this.surname = surname;
         
     }
+
+    showHistory(): void {
+
+    }
+
+    addHistory(entry): void {
+
+    }
 }
+
+const person = new user 
