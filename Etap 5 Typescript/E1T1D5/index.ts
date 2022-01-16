@@ -76,7 +76,7 @@ class User implements Human, Historic {
     surname: string;
     age: number;
 
-    constructor(age: number, name: string, surname: string, age: number, ) {
+    constructor(name: string, surname: string, age: number, ) {
         this.name = name;
         this.age = age;
         this.surname = surname;
@@ -87,9 +87,11 @@ class User implements Human, Historic {
 
     }
 
-    addHistory(entry): void {
+    // addHistory(entry): void {
 
-    }
+    // }
 }
 
-const person = new user 
+const person = new User ('Marcin', 'Kowalski', 34 );
+person.showHistory();
+person.addHistory
