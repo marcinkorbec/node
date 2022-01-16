@@ -76,25 +76,46 @@ class User implements Human, Historic {
     surname: string;
     age: number;
 
-    constructor(name: string, surname: string, age: number, ) {
+    constructor(name: string, surname: string, age: number,) {
         this.name = name;
         this.age = age;
         this.surname = surname;
-        
+
     }
 
     showHistory(): void {
 
     }
 
-    // addHistory(entry): void {
+    addHistory(entry): void {
 
-    // }
+    }
 }
 
-const person = new User ('Marcin', 'Kowalski', 34 );
-person.showHistory();
+const person = new User('Marcin', 'Kowalski', 34);
+person.showHistory(); // []
 person.addHistory({
     createdAt: new Date(),
     event: 'Zalogowano.',
 })
+person.showHistory();
+
+
+interface MyInterface {
+    barfoo: string;
+    foobar(a: number, b: number): number;
+}
+
+class B implements MyInterface {
+    barfoo: string;
+    foobar(a: number, b: number): number {
+        return 1;
+    }
+
+}
+
+class A extends B {
+    barfoo: string;
+}
+
+const obj = new MyInterface();
