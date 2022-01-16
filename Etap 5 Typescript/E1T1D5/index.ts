@@ -70,7 +70,6 @@ interface Historic {
 }
 
 class User implements Human, Historic {
-    length: number;
     history: HistoryEntry[]; // Coś trzeba będzie z zrobić z tym
     name: string;
     surname: string;
@@ -80,15 +79,15 @@ class User implements Human, Historic {
         this.name = name;
         this.age = age;
         this.surname = surname;
-
+        this.history = [];
     }
 
     showHistory(): void {
-
+        console.log(this.history);
     }
 
-    addHistory(entry): void {
-
+    addHistory(entry: HistoryEntry): void {
+        this.history.push(entry);
     }
 }
 
@@ -101,21 +100,21 @@ person.addHistory({
 person.showHistory();
 
 
-interface MyInterface {
-    barfoo: string;
-    foobar(a: number, b: number): number;
-}
+// interface MyInterface {
+//     barfoo: string;
+//     foobar(a: number, b: number): number;
+// }
 
-class B implements MyInterface {
-    barfoo: string;
-    foobar(a: number, b: number): number {
-        return 1;
-    }
+// class B implements MyInterface {
+//     barfoo: string;
+//     foobar(a: number, b: number): number {
+//         return 1;
+//     }
 
-}
+// }
 
-class A extends B {
-    barfoo: string;
-}
+// class A extends B {
+//     barfoo: string;
+// }
 
-const obj = new MyInterface();
+// const obj = new MyInterface();
