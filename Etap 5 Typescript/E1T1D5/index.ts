@@ -66,11 +66,11 @@ interface HistoryEntry {
 }
 
 interface Historic {
-    history: HistoryEntry[];
+    history2: HistoryEntry[];
 }
 
 class User implements Human, Historic {
-    history: HistoryEntry[]; // Coś trzeba będzie z zrobić z tym
+    history2: HistoryEntry[] = []; // Coś trzeba będzie z zrobić z tym
     name: string;
     surname: string;
     age: number;
@@ -79,15 +79,14 @@ class User implements Human, Historic {
         this.name = name;
         this.age = age;
         this.surname = surname;
-        this.history = [];
     }
 
     showHistory(): void {
-        console.log(this.history);
+        console.log(this.history2);
     }
 
     addHistory(entry: HistoryEntry): void {
-        this.history.push(entry);
+        this.history2.push(entry);
     }
 }
 
