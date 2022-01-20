@@ -37,7 +37,7 @@ const data:  Person[] = [
     },
     {
         name: 'Krzysztof',
-        points: 500,
+        points: 1500,
     },
     {
         name: 'Ola',
@@ -58,14 +58,25 @@ function totalPoints(ar:  Person[]) : number {
 }
 
 function personWithMostPoints(ar:  Person[]): Person {
-    return ar.reduce((prev, curr) => {
-        if(prev.points < curr.points) {
-            return curr;
-        } else {
-            return prev;
+    // return ar.reduce((prev, curr) => {
+        // if(prev.points < curr.points) {
+        //     return curr;
+        // } else {
+        //     return prev;
+        // }
+    return ar.sort(function(a, b) {
+        if ( a.points < b.points ) {
+            return 1;
         }
-    });
+        else if ( a.points > b.points ) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    })[0];
 }
+
 
 console.log(totalPoints(data))
 incPoints(data[1]);
