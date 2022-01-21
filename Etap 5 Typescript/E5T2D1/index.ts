@@ -108,48 +108,150 @@
 // }
 
 /* ZADANIE 4 */
-type sum = '+';
-type subtract = "-";
-type multiply = "*";
-type divide = "/";
 
-
-
-interface CurrentType {
-    a: string | number;
-    b?: string | number;
-    sign?: sum | subtract | multiply | divide;
-}
-
-interface SingleData {
-    a: string | number;
-    sign: "++" | "--"
-}
-
-const a: CurrentType = {
-    a: 1,
-    b: 2,
-    sign: '+',
-};
-
-const b: CurrentType = {
-    a: 1,
-    b: 2,
-};
-
-const c: CurrentType = {
-    a: '1',
-    b: '2',
-    sign: '-',
-};
-
-const d: CurrentType | SingleData= {
-    a: 1,
-    sign: '++',
-};
+// type Sign = '+'|"-"|"/"|"*";
+//
+// interface DoubleData {
+//     a: string | number;
+//     b?: string | number;
+//     sign?: Sign;
+// }
+//
+// interface SingleData {
+//     a: string | number;
+//     sign: "++" | "--"
+// }
+//
+// type CorrectType = SingleData | DoubleData;
+//
+// const a: CorrectType = {
+//     a: 1,
+//     b: 2,
+//     sign: '+',
+// };
+//
+// const b: CorrectType = {
+//     a: 1,
+//     b: 2,
+// };
+//
+// const c: CorrectType = {
+//     a: '1',
+//     b: '2',
+//     sign: '-',
+// };
+//
+// const d: CorrectType | SingleData= {
+//     a: 1,
+//     sign: '++',
+// };
 
 // Zmiana: zmień teraz typ tak, aby znak mógł być tylko +, -, * lub /
 
 // Zmiana: stwórz dokładne typy tak, by w przypadku posiadania tylko 1 danej (a) można było na niej wykonać ++ i --, ale nie w przypadku dwóch i na odwrót
 
 // Zmień program w taki sposób, aby do operacji używało się enumów, a nie stringów
+
+// enum TwoNumberSign {
+//     Add,
+//     Subtract,
+//     Multiply,
+//     Divide,
+// }
+//
+// enum OneNumberSign {
+//     Increment,
+//     Decrement,
+// }
+//
+// interface DoubleData {
+//     a: string | number;
+//     b?: string | number;
+//     sign?: TwoNumberSign;
+// }
+//
+// interface SingleData {
+//     a: string | number;
+//     sign: OneNumberSign
+// }
+//
+// type CorrectType = SingleData | DoubleData;
+//
+// const a: CorrectType = {
+//     a: 1,
+//     b: 2,
+//     sign: TwoNumberSign.Add,
+// };
+//
+// const b: CorrectType = {
+//     a: 1,
+//     b: 2,
+// };
+//
+// const c: CorrectType = {
+//     a: '1',
+//     b: '2',
+//     sign: TwoNumberSign.Divide,
+// };
+//
+// const d: CorrectType | SingleData= {
+//     a: 1,
+//     sign: OneNumberSign.Increment,
+// };
+//
+// function calc({a, b, sign}: DoubleData) {
+//     switch (sign) {
+//         case TwoNumberSign.Add:
+//             console.log(Number(a) + Number(b));
+//             break;
+//         case TwoNumberSign.Subtract:
+//             console.log(Number(a) - Number(b));
+//             break;
+//         case TwoNumberSign.Multiply:
+//             console.log(Number(a) * Number(b));
+//             break;
+//         case TwoNumberSign.Divide:
+//             console.log(Number(a) / Number(b));
+//             break;
+//     }
+// }
+//
+// function calc2({a, sign}: SingleData) {
+//     switch (sign) {
+//         case OneNumberSign.Decrement:
+//             console.log(Number(a) - Number(a));
+//             break;
+//         case OneNumberSign.Increment:
+//             console.log(Number(a) + Number(a))
+//             break;
+//     }
+// }
+//
+// calc(a);
+// calc(b);
+// calc(c);
+// calc2(d);
+
+/* ZADANIE 5 */
+
+// // Uzupełnij typy - w jaki sposób możesz to zrobić? Czy musisz coś jeszcze modyfikować?
+//
+// interface Product {
+//     name: string;
+//     count: number;
+//     isDegradable: boolean;
+// }
+//
+// const product: Product = {
+//     name: 'Opakowanie zbiorcze',
+//     count: 1000,
+//     isDegradable: true,
+// };
+//
+// function getProductProp(obj: Product, propName: keyof Product): string | number | boolean {
+//     return obj[propName];
+// }
+//
+// const count = getProductProp(product, 'count') as number;
+// const degraded = getProductProp(product, 'isDegradable') as boolean;
+// console.log(`${count.toFixed(2)} ${degraded ? 'degraded' : 'undegraded'}`);
