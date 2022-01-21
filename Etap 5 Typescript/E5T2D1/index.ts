@@ -87,23 +87,69 @@
 
 // Nie zmieniaj poniższego kodu OPRÓCZ dodawania odpowiednich typów
 
-{
-    class User {
-        firstName: string;
+// {
+//     class User {
+//         firstName: string;
+//         constructor(firstName: string) {
+//             this.firstName = firstName;
+//         }
+//     }
+//
+//     const json: string = '{"firstName":"Jan"}';
+//     const {firstName} = JSON.parse(json) as User;
+//
+//     let user: string | User = firstName === '' ? '' : `User ${firstName}`;
+//
+//     if (user !== '') {
+//         user = new User(user);
+//     }
+//
+//     console.log(user);
+// }
 
-        constructor(firstName: string) {
-            this.firstName = firstName;
-        }
-    }
+/* ZADANIE 4 */
+type sum = '+';
+type subtract = "-";
+type multiply = "*";
+type divide = "/";
 
-    const json: string = '{"firstName":"Jan"}';
-    const {firstName} = JSON.parse(json) as User;
 
-    let user: string | User = firstName === '' ? '' : `User ${firstName}`;
 
-    if (user !== '') {
-        user = new User(user);
-    }
-
-    console.log(user);
+interface CurrentType {
+    a: string | number;
+    b?: string | number;
+    sign?: sum | subtract | multiply | divide;
 }
+
+interface SingleData {
+    a: string | number;
+    sign: "++" | "--"
+}
+
+const a: CurrentType = {
+    a: 1,
+    b: 2,
+    sign: '+',
+};
+
+const b: CurrentType = {
+    a: 1,
+    b: 2,
+};
+
+const c: CurrentType = {
+    a: '1',
+    b: '2',
+    sign: '-',
+};
+
+const d: CurrentType | SingleData= {
+    a: 1,
+    sign: '++',
+};
+
+// Zmiana: zmień teraz typ tak, aby znak mógł być tylko +, -, * lub /
+
+// Zmiana: stwórz dokładne typy tak, by w przypadku posiadania tylko 1 danej (a) można było na niej wykonać ++ i --, ale nie w przypadku dwóch i na odwrót
+
+// Zmień program w taki sposób, aby do operacji używało się enumów, a nie stringów
