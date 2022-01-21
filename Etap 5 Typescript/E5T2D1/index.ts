@@ -24,61 +24,86 @@
 
 /* ZADANIE 2 */
 
-interface Person {
-    name: string;
-    points: number;
-}
+// interface Person {
+//     name: string;
+//     points: number;
+// }
+//
+//
+// const data:  Person[] = [
+//     {
+//         name: 'Anna',
+//         points: 1000,
+//     },
+//     {
+//         name: 'Krzysztof',
+//         points: 1500,
+//     },
+//     {
+//         name: 'Ola',
+//         points: 0,
+//     },
+//     {
+//         name: 'Marek',
+//         points: 0,
+//     },
+// ];
+//
+// function incPoints(obj: Person) :void {
+//     obj.points++;
+// }
+//
+// function totalPoints(ar:  Person[]) : number {
+//    return ar.reduce((prev, curr) => prev + curr.points, 0);
+// }
+//
+// function personWithMostPoints(ar:  Person[]): Person {
+//     // return ar.reduce((prev, curr) => {
+//         // if(prev.points < curr.points) {
+//         //     return curr;
+//         // } else {
+//         //     return prev;
+//         // }
+//     return ar.sort(function(a, b) {
+//         if ( a.points < b.points ) {
+//             return 1;
+//         }
+//         else if ( a.points > b.points ) {
+//             return -1;
+//         }
+//         else {
+//             return 0;
+//         }
+//     })[0];
+// }
+//
+//
+// console.log(totalPoints(data))
+// incPoints(data[1]);
+// console.log(totalPoints(data));
+// console.log(personWithMostPoints(data))
 
+/* ZADANIE 3 */
 
-const data:  Person[] = [
-    {
-        name: 'Anna',
-        points: 1000,
-    },
-    {
-        name: 'Krzysztof',
-        points: 1500,
-    },
-    {
-        name: 'Ola',
-        points: 0,
-    },
-    {
-        name: 'Marek',
-        points: 0,
-    },
-];
+// Nie zmieniaj poniższego kodu OPRÓCZ dodawania odpowiednich typów
 
-function incPoints(obj: Person) :void {
-    obj.points++;
-}
+{
+    class User {
+        firstName: string;
 
-function totalPoints(ar:  Person[]) : number {
-   return ar.reduce((prev, curr) => prev + curr.points, 0);
-}
-
-function personWithMostPoints(ar:  Person[]): Person {
-    // return ar.reduce((prev, curr) => {
-        // if(prev.points < curr.points) {
-        //     return curr;
-        // } else {
-        //     return prev;
-        // }
-    return ar.sort(function(a, b) {
-        if ( a.points < b.points ) {
-            return 1;
+        constructor(firstName: string) {
+            this.firstName = firstName;
         }
-        else if ( a.points > b.points ) {
-            return -1;
-        }
-        else {
-            return 0;
-        }
-    })[0];
+    }
+
+    const json: string = '{"firstName":"Jan"}';
+    const {firstName} = JSON.parse(json) as User;
+
+    let user: string | User = firstName === '' ? '' : `User ${firstName}`;
+
+    if (user !== '') {
+        user = new User(user);
+    }
+
+    console.log(user);
 }
-
-
-console.log(totalPoints(data))
-incPoints(data[1]);
-console.log(totalPoints(data));
-console.log(personWithMostPoints(data))
