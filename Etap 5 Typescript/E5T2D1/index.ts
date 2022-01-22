@@ -309,6 +309,10 @@
 // 2. Usuń błędy w wyznaczonym miejscu.
 // *3. Napisz interfejs, który będzie w całości opisywał klasę Bookmarks, a następnie zrób tak, żeby klasa Bookmarks implementowała ten interfejs.
 
+
+
+
+
 // Nie zmieniaj w klasie nic oprócz typów!
 class Bookmarks {
     constructor() {
