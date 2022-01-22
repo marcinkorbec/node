@@ -255,3 +255,50 @@
 // const count = getProductProp(product, 'count') as number;
 // const degraded = getProductProp(product, 'isDegradable') as boolean;
 // console.log(`${count.toFixed(2)} ${degraded ? 'degraded' : 'undegraded'}`);
+
+/* ZADANIE 6 */
+
+// Optypuj poniższy kod, następie napisz pętlę, która będzie wypisywała wartość po kolei wszystkich elementów pojedynczo w konsoli.
+// Spróbuj użyć różnych typów pętli. //forEach, for...i, for...in, for...of
+// Zwróć uwagę na to jak edytor sprawnie podpowiada Ci w pracy.
+// W kodzie jest błąd - powinno to być widać i łatwo możesz go naprawić.
+
+interface Item {
+    name: string;
+    count: number;
+    pricePerOne: number;
+    vat: number
+}
+
+function showItems(items: Item[]):void { // Ew. typy dodaj wyłącznie tutaj
+    items.forEach(items => {
+        console.log(items);
+        })
+}
+
+showItems([
+    {
+        name: 'Pomarańcze luz',
+        count: 1.2,
+        pricePerOne: 1,
+        vat: 0,
+    },
+    {
+        name: 'Opony komplet',
+        count: 1,
+        pricePerOne: 800,
+        vat: 23,
+    },
+    {
+        name: 'MP3 Player Manta 256MB',
+        count: 1,
+        pricePerOne: 75,
+        vat: 23,
+    },
+    {
+        name: 'Baton Mega "Kursowy Baton Masło Orzechowe"',
+        count: 5,
+        pricePerOne: 2,
+        vat: 23,
+    },
+]);
