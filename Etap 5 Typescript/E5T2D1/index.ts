@@ -314,24 +314,33 @@
 
 
 // Nie zmieniaj w klasie nic oprócz typów!
-class Bookmarks {
+interface List {
+    list: string[]; //tablica stringów
+    first(): string | undefined;
+    last():string;
+    add(url:string): void;
+    remove(urlOrAll: string | true):void
+}
+
+class Bookmarks implements List{
+    list: string[];
     constructor() {
         this.list = [];
     }
 
-    first() {
+    first(): string | undefined {
         return this.list[0];
     }
 
-    last() {
+    last():string {
         return this.list[this.list.length - 1];
     }
 
-    add(url) {
+    add(url:string): void {
         this.list.push(url);
     }
 
-    remove(urlOrAll) {
+    remove(urlOrAll: string | true):void {
         if (urlOrAll === true) {
             this.list = [];
         } else {
@@ -343,8 +352,11 @@ class Bookmarks {
 // Poniższy kod możesz zmieniać - tak, aby miał typy, sens i nie wywalał błędów :)
 const favorites = new Bookmarks();
 
-function createLink(bookmark) {
-    return `<a href="${bookmark}">${bookmark.substr(bookmark.indexOf('//')+2)}</a>`;
+function createLink(bookmark: string | undefined):string {
+    if (!bookmark) {
+        return '';
+    }
+    return `<a href="${bookmark}">${bookmark.substring(bookmark.indexOf('//')+2)}</a>`;
 }
 
 favorites.add('http://wp.pl');
