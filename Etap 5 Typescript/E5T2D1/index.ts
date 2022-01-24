@@ -310,9 +310,6 @@
 // *3. Napisz interfejs, który będzie w całości opisywał klasę Bookmarks, a następnie zrób tak, żeby klasa Bookmarks implementowała ten interfejs.
 
 
-
-
-
 // // Nie zmieniaj w klasie nic oprócz typów!
 // interface List {
 //     list: string[]; //tablica stringów
@@ -370,32 +367,45 @@
 
 class Animal {
     constructor(
-        private speciesName: string) {};
+        private speciesName: string) {
+    };
 }
 
-class Human extends Animal{
-    private readonly lifeEvents: string[] = [];
-    private isAlive:boolean = true;
+const 
+
+class Human extends Animal {
+    private lifeEventsList: string[] = [];
+    private isAlive: boolean = true;
 
     constructor(
-        private readonly name:string,
-        private readonly surname:string
+        private readonly name: string,
+        private readonly surname: string
     ) {
         super('human');
     }
 
     addLifeEvent(eventName: string): void {
-        this.lifeEvents.push(eventName);
-        this.checkPulse();
+        this.lifeEventsList.push(eventName);
     }
 
-    getlifeEvents():string[] {
-        return this.lifeEvents.filter(s => s !== 'Kompromitacja');
+    get lifeEvents(): string[] {
+        return this.lifeEventsList.filter(s => s !== 'Kompromitacja');
     }
 
+    get alive(): boolean {
+        return this.isAlive;
+    }
+
+    set alive(newAlive: boolean) {
+        if (!this.isAlive && newAlive) {
+            throw new Error('Nie jesteś Bogiem');
+        }
+        this.isAlive = newAlive;
+    }
 }
 
-const bartek = new Human('Bartek', "Borowczyk");
-bartek.addLifeEvent('Urodziny');
-bartek.addLifeEvent('Kompromitacja');
-bartek.addLifeEvent('Nowe życie');
+const adolf = new Human('Adolf', 'H.');
+console.log(adolf.alive);
+adolf.alive = false;
+console.log(adolf.alive);
+adolf.alive = true;
