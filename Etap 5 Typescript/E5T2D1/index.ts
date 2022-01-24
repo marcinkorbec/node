@@ -369,7 +369,8 @@
 // console.log('This should be true if list is empty', !favorites.first());
 
 class Animal {
-    constructor(public speciesName: string) {};
+    constructor(
+        private speciesName: string) {};
 }
 
 class Human extends Animal{
@@ -392,8 +393,9 @@ class Human extends Animal{
         return this.lifeEvents.filter(s => s !== 'Kompromitacja');
     }
 
-    private checkPulse() {
-
-    }
 }
 
+const bartek = new Human('Bartek', "Borowczyk");
+bartek.addLifeEvent('Urodziny');
+bartek.addLifeEvent('Kompromitacja');
+bartek.addLifeEvent('Nowe życie');
