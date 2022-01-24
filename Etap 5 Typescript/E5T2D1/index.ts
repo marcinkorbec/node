@@ -377,6 +377,6 @@ class Human extends Animal{
     isAlive:boolean = true;
 
     constructor( public name:string, public surname:string) {
-        super('human')
+        super('human');
     }
 }
