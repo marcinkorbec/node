@@ -1,4 +1,4 @@
-/* ZADANIE 1 */
+{/* ZADANIE 1 */
 
 // function pricify(
 //     price: number,
@@ -365,47 +365,61 @@
 // favorites.remove(true); // This should remove all
 // console.log('This should be true if list is empty', !favorites.first());
 
-abstract class Animal {
-    constructor(
-        private speciesName: string) {
-    };
+// abstract class Animal {
+//     constructor(
+//         private speciesName: string) {
+//     };
+// }
+//
+// const duck = new Animal('duck')
+//
+// class Human extends Animal {
+//     private lifeEventsList: string[] = [];
+//     private isAlive: boolean = true;
+//
+//     constructor(
+//         private readonly name: string,
+//         private readonly surname: string
+//     ) {
+//         super('human');
+//     }
+//
+//     addLifeEvent(eventName: string): void {
+//         this.lifeEventsList.push(eventName);
+//     }
+//
+//     get lifeEvents(): string[] {
+//         return this.lifeEventsList.filter(s => s !== 'Kompromitacja');
+//     }
+//
+//     get alive(): boolean {
+//         return this.isAlive;
+//     }
+//
+//     set alive(newAlive: boolean) {
+//         if (!this.isAlive && newAlive) {
+//             throw new Error('Nie jesteś Bogiem');
+//         }
+//         this.isAlive = newAlive;
+//     }
+// }
+//
+// const adolf = new Human('Adolf', 'H.');
+// console.log(adolf.alive);
+// adolf.alive = false;
+// console.log(adolf.alive);
+// adolf.alive = true;
 }
 
-const duck = new Animal('duck')
-
-class Human extends Animal {
-    private lifeEventsList: string[] = [];
-    private isAlive: boolean = true;
-
-    constructor(
-        private readonly name: string,
-        private readonly surname: string
-    ) {
-        super('human');
-    }
-
-    addLifeEvent(eventName: string): void {
-        this.lifeEventsList.push(eventName);
-    }
-
-    get lifeEvents(): string[] {
-        return this.lifeEventsList.filter(s => s !== 'Kompromitacja');
-    }
-
-    get alive(): boolean {
-        return this.isAlive;
-    }
-
-    set alive(newAlive: boolean) {
-        if (!this.isAlive && newAlive) {
-            throw new Error('Nie jesteś Bogiem');
-        }
-        this.isAlive = newAlive;
-    }
+async function getToDo(id: number) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
+    return await response.json();
 }
 
-const adolf = new Human('Adolf', 'H.');
-console.log(adolf.alive);
-adolf.alive = false;
-console.log(adolf.alive);
-adolf.alive = true;
+(async () => {
+    const todo = await getToDo(1);
+    console.log(todo)
+})();
+
+
+const ar: Array<number> = [1,2,3,4]
