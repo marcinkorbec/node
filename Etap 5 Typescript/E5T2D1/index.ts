@@ -365,13 +365,13 @@
 // favorites.remove(true); // This should remove all
 // console.log('This should be true if list is empty', !favorites.first());
 
-class Animal {
+abstract class Animal {
     constructor(
         private speciesName: string) {
     };
 }
 
-const 
+const duck = new Animal('duck')
 
 class Human extends Animal {
     private lifeEventsList: string[] = [];
