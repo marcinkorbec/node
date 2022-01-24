@@ -373,10 +373,27 @@ class Animal {
 }
 
 class Human extends Animal{
-    lifeEvents: string[] = [];
-    isAlive:boolean = true;
+    private readonly lifeEvents: string[] = [];
+    private isAlive:boolean = true;
 
-    constructor( public name:string, public surname:string) {
+    constructor(
+        private readonly name:string,
+        private readonly surname:string
+    ) {
         super('human');
     }
+
+    addLifeEvent(eventName: string): void {
+        this.lifeEvents.push(eventName);
+        this.checkPulse();
+    }
+
+    getlifeEvents():string[] {
+        return this.lifeEvents.filter(s => s !== 'Kompromitacja');
+    }
+
+    private checkPulse() {
+
+    }
 }
+
