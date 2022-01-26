@@ -1,5 +1,8 @@
-
-
+// import {TodoApi, Gender} from "./types/index";
+//
+//
+//
+//
 //
 // (async () => {
 //     const todo = new TodoApi();
@@ -19,8 +22,9 @@
 //         completed: false,
 //     }));
 // })();
-
-
-import {} from "./types/gender";
-
+//
 // console.log(Gender[Gender.Women]);
+
+import {addDays} from "date-fns";
+
+console.log(addDays(new Date(), 30));
