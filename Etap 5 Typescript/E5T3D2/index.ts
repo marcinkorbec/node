@@ -56,6 +56,6 @@
 // })();
 
 
-import {Gender} from "./types/gender";
+import {} from "./types/gender";
 
 console.log(Gender[Gender.Women]);
