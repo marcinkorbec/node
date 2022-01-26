@@ -58,4 +58,4 @@
 
 import {} from "./types/gender";
 
-console.log(Gender[Gender.Women]);
+// console.log(Gender[Gender.Women]);
