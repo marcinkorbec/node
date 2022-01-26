@@ -55,14 +55,7 @@
 //     }));
 // })();
 
-enum ObjectType {
-    Women,
-    Men,
-    Xyz ,
-}
 
-const allPossibilities = Object
-    .keys(ObjectType)
-    .filter((key => Number.isNaN(Number(key))));
+import {Gender} from "./types/gender";
 
-console.log(allPossibilities)
+console.log(Gender[Gender.Women]);
