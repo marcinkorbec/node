@@ -63,3 +63,5 @@ class Test {
 
 const test = new Test();
 test.push();
+test.destructuring();
+test.last();
