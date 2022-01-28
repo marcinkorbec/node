@@ -50,7 +50,6 @@ export class Arena {
             console.log(attacked.getName(), 'goes to Valhalla');
             return attacker;
         }
-
         return null;
     }
 }
