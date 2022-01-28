@@ -1,4 +1,4 @@
-const { EventEmitter } = require('events');
+import { EventEmitter } from 'events';
 
 class Restaurant extends EventEmitter {
     /**
@@ -53,6 +53,6 @@ class Restaurant extends EventEmitter {
     }
 }
 
-module.exports = {
+export {
   Restaurant,
 };
