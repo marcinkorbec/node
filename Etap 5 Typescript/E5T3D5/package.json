@@ -1,10 +1,9 @@
 {
-  "name": "e5t1d1",
+  "name": "e5t3d5",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node index.ts",
     "start:dev": "tsnd index.ts"
   },
