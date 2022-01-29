@@ -1,17 +1,12 @@
 import {Warrior} from "./warrior";
 
-interface Arena1 {
-    warrior1: Warrior;
-    warrior2: Warrior;
-    activeWarrior:number;
-}
-
 export class Arena {
-    warrior1: Warrior;
-    warrior2: Warrior;
     activeWarrior:number
 
-    constructor(warrior1:Warrior, warrior2:Warrior) {
+    constructor(
+        public warrior1:Warrior,
+        public warrior2:Warrior
+    ) {
         if (!(warrior1 instanceof Warrior)) {
             throw new Error('warrior1 must be an instance of Warrior class!');
         }
@@ -25,17 +20,17 @@ export class Arena {
         this.activeWarrior = 2;
     }
 
-    fight() {
+    fight(): Warrior {
         const attacker = this.activeWarrior === 1 ? this.warrior1 : this.warrior2;
         const attacked = this.activeWarrior === 1 ? this.warrior2 : this.warrior1;
 
-        const attackingHitPoints = attacker.getHitPoints();
-        const attackedOldHp = attacked.getHp();
+        const attackingHitPoints = attacker.HitPoints;
+        const attackedOldHp = attacked.Hp;
         const attackedNewHp = attackedOldHp - attackingHitPoints;
 
-        console.log(attacker.getName(), 'is attacking', attacked.getName(), 'and how he has', attackedNewHp, 'hp');
+        console.log(attacker.Name, 'is attacking', attacked.Name, 'and how he has', attackedNewHp, 'hp');
 
-        attacked.setHp(attackedNewHp);
+        attacked.Hp = attackedNewHp;
 
         this.activeWarrior = this.activeWarrior === 1 ? 2 : 1;
         /**
@@ -47,7 +42,7 @@ export class Arena {
          */
 
         if (attackedNewHp <= 0) {
-            console.log(attacked.getName(), 'goes to Valhalla');
+            console.log(attacked.Name, 'goes to Valhalla');
             return attacker;
         }
         return null;

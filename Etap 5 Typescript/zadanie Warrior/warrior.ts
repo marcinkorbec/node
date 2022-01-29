@@ -1,33 +1,24 @@
-// interface Warriors {
-//     name: string,
-//     hitPoints: number,
-//     hp: number,
-// }
-
 export class Warrior {
-    name: string
-    hitPoints: number
-    hp: number
 
-    public constructor(name: string, hitPoints: number, hp:number) {
-        // this.name = name;
-        // this.hitPoints = hitPoints;
-        // this.hp = hp;
-    }
+    constructor(
+        public name: string,
+        public hitPoints: number,
+        public hp:number
+    ) {};
 
-    setHp(hp: number): void {
+    set Hp(hp: number) {
         this.hp = hp;
     }
 
-    getHp(): number {
+    get Hp(): number {
         return this.hp;
     }
 
-    getHitPoints(): number {
+    get HitPoints(): number {
         return this.hitPoints;
     }
 
-    getName(): string {
+    get Name(): string {
         return this.name;
     }
 

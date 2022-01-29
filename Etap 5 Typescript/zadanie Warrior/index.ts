@@ -12,4 +12,4 @@ do {
 } while (winner === null);
 
 winner.levelUp();
-console.log(winner.getName(), 'is a winner!');
+console.log(winner.Name, 'is a winner!');
