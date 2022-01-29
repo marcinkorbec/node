@@ -1,5 +1,4 @@
 export class Warrior {
-
     constructor(
         public name: string,
         public hitPoints: number,
