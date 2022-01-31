@@ -11,7 +11,7 @@ const COOKIE_ADDONS = {
 	kokos: 10,
 }
 
-module.exports = {
+export {
 	COOKIE_BASES,
 	COOKIE_ADDONS
 }

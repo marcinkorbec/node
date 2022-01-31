@@ -1,33 +1,43 @@
 const express = require('express');
-const {getCookieSettings} = require("../utils/get-cookie-settings");
 const orderRouter = express.Router();
 
-orderRouter
-	.get('/order/summary', (req, res) => {
-		const {base, addons, sum, allAddons, allBases} = getCookieSettings(req);
-		res.render('order/summary', {
-			cookie: {
-				base,
-				addons,
-			},
-			allBases,
-			allAddons,
-			sum,
-		});
-	})
+function getCookieSettings() {};
 
-	.get('/order/thanks', ((req, res) => {
-		const {sum, addons, cookieBase} = getCookieSettings(req);
-		res
-			.clearCookie('cookieBase')
-			.clearCookie('cookieAddons')
-			.render('order/thanks', {
-				cookieBase,
-				addons,
-				sum,
-			})
-	}))
+export class OrderRouter {
+    constructor(cmapp) {
+        this.cmapp = cmapp;
+        this.router = express.Router();
+        this.setUpRoutes();
+    }
 
-export {
-	orderRouter,
+    setUpRoutes() {
+        this.router.get('/order/summary', this.summary);
+        this.router.get('/order/thanks', this.thanks);
+    }
+
+    summary = (req, res) => {
+        const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
+
+        res.render('order/summary', {
+            cookie: {
+                base,
+                addons,
+            },
+            allBases,
+            allAddons,
+            sum,
+        });
+    };
+
+    thanks = (req, res) => {
+        const {sum} = this.cmapp.getCookieSettings(req);
+
+        res
+            .clearCookie('cookieBase')
+            .clearCookie('cookieAddons')
+            .render('order/thanks', {
+                sum,
+            });
+    }
+
 }
