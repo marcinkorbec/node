@@ -1,8 +1,8 @@
 export class Warrior {
     constructor(
-        public name: string,
-        public hitPoints: number,
-        public hp:number
+        private name: string,
+        private hitPoints: number,
+        private hp:number
     ) {};
 
     set Hp(hp: number) {
