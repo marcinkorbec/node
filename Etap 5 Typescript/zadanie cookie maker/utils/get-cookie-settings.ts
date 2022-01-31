@@ -1,9 +1,9 @@
-const {getAddonsFromReq} = require("./get-addons-from-req");
-const {COOKIE_BASES, COOKIE_ADDONS} = require("../data/cookie-data");
-const {handlebarsHelpers} = require("./handlebars-helpers");
+import {getAddonsFromReq} from "./get-addons-from-req";
+import {COOKIE_BASES, COOKIE_ADDONS} from "../data/cookie-data";
+import {handlebarsHelpers} from "./handlebars-helpers";
 
 
-function getCookieSettings(req) {
+function getCookieSettings(req: Request) {
 	const {cookieBase: base} = req.cookies;
 	const addons = getAddonsFromReq(req);
 	const allBases = Object.entries(COOKIE_BASES);

@@ -15,7 +15,7 @@ export class OrderRouter {
         this.router.get('/order/thanks', this.thanks);
     }
 
-    summary = (req, res) => {
+    summary = (req: Request, res: Response) => {
         const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
 
         res.render('order/summary', {
@@ -29,7 +29,7 @@ export class OrderRouter {
         });
     };
 
-    thanks = (req, res) => {
+    thanks = (req: Request, res: Response) => {
         const {sum} = this.cmapp.getCookieSettings(req);
 
         res

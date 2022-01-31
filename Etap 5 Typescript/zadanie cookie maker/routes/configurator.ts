@@ -1,8 +1,10 @@
 const express = require('express');
-const { COOKIE_ADDONS, COOKIE_BASES } = require("../data/cookie-data");
+import { COOKIE_ADDONS, COOKIE_BASES } from "../data/cookie-data";
 
 export class ConfiguratorRouter {
-    constructor(cmapp) {
+    cmapp: string;
+    router = express.Router();
+    constructor(cmapp: string) {
         this.cmapp = cmapp;
         this.router = express.Router();
         this.setUpRoutes();
@@ -14,7 +16,7 @@ export class ConfiguratorRouter {
         this.router.get('/delete-addon/:addonName', this.deleteAddon);
     }
 
-    selectBase = (req, res) => {
+    selectBase = (req: Request, res: Response) => {
         const {baseName} = req.params;
 
         if(!this.cmapp.data.COOKIE_BASES[baseName]) {
@@ -28,7 +30,7 @@ export class ConfiguratorRouter {
         }
     }
 
-    addAddon = (req, res) => {
+    addAddon = (req: Request, res:Response) => {
         const {addonName} = req.params;
 
         if(!this.cmapp.data.COOKIE_ADDONS[addonName]) { //sprawdzanie czy taki dodatek już istnieje
@@ -49,7 +51,7 @@ export class ConfiguratorRouter {
 
     };
 
-    deleteAddon = (req, res) => {
+    deleteAddon = (req: Request, res: Response) => {
         const {addonName} = req.params;
         const oldAddons = this.cmapp.getAddonsFromReq(req);
 

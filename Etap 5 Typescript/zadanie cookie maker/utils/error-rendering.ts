@@ -1,4 +1,4 @@
-const renderError = (res, description) => {
+const renderError = (res: Response, description: string) => {
 	return res.render('errors/error.hbs', {
 		description: `${description}`
 	});

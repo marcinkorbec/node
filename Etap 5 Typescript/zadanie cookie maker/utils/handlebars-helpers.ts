@@ -1,11 +1,11 @@
 const handlebarsHelpers = {
-	upper: function (str) {
+	upper: function (str: string) {
 		return str.toUpperCase();
 	},
-	lower: (str) => {
+	lower: (str: string) => {
 		return str.toLowerCase();
 	},
-	findPrice : (entries, selectedItem) => {
+	findPrice : (entries:string[], selectedItem:string) => {
 		const found = entries.find(el => {
 			return el[0] === selectedItem;
 		});
@@ -16,7 +16,7 @@ const handlebarsHelpers = {
 		return price;
 	},
 	pricify: price => price.toFixed(2),
-	isNotOnArray: (array, element) => !array.includes(element),
+	isNotOnArray: (array: [], element: string) => !array.includes(element),
 };
 
 export {
