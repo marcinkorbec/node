@@ -27,17 +27,17 @@ export class Arena {
     fight(): Warrior | null {
         const attacker = this.activeWarrior === ActiveWarrior.First ? this.warrior1 : this.warrior2;
         const attacked = this.activeWarrior === ActiveWarrior.First ? this.warrior2 : this.warrior1;
-        const attackingHitPoints = attacker.HitPoints;
-        const attackedOldHp = attacked.Hp;
+        const attackingHitPoints = attacker.hitPoints;
+        const attackedOldHp = attacked.hp;
         const attackedNewHp = attackedOldHp - attackingHitPoints;
-        console.log(attacker.Name, 'is attacking', attacked.Name, 'and how he has', attackedNewHp, 'hp');
-        attacked.Hp = attackedNewHp;
+        console.log(attacker.name, 'is attacking', attacked.name, 'and how he has', attackedNewHp, 'hp');
+        attacked.hp = attackedNewHp;
         this.activeWarrior = this.activeWarrior === ActiveWarrior.First
             ? ActiveWarrior.Second
             : ActiveWarrior.First;
 
         if (attackedNewHp <= 0) {
-            console.log(attacked.Name, 'goes to Valhalla');
+            console.log(attacked.name, 'goes to Valhalla');
             return attacker;
         }
         return null;

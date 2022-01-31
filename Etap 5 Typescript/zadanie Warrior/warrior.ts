@@ -1,28 +1,28 @@
 export class Warrior {
     constructor(
-        private name: string,
-        private hitPoints: number,
-        private hp:number
+        private _name: string,
+        private _hitPoints: number,
+        private _hp:number
     ) {};
 
-    set Hp(hp: number) {
-        this.hp = hp;
+    set hp(hp: number) {
+        this._hp = hp;
     }
 
-    get Hp(): number {
-        return this.hp;
+    get hp(): number {
+        return this._hp;
     }
 
-    get HitPoints(): number {
-        return this.hitPoints;
+    get hitPoints(): number {
+        return this._hitPoints;
     }
 
-    get Name(): string {
-        return this.name;
+    get name(): string {
+        return this._name;
     }
 
     levelUp(): void {
-        this.hitPoints *= 1.1;
-        this.hp *= 1.1;
+        this._hitPoints *= 1.1;
+        this._hp *= 1.1;
     }
 }
