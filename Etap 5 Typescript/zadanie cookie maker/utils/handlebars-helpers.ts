@@ -1,11 +1,13 @@
-const handlebarsHelpers = {
+type Entries = [string, number][];
+
+export const handlebarsHelpers = {
 	upper: function (str: string) {
 		return str.toUpperCase();
 	},
 	lower: (str: string) => {
 		return str.toLowerCase();
 	},
-	findPrice : (entries:string[], selectedItem:string) => {
+	findPrice : (entries: Entries, selectedItem:string): number => {
 		const found = entries.find(el => {
 			return el[0] === selectedItem;
 		});
@@ -15,10 +17,8 @@ const handlebarsHelpers = {
 		const [, price] = found;
 		return price;
 	},
-	pricify: price => price.toFixed(2),
-	isNotOnArray: (array: [], element: string) => !array.includes(element),
+	pricify: (price:number): string => price.toFixed(2),
+	isNotOnArray: (array: any[], element: any): boolean => !array.includes(element),
+    isInArray: <T>(array: T[], element: T):boolean => array.includes(element),
 };
 
-export {
-	handlebarsHelpers,
-}

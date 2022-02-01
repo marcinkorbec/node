@@ -11,5 +11,6 @@
     "importHelpers" : false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "moduleResolution": "Node"
   }
 }
