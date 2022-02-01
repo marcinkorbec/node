@@ -1,27 +1,31 @@
-const express = require('express');
 import { COOKIE_ADDONS, COOKIE_BASES } from "../data/cookie-data";
+import {Request, Response, Router} from "express";
+import {CookieMakerApp} from "../index";
 
 export class ConfiguratorRouter {
-    cmapp: string;
-    router = express.Router();
-    constructor(cmapp: string) {
-        this.cmapp = cmapp;
-        this.router = express.Router();
+    public readonly router: Router = Router();
+
+    constructor(
+        private cmapp: CookieMakerApp
+    ) {
+        this.router = Router();
         this.setUpRoutes();
     }
 
-    setUpRoutes() {
+    private setUpRoutes() {
         this.router.get('/select-base/:baseName', this.selectBase);
-        this.router.get('/select-addon/:addonName', this.addAddon);
-        this.router.get('/delete-addon/:addonName', this.deleteAddon);
+        // this.router.get('/select-addon/:addonName', this.addAddon);
+        // this.router.get('/delete-addon/:addonName', this.deleteAddon);
     }
 
-    selectBase = (req: Request, res: Response) => {
+     private selectBase = (req: Request, res: Response) => {
         const {baseName} = req.params;
 
-        if(!this.cmapp.data.COOKIE_BASES[baseName]) {
-            return this.cmapp.renderError(res, 'Wybrałeś bazę, która nie istnieje!')
-        } else {
+        // if(!this.cmapp.data.COOKIE_BASES[baseName]) {
+        //     return this.cmapp.renderError(res, 'Wybrałeś bazę, która nie istnieje!')
+        // }
+
+        else {
             res
                 .cookie('cookieBase', baseName)
                 .render('configurator/base-selected.hbs', {
@@ -67,9 +71,4 @@ export class ConfiguratorRouter {
                 addonName,
             })
     }
-}
-
-
-module.exports = {
-    ConfiguratorRouter,
 }

@@ -1,4 +1,5 @@
 import * as express from 'express'; //pobieramy moduł express
+import {json, static as expressStatic} from 'express';
 import * as hbs from 'express-handlebars'; //pobieramy moduł handlebars
 import * as cookieParser from 'cookie-parser'; //pobieramy moduł cookie parser
 const app = express(); //tworzymy nową aplikację express
@@ -7,7 +8,7 @@ import { ConfiguratorRouter } from "./routes/configurator"; // pobieramy customo
 import { OrderRouter } from "./routes/order"; // pobieramy customowy moduł orderRouter czyli ścieżka order/zamówienie
 import { handlebarsHelpers } from "./utils/handlebars-helpers";
 
-class CookieMakerApp {
+export class CookieMakerApp {
     constructor() {
         this._loadData()
         this._configureApp();
@@ -18,8 +19,8 @@ class CookieMakerApp {
     _configureApp() {
         this.app = express(); //tworzymy nową aplikację express
 
-        this.app.use(express.json()); // aplikacja używa:
-        this.app.use(express.static('public')); // aplikacja używa: folder statyczny public
+        this.app.use(json()); // aplikacja używa:
+        this.app.use(expressStatic('public')); // aplikacja używa: folder statyczny public
         this.app.use(cookieParser()); // aplikacja używa: modułu odczytywania ciastek
         this.app.engine('.hbs', hbs({
             extname:'.hbs', //rozszerzenie .hbs
