@@ -1,4 +1,5 @@
-type Entries = [string, number][];
+import {Entries} from "../types/types";
+
 
 export const handlebarsHelpers = {
 	upper: function (str: string) {
