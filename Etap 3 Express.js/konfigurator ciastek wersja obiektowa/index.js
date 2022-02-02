@@ -35,7 +35,7 @@ class CookieMakerApp {
 	}
 
 	_run() {
-		this.app.listen(3000); // aplikacja nasłuchuje na porcie 3000
+		this.app.listen(3001); // aplikacja nasłuchuje na porcie 3001
 		console.log('Program działa.')
 	}
 

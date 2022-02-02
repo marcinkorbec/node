@@ -1,9 +1,8 @@
-import { COOKIE_ADDONS, COOKIE_BASES } from "../data/cookie-data";
 import {Request, Response, Router} from "express";
 import {CookieMakerApp} from "../index";
 import {MyRouter} from "../types/my-router";
 
-export class ConfiguratorRouter implements MyRouter{
+export class ConfiguratorRouter implements MyRouter {
     public readonly urlPrefix = '/configurator';
     public readonly router: Router = Router();
 
@@ -21,7 +20,7 @@ export class ConfiguratorRouter implements MyRouter{
     }
 
      private selectBase = (req: Request, res: Response): void => {
-        const {baseName} = req.params;
+        const { baseName } = req.params;
 
         if(!(this.cmapp.data.COOKIE_BASES as Record<string, number>)[baseName]) {
             return this.cmapp.renderError(res, 'Wybrałeś bazę, która nie istnieje!')

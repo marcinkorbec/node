@@ -3,11 +3,9 @@ import {CookieMakerApp} from "../index";
 import {MyRouter} from "../types/my-router";
 
 
-function getCookieSettings() {};
-
-export class OrderRouter implements MyRouter{
+export class OrderRouter implements MyRouter {
     public readonly router: Router = Router();
-    static readonly urlPrefix = '/';
+    public readonly urlPrefix = '/';
 
     constructor(
         private cmapp: CookieMakerApp,
@@ -17,12 +15,12 @@ export class OrderRouter implements MyRouter{
         this.setUpRoutes();
     }
 
-    setUpRoutes() {
+    private setUpRoutes(): void {
         this.router.get('/order/summary', this.summary);
         this.router.get('/order/thanks', this.thanks);
     }
 
-    summary = (req: Request, res: Response) => {
+    private summary = (req: Request, res: Response) => {
         const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
 
         res.render('order/summary', {
@@ -36,7 +34,7 @@ export class OrderRouter implements MyRouter{
         });
     };
 
-    thanks = (req: Request, res: Response) => {
+    private thanks = (req: Request, res: Response) => {
         const {sum} = this.cmapp.getCookieSettings(req);
 
         res
