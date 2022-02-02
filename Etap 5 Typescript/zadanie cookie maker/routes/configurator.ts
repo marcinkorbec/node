@@ -3,7 +3,7 @@ import {Request, Response, Router} from "express";
 import {CookieMakerApp} from "../index";
 
 export class ConfiguratorRouter {
-    static readonly urlPrefix = '/configurator';
+    public readonly urlPrefix = '/configurator';
     public readonly router: Router = Router();
 
     constructor(

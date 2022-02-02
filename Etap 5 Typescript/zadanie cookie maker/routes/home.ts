@@ -4,7 +4,7 @@ import {Request, Response, Router} from "express";
 
 export class HomeRouter {
     public readonly router: Router = Router();
-    static readonly urlPrefix = '/';
+    public readonly urlPrefix = '/';
 
     constructor(
         private cmapp: CookieMakerApp,
