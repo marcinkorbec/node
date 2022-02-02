@@ -5,7 +5,7 @@ import {MyRouter} from "../types/my-router";
 
 export class OrderRouter implements MyRouter {
     public readonly router: Router = Router();
-    public readonly urlPrefix = '/';
+    public readonly urlPrefix: string = '/';
 
     constructor(
         private cmapp: CookieMakerApp,
