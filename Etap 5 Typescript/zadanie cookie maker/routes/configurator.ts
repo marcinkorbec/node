@@ -3,7 +3,7 @@ import {CookieMakerApp} from "../index";
 import {MyRouter} from "../types/my-router";
 
 export class ConfiguratorRouter implements MyRouter {
-    public readonly urlPrefix = '/configurator';
+    public readonly urlPrefix = '/';
     public readonly router: Router = Router();
 
     constructor(
