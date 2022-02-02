@@ -1,10 +1,11 @@
 import {Request, Response, Router} from "express";
 import {CookieMakerApp} from "../index";
+import {MyRouter} from "../types/my-router";
 
 
 function getCookieSettings() {};
 
-export class OrderRouter {
+export class OrderRouter implements MyRouter{
     public readonly router: Router = Router();
     static readonly urlPrefix = '/';
 

@@ -1,8 +1,9 @@
 import { COOKIE_ADDONS, COOKIE_BASES } from "../data/cookie-data";
 import {Request, Response, Router} from "express";
 import {CookieMakerApp} from "../index";
+import {MyRouter} from "../types/my-router";
 
-export class ConfiguratorRouter {
+export class ConfiguratorRouter implements MyRouter{
     public readonly urlPrefix = '/configurator';
     public readonly router: Router = Router();
 
