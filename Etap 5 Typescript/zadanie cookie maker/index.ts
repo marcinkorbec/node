@@ -3,7 +3,7 @@ import {Application, json, Request, Response, static as expressStatic} from 'exp
 import * as hbs from 'express-handlebars'; //pobieramy moduł handlebars
 import * as cookieParser from 'cookie-parser'; //pobieramy moduł cookie parser
 const app = express(); //tworzymy nową aplikację express
-// import { HomeRouter } from './routes/home'; // pobieramy customowy moduł homeRouter czyli ścieżka strony głównej
+import { HomeRouter } from './routes/home'; // pobieramy customowy moduł homeRouter czyli ścieżka strony głównej
 import { ConfiguratorRouter } from "./routes/configurator"; // pobieramy customowy moduł configuratorRouter czyli ścieżka konfiguratora
 import { OrderRouter } from "./routes/order"; // pobieramy customowy moduł orderRouter czyli ścieżka order/zamówienie
 import { handlebarsHelpers } from "./utils/handlebars-helpers";
@@ -13,15 +13,18 @@ import {Entries} from "./types/types";
 export class CookieMakerApp {
     private app: Application;
 
-    private data = {
+    public readonly data = {
         COOKIE_BASES,
         COOKIE_ADDONS,
     };
+
     constructor() {
         this._configureApp();
         this._setRoutes();
         this._run();
     }
+
+    private readonly routes = [HomeRouter, ConfiguratorRouter, OrderRouter];
 
     _configureApp(): void {
         this.app = express(); //tworzymy nową aplikację express
@@ -37,8 +40,11 @@ export class CookieMakerApp {
     }
 
     _setRoutes(): void {
-        // this.app.use('/', new HomeRouter(this).router); // aplikacja używa: scieżkowacza strony głównej
-        this.app.use('/', new ConfiguratorRouter(this).router); // aplikacja używa: moduł configuratorRouter
+        for (const router of this.routes) {
+            this.app.use(router.urlPrefix, new router(this).router);
+        }
+        // this.app.use(ConfiguratorRouter.urlPrefix, new HomeRouter(this).router); // aplikacja używa: scieżkowacza strony głównej
+        // this.app.use(ConfiguratorRouter.urlPrefix, new ConfiguratorRouter(this).router); // aplikacja używa: moduł configuratorRouter
         // this.app.use('/', new OrderRouter(this).router); // aplikacja używa: moduł orderRouter
     }
 

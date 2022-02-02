@@ -1,17 +1,24 @@
-const express = require('express');
+import {CookieMakerApp} from "../index";
+import {Request, Response, Router} from "express";
+
 
 export class HomeRouter {
-    constructor(cmapp) {
+    public readonly router: Router = Router();
+    static readonly urlPrefix = '/';
+
+    constructor(
+        private cmapp: CookieMakerApp,
+    ) {
         this.cmapp = cmapp;
-        this.router = express.Router();
+        this.router = Router();
         this.setUpRoutes();
     }
 
-    setUpRoutes() {
+    private setUpRoutes(): void {
         this.router.get('/', this.home);
     }
 
-    home = (req, res) => {
+    private home = (req: Request, res: Response) => {
         const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
 
         res.render('home/index.hbs', {
@@ -23,6 +30,6 @@ export class HomeRouter {
             allAddons,
             sum,
         });
-    };
+    }
 }
 

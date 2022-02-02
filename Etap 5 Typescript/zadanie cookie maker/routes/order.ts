@@ -1,12 +1,18 @@
-const express = require('express');
-const orderRouter = express.Router();
+import {Request, Response, Router} from "express";
+import {CookieMakerApp} from "../index";
+
 
 function getCookieSettings() {};
 
 export class OrderRouter {
-    constructor(cmapp) {
+    public readonly router: Router = Router();
+    static readonly urlPrefix = '/';
+
+    constructor(
+        private cmapp: CookieMakerApp,
+    ) {
         this.cmapp = cmapp;
-        this.router = express.Router();
+        this.router = Router();
         this.setUpRoutes();
     }
 
