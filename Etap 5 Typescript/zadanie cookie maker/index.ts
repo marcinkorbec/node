@@ -41,7 +41,8 @@ export class CookieMakerApp {
 
     _setRoutes(): void {
         for (const router of this.routes) {
-            this.app.use(router.urlPrefix, new router(this).router);
+            const obj = new router(this);
+            this.app.use(obj.urlPrefix, obj.router);
         }
         // this.app.use(ConfiguratorRouter.urlPrefix, new HomeRouter(this).router); // aplikacja używa: scieżkowacza strony głównej
         // this.app.use(ConfiguratorRouter.urlPrefix, new ConfiguratorRouter(this).router); // aplikacja używa: moduł configuratorRouter
