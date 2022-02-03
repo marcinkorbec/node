@@ -10,7 +10,7 @@ import { handlebarsHelpers } from "./utils/handlebars-helpers";
 import {COOKIE_ADDONS, COOKIE_BASES} from "./data/cookie-data";
 import {Entries} from "./types/types";
 
-        
+
 export class CookieMakerApp {
     private app: Application;
 

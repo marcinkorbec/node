@@ -1,6 +1,7 @@
 import {CookieMakerApp} from "../index";
 import {Request, Response, Router} from "express";
 import {MyRouter} from "../types/my-router";
+import {rest} from "../decorators/rest.decorator";
 
 
 export class HomeRouter implements MyRouter {
@@ -19,6 +20,7 @@ export class HomeRouter implements MyRouter {
         this.router.get('/', this.home);
     }
 
+    @rest('get', '/')
     private home = (req: Request, res: Response): void => {
         const {sum, addons, base, allBases, allAddons} = this.cmapp.getCookieSettings(req);
 
