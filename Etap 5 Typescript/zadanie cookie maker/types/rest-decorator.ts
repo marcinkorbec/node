@@ -1,6 +1,6 @@
 import {HttpMethod} from "./http-method";
 
-interface RestDecoratorInfo {
+export interface RestDecoratorInfo {
     httpMethod: HttpMethod;
     path: string;
     propertyName: string;
