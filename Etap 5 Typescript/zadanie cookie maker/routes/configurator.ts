@@ -1,23 +1,16 @@
 import {Request, Response, Router} from "express";
-import {CookieMakerApp} from "../index";
 import {MyRouter} from "../types/my-router";
+import {BaseRouter} from "./base";
 
-export class ConfiguratorRouter implements MyRouter {
+export class ConfiguratorRouter extends BaseRouter implements MyRouter {
     public readonly urlPrefix = '/';
     public readonly router: Router = Router();
 
-    constructor(
-        private cmapp: CookieMakerApp
-    ) {
-        this.router = Router();
-        this.setUpRoutes();
-    }
-
-    private setUpRoutes():void {
-        this.router.get('/select-base/:baseName', this.selectBase);
-        this.router.get('/select-addon/:addonName', this.addAddon);
-        this.router.get('/delete-addon/:addonName', this.deleteAddon);
-    }
+    // private setUpRoutes():void {
+    //     this.router.get('/select-base/:baseName', this.selectBase);
+    //     this.router.get('/select-addon/:addonName', this.addAddon);
+    //     this.router.get('/delete-addon/:addonName', this.deleteAddon);
+    // }
 
      private selectBase = (req: Request, res: Response): void => {
         const { baseName } = req.params;
