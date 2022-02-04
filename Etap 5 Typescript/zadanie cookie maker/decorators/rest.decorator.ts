@@ -17,3 +17,15 @@ export function rest(
         Reflect.set(target, '_restApiCalls', ar);
     }
 }
+
+export function get(path: string) {
+    return rest('get', path)
+}
+
+export function post(path: string) {
+    return rest('post', path)
+}
+
+export function patch(path: string) {
+    return rest('patch', path)
+}

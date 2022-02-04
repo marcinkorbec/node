@@ -5,3 +5,4 @@ export interface RestDecoratorInfo {
     path: string;
     propertyName: string;
 }
+
