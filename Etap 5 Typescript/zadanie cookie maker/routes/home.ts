@@ -5,6 +5,7 @@ import {rest} from "../decorators/rest.decorator";
 
 
 export class HomeRouter implements MyRouter {
+
     public readonly router: Router = Router();
     public readonly urlPrefix: string = '/';
 
@@ -17,7 +18,8 @@ export class HomeRouter implements MyRouter {
     }
 
     private setUpRoutes(): void {
-        this.router.get('/', this.home);
+        console.log(Reflect.get(this, '_restApiCall'))
+        // this.router.get('/', this.home);
     }
 
     @rest('get', '/')

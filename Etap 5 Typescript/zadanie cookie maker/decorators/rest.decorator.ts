@@ -1,15 +1,16 @@
 import {HttpMethod} from "../types/http-method";
 import {RestDecoratorInfo} from "../types/rest-decorator";
+import {MyRouter} from "../types/my-router";
 
 export function rest(
     httpMethod: HttpMethod,
-    url: string,
+    path: string,
     ) {
-    return (target: any, propertyName: string): any => {
+    return (target: MyRouter, propertyName: string): any => {
         Reflect.set(target, '_restApiCall', {
             httpMethod,
             path,
-            propertyName
+            propertyName,
         } as RestDecoratorInfo);
     }
 }
