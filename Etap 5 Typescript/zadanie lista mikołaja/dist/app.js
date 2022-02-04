@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,19 +7,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const { unlink } = require('fs').promises;
-(() => __awaiter(void 0, void 0, void 0, function* () {
-    const oldFile = process.argv[2];
-    try {
-        yield unlink(oldFile);
-    }
-    catch (e) {
-        if (e.code === 'ENOENT') {
-            console.log(`${oldFile} does not exist.`);
+import { unlink } from ('fs').promises;
+(function () {
+    return __awaiter(this, void 0, void 0, function* () {
+        const oldFile = process.argv[2];
+        try {
+            yield unlink(oldFile);
         }
-        else {
-            console.log('Unknown error:', e);
+        catch (e) {
+            if (e.code === 'ENOENT') {
+                console.log(`${oldFile} does not exist.`);
+            }
+            else {
+                console.log('Unknown error:', e);
+            }
         }
-    }
-}))();
+    });
+})();
 //# sourceMappingURL=app.js.map

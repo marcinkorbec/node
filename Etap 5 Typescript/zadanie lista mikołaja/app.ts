@@ -1,7 +1,7 @@
-const { unlink } = require('fs').promises;
+import { unlink } from ('fs').promises;
 
-(async () => {
-    const oldFile = process.argv[2];
+export (async function () {
+    const oldFile: string = process.argv[2];
     try {
         await unlink(oldFile)
     } catch (e) {

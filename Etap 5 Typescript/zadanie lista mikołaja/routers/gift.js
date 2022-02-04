@@ -1,12 +1,11 @@
-const {Router} = require("express");
-const {GiftRecord} = require("../records/gift.record");
-const {ValidationError} = require("../utils/errors");
+import {Router, Request, Response} from "express";
+import {GiftRecord} from "../records/gift.record";
 
 const giftRouter = Router();
 
 giftRouter
 
-	.get('/', async (req, res) => {
+	.get('/', async (req: Request, res: Response) => {
 		const giftsList = await GiftRecord.listAll();
 
 		res.render('gift/list', {
@@ -14,7 +13,7 @@ giftRouter
 		});
 	})
 
-	.post('/', async (req, res) => {
+	.post('/', async (req: Request, res: Response) => {
 		const data = {
 			...req.body,
 			count: Number(req.body.count),
@@ -26,6 +25,6 @@ giftRouter
 		res.redirect('/gift');
 	});
 
-module.exports = {
+export  {
 	giftRouter,
 };

@@ -1,14 +1,13 @@
-"use strict";
-const express = require("express");
+import * as express from "express";
 require('express-async-errors');
-const methodOverride = require("method-override");
-const { engine } = require("express-handlebars");
-const { handleError } = require("./utils/errors");
-const { homeRouter } = require("./routers/home");
-const { childRouter } = require("./routers/child");
-const { giftRouter } = require("./routers/gift");
+import methodOverride from "method-override";
+import { engine } from "express-handlebars";
+import { handleError } from "./utils/errors";
+import { homeRouter } from "./routers/home";
+import { childRouter } from "./routers/child";
+import { giftRouter } from "./routers/gift";
 require('./utils/db');
-const { handlebarsHelpers } = require("./utils/handlebars-helpers");
+import { handlebarsHelpers } from "./utils/handlebars-helpers";
 const app = express();
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({

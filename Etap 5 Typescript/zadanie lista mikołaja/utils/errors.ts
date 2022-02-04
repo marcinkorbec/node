@@ -1,6 +1,8 @@
-class ValidationError extends Error { }
+import {Request, Response} from "express";
 
-const handleError = (err, req, res, next) => {
+export class ValidationError extends Error { }
+
+export const handleError = (err: any, req: Request, res: Response, next: any): void => {
     console.error(err);
 
     res
@@ -9,8 +11,3 @@ const handleError = (err, req, res, next) => {
             message: err instanceof ValidationError ? err.message : 'Przepraszamy, spróbuj ponownie za kilka minut.',
         })
 };
-
-module.exports = {
-    handleError,
-    ValidationError,
-}
