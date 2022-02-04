@@ -14,7 +14,6 @@ export class BaseRouter {
     }
 
     private setUpRoutes(): void {
-        console.log(Reflect.get(this, '_restApiCall'))
         const ar: RestDecoratorInfo[] = Reflect.get(this, '_restApiCalls') ?? [];
 
         for (const apiOp of ar) {
