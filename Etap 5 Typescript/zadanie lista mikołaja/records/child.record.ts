@@ -1,8 +1,8 @@
-const {pool} = require("../utils/db");
-const {ValidationError} = require("../utils/errors");
-const {v4: uuid} = require("uuid");
+import {pool} from "../utils/db";
+import {ValidationError} from "../utils/errors";
+import {v4: uuid} from "uuid";
 
-class ChildRecord {
+export class ChildRecord {
 	constructor(obj) {
 		if (!obj.name || obj.name.length < 3 || obj.name.length > 25) {
 			throw new ValidationError('Imię musi mieć od 3 do 25 znaków.');
@@ -46,7 +46,3 @@ class ChildRecord {
 		});
 	}
 }
-
-module.exports = {
-	ChildRecord,
-};

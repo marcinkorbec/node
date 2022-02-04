@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,10 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const { pool } = require("../utils/db");
-const { ValidationError } = require("../utils/errors");
-const { v4: uuid } = require("uuid");
-class ChildRecord {
+import { pool } from "../utils/db";
+import { ValidationError } from "../utils/errors";
+import { uuid } from "uuid";
+export class ChildRecord {
     constructor(obj) {
         if (!obj.name || obj.name.length < 3 || obj.name.length > 25) {
             throw new ValidationError('Imię musi mieć od 3 do 25 znaków.');
@@ -56,7 +55,4 @@ class ChildRecord {
         });
     }
 }
-module.exports = {
-    ChildRecord,
-};
 //# sourceMappingURL=child.record.js.map

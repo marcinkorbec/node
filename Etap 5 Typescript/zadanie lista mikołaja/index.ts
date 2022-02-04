@@ -3,7 +3,7 @@ require('express-async-errors');
 import methodOverride from "method-override";
 import {engine} from "express-handlebars";
 import {handleError} from "./utils/errors";
-import {homeRouter} from"./routers/home";
+import {homeRouter} from "./routers/home";
 import {childRouter} from "./routers/child";
 import {giftRouter} from "./routers/gift";
 require('./utils/db');
