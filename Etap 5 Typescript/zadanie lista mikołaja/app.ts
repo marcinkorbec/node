@@ -1,4 +1,5 @@
 const { unlink } = require('fs').promises;
+
 (async () => {
     const oldFile = process.argv[2];
     try {
