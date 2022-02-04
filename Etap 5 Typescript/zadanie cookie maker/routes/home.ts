@@ -2,6 +2,7 @@ import {CookieMakerApp} from "../index";
 import {Request, Response, Router} from "express";
 import {MyRouter} from "../types/my-router";
 import {rest} from "../decorators/rest.decorator";
+import {RestDecoratorInfo} from "../types/rest-decorator";
 
 
 export class HomeRouter implements MyRouter {
@@ -17,8 +18,18 @@ export class HomeRouter implements MyRouter {
         this.setUpRoutes();
     }
 
+    @rest('get', '/home2')
+    private home2 = (req: Request, res: Response): void => {
+        res.send('It works!')
+    }
+
     private setUpRoutes(): void {
         console.log(Reflect.get(this, '_restApiCall'))
+        const ar: RestDecoratorInfo[] = Reflect.get(this, '_restApiCalls') ?? [];
+
+        for (const apiOp of ar) {
+            this.router[apiOp.httpMethod](apiOp.path, (this as any)[apiOp.propertyName]);
+        }
         // this.router.get('/', this.home);
     }
 

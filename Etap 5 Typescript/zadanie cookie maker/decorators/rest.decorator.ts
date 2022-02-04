@@ -7,10 +7,13 @@ export function rest(
     path: string,
     ) {
     return (target: MyRouter, propertyName: string): any => {
-        Reflect.set(target, '_restApiCall', {
+        const ar: RestDecoratorInfo[] = (Reflect.get(target, '_restApiCalls') ?? []) as RestDecoratorInfo[];
+        ar.push({
             httpMethod,
             path,
             propertyName,
-        } as RestDecoratorInfo);
+        })
+
+        Reflect.set(target, '_restApiCalls', ar);
     }
 }
