@@ -1,3 +1,3 @@
-export const handlebarsHelpers ={
-	equals: (a: number, b: number) => a === b,
+export const handlebarsHelpers = {
+	equals: (a: any, b: any): boolean => a === b,
 };
