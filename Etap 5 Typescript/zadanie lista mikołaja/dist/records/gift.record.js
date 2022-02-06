@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { pool } from "../utils/db";
 import { ValidationError } from "../utils/errors";
-import { uuid } from 'uuid';
+import { v4 as uuid } from 'uuid';
 export class GiftRecord {
     constructor(obj) {
         if (!obj.name || obj.name.length < 3 || obj.name.length > 55) {
