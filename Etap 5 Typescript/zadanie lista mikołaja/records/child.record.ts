@@ -1,6 +1,10 @@
 import {pool} from "../utils/db";
 import {ValidationError} from "../utils/errors";
 import {v4 as uuid} from "uuid";
+import {FieldPacket} from "mysql2";
+
+type ChildRecordResult = [ChildRecord[], FieldPacket[]];
+
 
 export class ChildRecord {
     id?: string;
@@ -17,7 +21,7 @@ export class ChildRecord {
 		this.giftId = obj.giftId;
 	}
 
-	async insert() {
+	async insert(): Promise<string> {
 		if (!this.id) {
 			this.id = uuid();
 		}
@@ -30,23 +34,23 @@ export class ChildRecord {
 		return this.id;
 	}
 
-	static async listAll() {
-		const [results] = await pool.execute("SELECT * FROM `children` ORDER BY `name` ASC");
+	static async listAll(): Promise<ChildRecord[]> {
+		const [results] = await pool.execute("SELECT * FROM `children` ORDER BY `name` ASC") as ChildRecordResult;
 		return results.map(obj => new ChildRecord(obj));
 	}
 
-	static async getOne(id) {
+	static async getOne(id: string): Promise<ChildRecord | null> {
 		const [results] = await pool.execute("SELECT * FROM `children` WHERE `id` = :id", {
 			id,
-		});
+		}) as ChildRecordResult;
 		return results.length === 0 ? null : new ChildRecord(results[0]);
 	}
 
-	async update() {
-		await pool.execute("UPDATE `children` SET `name` = :name, `giftId` = :giftId WHERE `id` = :id", {
-			id: this.id,
-			name: this.name,
-			giftId: this.giftId,
-		});
-	}
+    async update(): Promise<void> {
+        await pool.execute("UPDATE `children` SET `name` = :name, `giftId` = :giftId WHERE `id` = :id", {
+            id: this.id,
+            name: this.name,
+            giftId: this.giftId,
+        });
+    }
 }
