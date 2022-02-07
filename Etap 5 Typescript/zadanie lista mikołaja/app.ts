@@ -12,3 +12,11 @@
 //         }
 //     }
 // })();
+
+import {NextFunction, Request, Response, RequestHandler} from "express";
+
+function catchAsync(fn: (req: Request, res: Response, next: NextFunction) => Promise<void | Response> ): RequestHandler {
+    return (req: Request, res: Response, next: NextFunction) => {
+        fn(req, res, next).catch((err:Error) => next(err));
+    }
+};

@@ -1,13 +1,13 @@
 import * as express from"express";
-require('express-async-errors');
+import 'express-async-errors';
 import methodOverride from "method-override";
 import {engine} from "express-handlebars";
 import {handleError} from "./utils/errors";
 import {homeRouter} from "./routers/home";
 import {childRouter} from "./routers/child";
 import {giftRouter} from "./routers/gift";
-require('./utils/db');
 import {handlebarsHelpers} from "./utils/handlebars-helpers";
+import'./utils/db';
 
 const app = express();
 

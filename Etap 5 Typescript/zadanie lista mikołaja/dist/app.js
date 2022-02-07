@@ -1,4 +1,3 @@
-"use strict";
 // import { unlink } from ('fs').promises;
 //
 // export (async function () {
@@ -13,4 +12,11 @@
 //         }
 //     }
 // })();
+function catchAsync(fn) {
+    return (req, res, next) => {
+        fn(req, res, next).catch((err) => next(err));
+    };
+}
+;
+export {};
 //# sourceMappingURL=app.js.map
