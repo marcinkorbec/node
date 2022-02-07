@@ -1,6 +1,6 @@
 import * as express from"express";
 import 'express-async-errors';
-import methodOverride from "method-override";
+import * as methodOverride  from "method-override";
 import {engine} from "express-handlebars";
 import {handleError} from "./utils/errors";
 import {homeRouter} from "./routers/home";
