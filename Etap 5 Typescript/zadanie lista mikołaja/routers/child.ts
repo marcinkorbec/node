@@ -3,11 +3,11 @@ import {ChildRecord} from "../records/child.record";
 import {GiftRecord} from "../records/gift.record";
 import {ValidationError} from "../utils/errors";
 
-const childRouter = Router();
+export const childRouter = Router();
 
 childRouter // /child
 
-    .get('/', async (req: Request, res: Response) => {
+    .get('/', async (req: Request, res: Response): Promise<void> => {
         const childrenList = await ChildRecord.listAll();
         const giftsList = await GiftRecord.listAll();
 
@@ -17,14 +17,14 @@ childRouter // /child
         });
     })
 
-    .post('/', async (req: Request, res: Response) => {
+    .post('/', async (req: Request, res: Response): Promise<void> => {
         const newChild = new ChildRecord(req.body);
         await newChild.insert();
 
         res.redirect('/child');
     })
 
-    .patch('/gift/:childId', async (req: Request, res: Response) => {
+    .patch('/gift/:childId', async (req: Request, res: Response): Promise<void> => {
         const child = await ChildRecord.getOne(req.params.childId);
 
         if (child === null) {
@@ -44,8 +44,4 @@ childRouter // /child
 
         res.redirect('/child');
     })
-}
 
-export {
-	childRouter,
-}

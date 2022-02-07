@@ -11,7 +11,7 @@ import { Router } from "express";
 import { ChildRecord } from "../records/child.record";
 import { GiftRecord } from "../records/gift.record";
 import { ValidationError } from "../utils/errors";
-const childRouter = Router();
+export const childRouter = Router();
 childRouter // /child
     .get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const childrenList = yield ChildRecord.listAll();
@@ -42,5 +42,4 @@ childRouter // /child
     yield child.update();
     res.redirect('/child');
 }));
-export { childRouter, };
 //# sourceMappingURL=child.js.map
