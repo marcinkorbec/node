@@ -1,8 +1,7 @@
 import { Router } from "express";
-const homeRouter = Router();
+export const homeRouter = Router();
 homeRouter
     .get('/', (req, res) => {
     res.redirect('/child');
 });
-export { homeRouter, };
 //# sourceMappingURL=home.js.map

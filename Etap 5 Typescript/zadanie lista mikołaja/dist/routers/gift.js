@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Router } from "express";
 import { GiftRecord } from "../records/gift.record";
-const giftRouter = Router();
+export const giftRouter = Router();
 giftRouter
     .get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const giftsList = yield GiftRecord.listAll();
@@ -23,5 +23,4 @@ giftRouter
     yield newGift.insert();
     res.redirect('/gift');
 }));
-export { giftRouter, };
 //# sourceMappingURL=gift.js.map

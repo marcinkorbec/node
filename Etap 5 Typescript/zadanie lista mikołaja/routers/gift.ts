@@ -1,11 +1,11 @@
 import {Router, Request, Response} from "express";
 import {GiftRecord} from "../records/gift.record";
 
-const giftRouter = Router();
+export const giftRouter = Router();
 
 giftRouter
 
-	.get('/', async (req: Request, res: Response) => {
+	.get('/', async (req: Request, res: Response): Promise<void> => {
 		const giftsList = await GiftRecord.listAll();
 
 		res.render('gift/list', {
@@ -13,7 +13,7 @@ giftRouter
 		});
 	})
 
-	.post('/', async (req: Request, res: Response) => {
+	.post('/', async (req: Request, res: Response): Promise<void> => {
 		const data = {
 			...req.body,
 			count: Number(req.body.count),
@@ -25,6 +25,3 @@ giftRouter
 		res.redirect('/gift');
 	});
 
-export  {
-	giftRouter,
-};
