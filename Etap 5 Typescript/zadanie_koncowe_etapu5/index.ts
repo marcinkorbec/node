@@ -28,6 +28,6 @@ app.set('view engine', '.hbs');
 
 // app.use(handleError);
 
-app.listen(3002, '0.0.0.0', () => {
-    console.log('Program działa na adresie http://localhost:3002');
+app.listen(3008, '0.0.0.0', () => {
+    console.log('Program działa na adresie http://localhost:3008');
 })
