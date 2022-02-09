@@ -2,9 +2,9 @@
 
 import {Router} from "express";
 
-const ranking = Router();
+export const rankingRouter = Router();
 
-ranking
+rankingRouter
     .get('/ranking', (req, res):void => {
-        res.render('views/ranking.hbs')
+        res.render('views/ranking.hbs',{})
     })
