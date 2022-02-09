@@ -7,3 +7,4 @@ rankingRouter
     .get('/ranking', (req, res):void => {
         res.render('views/ranking.hbs',{})
     })
+
