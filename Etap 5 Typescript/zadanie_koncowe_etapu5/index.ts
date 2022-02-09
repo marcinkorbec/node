@@ -5,8 +5,8 @@ import {engine} from "express-handlebars";
 // import {handleError} from "./utils/errors";
 import {homeRouter} from "./routers/home";
 import {arenaRouter} from "./routers/arena";
-import {rankingRouter} from "./routers/ranking";
-import {registerRouter} from "./routers/register-new-warrior";
+import {fameRouter} from "./routers/hall-of-fame";
+import {warriorRouter} from "./routers/warrior";
 // import {handlebarsHelpers} from "./utils/handlebars-helpers";
 import'./utils/db';
 
@@ -24,8 +24,9 @@ app.engine('.hbs', engine({
 app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);
-// app.use('/child', childRouter);
-// app.use('/gift', giftRouter);
+app.use('/', arenaRouter);
+app.use('/', fameRouter);
+app.use('/warrior', warriorRouter);
 
 // app.use(handleError);
 

@@ -2,9 +2,12 @@
 //zapisanie wojownika do bazy
 import {Router} from "express";
 
-export const registerRouter = Router();
+export const warriorRouter = Router();
 
-registerRouter
+warriorRouter
     .get('/register', (req, res):void => {
         res.render('views/register.hbs',{})
+    })
+    .post('/', (req, res):void => {
+        res.render('views/ranking.hbs',{})
     })

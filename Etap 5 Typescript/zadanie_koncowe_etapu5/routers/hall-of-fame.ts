@@ -1,9 +1,9 @@
 // ranking lista najlepszych wojowników
 import {Router} from "express";
 
-export const rankingRouter = Router();
+export const fameRouter = Router();
 
-rankingRouter
+fameRouter
     .get('/ranking', (req, res):void => {
         res.render('views/ranking.hbs',{})
     })
