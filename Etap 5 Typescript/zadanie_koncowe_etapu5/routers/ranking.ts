@@ -1,5 +1,4 @@
 // ranking lista najlepszych wojowników
-
 import {Router} from "express";
 
 export const rankingRouter = Router();

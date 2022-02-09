@@ -3,9 +3,10 @@ import 'express-async-errors';
 import * as methodOverride  from "method-override";
 import {engine} from "express-handlebars";
 // import {handleError} from "./utils/errors";
-// import {homeRouter} from "./routers/home";
-// import {childRouter} from "./routers/child";
-// import {giftRouter} from "./routers/gift";
+import {homeRouter} from "./routers/home";
+import {arenaRouter} from "./routers/arena";
+import {rankingRouter} from "./routers/ranking";
+import {registerRouter} from "./routers/register-new-warrior";
 // import {handlebarsHelpers} from "./utils/handlebars-helpers";
 import'./utils/db';
 
@@ -22,7 +23,7 @@ app.engine('.hbs', engine({
 }));
 app.set('view engine', '.hbs');
 
-// app.use('/', homeRouter);
+app.use('/', homeRouter);
 // app.use('/child', childRouter);
 // app.use('/gift', giftRouter);
 

@@ -1,11 +1,10 @@
 //formularz
 //zapisanie wojownika do bazy
-
 import {Router} from "express";
 
-export const register = Router();
+export const registerRouter = Router();
 
-register
+registerRouter
     .get('/register', (req, res):void => {
         res.render('views/register.hbs',{})
     })
