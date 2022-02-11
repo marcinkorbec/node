@@ -9,5 +9,5 @@ warriorRouter
         res.render('register.hbs',{})
     })
     .post('/', (req, res):void => {
-        res.render('ranking.hbs',{})
+        res.render('hall-of-fame.hbs',{})
     })

@@ -4,7 +4,7 @@ import {Router} from "express";
 export const fameRouter = Router();
 
 fameRouter
-    .get('/ranking', (req, res):void => {
-        res.render('ranking.hbs',{})
+    .get('/fame', (req, res):void => {
+        res.render('hall-of-fame.hbs',{})
     })
 

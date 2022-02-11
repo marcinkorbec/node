@@ -3,10 +3,10 @@ import 'express-async-errors';
 import * as methodOverride  from "method-override";
 import {engine} from "express-handlebars";
 // import {handleError} from "./utils/errors";
-import {homeRouter} from "./routers/home";
-import {arenaRouter} from "./routers/arena";
-import {fameRouter} from "./routers/hall-of-fame";
-import {warriorRouter} from "./routers/warrior";
+import {homeRouter} from "./routers/home-router";
+import {arenaRouter} from "./routers/arena-router";
+import {fameRouter} from "./routers/hall-of-fame-router";
+import {warriorRouter} from "./routers/warrior-router";
 // import {handlebarsHelpers} from "./utils/handlebars-helpers";
 // import'./utils/db';
 
@@ -23,9 +23,9 @@ app.engine('.hbs', engine({
 }));
 app.set('view engine', '.hbs');
 
-app.use('/home', homeRouter);
+app.use('/', homeRouter);
 app.use('/arena', arenaRouter);
-app.use('/fame', fameRouter);
+app.use('/hall-of-fame', fameRouter);
 app.use('/warrior', warriorRouter);
 
 // app.use(handleError);
