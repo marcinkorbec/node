@@ -6,9 +6,9 @@ export const arenaRouter = Router();
 
 arenaRouter
     .get('/fight-form', (req, res):void => {
-        res.render('views/arena.hbs',{})
+        res.render('arena.hbs',{})
     })
 
     .post('/fight', (req, res):void => {
-        res.render('views/arena.hbs',{})
+        res.render('arena.hbs',{})
     })

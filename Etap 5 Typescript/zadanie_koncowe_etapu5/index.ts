@@ -8,7 +8,7 @@ import {arenaRouter} from "./routers/arena";
 import {fameRouter} from "./routers/hall-of-fame";
 import {warriorRouter} from "./routers/warrior";
 // import {handlebarsHelpers} from "./utils/handlebars-helpers";
-import'./utils/db';
+// import'./utils/db';
 
 const app = express();
 
@@ -23,9 +23,9 @@ app.engine('.hbs', engine({
 }));
 app.set('view engine', '.hbs');
 
-app.use('/', homeRouter);
-app.use('/', arenaRouter);
-app.use('/', fameRouter);
+app.use('/home', homeRouter);
+app.use('/arena', arenaRouter);
+app.use('/fame', fameRouter);
 app.use('/warrior', warriorRouter);
 
 // app.use(handleError);

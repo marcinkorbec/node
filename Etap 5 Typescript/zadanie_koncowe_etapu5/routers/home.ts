@@ -5,5 +5,5 @@ export const homeRouter = Router();
 
 homeRouter
     .get('/', (req, res):void => {
-        res.render('views/home.hbs',{})
+        res.render('home.hbs',{})
     })

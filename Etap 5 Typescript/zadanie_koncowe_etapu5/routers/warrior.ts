@@ -6,8 +6,8 @@ export const warriorRouter = Router();
 
 warriorRouter
     .get('/register', (req, res):void => {
-        res.render('views/register.hbs',{})
+        res.render('register.hbs',{})
     })
     .post('/', (req, res):void => {
-        res.render('views/ranking.hbs',{})
+        res.render('ranking.hbs',{})
     })

@@ -5,6 +5,6 @@ export const fameRouter = Router();
 
 fameRouter
     .get('/ranking', (req, res):void => {
-        res.render('views/ranking.hbs',{})
+        res.render('ranking.hbs',{})
     })
 
