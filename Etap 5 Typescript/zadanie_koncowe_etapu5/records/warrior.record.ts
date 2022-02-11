@@ -13,9 +13,9 @@ export class WarriorRecord {
         const sum = [strong, defense, resilience, agility].reduce((previousValue, currentValue) =>
             previousValue + currentValue, 0);
 
-        if ( sum !== 10 {
-            throw new Error()
-        })
+        if (sum !== 10) {
+            throw new Error(`Suma wszystkich statystyk musi wynosić 10. Aktualnie jest to ${sum}.`);
+        }
     }
 }
 
