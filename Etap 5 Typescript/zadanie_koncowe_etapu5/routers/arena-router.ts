@@ -10,5 +10,5 @@ arenaRouter
     })
 
     .post('/fight', (req, res):void => {
-        res.render('arena.hbs',{})
+        res.render('fight.hbs',{})
     })
