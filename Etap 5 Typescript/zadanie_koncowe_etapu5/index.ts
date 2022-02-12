@@ -2,13 +2,13 @@ import * as express from"express";
 import 'express-async-errors';
 import * as methodOverride  from "method-override";
 import {engine} from "express-handlebars";
-// import {handleError} from "./utils/errors";
+import {handleError} from "./utils/errors";
 import {homeRouter} from "./routers/home-router";
 import {arenaRouter} from "./routers/arena-router";
 import {fameRouter} from "./routers/hall-of-fame-router";
 import {warriorRouter} from "./routers/warrior-router";
 // import {handlebarsHelpers} from "./utils/handlebars-helpers";
-// import'./utils/db';
+import'./utils/db';
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.use('/arena', arenaRouter);
 app.use('/hall-of-fame', fameRouter);
 app.use('/warrior', warriorRouter);
 
-// app.use(handleError);
+app.use(handleError);
 
 app.listen(3008, '0.0.0.0', () => {
     console.log('Program działa na adresie http://localhost:3008');

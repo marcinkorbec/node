@@ -1,12 +1,7 @@
-const header = document.getElementById("header");
-const btns = header.getElementsByClassName("btn");
+const mainPage = document.querySelector("[href='/']");
 
-for (let i = 0; i < btns.length; i++) {
-	btns[i].addEventListener("click", function () {
-		const current = document.getElementsByClassName("active");
-		if (current.length > 0) {
-			current[0].className = current[0].className.replace(" active", "");
-		}
-		this.className += " active";
-	});
+const url = window.location.pathname;
+
+if(url.includes('/')) {
+	mainPage.classList.add('active');
 }

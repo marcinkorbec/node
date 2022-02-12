@@ -13,7 +13,7 @@
     <header id="header">
         <h1>Arena Walk</h1>
         <ul>
-            <li class="btn"><a href="/">Strona główna</a></li>
+            <li class="btn"><a href="/home" >Strona główna</a></li>
         </ul>
         <ul>
             <li class="btn"><a href="/warrior/register">Zarejestruj Wojownika</a></li>
@@ -29,6 +29,29 @@
         {{{body}}}
     </div>
 </div>
-<script src="/js/script.js"></script>
+<script>
+    const mainPageLink = document.querySelector("[href='/home']");
+	const newWarriorLink = document.querySelector('[href="/warrior/register"]');
+	const hallFameLink = document.querySelector('[href="/hall-of-fame/fame"]');
+	const arenaLink = document.querySelector('[href="/arena/fight-form"]');
+
+    const url = window.location.pathname;
+
+    if(url.includes('/home')) {
+        mainPageLink.classList.add('active');
+    }
+
+	if(url.includes('/warrior/register')) {
+        newWarriorLink.classList.add('active');
+    }
+
+	if(url.includes('/hall-of-fame/fame')) {
+        hallFameLink.classList.add('active');
+    }
+
+	if(url.includes('/arena/fight-form')) {
+        arenaLink.classList.add('active');
+    }
+</script>
 </body>
 </html>
