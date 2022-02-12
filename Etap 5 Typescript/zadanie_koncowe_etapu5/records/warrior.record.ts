@@ -1,4 +1,6 @@
 import {ValidationError} from "../utils/errors";
+import {v4 as uuid} from "uuid";
+import {pool} from "../utils/db";
 
 export class WarriorRecord {
     public id?: string;
@@ -20,24 +22,39 @@ export class WarriorRecord {
         };
 
         if (name.length < 3 && name.length > 40) {
-            throw new ValidationError(`Nick powinien być dłuższy niż 3 znakii krótszy niż 40. Aktualnie jest to ${name.length}`);
+            throw new ValidationError(`Nick powinien być dłuższy niż 3 znaki i krótszy niż 40. Aktualnie jest to ${name.length}`);
         };
 
         this.id = id;
         this.name = name;
-        this. strong = strong;
+        this.strong = strong;
         this.defense = defense;
         this.resilience = resilience;
         this.agility = agility;
         this.wins = wins;
     }
 
-    async insert() {
+    async insert(): Promise<void> {
+        if (!this.id) {
+            this.id = uuid();
+        }
 
+        await pool.execute("INSERT INTO `warriors`(`id`, `name`, `strong`, `defense`, `resilience`, `agility`, `wins`) VALUES(:id, :name, :strong, :defense, :resilience, :agility, :wins)",{
+            id: this.id,
+            name: this.name,
+            strong: this.strong,
+            defense: this.defense,
+            resilience: this.resilience,
+            agility: this.agility,
+            wins: this.wins,
+        });
     }
 
-    async update() {
-
+    async update(): Promise<void> {
+        await pool.execute("UPDATE `warriors` SET `name` = :name, `giftId` = :giftId WHERE `id` = :id", {
+            id: this.id,
+            name: this.name,
+        });
     }
 
     static async getOne(id: string) {
