@@ -1,6 +1,9 @@
-import {ValidationError} from "../utils/errors";
-import {v4 as uuid} from "uuid";
-import {pool} from "../utils/db";
+import { ValidationError } from "../utils/errors";
+import { v4 as uuid } from "uuid";
+import { pool } from "../utils/db";
+import { FieldPacket } from "mysql2";
+
+type WarriorRecordResult = [WarriorRecord[], FieldPacket[]];
 
 export class WarriorRecord {
     public id?: string;
@@ -12,18 +15,18 @@ export class WarriorRecord {
     public readonly wins?: number;
 
     constructor(obj: WarriorRecord) {
-        const {id, name, strong, defense, resilience, wins, agility} = obj;
+        const { id, name, strong, defense, resilience, wins, agility } = obj;
 
         const sum = [strong, defense, resilience, agility].reduce((previousValue, currentValue) =>
             previousValue + currentValue, 0);
 
         if (sum !== 10) {
             throw new ValidationError(`Suma wszystkich statystyk musi wynosić 10. Aktualnie jest to ${sum}.`);
-        };
+        }
 
         if (name.length < 3 && name.length > 40) {
             throw new ValidationError(`Nick powinien być dłuższy niż 3 znaki i krótszy niż 40. Aktualnie jest to ${name.length}`);
-        };
+        }
 
         this.id = id;
         this.name = name;
@@ -34,12 +37,12 @@ export class WarriorRecord {
         this.wins = wins;
     }
 
-    async insert(): Promise<void> {
+    async insert(): Promise<string> {
         if (!this.id) {
-            this.id = uuid();
+             return this.id = uuid();
         }
 
-        await pool.execute("INSERT INTO `warriors`(`id`, `name`, `strong`, `defense`, `resilience`, `agility`, `wins`) VALUES(:id, :name, :strong, :defense, :resilience, :agility, :wins)",{
+        await pool.execute("INSERT INTO `warriors`(`id`, `name`, `strong`, `defense`, `resilience`, `agility`, `wins`) VALUES(:id, :name, :strong, :defense, :resilience, :agility, :wins)", {
             id: this.id,
             name: this.name,
             strong: this.strong,
@@ -51,18 +54,22 @@ export class WarriorRecord {
     }
 
     async update(): Promise<void> {
-        await pool.execute("UPDATE `warriors` SET `name` = :name, `giftId` = :giftId WHERE `id` = :id", {
+        await pool.execute("UPDATE `warriors` SET `name` = :name WHERE `id` = :id", {
             id: this.id,
             name: this.name,
         });
     }
 
-    static async getOne(id: string) {
-
+    static async getOne(id: string): Promise<WarriorRecord | null> {
+        const [results] = await pool.execute("SELECT * FROM `warrior` WHERE `id` = :id", {
+            id,
+        }) as WarriorRecordResult;
+        return results.length === 0 ? null : new WarriorRecord(results[0]);
     }
 
-    static async listAll() {
-
+    static async listAll(): Promise<WarriorRecord[]> {
+        const [results] = await pool.execute("SELECT * FROM `warrior`") as WarriorRecordResult;
+        return results.map(obj => new WarriorRecord(obj));
     }
 
     static async topList(topCount: number) {
