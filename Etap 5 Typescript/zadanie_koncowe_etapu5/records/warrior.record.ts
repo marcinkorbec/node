@@ -58,9 +58,8 @@ export class WarriorRecord {
     }
 
     async update(): Promise<void> {
-        await pool.execute("UPDATE `warriors` SET `name` = :name WHERE `id` = :id", {
-            id: this.id,
-            name: this.name,
+        await pool.execute("UPDATE `warriors` SET `wins` = :wins", {
+            wins: this.wins,
         });
     }
 

@@ -32,10 +32,11 @@ app.use('/warrior', warriorRouter);
 app.use(handleError);
 
 const warrior = new WarriorRecord({
-    strong: 0,
-    defense: 0,
-    resilience: 0,
-    agility: 0,
+    name: 'Xyz',
+    strong: 7,
+    defense: 1,
+    resilience: 1,
+    agility: 1,
 })
 console.log(warrior)
 app.listen(3008, '0.0.0.0', () => {
