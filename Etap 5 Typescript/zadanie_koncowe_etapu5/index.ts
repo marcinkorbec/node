@@ -9,6 +9,7 @@ import {fameRouter} from "./routers/hall-of-fame-router";
 import {warriorRouter} from "./routers/warrior-router";
 // import {handlebarsHelpers} from "./utils/handlebars-helpers";
 import'./utils/db';
+import {WarriorRecord} from "./records/warrior.record";
 
 const app = express();
 
@@ -30,6 +31,13 @@ app.use('/warrior', warriorRouter);
 
 app.use(handleError);
 
+const warrior = new WarriorRecord({
+    strong: 0,
+    defense: 0,
+    resilience: 0,
+    agility: 0,
+})
+console.log(warrior)
 app.listen(3008, '0.0.0.0', () => {
     console.log('Program działa na adresie http://localhost:3008');
 })

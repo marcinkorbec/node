@@ -1,7 +1,7 @@
-import { ValidationError } from "../utils/errors";
-import { v4 as uuid } from "uuid";
-import { pool } from "../utils/db";
-import { FieldPacket } from "mysql2";
+import {ValidationError} from "../utils/errors";
+import {v4 as uuid} from "uuid";
+import {pool} from "../utils/db";
+import {FieldPacket} from "mysql2";
 
 type WarriorRecordResult = [WarriorRecord[], FieldPacket[]];
 
@@ -15,10 +15,16 @@ export class WarriorRecord {
     public readonly wins?: number;
 
     constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) {
-        const { id, name, strong, defense, resilience, wins, agility } = obj;
+        const {id, name, strong, defense, resilience, wins, agility} = obj;
         const stats = [strong, defense, resilience, agility];
         const sum = stats.reduce((previousValue, currentValue) =>
             previousValue + currentValue, 0);
+
+        for (const stat of stats) {
+            if (stat < 1) {
+                throw new ValidationError(`Każda ze statystyk musi wynosić minimum 1, Ta zasada została złamana.`)
+            }
+        }
 
         if (sum !== 10) {
             throw new ValidationError(`Suma wszystkich statystyk musi wynosić 10. Aktualnie jest to ${sum}.`);
