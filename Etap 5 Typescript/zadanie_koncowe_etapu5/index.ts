@@ -31,7 +31,6 @@ app.use('/warrior', warriorRouter);
 
 app.use(handleError);
 
-console.log(warrior)
 app.listen(3008, '0.0.0.0', () => {
     console.log('Program działa na adresie http://localhost:3008');
 })
