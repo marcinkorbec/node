@@ -14,10 +14,10 @@ export class WarriorRecord {
     public readonly agility: number;
     public readonly wins?: number;
 
-    constructor(obj: WarriorRecord) {
+    constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) {
         const { id, name, strong, defense, resilience, wins, agility } = obj;
-
-        const sum = [strong, defense, resilience, agility].reduce((previousValue, currentValue) =>
+        const stats = [strong, defense, resilience, agility];
+        const sum = stats.reduce((previousValue, currentValue) =>
             previousValue + currentValue, 0);
 
         if (sum !== 10) {
@@ -28,19 +28,16 @@ export class WarriorRecord {
             throw new ValidationError(`Nick powinien być dłuższy niż 3 znaki i krótszy niż 40. Aktualnie jest to ${name.length}`);
         }
 
-        this.id = id;
+        this.id = id ?? uuid();
         this.name = name;
         this.strong = strong;
         this.defense = defense;
         this.resilience = resilience;
         this.agility = agility;
-        this.wins = wins;
+        this.wins = wins ?? 0;
     }
 
     async insert(): Promise<string> {
-        if (!this.id) {
-             return this.id = uuid();
-        }
 
         await pool.execute("INSERT INTO `warriors`(`id`, `name`, `strong`, `defense`, `resilience`, `agility`, `wins`) VALUES(:id, :name, :strong, :defense, :resilience, :agility, :wins)", {
             id: this.id,
@@ -51,6 +48,7 @@ export class WarriorRecord {
             agility: this.agility,
             wins: this.wins,
         });
+        return this.id;
     }
 
     async update(): Promise<void> {
@@ -72,7 +70,7 @@ export class WarriorRecord {
         return results.map(obj => new WarriorRecord(obj));
     }
 
-    static async topList(topCount: number) {
+    static async topList(topCount: number): Promise<void> {
 
     }
 }
