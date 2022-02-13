@@ -17,8 +17,11 @@ export class WarriorRecord {
     constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) {
         const {id, name, strong, defense, resilience, wins, agility} = obj;
         const stats = [strong, defense, resilience, agility];
+
         const sum = stats.reduce((previousValue, currentValue) =>
             previousValue + currentValue, 0);
+
+        console.log(sum);
 
         for (const stat of stats) {
             if (stat < 1) {
@@ -70,16 +73,23 @@ export class WarriorRecord {
         return results.length === 0 ? null : new WarriorRecord(results[0]);
     }
 
-    static async listAll(): Promise<WarriorRecord[]> {
+    static async listAll(): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!
         const [results] = await pool.execute("SELECT * FROM `warrior`") as WarriorRecordResult;
         return results.map(obj => new WarriorRecord(obj));
     }
 
-    static async topList(topCount: number): Promise<WarriorRecord[]> {
+    static async topList(topCount: number): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!
         const [results] = await pool.execute("SELECT * FROM `warrior` ORDER BY `wins` AS DESC LIMIT :topCount", {
             topCount,
         }) as WarriorRecordResult;
         return results.map(obj => new WarriorRecord(obj));
+    }
+
+    static async isNameTaken(name: string): Promise<boolean> {
+        const [results] = await pool.execute("SELECT * FROM `name` WHERE `name` =:name", {
+            name,
+        }) as WarriorRecordResult;
+        return results.length > 0 ;
     }
 }
 
