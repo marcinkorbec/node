@@ -63,9 +63,9 @@ export class WarriorRecord {
         });
     }
 
-    static async getOne(id: string): Promise<WarriorRecord | null> {
+    static async getOne(id: string): Promise<WarriorRecord | null> { // metoda statyczna nie ma dostępu do this !!!
         const [results] = await pool.execute("SELECT * FROM `warrior` WHERE `id` = :id", {
-            id,
+            id: id,
         }) as WarriorRecordResult;
         return results.length === 0 ? null : new WarriorRecord(results[0]);
     }
@@ -75,8 +75,11 @@ export class WarriorRecord {
         return results.map(obj => new WarriorRecord(obj));
     }
 
-    static async topList(topCount: number): Promise<void> {
-
+    static async topList(topCount: number): Promise<WarriorRecord[]> {
+        const [results] = await pool.execute("SELECT * FROM `warrior` ORDER BY `wins` AS DESC LIMIT :topCount", {
+            topCount,
+        }) as WarriorRecordResult;
+        return results.map(obj => new WarriorRecord(obj));
     }
 }
 
