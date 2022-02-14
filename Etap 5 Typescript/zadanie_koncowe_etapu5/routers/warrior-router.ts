@@ -23,11 +23,14 @@ warriorRouter
         });
 
         if (await WarriorRecord.isNameTaken(req.body.name)) {
-            throw new ValidationError(`To imię jest zajęte! Wybierz inne!`)
+            throw new ValidationError(`Imię ${req.body.name} jest zajęte! Wybierz inne!`)
         }
 
         else {
-            await warrior.insert();
-            res.render('added.hbs', {})
+            const id = await warrior.insert();
+            res.render('added.hbs', {
+                name: warrior.name,
+                id,
+            })
         }
     })

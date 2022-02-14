@@ -67,26 +67,26 @@ export class WarriorRecord {
     }
 
     static async getOne(id: string): Promise<WarriorRecord | null> { // metoda statyczna nie ma dostępu do this !!!
-        const [results] = await pool.execute("SELECT * FROM `warrior` WHERE `id` = :id", {
+        const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `id` = :id", {
             id: id,
         }) as WarriorRecordResult;
         return results.length === 0 ? null : new WarriorRecord(results[0]);
     }
 
     static async listAll(): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!
-        const [results] = await pool.execute("SELECT * FROM `warrior`") as WarriorRecordResult;
+        const [results] = await pool.execute("SELECT * FROM `warriors`") as WarriorRecordResult;
         return results.map(obj => new WarriorRecord(obj));
     }
 
     static async topList(topCount: number): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!
-        const [results] = await pool.execute("SELECT * FROM `warrior` ORDER BY `wins` AS DESC LIMIT :topCount", {
+        const [results] = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` AS DESC LIMIT :topCount", {
             topCount,
         }) as WarriorRecordResult;
         return results.map(obj => new WarriorRecord(obj));
     }
 
     static async isNameTaken(name: string): Promise<boolean> {
-        const [results] = await pool.execute("SELECT * FROM `name` WHERE `name` =:name", {
+        const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `name` =:name", {
             name,
         }) as WarriorRecordResult;
         return results.length > 0 ;
