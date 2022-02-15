@@ -21,8 +21,6 @@ export class WarriorRecord {
         const sum = stats.reduce((previousValue, currentValue) =>
             previousValue + currentValue, 0);
 
-        console.log(sum);
-
         for (const stat of stats) {
             if (stat < 1) {
                 throw new ValidationError(`Każda ze statystyk musi wynosić minimum 1, Ta zasada została złamana.`)
@@ -61,7 +59,8 @@ export class WarriorRecord {
     }
 
     async update(): Promise<void> {
-        await pool.execute("UPDATE `warriors` SET `wins` = :wins", {
+        await pool.execute("UPDATE `warriors` SET `wins` = :wins WHERE id = :id", {
+            id: this.id,
             wins: this.wins,
         });
     }
@@ -71,7 +70,6 @@ export class WarriorRecord {
             id,
         }) as WarriorRecordResult;
         return results.length === 0 ? null : new WarriorRecord(results[0]);
-        console.log(results)
     }
 
     static async listAll(): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!

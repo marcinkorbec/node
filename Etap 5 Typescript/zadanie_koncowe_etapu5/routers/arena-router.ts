@@ -33,5 +33,6 @@ arenaRouter
         if (!warrior2) {
             throw new ValidationError("Użytkownik nr 2 nie istnieje!")
         }
+
         res.render('fight.hbs',{})
     })

@@ -2,12 +2,12 @@ import * as express from"express";
 import 'express-async-errors';
 import * as methodOverride  from "method-override";
 import {engine} from "express-handlebars";
-import {handleError} from "./utils/errors";
 import {homeRouter} from "./routers/home-router";
 import {arenaRouter} from "./routers/arena-router";
 import {fameRouter} from "./routers/hall-of-fame-router";
 import {warriorRouter} from "./routers/warrior-router";
 import'./utils/db';
+import {handleError} from "./utils/errors";
 
 const app = express();
 
