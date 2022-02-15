@@ -8,6 +8,7 @@ import {fameRouter} from "./routers/hall-of-fame-router";
 import {warriorRouter} from "./routers/warrior-router";
 import'./utils/db';
 import {handleError} from "./utils/errors";
+import {WarriorRecord} from "./records/warrior.record";
 
 const app = express();
 
@@ -27,6 +28,10 @@ app.use('/hall-of-fame', fameRouter);
 app.use('/warrior', warriorRouter);
 
 app.use(handleError);
+
+// const warrior = new WarriorRecord.getOne('a1a1e41c-be37-44fa-b344-de3409ab269f');
+// console.log(warrior);
+
 
 app.listen(3008, '0.0.0.0', () => {
     console.log('Program działa na adresie http://localhost:3008');

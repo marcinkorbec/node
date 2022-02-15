@@ -12,7 +12,7 @@ export class WarriorRecord {
     public readonly defense: number;
     public readonly resilience: number;
     public readonly agility: number;
-    public readonly wins?: number;
+    public wins?: number;
 
     constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) {
         const {id, name, strong, defense, resilience, wins, agility} = obj;
@@ -66,15 +66,18 @@ export class WarriorRecord {
     }
 
     static async getOne(id: string): Promise<WarriorRecord | null> { // metoda statyczna nie ma dostępu do this !!!
+
         const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `id` = :id", {
             id,
         }) as WarriorRecordResult;
+
         return results.length === 0 ? null : new WarriorRecord(results[0]);
     }
 
     static async listAll(): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!
         const [results] = await pool.execute("SELECT * FROM `warriors`") as WarriorRecordResult;
         return results.map(obj => new WarriorRecord(obj));
+
     }
 
     static async topList(topCount: number): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!

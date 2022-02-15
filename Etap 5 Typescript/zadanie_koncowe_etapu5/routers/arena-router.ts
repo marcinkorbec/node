@@ -18,6 +18,7 @@ arenaRouter
     .post('/fight', async (req, res):Promise<void> => {
         const {warrior1 :warrior1Id, warrior2: warrior2Id} = req.body;
 
+        console.log(console.log(req.body))
         const warrior1 = await WarriorRecord.getOne(warrior1Id);
         const warrior2 = await WarriorRecord.getOne(warrior2Id);
 
