@@ -132,3 +132,10 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #ddd;
 }
+
+select {
+    width: 49%;
+    height: 2.5em;
+    text-align: center;
+    border-color: #04AA6D;
+}
