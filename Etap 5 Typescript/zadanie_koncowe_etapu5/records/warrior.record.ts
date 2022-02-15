@@ -68,9 +68,10 @@ export class WarriorRecord {
 
     static async getOne(id: string): Promise<WarriorRecord | null> { // metoda statyczna nie ma dostępu do this !!!
         const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `id` = :id", {
-            id: id,
+            id,
         }) as WarriorRecordResult;
         return results.length === 0 ? null : new WarriorRecord(results[0]);
+        console.log(results)
     }
 
     static async listAll(): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!

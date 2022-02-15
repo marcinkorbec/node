@@ -7,9 +7,7 @@ import {homeRouter} from "./routers/home-router";
 import {arenaRouter} from "./routers/arena-router";
 import {fameRouter} from "./routers/hall-of-fame-router";
 import {warriorRouter} from "./routers/warrior-router";
-// import {handlebarsHelpers} from "./utils/handlebars-helpers";
 import'./utils/db';
-import {WarriorRecord} from "./records/warrior.record";
 
 const app = express();
 
@@ -20,7 +18,6 @@ app.use(express.urlencoded({
 app.use(express.static('public'));
 app.engine('.hbs', engine({
     extname: '.hbs',
-    // helpers: handlebarsHelpers, // Dodatkowe funkcjonalności, które chcemy dodać do Handlebarsów
 }));
 app.set('view engine', '.hbs');
 
