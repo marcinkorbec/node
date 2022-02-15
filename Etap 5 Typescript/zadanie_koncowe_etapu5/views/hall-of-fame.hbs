@@ -17,24 +17,18 @@
         </tr>
         </thead>
         <tbody>
-
+        {{#each warriors}}
             <tr>
                 <th>
-                    1
+                    {{@index}}
                 </th>
                 <td>
-                    Marcin Juzek Baranowski
-                </td>
+                    {{this.name}}                </td>
                 <td>
-                    1
+                    {{this.wins}}
                 </td>
             </tr>
-
+        {{/each}}
         </tbody>
     </table>
-    <div>
-<!--        <form method="GET" action="client/form/add">-->
-<!--            <button type="submit" class="btn btn-outline-success btn-lg large-button" >Dodaj nowego Klienta</button>-->
-<!--        </form>-->
-    </div>
 </div>
