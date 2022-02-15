@@ -3,6 +3,7 @@
 import {Router} from "express";
 import {WarriorRecord} from "../records/warrior.record";
 import {ValidationError} from "../utils/errors";
+import {fight} from "../utils/fight";
 
 export const arenaRouter = Router();
 
@@ -22,6 +23,7 @@ arenaRouter
 
         console.log(warrior1)
         console.log(warrior2)
+
         if (warrior1Id === warrior2Id) {
             throw new ValidationError("Obydwa wojowniki są takie same, proszę wybrać różne!")
         }
@@ -34,5 +36,12 @@ arenaRouter
             throw new ValidationError("Użytkownik nr 2 nie istnieje!")
         }
 
-        res.render('fight.hbs',{})
+        const {log, winner} = fight(warrior1, warrior2);
+
+        winner.wins++;
+        await winner.update();
+
+        res.render('arena/fight', {
+            log,
+        });
     })
