@@ -79,7 +79,7 @@ export class WarriorRecord {
     }
 
     static async topList(topCount: number): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!
-        const [results] = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` AS DESC LIMIT :topCount", {
+        const [results] = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` DESC LIMIT :topCount", {
             topCount,
         }) as WarriorRecordResult;
         return results.map(obj => new WarriorRecord(obj));
