@@ -6,7 +6,7 @@ export const fameRouter = Router();
 
 fameRouter
     .get('/fame', async(req, res): Promise<void> => {
-        const topWarriors = WarriorRecord.topList(10);
+        const topWarriors = await WarriorRecord.topList(10);
         console.log(topWarriors);
         res.render('hall-of-fame.hbs',{
             warriors: topWarriors,
