@@ -76,6 +76,7 @@ export class WarriorRecord {
 
     static async listAll(): Promise<WarriorRecord[]> { // metoda statyczna nie ma dostępu do this !!!
         const [results] = await pool.execute("SELECT * FROM `warriors`") as WarriorRecordResult;
+
         return results.map(obj => new WarriorRecord(obj));
 
     }

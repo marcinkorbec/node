@@ -14,7 +14,7 @@ fameRouter
                 warrior,
             }
         });
-        console.log(topWarriors);
+
         res.render('hall-of-fame.hbs',{
             warriors: topWarriors,
         })

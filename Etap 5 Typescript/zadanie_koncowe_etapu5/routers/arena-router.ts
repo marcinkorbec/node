@@ -18,12 +18,8 @@ arenaRouter
     .post('/fight', async (req, res):Promise<void> => {
         const {warrior1 :warrior1Id, warrior2: warrior2Id} = req.body;
 
-        console.log(console.log(req.body))
         const warrior1 = await WarriorRecord.getOne(warrior1Id);
         const warrior2 = await WarriorRecord.getOne(warrior2Id);
-
-        console.log(warrior1)
-        console.log(warrior2)
 
         if (warrior1Id === warrior2Id) {
             throw new ValidationError("Obydwa wojowniki są takie same, proszę wybrać różne!")
@@ -42,7 +38,7 @@ arenaRouter
         winner.wins++;
         await winner.update();
 
-        res.render('arena/fight', {
+        res.render('fight', {
             log,
         });
     })
