@@ -1,4 +1,15 @@
+const title = () => <h1>Mój tytuł</h1>;
+
+const MyComponent = () => {
+    return (
+        <>
+            <Title></Title>
+            <p>Tekst pod nagłówkiem</p>
+        </>
+    )
+}
+
 ReactDOM.render(
-    <div><h1>Hello Roman!</h1> <p>Tekst pod nagłówkiem.</p></div>,
+    <MyComponent/>,
     document.getElementById('root')
 );
