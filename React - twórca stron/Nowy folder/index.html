@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/browse/@babel/standalone@7.17.6/"></script>
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello React</h1>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
     <div id="root"></div>
-    
-    <script  type="text/babel" src="app.js"></script>
-</body>
+    <script type="text/babel">
+        const title = () => <h1>Mój tytuł</h1>;
+        const MyComponent = function() {
+            return (
+                <div>
+                    <Title></Title>
+                    <p>Tekst pod nagłówkiem</p>
+                </div>
+            )
+        }
+
+        ReactDOM.render(
+            <MyComponent/>,
+            document.getElementById('root')
+        );
+
+    </script>
+   
+  </body>
 </html>
