@@ -1,11 +1,10 @@
-const title = () => <h1>Mój tytuł</h1>;
-
-const MyComponent = () => {
+const Title = () => <h1>Mój tytuł</h1>;
+const MyComponent = function() {
     return (
-        <>
+        <div>
             <Title></Title>
             <p>Tekst pod nagłówkiem</p>
-        </>
+        </div>
     )
 }
 
