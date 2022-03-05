@@ -1,15 +1,14 @@
 const Title = () => <h1>To jest blog o gotowaniu</h1>;
 
 const Post = (props) => {
+    console.log(props.showContent)
     return (
         <>
             <h2>{props.title}</h2>
-            <p>{props.shortContent}</p>
-            <p>{props.content}</p>
-            <button>Czytaj więcej</button>
+            { props.showContent ? <p>{props.content}</p> : <><p>{props.shortContent}</p><button>Czytaj więcej</button></>}
         <hr/>
         </> 
-    )
+    );
 }
 
 const Blog = function() {
@@ -36,7 +35,7 @@ const Blog = function() {
             title={el.title}
             content={el.content}
             shortContent={el.shortContent}
-            shortContent={el.shortContent}
+            showContent={el.showContent}
         />
     ))
 
