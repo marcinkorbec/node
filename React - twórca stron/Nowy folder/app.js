@@ -1,22 +1,41 @@
-const Title = () => <h1>To jest blog o gotowaniu</h1>;
+const MainTitle = () => <h1>To jest blog o gotowaniu</h1>;
 
-const Post = (props) => {
-    const [showContent, setShowContent] = React.useState(false);
+class Title extends React.Component {
+    constructor(props){
+        super(props)
+    }
+    render() {
+        return (
+           <h2>{this.props.value}</h2> 
+        )
+    }
+}
 
-    const showMoreContent = (event) => {
-        console.log('Kliknięcie');
-        showContent = true;
+class Post extends React.Component {
+    constructor(props) {
+        super(props) 
+        this.state = {
+            showContent: false
+        }
     }
 
-    return (
-        <>
-            <h2>{props.title}</h2>
-            { showContent ? (<p>{props.content}</p>) : 
-            (<><p>{props.shortContent}</p>
-            <button onClick={showMoreContent}>Czytaj więcej</button></>)}
-        <hr/>
-        </> 
-    );
+    showMoreContent() {
+        setShowContent(true);
+        this.setState({ showContent: true});
+    }
+
+    render () {
+        return (
+            <>
+                <Title value={this.props.title}/>
+                { this.state.showContent ? (<p>{this.props.content}</p>) : 
+                (<><p>{this.props.shortContent}</p>
+                <button onClick={() => this.showMoreContent()}>Czytaj więcej</button></>)}
+            <hr/>
+            </> 
+        );
+    }
+    
 }
 
 const Blog = function() {
@@ -44,7 +63,7 @@ const Blog = function() {
 
     return (
         <div>
-            <Title/>
+            <MainTitle/>
             {postsList}
         </div>
     )
