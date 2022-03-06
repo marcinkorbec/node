@@ -1,11 +1,11 @@
 const Title = () => <h1>To jest blog o gotowaniu</h1>;
 
 const Post = (props) => {
-    const showContent = false;
-    
+    const [showContent, setShowContent] = React.useState(false);
+
     const showMoreContent = (event) => {
-        event.preventDefault();
         console.log('Kliknięcie');
+        showContent = true;
     }
 
     return (
