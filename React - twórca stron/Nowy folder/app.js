@@ -1,7 +1,6 @@
 const Title = () => <h1>To jest blog o gotowaniu</h1>;
 
 const Post = (props) => {
-    console.log(props.showContent)
     return (
         <>
             <h2>{props.title}</h2>
@@ -32,10 +31,7 @@ const Blog = function() {
     const postsList = posts.map(el => (
         <Post
             key= {el.id}
-            title={el.title}
-            content={el.content}
-            shortContent={el.shortContent}
-            showContent={el.showContent}
+            {...el}
         />
     ))
 
