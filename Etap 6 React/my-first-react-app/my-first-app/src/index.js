@@ -5,14 +5,15 @@ import './index.css';
 
 const name = prompt("jak masz na imię?")
 
-const MyComponent = () => {
-	return (
-		<div>
-			{ (name==='') ? <strong>Nie podałeś imienia!</strong> : <h1>Witaj {name}</h1>}
-		</div>
-	)
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<div>
+				{(name === '') ? <strong>Nie podałeś imienia!</strong> : <h1>Witaj {name}</h1>}
+			</div>
+		)
+	}
 }
-
 
 
 ReactDOM.render(
