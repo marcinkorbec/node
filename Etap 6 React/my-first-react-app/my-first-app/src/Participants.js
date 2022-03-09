@@ -3,7 +3,7 @@ import './App.css';
 
 
 
-const StringsList = (props) => {
+const Participants = (props) => {
 	const string = props.list
 		.map(person => person.name)
 		.join(', ')
@@ -17,6 +17,6 @@ const StringsList = (props) => {
 }
 
 export default {
-	Participants: StringsList,
+	Participants,
 	Names
 }
