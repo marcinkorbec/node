@@ -24,12 +24,7 @@ const data = [
 
 render(
 	<React.StrictMode>
-		<div>
-			<
-				Participants
-					list={data}
-			/>
-		</div>
+		<Participants list={data}/>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
