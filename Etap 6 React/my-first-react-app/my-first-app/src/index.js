@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import './index.css';
-import Participants from './StringsList';
+import Participants from './Participants';
 
 const data = [
 	{
