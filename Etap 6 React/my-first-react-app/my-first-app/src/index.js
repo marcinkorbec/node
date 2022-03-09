@@ -1,16 +1,33 @@
 import React from 'react';
 import {render} from 'react-dom';
 import './index.css';
-import App from './App';
+import Participants from './StringsList';
+
+const data = [
+	{
+		name: 'Anna',
+		mail: 'a@wp.pl'
+	},
+	{
+		name: 'Maria',
+		mail: 'm@wp.pl'
+	},
+	{
+		name: 'Ela',
+		mail: 'e@wp.pl'
+	},
+	{
+		name: 'Józia',
+		mail: 'j@wp.pl'
+	}
+];
 
 render(
 	<React.StrictMode>
 		<div>
 			<
-				App name="Marcin"
-				lastName="Korbecki"
-				age = {20}
-				isTest
+				Participants
+					list={data}
 			/>
 		</div>
 	</React.StrictMode>,
