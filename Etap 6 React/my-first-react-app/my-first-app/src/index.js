@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 
 render(
-	<>
-		<App name="Testowa" lastName="Osoba"/>
-		<App name="Marcin"/>
-		<App name="Marysia"/>
-	</>,
+	<React.StrictMode>
+		<div>
+			<
+				App name="Marcin"
+				lastName="Korbecki"
+				age = {20}
+				isTest
+			/>
+		</div>
+	</React.StrictMode>,
 	document.getElementById('root')
 );
 
