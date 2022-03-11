@@ -1,18 +1,18 @@
 import React from "react";
 import './App.css';
 import {StringsList} from "./StringsList";
+import {RecordsCount} from "./RecordsCount";
 
 
 
 export const Participants = (props) => {
 	const names = props.list.map(person => person.name)
-	console.log(names);
 
 	return (
 		<>
 			<StringsList list={names}/>
 			<hr/>
-			<p>Baza zawiera {props.list.length} rekordów.</p>
+			<RecordsCount/>
 		</>
 	);
 }
