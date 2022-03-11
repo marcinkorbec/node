@@ -12,7 +12,7 @@ export const Participants = (props) => {
 		<>
 			<StringsList list={names}/>
 			<hr/>
-			<RecordsCount/>
+			<RecordsCount list={names}/>
 		</>
 	);
 }
