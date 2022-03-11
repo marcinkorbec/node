@@ -3,5 +3,5 @@ import './App.css';
 
 
 export const RecordsCount = (props) => {
-	return <p>Razem: {props.list.length} rekordów.</p>
+	return <p>Razem: {props.count} rekordów.</p>
 }
