@@ -6,7 +6,7 @@ import {RecordsCount} from "./RecordsCount";
 
 
 export const Participants = (props) => {
-	const names = props.list.map(person => person.name)
+	const names = props.list.map(person => person.name);
 
 	return (
 		<>
