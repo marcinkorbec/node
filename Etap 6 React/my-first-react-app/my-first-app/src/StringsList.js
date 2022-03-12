@@ -3,7 +3,10 @@ import './App.css';
 
 
 export const StringsList = (props) => {
-	const names = props.list.join(', ');
-	return <p>{names}</p>
+	const string = props.list
+		.slice(0, props.list.length - 1)
+		.join(', ');
+
+	return <p>{string}</p>
 }
 
