@@ -5,11 +5,15 @@ import './App.css';
 
 export const Participants = (props) => {
 
-	const [count, setCount] = useState(0);
+	const [thingToDo, setThingToDo] = useState('Iść do lodówki oraz');
+
+	setTimeout(() => {
+		setThingToDo('zjeść kiełbase')
+	}, 5000)
 
 	return (
 		<>
-			{count}
+			{thingToDo}
 		</>
 	);
 }
