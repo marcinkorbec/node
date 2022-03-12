@@ -5,11 +5,11 @@ import './App.css';
 
 export const Participants = (props) => {
 
-	const [thingToDo, setThingToDo] = useState('iść do lodówki');
+	const [count, setCount] = useState(0);
 
 	return (
 		<>
-			{thingToDo}
+			{count}
 		</>
 	);
 }
