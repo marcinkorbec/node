@@ -1,7 +1,5 @@
 import React from "react";
 import './App.css';
-import {StringsList} from "./StringsList";
-import {RecordsCount} from "./RecordsCount";
 
 
 
@@ -10,9 +8,7 @@ export const Participants = (props) => {
 
 	return (
 		<>
-			<StringsList list={names}/>
-			<hr/>
-			<RecordsCount count={names.length}/>
+
 		</>
 	);
 }
