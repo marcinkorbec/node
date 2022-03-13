@@ -1,28 +1,22 @@
-import React, {useState} from "react";
+import React, {Component, useState} from "react";
 import './App.css';
 
 
 
-export const Participants = (props) => {
-	const [count, setCount] = useState(0);
-	const [person, setPerson] = useState({
-		name: 'Marcin',
-		email: 'marcin@gmail.com'
-	});
+export class Participants extends Component {
+	state = {
+		name: 'Foo',
+		gentleList: ['Marcin', 'Bartek', 'Juzek', 'Zenobiusz']
+	};
 
-	setTimeout(() => {
-		setPerson(() => {
-			const personCopy = JSON.parse(JSON.stringify(person));
-			personCopy.name = 'Kuba';
-			return personCopy;
-		})
-	}, 2500);
+	render () {
+		const [name, setName] = useState('Foo')
 
-
-	return (
-		<>
-			<h1>{count}</h1>
-			<p>{person.name}</p>
-		</>
-	)
+		setTimeout( () => {
+			this.setState({
+				name: 'Bar'
+			})
+		}, 2500)
+		return <h1>{this.setState.name}</h1>
+	}
 }
