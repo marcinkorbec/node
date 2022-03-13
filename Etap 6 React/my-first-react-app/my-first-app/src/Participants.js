@@ -11,7 +11,7 @@ export const Participants = (props) => {
 		setCount (count => {
 			return count + 1;
 		})
-	}, 5000)
+	}, 1000)
 
 	return <h1>{count}</h1>
 }
