@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react";
+import React, {Component} from "react";
 import './App.css';
 
 
@@ -6,17 +6,17 @@ import './App.css';
 export class Participants extends Component {
 	state = {
 		name: 'Foo',
-		gentleList: ['Marcin', 'Bartek', 'Juzek', 'Zenobiusz']
+		lastName: 'Xxxx'
 	};
 
 	render () {
-		const [name, setName] = useState('Foo')
 
 		setTimeout( () => {
 			this.setState({
 				name: 'Bar'
 			})
 		}, 2500)
-		return <h1>{this.setState.name}</h1>
+
+		return <h1>{this.state.name}</h1>
 	}
 }
