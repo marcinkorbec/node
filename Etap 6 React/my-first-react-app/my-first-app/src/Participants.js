@@ -29,8 +29,6 @@ export class Participants extends Component {
 
 	render () {
 		const name = this.state;
-
-
 		return <h1>{this.state.name}</h1>
 	}
 }
