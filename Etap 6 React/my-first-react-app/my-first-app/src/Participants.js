@@ -4,14 +4,21 @@ import './App.css';
 
 
 export const Participants = (props) => {
-
 	const [count, setCount] = useState(0);
+	const [person, setPerson] = useState({
+		name: 'Marcin',
+		email: 'marcin@gmail.com'
+	});
 
-	setInterval(() => {
-		setCount (count => {
-			return count + 1;
-		})
-	}, 1000)
+	setTimeout(() => {
 
-	return <h1>{count}</h1>
+	}, 2500);
+
+
+	return (
+		<>
+			<h1>{count}</h1>
+			<p>{person.name}</p>
+		</>
+	)
 }
