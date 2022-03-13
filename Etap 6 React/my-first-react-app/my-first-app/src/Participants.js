@@ -11,7 +11,11 @@ export const Participants = (props) => {
 	});
 
 	setTimeout(() => {
-
+		setPerson(() => {
+			const personCopy = JSON.parse(JSON.stringify(person));
+			personCopy.name = 'Kuba';
+			return personCopy;
+		})
 	}, 2500);
 
 
