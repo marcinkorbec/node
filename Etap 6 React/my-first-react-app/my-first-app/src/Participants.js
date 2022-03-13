@@ -5,15 +5,13 @@ import './App.css';
 
 export const Participants = (props) => {
 
-	const [thingToDo, setThingToDo] = useState('Iść do lodówki oraz');
+	const [count, setCount] = useState(0);
 
-	setTimeout(() => {
-		setThingToDo('zjeść kiełbase');
+	setInterval(() => {
+		setCount (count => {
+			return count + 1;
+		})
 	}, 5000)
 
-	return (
-		<>
-			{thingToDo === 'iść do lodówki' ? <strong>Brak jedzenia w lodówce:(</strong> : <h1>{thingToDo}</h1> }
-		</>
-	);
+	return <h1>{count}</h1>
 }
