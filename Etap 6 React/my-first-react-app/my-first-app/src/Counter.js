@@ -3,23 +3,24 @@ import './App.css';
 
 
 
-export class Participants extends Component {
+export class Counter extends Component {
 	state = {
 		name: 'Foo',
-		lastName: 'Xxxx'
+		lastName: 'Xxxx',
+		count: 0
 	};
 
 	componentDidMount() {
-		setTimeout( () => {
-			this.setState({
-				name: 'Bar'
-			})
-		}, 2500)
-
+		setInterval( () => {
+			this.setState(prev => ({
+				count: prev.count + 1,
+			}))
+		}, 1000)
 		console.log('Pierwsze zamontowanie naszego komponentu.');
 	}
 
 	componentDidUpdate() {
+
 		console.log('Aktualizowanie DOMu.')
 	}
 
@@ -28,7 +29,7 @@ export class Participants extends Component {
 	}
 
 	render () {
-		const name = this.state;
-		return <h1>{this.state.name}</h1>
+		const {count} = this.state
+		return <h1>{count}</h1>
 	}
 }
