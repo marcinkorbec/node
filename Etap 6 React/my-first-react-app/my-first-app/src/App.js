@@ -9,6 +9,5 @@ export const App = props => {
 		setShow(false);
 	}, 5000)
 
-
 	return show===true ? <NumberList/> : null;
 }
