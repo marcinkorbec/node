@@ -9,27 +9,21 @@ export class NumberList extends Component {
 		numbers: [1],
 	};
 
-	componentDidMount() {
-		this.intervalId = setInterval( () => {
-			this.setState(prev => ({
-				count: prev.count + 1,
-			}))
-		}, 1000)
-		console.log('Pierwsze zamontowanie naszego komponentu.');
-	}
-
-	// componentDidUpdate() {
-	//
-	// 	console.log('Aktualizowanie DOMu.')
+	// componentDidMount() {
+	// 	this.intervalId = setInterval( () => {
+	// 		this.setState(prev => ({
+	// 			count: prev.count + 1,
+	// 		}))
+	// 	}, 1000)
+	// 	console.log('Pierwsze zamontowanie naszego komponentu.');
 	// }
 	//
-	componentWillUnmount() {
-		console.log('Komponent zostanie odmonotowany.')
-		clearInterval(this.intervalId);
-	}
+	// componentWillUnmount() {
+	// 	console.log('Komponent zostanie odmonotowany.')
+	// 	clearInterval(this.intervalId);
+	// }
 
 	render () {
-		const {numbers} = this.state
-		return <StringsList list={numbers}/>
+		return <StringsList list={this.state.numbers}/>
 	}
 }
