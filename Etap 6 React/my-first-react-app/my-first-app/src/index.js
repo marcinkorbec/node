@@ -1,11 +1,11 @@
 import React from 'react';
 import {render} from 'react-dom';
 import './index.css';
-import {App} from "./App";
+import {NumberList} from "./numberList";
 
 render(
 	<React.StrictMode>
-		<App/>
+		<NumberList/>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
