@@ -1,11 +1,12 @@
 import React, {Component} from "react";
 import './App.css';
+import {StringsList} from "./StringsList";
 
 
 
 export class NumberList extends Component {
 	state = {
-		count: 0
+		numbers: [1],
 	};
 
 	componentDidMount() {
@@ -28,7 +29,7 @@ export class NumberList extends Component {
 	}
 
 	render () {
-		const {count} = this.state
-		return <h1>{count}</h1>
+		const {numbers} = this.state
+		return <StringsList list={numbers}/>
 	}
 }
