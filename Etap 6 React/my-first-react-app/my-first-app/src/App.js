@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './App.css';
-import {Counter} from "./Counter";
+import {NumberList} from "./numberList";
 
 export const App = props => {
 	const [show, setShow] = useState(true);
@@ -9,5 +9,5 @@ export const App = props => {
 		setShow(false);
 	}, 5000)
 
-	return show===true ? <Counter/> : null;
+	return show===true ? <NumberList/> : null;
 }
