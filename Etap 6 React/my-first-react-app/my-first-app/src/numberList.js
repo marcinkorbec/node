@@ -3,10 +3,8 @@ import './App.css';
 
 
 
-export class Counter extends Component {
+export class NumberList extends Component {
 	state = {
-		name: 'Foo',
-		lastName: 'Xxxx',
 		count: 0
 	};
 
