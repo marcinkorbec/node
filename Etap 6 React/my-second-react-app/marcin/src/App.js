@@ -1,15 +1,8 @@
 import './App.css';
-import {Clock} from "./Clock";
-import {useState} from "react";
+import {CrazyInput} from "./CrazyInput";
 
-export const App = props => {
-    const [show, setShow] = useState(true);
-
-    setTimeout(()=> {
-        setShow(false);
-    }, 5000);
-
-    return show ? <Clock/> : null;
-}
-
-
+export const App = props => (
+    <>
+        <CrazyInput type="text"/>
+    </>
+)
