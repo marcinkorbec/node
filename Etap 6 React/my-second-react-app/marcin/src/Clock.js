@@ -7,7 +7,9 @@ export const Clock = props => {
         setInterval(() => {
             setDt(new Date());
         }, 1000)
-    })
+
+        return () => clearInterval();
+    }, [])
 
     useEffect(() => {
         console.log('Czas się zmienił');
@@ -22,5 +24,3 @@ export const Clock = props => {
 
     return <p>{dt.toLocaleString()}</p>
 }
-
-
