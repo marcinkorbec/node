@@ -1,0 +1,25 @@
+import {useEffect, useState} from "react";
+
+export const Clock = props => {
+    const [dt, setDt] = useState(new Date());
+
+    useEffect(() =>{
+        return () => {
+            console.log('Komponent będzie zdemontowany.')
+        };
+    }, []);
+
+
+
+    return <p>{dt.toLocaleString()}</p>
+}
+
+
+// setInterval(()=> {
+//     setDt(new Date());
+// }, 1000)
+
+
+// useEffect( ()=> {
+//     console.log('Czas się zmienił');
+// }, [dt]);
