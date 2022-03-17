@@ -1,31 +1,23 @@
-import React, {Component} from "react";
+import React, {Component, useEffect, useState} from "react";
 import './App.css';
 import {StringsList} from "./StringsList";
 
 
 
-export class NumberList extends Component {
-    state = {
-        numbers: [1],
-    };
+export const NumberList = props => {
+    const [numbers, setNumbers] = useState([1])
 
-    componentDidMount() {
-        this.intervalId = setInterval( () => {
-            this.setState(prev => ({
-                numbers: [...prev.numbers, prev.numbers.length + 1]
-            }));
-        }, 10000)
+    useEffect(() => {
+        const intervalId = setInterval( () => {
+            setNumbers(numbers => (
+                [...numbers, numbers.length + 1]
+            ));
+        }, 1000)
 
-        console.log('Pierwsze zamontowanie naszego komponentu.');
-    }
+        return () => clearInterval(intervalId);
 
-    componentWillUnmount() {
-        console.log('Komponent zostanie odmonotowany.')
-        clearInterval(this.intervalId);
-    }
+    }, [])
 
-    render () {
-        return <StringsList list={this.state.numbers}/>
-    }
+
+    return <StringsList list={numbers}/>
 }
-
