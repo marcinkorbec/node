@@ -7,10 +7,6 @@ export const StringsList = (props) => {
         .join(', ');
     console.log(string)
 
-    useEffect(() => {
-        console.log('Zmienia się lista.');
-    }, [props.list])
-
     return <h1>{string}</h1>
 }
 
