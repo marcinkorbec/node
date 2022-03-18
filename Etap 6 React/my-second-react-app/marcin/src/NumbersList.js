@@ -3,7 +3,6 @@ import './App.css';
 import {StringsList} from "./StringsList";
 
 
-
 export const NumberList = props => {
     const [numbers, setNumbers] = useState([1])
 
@@ -15,9 +14,7 @@ export const NumberList = props => {
         }, 1000)
 
         return () => clearInterval(intervalId);
-
     }, [])
-
 
     return <StringsList list={numbers}/>
 }
