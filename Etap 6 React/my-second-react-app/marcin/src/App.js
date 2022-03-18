@@ -1,10 +1,9 @@
 import './App.css';
-import {CrazyInput} from "./CrazyInput";
+import {Progressbar} from "./Progressbar";
 
 export const App = props => (
 
     <>
-        <div>Marcin Korbecki</div>
-        <CrazyInput />
+        <Progressbar/>
     </>
 )
