@@ -2,11 +2,14 @@ import React from "react";
 import './App.css';
 
 
-export const Event = props => {
+export class Event extends React.Component {
 
-    const clicked = event => {
-        alert('Kliknięto!');
+    clicked(event) {
+        event.preventDefault();
+        console.log(event);
     };
 
-    return <button onClick={clicked}>Click me!</button>
+    render() {
+        return <button onClick={this.clicked}>Click me!</button>
+    }
 }
