@@ -2,7 +2,7 @@ import React from "react";
 import "./Kwadrat.css"
 
 export const PasswordInput = props => {
-    // const [state, useState] = useState('white');
+    // const [state, setState] = useState('white');
 
     return (
         <>
