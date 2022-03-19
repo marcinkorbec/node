@@ -1,10 +1,10 @@
 import './App.css';
-import {PasswordInput} from "./Zad1";
+import {ThreeColorsLedBox} from "./Zad2";
 
 
 export const App = props => (
 
     <>
-        <PasswordInput/>
+        <ThreeColorsLedBox/>
     </>
 )
