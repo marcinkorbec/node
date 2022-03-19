@@ -8,12 +8,12 @@ export const Progressbar = props => {
     useEffect(()=> {
         const intervalId = setInterval(()=> {
             setProgressbar( progressbar => {
-                if (progressbar >= 99) {
+                if (progressbar >= 100) {
                     clearInterval(intervalId)
                     return progressbar;
                 }
                 return progressbar + 0.05;
-                }
+            }
         )}, 1);
 
         return ()=> clearInterval(intervalId);
@@ -26,7 +26,7 @@ export const Progressbar = props => {
                 width: `${progressbar}vw`
             }}
         >
-            {Math.ceil(progressbar)}%
+            {Math.ceil(progressbar - 1)}%
         </div>
     )
 }
