@@ -1,12 +1,10 @@
 import './App.css';
-import {Progressbar} from "./Progressbar";
-import {Event} from "./Event";
+import {PasswordInput} from "./Zad1";
 
 
 export const App = props => (
 
     <>
-        <Progressbar/>
-        <Event/>
+        <PasswordInput/>
     </>
 )
