@@ -21,11 +21,13 @@ export const Progressbar = props => {
 
     return (
         <div
-        className="Progressbar"
-        style={{
-            width: `${progressbar}vw`
-        }}
-    >{Math.ceil(progressbar)}%</div>
+            className="Progressbar"
+            style={{
+                width: `${progressbar}vw`
+            }}
+        >
+            {Math.ceil(progressbar)}%
+        </div>
     )
 }
 
