@@ -10,7 +10,9 @@ export const PassText = props => {
     return (
         <>
             <input type={state}/>
-            <button onMouseDown={show} onMouseUp={hide}>Pokaż hasło</button>
+            <button onMouseDown={show} onMouseUp={hide}>
+                {state==='password' ? '👀' : '👁' }
+            </button>
         </>
     )
 }
