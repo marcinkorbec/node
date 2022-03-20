@@ -3,10 +3,10 @@ import './App.css';
 
 
 export const StringsList = (props) => {
-    const string = props.list
-        .join(', ');
-    console.log(string)
+    const liList = props
+        .list
+        .map((s, index) => <li key={index.toString()}>{s}</li>);
 
-    return <h1>{string}</h1>
+    return <h1>{liList}</h1>
 }
 
