@@ -2,9 +2,15 @@ import React, {useState} from "react";
 import "./Zad1.css";
 
 export const PassText = props => {
-    const [] = useState(onMouseUp)
-    
+    const [state, setState] = useState('password')
+
+    const show = () => setState('text');
+    const hide = () => setState('password')
+
     return (
-        <input type="text"/>
+        <>
+            <input type={state}/>
+            <button onMouseDown={show} onMouseUp={hide}>Pokaż hasło</button>
+        </>
     )
 }
