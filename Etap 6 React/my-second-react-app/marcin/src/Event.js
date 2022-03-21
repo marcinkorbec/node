@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css';
+import './Components/App/App.css';
 
 
 export class Event extends React.Component {

@@ -1,23 +1,5 @@
 export const People = [
     {
-        "email": "سارینا.کوتی@example.com",
-        "gender": "female",
-        "phone_number": "0997-267-1133",
-        "birthdate": 1077518239,
-        "location": {
-            "street": "5273 سمیه",
-            "city": "بیرجند",
-            "state": "تهران",
-            "postcode": 99854
-        },
-        "username": "yellowpeacock139",
-        "password": "chopper",
-        "first_name": "سارینا",
-        "last_name": "کوتی",
-        "title": "mrs",
-        "picture": "women/38.jpg"
-    },
-    {
         "email": "melissa.fleming@example.com",
         "gender": "female",
         "phone_number": "0740-304-475",
@@ -1277,4 +1259,4 @@ export const People = [
         "title": "ms",
         "picture": "algolia/women/fanette.png"
     },
-]
+];

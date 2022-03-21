@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import './App.css';
+import React from "react";
+import '../App/App.css';
 
 
 export const StringsList = (props) => {

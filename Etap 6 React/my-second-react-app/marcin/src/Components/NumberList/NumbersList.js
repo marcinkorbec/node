@@ -1,6 +1,6 @@
 import React, {Component, useEffect, useState} from "react";
-import './App.css';
-import {StringsList} from "./StringsList";
+import '../App/App.css';
+import {StringsList} from "../StringsList/StringsList";
 
 
 export const NumberList = props => {

@@ -1,5 +1,5 @@
 import React from "react";
-import {StringsList} from "./StringsList";
+import {StringsList} from "./Components/StringsList/StringsList";
 
 export const Aplication = props => {
 
