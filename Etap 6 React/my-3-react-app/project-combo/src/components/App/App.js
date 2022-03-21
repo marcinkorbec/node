@@ -1,4 +1,4 @@
-import {UsersList} from "../PersonList/UsersList";
+import {UsersList} from "../UsersList/UsersList";
 import {People} from "../../data/people";
 import './App.css';
 
