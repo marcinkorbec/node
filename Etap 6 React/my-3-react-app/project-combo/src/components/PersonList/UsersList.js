@@ -1,15 +1,15 @@
 import React from "react";
 
 export const UsersList = props => {
+    function capitalizeFirstLetter(string) {
+        return string[0].toUpperCase() + string.slice(1);
+    }
 
-    const person = props.users.map((s, index) => <li key={index.toString()}>{s}</li>);
-    console.log(person)
     return (
-        <>
-            {/*<img src=`{person.picture}` alt=""/>*/}
-            {/*<p>email: {person.email}</p>*/}
-            <p>imię: {person}</p>
-            {/*<p>nazwa użytkownika: {person.username}</p>*/}
-        </>
+        <ul>{props.users
+            .map(user => <li key={user.username.toUpperCase()}>
+                <strong>{capitalizeFirstLetter(user.first_name)} {capitalizeFirstLetter(user.last_name)}</strong> <em>{user.username} </em>
+            </li>)}
+        </ul>
     )
 }
