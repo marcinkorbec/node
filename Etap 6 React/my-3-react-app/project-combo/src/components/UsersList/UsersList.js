@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import {UsersListOneItem} from "./UsersListOneItem";
 
 export const UsersList = props => {
+    const [list, setList] = useState()
 
     return (
         <div className="container">
