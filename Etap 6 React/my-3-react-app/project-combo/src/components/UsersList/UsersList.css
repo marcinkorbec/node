@@ -25,18 +25,12 @@
 }
 
 .user_name {
-    border-radius: 0;
-    max-width: 45%;
-    box-shadow: none;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2px;
-    margin: 3px 3px;
-    background-color: #eee;
+
     align-self: center;
 }
 
-.user:hover, strong:hover {
+.user:hover, user_name:hover {
     cursor: pointer;
-    background-color: #fff;
+    background-color: white;
+
 }
