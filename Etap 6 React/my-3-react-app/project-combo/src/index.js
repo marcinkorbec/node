@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './components/App/App';
 import reportWebVitals from './reportWebVitals';
+import {Gender} from "./components/Gender/Gender";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Gender/>
   </React.StrictMode>,
   document.getElementById('root')
 );
