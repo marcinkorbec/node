@@ -14,15 +14,8 @@ export const Agreement = props => {
 
   return (
     <form onSubmit={sendForm}>
-      <select
-        name="gender"
-        onChange={changeAgreement}
-        value={agreement}
-      >
-        <option value="">-Wybierz-</option>
-        <option value="K">Kobieta</option>
-        <option value="M">Mężczyzna</option>
-      </select>
+      <input type="checkbox"/>
+       zaakceptuj RODO aby przejść dalej
       <p>Wpisałeś {agreement.length} znaków.</p>
       <button type="submit">Save</button>
     </form>
