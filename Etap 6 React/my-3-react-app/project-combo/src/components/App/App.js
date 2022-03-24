@@ -1,5 +1,3 @@
-import {UsersList} from "../UsersList/UsersList";
-import {People} from "../../data/people";
 import './App.css';
 import {useState} from "react";
 
@@ -12,12 +10,23 @@ export const App = props => {
 
   const backgroundColor = firstName[0] === '@' ? 'lime' : '#fab7b7';
 
+  const sendForm = event => {
+    event.preventDefault();
+    console.log('Wysłano dane z formularza.', firstName);
+  }
+
   return (
-    <>
-      <input type="password" value={firstName} onChange={changeFirstName} style={{backgroundColor: `${backgroundColor}`}}/>
+    <form onSubmit={sendForm}>
+      <input
+        name="firstName"
+        value={firstName}
+        onChange={changeFirstName}
+        style={{backgroundColor: `${backgroundColor}`}}
+      />
       <h1>{firstName}</h1>
       <p>Wpisałeś {firstName.length} znaków.</p>
-    </>
+      <button type="submit">Save</button>
+    </form>
   );
 }
 
