@@ -4,10 +4,11 @@ import './index.css';
 import {App} from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import {Gender} from "./components/Gender/Gender";
+import {Agreement} from "./components/Agreement/Agreement";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Gender/>
+    <Agreement/>
   </React.StrictMode>,
   document.getElementById('root')
 );
