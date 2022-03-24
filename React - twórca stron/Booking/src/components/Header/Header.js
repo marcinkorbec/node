@@ -1,8 +1,10 @@
 import React from "react";
-
+import "./Header.css"
 
 export const Header = () => {
   return (
-    <h1>Hello łorld!</h1>
+    <header className="site-header">
+      <p>Booking.com</p>
+    </header>
   )
 }
