@@ -1,0 +1,9 @@
+.site-header {
+    height: 70px;
+    background-color: #cdcdcd;
+    margin-top: 0;
+}
+
+h1 {
+    align-self: center
+}
