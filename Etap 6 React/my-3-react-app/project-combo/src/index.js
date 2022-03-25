@@ -5,10 +5,11 @@ import {App} from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import {Gender} from "./components/Gender/Gender";
 import {Agreement} from "./components/Agreement/Agreement";
+import {InteractiveTask} from "./components/InetractiveTask/InteractiveTask";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Agreement/>
+    <InteractiveTask/>
   </React.StrictMode>,
   document.getElementById('root')
 );
