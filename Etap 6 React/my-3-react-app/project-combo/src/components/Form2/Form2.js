@@ -2,32 +2,40 @@ import React, {useState} from "react";
 import "./Form2.css"
 
 export const Form2 = props => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [age, setAge] = useState(0)
+  const [person, setPerson] = useState({
+    firstName: '',
+    lastName: '',
+    age: '',
+  })
+
 
   const sendForm = e => {
     e.preventDefault();
-
-    const person = {
-      firstName,
-      lastName,
-      age
-    }
     console.log(person)
   }
 
-  const changeFirstName = e => {
-    setFirstName(e.target.value);
+  function setName(e){
+    setPerson(person => ({
+      ...person,
+      firstName: e.target.value,
+    }));
   }
 
-  const changeLastName = e => {
-    setLastName(e.target.value);
+  function setLastName(e) {
+    setPerson(person => ({
+      ...person,
+      lastName: e.target.value,
+    }));
   }
 
-  const changeAge = e => {
-    setAge(Number(e.target.value));
+  function setAge(e) {
+    setPerson(person => ({
+      ...person,
+      age: Number(e.target.value),
+    }));
   }
+
+
 
 
   return (
@@ -35,19 +43,19 @@ export const Form2 = props => {
       <p>
         <label>
           Imię: <br/>
-          <input type="text" value={firstName} onChange={changeLastName}/>
+          <input type="text" value={person.firstName} onChange={setName}/>
         </label>
       </p>
       <p>
         <label>
           Nazwisko: <br/>
-          <input type="text" value={lastName} onChange={changeLastName}/>
+          <input type="text" value={person.lastName} onChange={setLastName}/>
         </label>
       </p>
       <p>
         <label>
         Wiek: <br/>
-        <input type="text" value={age} onChange={changeAge}/>
+        <input type="text" value={person.age} onChange={setAge}/>
       </label>
       </p>
       <p>
