@@ -6,10 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import {Gender} from "./components/Gender/Gender";
 import {Agreement} from "./components/Agreement/Agreement";
 import {InteractiveTask} from "./components/InetractiveTask/InteractiveTask";
+import {Form2} from "./components/Form2/Form2";
 
 ReactDOM.render(
   <React.StrictMode>
-    <InteractiveTask/>
+    <Form2/>
   </React.StrictMode>,
   document.getElementById('root')
 );
