@@ -1,0 +1,14 @@
+.square {
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    margin: 30px auto;
+    border-radius: 5px;
+}
+
+.checkbox {
+    margin: 20px auto;
+    width: 250px;
+    /*text-align: center;*/
+    padding-left: 5%;
+}
