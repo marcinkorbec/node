@@ -1,10 +1,10 @@
 import {useState} from "react";
 
 export const Agreement = props => {
-  const [agreement, setAgreement] = useState('M')
+  const [agreement, setAgreement] = useState(false)
 
-  const changeAgreement = e => {
-    setAgreement(e.target.value);
+  const changeAgreement = () => {
+    !agreement ? setAgreement(true) : setAgreement(false);
   }
 
   const sendForm = event => {
@@ -14,8 +14,13 @@ export const Agreement = props => {
 
   return (
     <form onSubmit={sendForm}>
-      <input type="checkbox"/>
-       zaakceptuj RODO aby przejść dalej
+      <label>
+        <input
+          type="checkbox"
+          checked={agreement}
+          onChange={changeAgreement}
+        /> Zaakceptuj RODO aby przejść dalej.
+      </label>
       <p>Wpisałeś {agreement.length} znaków.</p>
       <button type="submit">Save</button>
     </form>
