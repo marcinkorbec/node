@@ -43,7 +43,7 @@ export const Form2 = props => {
       <p>
         <label>
           Imię: <br/>
-          <input type="text" value={person.firstName} onChange={setName}/>
+          <input type="text" name={} value={person.firstName} onChange={setName}/>
         </label>
       </p>
       <p>
