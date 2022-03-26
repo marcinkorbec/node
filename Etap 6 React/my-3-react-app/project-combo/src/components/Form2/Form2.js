@@ -8,33 +8,15 @@ export const Form2 = props => {
     age: '',
   })
 
-
   const sendForm = e => {
     e.preventDefault();
     console.log(person)
   }
 
-  function setName(e){
-    setPerson(person => ({
+  const change = (e) => setPerson(person => ({
       ...person,
-      firstName: e.target.value,
+      [e.target.name]: e.target.value,
     }));
-  }
-
-  function setLastName(e) {
-    setPerson(person => ({
-      ...person,
-      lastName: e.target.value,
-    }));
-  }
-
-  function setAge(e) {
-    setPerson(person => ({
-      ...person,
-      age: Number(e.target.value),
-    }));
-  }
-
 
 
 
@@ -43,19 +25,19 @@ export const Form2 = props => {
       <p>
         <label>
           Imię: <br/>
-          <input type="text" name={} value={person.firstName} onChange={setName}/>
+          <input type="text" value={person.firstName} name="firstName" onChange={change}/>
         </label>
       </p>
       <p>
         <label>
           Nazwisko: <br/>
-          <input type="text" value={person.lastName} onChange={setLastName}/>
+          <input type="text" value={person.lastName} name="lastName" onChange={change}/>
         </label>
       </p>
       <p>
         <label>
         Wiek: <br/>
-        <input type="text" value={person.age} onChange={setAge}/>
+        <input type="number" value={person.age} name="age" onChange={change}/>
       </label>
       </p>
       <p>
