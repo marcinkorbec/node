@@ -7,10 +7,13 @@ import {Gender} from "./components/Gender/Gender";
 import {Agreement} from "./components/Agreement/Agreement";
 import {InteractiveTask} from "./components/InetractiveTask/InteractiveTask";
 import {Form2} from "./components/Form2/Form2";
+import {App2} from "./components/Dziedziczenie/Dziedziczenie";
+import {Dialog} from "./components/common/Dialog/Dialog";
+import {TextApp} from "./components/Text/Text";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Form2/>
+    <TextApp/>
   </React.StrictMode>,
   document.getElementById('root')
 );
