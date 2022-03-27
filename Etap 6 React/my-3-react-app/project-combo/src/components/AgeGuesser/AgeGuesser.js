@@ -1,12 +1,32 @@
 import React, {useState} from "react";
+import {AgeGuesserAnswer} from "./AgeGuesserAnswer";
+
 
 export const AgeGuesser = props => {
-  const [age, setAge] = useState(null)
+  const [name, setName] = useState('');
+  const [check, setCheck] = useState(false);
+
+  const sendform = event => {
+    event.preventDefault();
+    setCheck(true);
+  }
+
+  if (check) {
+    return <AgeGuesserAnswer name={name}/>;
+  }
 
   return (
-    <>
-      <p>Twój wiek to: {age}</p>
-      <p>Twoja data urodzenia: {new Date().getFullYear() - age}</p>
-    </>
+    <form onSubmit={sendform}>
+      <label>
+        Podaj imię:<br/>
+        <input
+          type="text"
+          value={name}
+          onChange={event => setName(event.target.value)}
+        />
+        <button type="submit">Zgadnij mój wiek.</button>
+      </label>
+    </form>
   )
 }
+
