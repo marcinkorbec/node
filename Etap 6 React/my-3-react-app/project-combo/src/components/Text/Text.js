@@ -1,6 +1,7 @@
 import React from "react";
 import {Dialog} from "../common/Dialog/Dialog";
 import {ConfirmDialog} from "../common/Dialog/ConfirmDialog";
+import {AgeGuesser} from "../AgeGuesser/AgeGuesser";
 
 export const TextApp = props => {
   return (
@@ -13,6 +14,7 @@ export const TextApp = props => {
       <ConfirmDialog title="Czy aby napewno?">
         <p>Kilnij aby zatwierdzić:</p>
       </ConfirmDialog>
+      <AgeGuesser/>
     </>
   )
 }
