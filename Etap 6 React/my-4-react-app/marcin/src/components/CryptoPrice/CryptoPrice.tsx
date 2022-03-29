@@ -39,7 +39,9 @@ export const CryptoPrice = () => {
           }
         </select>
         <Dialog>
-          <CryptoPriceOnePair onePair={data.find(one => one.symbol === pair) as BinanceOneCryptoPairData}/>
+          {
+            pair && <CryptoPriceOnePair onePair={data.find(one => one.symbol === pair) as BinanceOneCryptoPairData}/>
+          }
         </Dialog>
       </label>
     </>
