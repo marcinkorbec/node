@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Dialog} from "./components/common/Dialog/Dialog";
 
 export const App = () => {
   return (
@@ -18,6 +19,9 @@ export const App = () => {
         >
           Learn React
         </a>
+          <Dialog>
+              <h1>Wstawić można tu coś!</h1>
+          </Dialog>
       </header>
     </div>
   );
