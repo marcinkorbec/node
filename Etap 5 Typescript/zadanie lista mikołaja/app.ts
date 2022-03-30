@@ -1,4 +1,4 @@
-// import { unlink } from ('fs').promises;
+ // import { unlink } from ('fs').promises;
 //
 // export (async function () {
 //     const oldFile: string = process.argv[2];
