@@ -5,10 +5,10 @@ export const giftRouter = Router();
 
 giftRouter
 
-	.get('/', async (req: Request, res: Response): Promise<void> => {
+	.get('/gifts', async (req: Request, res: Response): Promise<void> => {
 		const giftsList = await GiftRecord.listAll();
 
-		res.render('gift/list', {
+		res.json({
 			giftsList,
 		});
 	})
