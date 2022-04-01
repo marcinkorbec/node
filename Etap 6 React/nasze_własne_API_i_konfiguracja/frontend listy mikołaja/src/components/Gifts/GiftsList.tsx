@@ -25,7 +25,7 @@ export const GiftsList = () => {
   return (
     <>
       <h1>Prezenty</h1>
-      <GiftsTable gifts={giftList} onGiftsChange={()=>{}} index={0}/>
+      <GiftsTable gifts={giftList}/>
     </>
   )
 }

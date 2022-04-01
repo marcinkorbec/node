@@ -5,7 +5,6 @@ import {GiftEntity} from "types";
 interface Props {
   gift: GiftEntity;
   index: number;
-  onGiftsChange: () => void;
 }
 
 
@@ -14,7 +13,7 @@ export const GiftTableRow = (props: Props) => (
     <td>{props.index + 1}</td>
     <td>{props.gift.name}</td>
     <td>{props.gift.count} szt.</td>
-    <td></td>
+    <td><a href="#">🗑</a></td>
   </tr>
 )
 
