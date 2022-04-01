@@ -8,14 +8,16 @@ import'./utils/db';
 
 const app = express();
 
-app.use(express.json()); //Content-type: application/json
-
 app.use(cors({
   origin: 'http://localhost:3000',
 }));
 
+
+app.use(express.json()); //Content-type: application/json
+
 app.use('/child', childRouter);
 app.use('/', giftRouter);
+
 
 app.use(handleError);
 

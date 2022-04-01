@@ -1,0 +1,10 @@
+{
+  "compilerOptions" : {
+    "baseUrl": ".",
+    "paths" : {
+      "types" : [
+        "../bakend lista mikołaja/types"
+      ]
+    }
+  }
+}

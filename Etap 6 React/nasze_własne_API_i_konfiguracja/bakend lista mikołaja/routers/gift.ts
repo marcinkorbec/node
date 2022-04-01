@@ -12,6 +12,12 @@ giftRouter
 			giftsList,
 		});
 	})
+  
+  .delete('/:id', async (req, res) => {
+  
+  }
+  
+  )
 
 	.post('/', async (req: Request, res: Response): Promise<void> => {
 		const data = {
