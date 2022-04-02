@@ -24,19 +24,20 @@ giftRouter
     if (await gift.countGivenGifts() > 0) {
       throw new ValidationError('Nie można usunąć tego co jest używane!')
     }
-    
+  
+    console.log(gift)
+    await gift.delete();
     res.end();
   })
 
 	.post('/', async (req: Request, res: Response): Promise<void> => {
-		const data = {
-			...req.body,
-			count: Number(req.body.count),
-		};
-
-		const newGift = new GiftRecord(data);
+		const newGift = new GiftRecord(req.body);
 		await newGift.insert();
 
 		res.redirect('/gift');
 	});
 
+// const data = {
+// 	...req.body, //to oznacza że wszystko to co wysyłaliśmy było wysyłane jako string
+// 	count: Number(req.body.count), //ale count żeby był liczbą
+// };
