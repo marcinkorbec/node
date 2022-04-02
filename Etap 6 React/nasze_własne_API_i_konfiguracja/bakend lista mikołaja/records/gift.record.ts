@@ -45,10 +45,10 @@ export class GiftRecord implements GiftEntity {
     return results.map(obj => new GiftRecord(obj));
   }
   
-  static async delete(id: string): Promise<void> {
-    const [results] = await pool.execute("DELETE FROM `gifts` WHERE `id` = :id", {
-      id,
-    }) as GiftRecordResult;
+  async delete(): Promise<void> {
+    await pool.execute("DELETE FROM `gifts` WHERE `id` = :id", {
+      id: this.id,
+    });
   }
   
   static async getOne(id: string): Promise<GiftRecord | null> {
@@ -64,5 +64,6 @@ export class GiftRecord implements GiftEntity {
     }) as GiftRecordResult;
     return count;
   }
+  
 }
 
