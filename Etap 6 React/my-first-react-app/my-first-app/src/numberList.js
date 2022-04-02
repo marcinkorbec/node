@@ -2,8 +2,6 @@ import React, {Component} from "react";
 import './App.css';
 import {StringsList} from "./StringsList";
 
-
-
 export class NumberList extends Component {
 	state = {
 		numbers: [1],
