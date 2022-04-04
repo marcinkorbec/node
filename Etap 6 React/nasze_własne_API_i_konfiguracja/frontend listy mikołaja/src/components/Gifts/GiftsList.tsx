@@ -2,7 +2,11 @@ import React, {useEffect, useState} from "react";
 import "./Gifts.css"
 import { GiftsTable } from "./GiftsTable";
 import {GiftEntity} from "types";
+import {Loading} from "../Loader/Loader";
 
+type DataType = {
+  data: GiftEntity[];
+}
 
 export const GiftsList = () => {
   const [giftList, setGiftList] = useState<GiftEntity[] | null>(null);
@@ -11,7 +15,7 @@ export const GiftsList = () => {
     setGiftList(null);
     const res = await fetch('http://localhost:3002/gifts');
     const data = await res.json();
-    console.log(data.giftsList)
+    console.log(data)
     setGiftList(data.giftsList);
   };
   
@@ -21,7 +25,7 @@ export const GiftsList = () => {
  
   
   if (giftList === null) {
-   return <div className="loader"></div>
+   return <Loading/>
   }
   
   
