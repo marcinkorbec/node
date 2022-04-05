@@ -31,7 +31,7 @@ export const GiftsList = () => {
   
   return (
     <>
-      <h1>Prezenty</h1>
+      <h2>Prezenty</h2>
       <GiftsTable gifts={giftList} onGiftsChange={refreshGifts}/>
     </>
   )
