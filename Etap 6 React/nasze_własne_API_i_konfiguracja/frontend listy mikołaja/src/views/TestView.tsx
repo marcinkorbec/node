@@ -11,7 +11,6 @@ export const TestView = () => {
       <h1>Test!</h1>
       <Link to="/gift">Przełącz do gifts.</Link>
     </>
-  
   )
 }
 
