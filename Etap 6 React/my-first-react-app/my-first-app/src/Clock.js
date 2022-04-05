@@ -4,7 +4,6 @@ export const Clock = props => {
 	const [dt, setDt] = useState(new Date());
 
 	useEffect(() => {
-
 		setInterval(()=> {
 			setDt(new Date());
 		})

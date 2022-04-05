@@ -15,7 +15,7 @@ giftRouter
 		});
 	})
   
-  .get('/:giftId', async (req: Request, res: Response): Promise<void> => {
+  .get('/gift/:giftId', async (req: Request, res: Response): Promise<void> => {
     const giftItem = await GiftRecord.getOne(req.params.giftId);
     const givenCount = await giftItem.countGivenGifts();
     
