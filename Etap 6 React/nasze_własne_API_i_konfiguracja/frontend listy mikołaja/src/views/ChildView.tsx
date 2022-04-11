@@ -9,7 +9,7 @@ export const ChildView = () => {
   return (
     <>
       <h1>Dzieci:</h1>
-      <Link to="/gift">Przełącz do gifts.</Link>
+      <Link to="/child">Przełącz do Prezentów.</Link>
     </>
   )
 }
