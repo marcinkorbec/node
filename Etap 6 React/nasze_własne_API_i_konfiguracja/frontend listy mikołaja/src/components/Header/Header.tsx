@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <>
       <h1>Santa Aplikacja</h1>
-      Menu: <NavLink style={colorOfLink} to="gift">Prezenty</NavLink> | <NavLink style={colorOfLink} to="/tests/test">Dzieci</NavLink>
+      Menu: <NavLink style={colorOfLink} to="gift">Prezenty</NavLink> | <NavLink style={colorOfLink} to="/child">Dzieci</NavLink>
     </>
   )
 }
