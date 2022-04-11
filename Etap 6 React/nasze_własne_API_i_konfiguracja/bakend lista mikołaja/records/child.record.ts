@@ -2,11 +2,12 @@ import {pool} from "../utils/db";
 import {ValidationError} from "../utils/errors";
 import {v4 as uuid} from "uuid";
 import {FieldPacket} from "mysql2";
+import {ChildEntity} from "../types/child/child.entity";
 
 type ChildRecordResult = [ChildRecord[], FieldPacket[]];
 
 
-export class ChildRecord {
+export class ChildRecord implements ChildEntity{
     id?: string;
     name: string;
     giftId: string;
