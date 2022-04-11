@@ -22,7 +22,7 @@ export const SingleGiftView = () => {
   return (
     <>
       <h2>{giftInfo.giftItem.name}</h2>
-      <p>Ten prezent ma ID <strong>{giftInfo.giftItem.id} i jest go {giftInfo.giftItem.count} sztuk.</strong></p>
+      <p>Ten prezent ma ID <strong style={{color: 'limegreen'}}>{giftInfo.giftItem.id}</strong> <strong> i jest go {giftInfo.giftItem.count} sztuk.</strong></p>
       <p>
         <Link to={'/gift'}>Wstecz</Link>
       </p>
