@@ -10,8 +10,8 @@ export const ChildrenList = () => {
   const refreshGifts = async () => {
     setData(null);
     const res = await fetch('http://localhost:3002/child');
-    const data = await res.json();
-    setData(data.data);
+    const dataResponse = await res.json()
+    setData(dataResponse);
   };
   
   useEffect( () => {
@@ -24,7 +24,6 @@ export const ChildrenList = () => {
   }
   
   
-  // @ts-ignore
   return (
     <>
       <h2>Prezenty</h2>
