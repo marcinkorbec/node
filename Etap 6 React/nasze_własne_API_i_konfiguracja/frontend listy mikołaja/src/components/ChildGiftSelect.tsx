@@ -35,7 +35,7 @@ export const ChildGiftSelect = (props: Props) => {
           ))
         }
       </select>
-      <button type="submit">Save</button>
+      <button type="submit">Zapisz</button>
     </form>
   );
 };
