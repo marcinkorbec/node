@@ -1,4 +1,3 @@
-import {strict as assert} from 'assert';
-import {handlebarsHelpers} from "./utils/handlebars-helpers";
+import {strict as assert} from "assert";
 
-assert(handlebarsHelpers.equals(2,3));
+assert.deepStrictEqual({ a: 1 }, { a: '1' });
