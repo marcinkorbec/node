@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node index.ts",
     "start:dev": "tsnd index.ts",
-    "tests": "ts-node test.ts",
+    "tests": "ts-node hmmm.ts",
     "test": "jest"
   },
   "keywords": [],

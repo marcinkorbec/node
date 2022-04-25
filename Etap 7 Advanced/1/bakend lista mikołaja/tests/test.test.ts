@@ -1,12 +1,7 @@
-test('adds 1 + 2 to equal 3', ()=> {
-  expect(1 + 2).toBe(3)
+import {ChildRecord} from "../records/child.record";
+
+test('foo bar test test', async () => {
+  // const children = await ChildRecord.listAll();
+  // console.log(children)
+  // expect(children).toBeDefined()
 })
-
-test('adds 1 + 2 to equal 4', ()=> {
-  expect(1 + 2).toBe(4)
-})
-
-
-test('Sprawdzamy czy buildPerson jest prawdziwawy', () => {
-  expect(2).toBeTruthy();
-});
