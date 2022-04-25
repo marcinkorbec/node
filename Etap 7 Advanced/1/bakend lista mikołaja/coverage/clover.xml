@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650828497368" clover="3.2.0">
-  <project timestamp="1650828497369" name="All files">
-    <metrics statements="28" coveredstatements="11" conditionals="15" coveredconditionals="5" methods="8" coveredmethods="1" elements="51" coveredelements="17" complexity="0" loc="28" ncloc="28" packages="2" files="3" classes="3"/>
-    <package name="records">
-      <metrics statements="22" coveredstatements="7" conditionals="11" coveredconditionals="5" methods="7" coveredmethods="1"/>
-      <file name="gift.record.ts" path="D:\node\Etap 7 Advanced\1\bakend lista mikołaja\records\gift.record.ts">
-        <metrics statements="22" coveredstatements="7" conditionals="11" coveredconditionals="5" methods="7" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="16" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="20" count="1" type="cond" truecount="2" falsecount="2"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="30" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="utils">
-      <metrics statements="6" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="db.ts" path="D:\node\Etap 7 Advanced\1\bakend lista mikołaja\utils\db.ts">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-      </file>
-      <file name="errors.ts" path="D:\node\Etap 7 Advanced\1\bakend lista mikołaja\utils\errors.ts">
-        <metrics statements="4" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1650918949939" clover="3.2.0">
+  <project timestamp="1650918949939" name="All files">
+    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
   </project>
 </coverage>
