@@ -1,0 +1,60 @@
+body{
+    counter-reset: Serial;           /* Set the Serial counter to 0 */
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    margin: 30px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Table*/
+
+table {
+    font-family: 'Arial';
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #00cccc;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+}
+
+table tr:hover {
+    background: #f4f4f4;
+}
+
+table tr:hover td {
+    color: #555;
+}
+
+table th, table td {
+    color: #999;
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #00cccc;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+table th.last {
+    border-right: none;
+}
+
+/*tr td:first-child:before{*/
+/*    counter-increment: Serial;      !* Increment the Serial counter *!*/
+/*    content:counter(Serial);        !* Display the counter *!*/
+/*}*/
