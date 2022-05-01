@@ -1,5 +1,5 @@
-import * as express from"express";
-import * as cors from 'cors';
+import express from"express";
+import cors from 'cors';
 import 'express-async-errors';
 import {handleError} from "./utils/errors";
 import {childRouter} from "./routers/child";
@@ -22,5 +22,5 @@ app.use('/', giftRouter);
 app.use(handleError);
 
 app.listen(3002, '0.0.0.0', () => {
-    console.log('Program działa na adresie http://localhost:3002');
+    console.log('Program działa na adresie http://0.0.0.0:3002');
 })
