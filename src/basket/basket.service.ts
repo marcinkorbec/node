@@ -7,36 +7,38 @@ export class BasketService {
   private items: AddProductDto[] = []
 
   addProductToBasket(item: AddProductDto): AddProductToBasketResponse {
+    const { items } = this;
+    const { name, quantity } = item;
     if (
-      typeof item.name !== "string" ||
-      typeof item.quantity !== "number" ||
-      item.name === '' ||
-      item.quantity < 1
+      typeof name !== "string" ||
+      typeof quantity !== "number" ||
+      name === '' ||
+      quantity < 1
     ) {
       return {
         isSucces: false,
       }
     }
     this.items.push(item);
-    console.log(this.items);
+    console.log(items);
     return {
       isSucces: true,
-      index: this.items.length - 1,
+      index: items.length - 1,
     }
   }
 
   removeProductFromBasket(index: number): RemoveProductFromBasketResponse {
-    const { length, splice } = this.items;
+    const { items } = this;
     if (
       index < 0 ||
-      index >= length
+      index >= items.length
     ) {
       return {
         isSucces: false,
       };
     };
 
-    splice(index, 1);
+    items.splice(index, 1);
 
     console.log(this.items);
 
