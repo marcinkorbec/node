@@ -1,49 +1,82 @@
-import { Injectable } from "@nestjs/common";
+import { Inject, Injectable } from "@nestjs/common";
 import { AddProductDto } from "./dto/add-product.dto";
-import { AddProductToBasketResponse, RemoveProductFromBasketResponse } from "../interfaces/basket";
+import {
+    AddProductToBasketResponse, GetTotalPriceResponse,
+    ListProductsInBasketResponse,
+    RemoveProductFromBasketResponse
+} from "../interfaces/basket";
+import { ShopService } from "../shop/shop.service";
 
 @Injectable()
 export class BasketService {
-  private items: AddProductDto[] = []
+    private items: AddProductDto[] = [];
 
-  addProductToBasket(item: AddProductDto): AddProductToBasketResponse {
-    const { items } = this;
-    const { name, quantity } = item;
-    if (
-      typeof name !== "string" ||
-      typeof quantity !== "number" ||
-      name === '' ||
-      quantity < 1
+    constructor(
+      @Inject(ShopService) private shopService: ShopService
     ) {
-      return {
-        isSucces: false,
-      }
     }
-    this.items.push(item);
-    console.log(items);
-    return {
-      isSucces: true,
-      index: items.length - 1,
+
+    getProductsFromBasket(): ListProductsInBasketResponse {
+        return this.items;
     }
-  }
 
-  removeProductFromBasket(index: number): RemoveProductFromBasketResponse {
-    const { items } = this;
-    if (
-      index < 0 ||
-      index >= items.length
-    ) {
-      return {
-        isSucces: false,
-      };
-    };
+    addProductToBasket(item: AddProductDto): AddProductToBasketResponse {
+        const { items } = this;
+        const { name, quantity } = item;
 
-    items.splice(index, 1);
+        if (
+          typeof name !== "string" ||
+          typeof quantity !== "number" ||
+          name === "" ||
+          quantity < 1 ||
+          !this.shopService.hasProduct(name)
+        ) {
+            return {
+                isSucces: false
+            };
+        }
 
-    console.log(this.items);
+        this.items.push(item);
 
-    return {
-      isSucces: true,
+        return {
+            isSucces: true,
+            index: items.length - 1
+        };
     }
-  }
+
+    removeProductFromBasket(index: number): RemoveProductFromBasketResponse {
+        const { items } = this;
+
+        if (
+          index < 0 ||
+          index >= items.length
+        ) {
+            return {
+                isSucces: false
+            };
+        }
+        ;
+
+        items.splice(index, 1);
+
+        return {
+            isSucces: true
+        };
+    }
+
+    getTotalPriceOfBasket(): GetTotalPriceResponse {
+        if(!this.items.every(item => this.shopService.hasProduct(item.name))) {
+
+            const alternativeBasket = this.items.filter(item => this.shopService.hasProduct(item.name));
+
+            return {
+                isSuccess: false,
+                alternativeBasket,
+            };
+        }
+
+        return this.items
+          .map(item=> this.shopService.getPriceOfProduct(item.name) * item.quantity * 1.23)
+          .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+    }
 }

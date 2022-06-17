@@ -1,4 +1,4 @@
 export class AddProductDto {
-  name: string;
-  quantity: number;
+    name: string;
+    quantity: number;
 }

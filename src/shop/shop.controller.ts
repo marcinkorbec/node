@@ -1,5 +1,5 @@
 import { Controller, Get, Inject } from "@nestjs/common";
-import { GetListOfProductsResponse } from "../interfaces/ShopItem";
+import { GetListOfProductsResponse } from "../interfaces/shop-item";
 import { ShopService } from "./shop.service";
 
 @Controller('shop')
