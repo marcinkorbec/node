@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable } from "@nestjs/common";
 import { AddProductDto } from "./dto/add-product.dto";
 import { AddProductToBasketResponse, RemoveProductFromBasketResponse } from "../interfaces/basket";
 
@@ -26,16 +26,17 @@ export class BasketService {
   }
 
   removeProductFromBasket(index: number): RemoveProductFromBasketResponse {
+    const { length, splice } = this.items;
     if (
       index < 0 ||
-      index >= this.items.length
+      index >= length
     ) {
       return {
         isSucces: false,
       };
     };
 
-    this.items.splice(index, 1);
+    splice(index, 1);
 
     console.log(this.items);
 
