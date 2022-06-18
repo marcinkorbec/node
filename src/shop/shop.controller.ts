@@ -1,15 +1,34 @@
-import { Controller, Get, Inject } from "@nestjs/common";
+import { Controller, Get, HostParam, Inject, Param, Redirect } from "@nestjs/common";
 import { GetListOfProductsResponse } from "../interfaces/shop-item";
 import { ShopService } from "./shop.service";
 
-@Controller('shop')
+@Controller({
+    path: 'shop',
+    host: ':name.lvh.me',
+})
 export class ShopController {
-  constructor(
-    @Inject(ShopService) private shopService: ShopService,
-  ) {}
+    onApplicationBootstrap() {
+        console.log('Załadowane');
+    }
 
-  @Get('/')
-  getListOfProducts(): GetListOfProductsResponse {
-    return this.shopService.getProducts();
-  }
+    onApplicationShutDown() {
+        console.log('Apka zaraz zniknie!');
+    }
+
+    constructor(
+      @Inject(ShopService) private shopService: ShopService
+    ) {
+    }
+
+    @Get("/")
+    getListOfProducts(): GetListOfProductsResponse {
+        return this.shopService.getProducts();
+    }
+
+    @Get("/welcome")
+    welcome(
+      @HostParam("name") siteName: string
+    ):string {
+        return `Witaj na sklepie ${siteName}!`
+    };
 }
