@@ -7,7 +7,7 @@ import { ShopModule } from "../shop/shop.module";
     imports: [forwardRef(()=> ShopModule)],
     controllers: [BasketController],
     providers: [BasketService],
-    exports: [BasketModule]
+    exports: [BasketService]
 })
 export class BasketModule {
 }

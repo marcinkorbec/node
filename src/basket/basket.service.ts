@@ -12,7 +12,7 @@ export class BasketService {
     private items: AddProductDto[] = [];
 
     constructor(
-      @Inject(forwardRef(() => ShopService)) private shopService: ShopService
+      @Inject(forwardRef(() => ShopService)) private shopService: ShopService,
     ) {
     }
 
