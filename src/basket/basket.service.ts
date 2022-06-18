@@ -1,4 +1,4 @@
-import { Inject, Injectable } from "@nestjs/common";
+import { forwardRef, Inject, Injectable } from "@nestjs/common";
 import { AddProductDto } from "./dto/add-product.dto";
 import {
     AddProductToBasketResponse, GetTotalPriceResponse,
@@ -12,7 +12,7 @@ export class BasketService {
     private items: AddProductDto[] = [];
 
     constructor(
-      @Inject(ShopService) private shopService: ShopService
+      @Inject(forwardRef(() => ShopService)) private shopService: ShopService
     ) {
     }
 
@@ -78,5 +78,9 @@ export class BasketService {
         return this.items
           .map(item=> this.shopService.getPriceOfProduct(item.name) * item.quantity * 1.23)
           .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+    }
+
+    countPromo(): number {
+        return this.getTotalPriceOfBasket() > 10 ? 1 : 0;
     }
 }

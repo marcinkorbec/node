@@ -1,8 +1,14 @@
-import { Injectable } from "@nestjs/common";
+import { forwardRef, Inject, Injectable } from "@nestjs/common";
 import { GetListOfProductsResponse } from "../interfaces/shop-item";
+import { BasketService } from "../basket/basket.service";
 
 @Injectable()
 export class ShopService {
+
+    constructor(
+      @Inject(forwardRef(()=> BasketService)) private basketService: BasketService,
+    ) {
+    }
 
     getProducts(): GetListOfProductsResponse {
         return [
@@ -14,12 +20,12 @@ export class ShopService {
             {
                 name: "M&Ms",
                 description: "wspaniałe M&Ms",
-                priceNet: 5.30
+                priceNet: 5.30 - this.basketService.countPromo()
             },
             {
                 name: "7-Days",
                 description: "wspaniały 7-Days",
-                priceNet: 4.60
+                priceNet: 4.60 - this.basketService.countPromo()
             }
         ];
     }
@@ -31,4 +37,5 @@ export class ShopService {
     getPriceOfProduct(name: string): number {
         return this.getProducts().find(item=> item.name === name).priceNet;
     }
+
 }
