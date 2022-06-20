@@ -1,9 +1,8 @@
-import {HelloWorldModule} from './modules/hello-world';
-import {CalcModule} from "./modules/calc";
+import { HelloWorldModule } from './modules/hello-world';
+import { CalcModule } from "./modules/calc";
 
 class Test {
   someMethod(
-    // @inject(HelloWorldModule, CalcModule)
     helloWorld?: HelloWorldModule,
     calc?: CalcModule,
   ) {
