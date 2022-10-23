@@ -6,13 +6,14 @@ interface Props {
 }
 
 const ItemsList = ({items, onDelete}: Props) => {
+  console.log('Items list rerender')
   return <ul>
     {items.map((item, index) => <li key={item}>{item}) <button onClick={()=> onDelete(index)}>usuń</button></li>)}
   </ul>
 }
 
-export const App = ()=> {
-  const [items, setItems] = useState<string[]>([]);
+export const AppRerender = ()=> {
+  const [items, setItems] = useState<string[]>(['a', 'b', 'c', 'd', 'e']);
   const [value, setValue] = useState<string>('')
 
   const handleDelete = (toDelete: number) => {
@@ -26,7 +27,7 @@ export const App = ()=> {
   return (
     <div>
       <input value={value} onChange={handleChange}/>
-      <ItemsList items={items} onDelete={handleDelete}/>;
+      <ItemsList items={items} onDelete={handleDelete}/>
     </div>
   )
 }
