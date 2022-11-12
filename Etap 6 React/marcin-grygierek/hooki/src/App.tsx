@@ -2,6 +2,7 @@ import React, {useCallback} from 'react';
 import './App.css';
 import {useEffect, useState} from "react";
 import { AppRerender } from './AppRerender';
+import {AppRef} from "./AppRef";
 
 interface Props {
   handler: ()=> void;
@@ -36,7 +37,7 @@ function App() {
   //   console.log(counter)
   // }, [])
 
-  return <AppRerender/>
+  return <AppRef/>
 }
 
 export default App;
