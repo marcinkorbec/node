@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import { AppRerender } from './AppRerender';
 import {AppRef} from "./AppRef";
 import {AppReducer} from "./AppReducer";
+import {AppReducer2} from "./AppReducer2";
 
 interface Props {
   handler: ()=> void;
@@ -38,7 +39,7 @@ function App() {
   //   console.log(counter)
   // }, [])
 
-  return <AppReducer/>
+  return <AppReducer2/>
 }
 
 export default App;
