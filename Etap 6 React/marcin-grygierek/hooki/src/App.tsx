@@ -3,6 +3,7 @@ import './App.css';
 import {useEffect, useState} from "react";
 import { AppRerender } from './AppRerender';
 import {AppRef} from "./AppRef";
+import {AppReducer} from "./AppReducer";
 
 interface Props {
   handler: ()=> void;
@@ -37,7 +38,7 @@ function App() {
   //   console.log(counter)
   // }, [])
 
-  return <AppRef/>
+  return <AppReducer/>
 }
 
 export default App;
