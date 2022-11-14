@@ -5,6 +5,7 @@ import { AppRerender } from './AppRerender';
 import {AppRef} from "./AppRef";
 import {AppReducer} from "./AppReducer";
 import {AppReducer2} from "./AppReducer2";
+import {Calculator} from "./Calculator";
 
 interface Props {
   handler: ()=> void;
@@ -39,7 +40,7 @@ function App() {
   //   console.log(counter)
   // }, [])
 
-  return <AppReducer2/>
+  return <Calculator/>
 }
 
 export default App;
