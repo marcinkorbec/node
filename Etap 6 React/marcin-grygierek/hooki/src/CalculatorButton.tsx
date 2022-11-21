@@ -1,24 +1,29 @@
 import { Operation } from "./Calculator";
 
 interface Props {
-  handleOperation: (operation: Operation) => void;
+  setOperationResult: (result: number | string) => void;
+  addToHistory: (line:string) => void;
+  clearHistory: () => void;
+  history: string[];
+  first: number;
+  second: number;
 }
 
-export const CalculatorButton = ({handleOperation}: Props) => {
+export const CalculatorButton = ({first, second, setOperationResult, addToHistory, clearHistory, history}: Props) => {
   const handleOperation = (operation:Operation) => {
     switch (operation) {
       case Operation.ADD: {
-        setResult(first + second)
+        setOperationResult(first + second)
         addToHistory(`${first} + ${second} = ${first + second}`)
         break;
       }
       case Operation.SUBTRACT: {
-        setResult(first - second)
+        setOperationResult(first - second)
         addToHistory(`${first} - ${second} = ${first - second}`)
         break;
       }
       case Operation.MULTIPLY: {
-        setResult(first * second)
+        setOperationResult(first * second)
         addToHistory(`${first} * ${second} = ${first * second}`)
         break;
       }
@@ -27,10 +32,13 @@ export const CalculatorButton = ({handleOperation}: Props) => {
           alert('Próbujesz podzielić przez zero!')
         }
         else {
-          setResult(first / second);
+          setOperationResult(first / second);
           addToHistory(`${first} / ${second} = ${first / second}`)
         }
         break;
+      }
+      case Operation.CLEAR: {
+        clearHistory();
       }
     }
   }
@@ -40,6 +48,7 @@ export const CalculatorButton = ({handleOperation}: Props) => {
       <button onClick={() => handleOperation(Operation.SUBTRACT)}>-</button>
       <button onClick={() => handleOperation(Operation.MULTIPLY)}>*</button>
       <button onClick={() => handleOperation(Operation.DIVIDE)}>/</button>
+      <button onClick={() => handleOperation(Operation.CLEAR)}>Wyczyść historię ({history.length})</button>
     </>
   )
 }
