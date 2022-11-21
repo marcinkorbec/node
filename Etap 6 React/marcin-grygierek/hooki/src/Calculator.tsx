@@ -1,6 +1,10 @@
 import {ChangeEvent, useState} from "react";
+import {CalculatorButton} from "./CalculatorButton";
+import {CalculatorForm} from "./CalculatorForm";
+import {CalculatorHistory} from "./CalculatorHistory";
+import {CalculatorResult} from "./CalculatorResult";
 
-enum Operation {
+export enum Operation {
   ADD,
   SUBTRACT,
   MULTIPLY,
@@ -11,7 +15,7 @@ export const Calculator = () => {
 
   const [first, setFirst] = useState<number>(0)
   const [second, setSecond] = useState<number>(0)
-  const [result, setResult] = useState<number>(0)
+  const [result, setResult] = useState<number | string>(0)
   const [storyOperation, setStoryOperation] = useState<string[]>([])
 
   const handleFirstChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,52 +26,26 @@ export const Calculator = () => {
     setSecond(Number(e.target.value));
   }
 
+  const setOperationResult = (operationResult: number | string)=> {
+    setResult(operationResult);
+  }
+
   const addToHistory = (line: string) => {
     setStoryOperation(prevHistory => [...prevHistory, line]);
   }
 
-  const handleOperation = (operation:Operation) => {
-    switch (operation) {
-      case Operation.ADD: {
-        setResult(first + second)
-        addToHistory(`${first} + ${second} = ${first + second}`)
-        break;
-      }
-      case Operation.SUBTRACT: {
-        setResult(first - second)
-        addToHistory(`${first} - ${second} = ${first - second}`)
-        break;
-      }
-      case Operation.MULTIPLY: {
-        setResult(first * second)
-        addToHistory(`${first} * ${second} = ${first * second}`)
-        break;
-      }
-      case Operation.DIVIDE: {
-        if (second === 0) {
-          alert('Próbujesz podzielić przez zero!')
-        }
-        else {
-          setResult(first / second);
-          addToHistory(`${first} / ${second} = ${first / second}`)
-        }
-        break;
-      }
-    }
-  }
+
 
   return <div>
-    <input type="number" value={first} onChange={handleFirstChange}/>
-    <input type="number" value={second} onChange={handleSecondChange}/>
+    <CalculatorForm
+      first={first}
+      second={second}
+      handleFirstChange={handleFirstChange}
+      handleSecondChange={handleSecondChange}
+    />
+    <CalculatorButton handleOperation={handleOperation}/>
+    <CalculatorResult result={result}/>
 
-    <h1>{result}</h1>
-    <button onClick={() => handleOperation(Operation.ADD)}>+</button>
-    <button onClick={() => handleOperation(Operation.SUBTRACT)}>-</button>
-    <button onClick={() => handleOperation(Operation.MULTIPLY)}>*</button>
-    <button onClick={() => handleOperation(Operation.DIVIDE)}>/</button>
-
-    <ul>
-      {storyOperation.map((line, index)=> <li key={index}>{line}</li>)}
-    </ul>
+    <CalculatorHistory storyOperation={storyOperation}/>
   </div>
 };
