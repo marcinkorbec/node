@@ -8,7 +8,8 @@ export enum Operation {
   ADD,
   SUBTRACT,
   MULTIPLY,
-  DIVIDE
+  DIVIDE,
+  CLEAR
 }
 
 export const Calculator = () => {
@@ -16,7 +17,7 @@ export const Calculator = () => {
   const [first, setFirst] = useState<number>(0)
   const [second, setSecond] = useState<number>(0)
   const [result, setResult] = useState<number | string>(0)
-  const [storyOperation, setStoryOperation] = useState<string[]>([])
+  const [history, setHistory] = useState<string[]>([])
 
   const handleFirstChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFirst(Number(e.target.value));
@@ -30,8 +31,11 @@ export const Calculator = () => {
     setResult(operationResult);
   }
 
+  const clearHistory = () => {
+    setHistory([])
+  }
   const addToHistory = (line: string) => {
-    setStoryOperation(prevHistory => [...prevHistory, line]);
+    setHistory(prevHistory => [...prevHistory, line]);
   }
 
 
@@ -43,9 +47,20 @@ export const Calculator = () => {
       handleFirstChange={handleFirstChange}
       handleSecondChange={handleSecondChange}
     />
-    <CalculatorButton handleOperation={handleOperation}/>
-    <CalculatorResult result={result}/>
+    <CalculatorButton
+      setOperationResult={setOperationResult}
+      addToHistory={addToHistory}
+      clearHistory={clearHistory}
+      history={history}
+      first={first}
+      second={second}
+    />
+    <CalculatorResult
+      result={result}
+      first={first}
+      second={second}
+    />
 
-    <CalculatorHistory storyOperation={storyOperation}/>
+    <CalculatorHistory storyOperation={history}/>
   </div>
 };
