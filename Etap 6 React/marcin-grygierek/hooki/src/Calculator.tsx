@@ -9,7 +9,6 @@ export enum Operation {
   SUBTRACT,
   MULTIPLY,
   DIVIDE,
-  CLEAR
 }
 
 export const Calculator = () => {

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a1cb6f5-4f4f-4b28-9588-937ab8795408" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/hooki/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooki/.idea/hooki.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooki/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooki/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooki/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooki/src/Calculator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/Calculator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Etap 8 Nest/E8T2D2/backend-shop" beforeDir="false" afterPath="$PROJECT_DIR$/../../Etap 8 Nest/E8T2D2/backend-shop" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2I91ofxXDtSGl9Ioz93hbo8d6KL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a1cb6f5-4f4f-4b28-9588-937ab8795408" name="Changes" comment="" />
+      <created>1669579165662</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669579165662</updated>
+      <workItem from="1669579167497" duration="596000" />
+      <workItem from="1669579934272" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
