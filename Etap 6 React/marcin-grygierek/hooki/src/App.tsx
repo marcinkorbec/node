@@ -5,7 +5,7 @@ import { AppRerender } from './AppRerender';
 import {AppRef} from "./AppRef";
 import {AppReducer} from "./AppReducer";
 import {AppReducer2} from "./AppReducer2";
-import {Calculator} from "./Calculator";
+import {Calculator} from "./context/Calculator";
 
 interface Props {
   handler: ()=> void;
