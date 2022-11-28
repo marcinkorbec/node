@@ -1,4 +1,4 @@
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, createContext, useState} from "react";
 import {CalculatorButton} from "./CalculatorButton";
 import {CalculatorForm} from "./CalculatorForm";
 import {CalculatorHistory} from "./CalculatorHistory";
@@ -10,6 +10,12 @@ export enum Operation {
   MULTIPLY,
   DIVIDE,
 }
+
+interface CalculatorContextType {
+
+}
+
+const CalculatorContext = createContext(null)
 
 export const Calculator = () => {
 
