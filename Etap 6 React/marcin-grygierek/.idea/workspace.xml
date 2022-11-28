@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a1cb6f5-4f4f-4b28-9588-937ab8795408" name="Changes" comment="">
+    <list default="true" id="7a1cb6f5-4f4f-4b28-9588-937ab8795408" name="Changes" comment="Update course code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/src/Calculator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/context/Calculator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/src/CalculatorArithmeticButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/context/CalculatorArithmeticButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/src/CalculatorButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/context/CalculatorButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/src/CalculatorForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/context/CalculatorForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/src/CalculatorHistory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/context/CalculatorHistory.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooki/src/CalculatorResult.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/context/CalculatorResult.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooki/src/context/Calculator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooki/src/context/Calculator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Etap 8 Nest/E8T2D2/backend-shop" beforeDir="false" afterPath="$PROJECT_DIR$/../../Etap 8 Nest/E8T2D2/backend-shop" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +50,65 @@
       <updated>1669579165662</updated>
       <workItem from="1669579167497" duration="596000" />
       <workItem from="1669579934272" duration="3000" />
-      <workItem from="1669585449899" duration="5046000" />
+      <workItem from="1669585449899" duration="8293000" />
     </task>
+    <task id="LOCAL-00001" summary="Update course code">
+      <created>1669670606150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670606150</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update course code">
+      <created>1669670623075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670623075</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update course code">
+      <created>1669670633532</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670633532</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update course code">
+      <created>1669670644735</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670644735</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update course code">
+      <created>1669670659878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670659878</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update course code">
+      <created>1669670674860</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670674860</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update course code">
+      <created>1669670697620</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670697620</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update course code">
+      <created>1669670707004</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669670707004</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,5 +124,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update course code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update course code" />
   </component>
 </project>

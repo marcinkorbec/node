@@ -12,10 +12,18 @@ export enum Operation {
 }
 
 interface CalculatorContextType {
-
+  first: number;
+  second: number;
+  result: number;
+  history: string[];
+  addToHistory: (line: string) => void;
+  clearHistory: () => void;
+  handleFirstChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSecondChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  setOperationResult: (operationResult: number | string)=> void;
 }
 
-const CalculatorContext = createContext(null)
+const CalculatorContext = createContext<CalculatorContextType>(null)
 
 export const Calculator = () => {
 
