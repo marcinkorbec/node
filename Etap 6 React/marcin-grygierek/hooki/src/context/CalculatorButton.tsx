@@ -1,15 +1,7 @@
 import {CalculatorArithmeticButtons} from "./CalculatorArithmeticButtons";
 
-interface Props {
-  clearHistory: () => void;
-  history: string[];
-  setOperationResult: (result: number | string) => void;
-  addToHistory: (line:string) => void;
-  first: number;
-  second: number;
-}
 
-export const CalculatorButton = ({clearHistory, history, first, second, setOperationResult, addToHistory}: Props) => {
+export const CalculatorButton = () => {
 
   return (
     <>

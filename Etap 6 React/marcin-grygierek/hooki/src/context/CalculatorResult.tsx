@@ -1,10 +1,5 @@
-interface Props {
-  result: number | string;
-  first: number;
-  second: number;
-}
 
-export const CalculatorResult = ({result, first, second}: Props) => {
+export const CalculatorResult = () => {
   return (
     <>
       <h1>{result}</h1>

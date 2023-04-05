@@ -1,8 +1,6 @@
-interface Props {
-  storyOperation: string[];
-}
 
-export const CalculatorHistory = ({storyOperation}: Props) => {
+
+export const CalculatorHistory = () => {
   return (
     <ul>
       {storyOperation.map((line, index)=> <li key={index}>{line}</li>)}

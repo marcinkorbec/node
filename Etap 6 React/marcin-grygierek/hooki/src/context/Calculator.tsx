@@ -1,8 +1,8 @@
-import {ChangeEvent, createContext, useState} from "react";
-import {CalculatorButton} from "./CalculatorButton";
-import {CalculatorForm} from "./CalculatorForm";
-import {CalculatorHistory} from "./CalculatorHistory";
-import {CalculatorResult} from "./CalculatorResult";
+import { ChangeEvent, createContext, useState } from "react";
+import { CalculatorButton } from "./CalculatorButton";
+import { CalculatorForm } from "./CalculatorForm";
+import { CalculatorHistory } from "./CalculatorHistory";
+import { CalculatorResult } from "./CalculatorResult";
 
 export enum Operation {
   ADD,
@@ -20,10 +20,10 @@ interface CalculatorContextType {
   clearHistory: () => void;
   handleFirstChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleSecondChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  setOperationResult: (operationResult: number | string)=> void;
+  setOperationResult: (operationResult: number | string) => void;
 }
 
-const CalculatorContext = createContext<CalculatorContextType>(null)
+export const CalculatorContext = createContext<CalculatorContextType | null>(null)
 
 export const Calculator = () => {
 
@@ -40,7 +40,7 @@ export const Calculator = () => {
     setSecond(Number(e.target.value));
   }
 
-  const setOperationResult = (operationResult: number | string)=> {
+  const setOperationResult = (operationResult: number | string) => {
     setResult(operationResult);
   }
 
@@ -53,27 +53,22 @@ export const Calculator = () => {
 
 
 
-  return <div>
-    <CalculatorForm
-      first={first}
-      second={second}
-      handleFirstChange={handleFirstChange}
-      handleSecondChange={handleSecondChange}
-    />
-    <CalculatorButton
-      setOperationResult={setOperationResult}
-      addToHistory={addToHistory}
-      clearHistory={clearHistory}
-      history={history}
-      first={first}
-      second={second}
-    />
-    <CalculatorResult
-      result={result}
-      first={first}
-      second={second}
-    />
-
-    <CalculatorHistory storyOperation={history}/>
-  </div>
+  return (
+      <CalculatorContext.Provider value={{
+        first,
+        second,
+        result,
+        history,
+        addToHistory,
+        clearHistory,
+        handleFirstChange,
+        handleSecondChange,
+        setOperationResult,
+      }}>
+        <CalculatorForm />
+        <CalculatorButton />
+        <CalculatorResult />
+        <CalculatorHistory />
+      </CalculatorContext.Provider>
+  )
 };
