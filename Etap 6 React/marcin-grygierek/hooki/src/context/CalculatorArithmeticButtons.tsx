@@ -1,14 +1,13 @@
-import {Operation} from "./Calculator";
+import { useContext } from "react";
+import {CalculatorContext, Operation} from "./Calculator";
 
-interface Props {
-  setOperationResult: (result: number | string) => void;
-  addToHistory: (line:string) => void;
-  first: number;
-  second: number;
-  history: string[];
-}
 
-export const CalculatorArithmeticButtons = ({first, second, setOperationResult, addToHistory}: Props) => {
+export const CalculatorArithmeticButtons = () => {
+  const context = useContext(CalculatorContext);
+
+  if (!context) return null;
+  const {first, second, setOperationResult, addToHistory} = context;
+  
   const handleOperation = (operation:Operation) => {
     switch (operation) {
       case Operation.ADD: {
