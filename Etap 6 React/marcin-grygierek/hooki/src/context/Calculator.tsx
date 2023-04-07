@@ -20,7 +20,7 @@ interface CalculatorContextType {
   clearHistory: () => void;
   handleFirstChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleSecondChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  setOperationResult: (operationResult: number | string) => void;
+  setOperationResult: (operationResult: number) => void;
 }
 
 export const CalculatorContext = createContext<CalculatorContextType | null>(null)
@@ -29,7 +29,7 @@ export const Calculator = () => {
 
   const [first, setFirst] = useState<number>(0)
   const [second, setSecond] = useState<number>(0)
-  const [result, setResult] = useState<number | string>(0)
+  const [result, setResult] = useState<number>(0)
   const [history, setHistory] = useState<string[]>([])
 
   const handleFirstChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +40,7 @@ export const Calculator = () => {
     setSecond(Number(e.target.value));
   }
 
-  const setOperationResult = (operationResult: number | string) => {
+  const setOperationResult = (operationResult: number) => {
     setResult(operationResult);
   }
 
