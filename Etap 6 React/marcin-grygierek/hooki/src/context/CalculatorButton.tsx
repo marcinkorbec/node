@@ -1,17 +1,17 @@
-import {CalculatorArithmeticButtons} from "./CalculatorArithmeticButtons";
+import { useContext } from "react";
+import { CalculatorArithmeticButtons } from "./CalculatorArithmeticButtons";
+import { CalculatorContext } from "./Calculator";
 
 
 export const CalculatorButton = () => {
+  const context = useContext(CalculatorContext);
+
+  if (!context) return null;
+  const {history, clearHistory } = context;
 
   return (
     <>
-      <CalculatorArithmeticButtons
-        setOperationResult={setOperationResult}
-        addToHistory={addToHistory}
-        history={history}
-        first={first}
-        second={second}
-      />
+      <CalculatorArithmeticButtons />
       <button onClick={clearHistory}>Wyczyść historię ({history.length})</button>
     </>
   )
