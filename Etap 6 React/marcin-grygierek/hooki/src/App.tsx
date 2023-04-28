@@ -19,27 +19,6 @@ const Foo = ({handler}: Props) => {
 }
 
 function App() {
-  // const [counter, setCounter] = useState<number>(0);
-  // const [randomValue, setRandomValue] = useState<number>(0)
-  //
-  // useEffect(()=> {
-  //   const interval = setInterval(()=> {
-  //     setCounter(prevCounter => prevCounter + 1);
-  //   }, 1000)
-  //
-  //   const interval2 = setInterval(()=> {
-  //     setRandomValue(Math.random());
-  //   }, 500)
-  //
-  //   return()=> {
-  //     clearInterval(interval)
-  //   }
-  // }, []);
-  //
-  // const handler = useCallback(()=> {
-  //   console.log(counter)
-  // }, [])
-
   return <Calculator/>
 }
 
