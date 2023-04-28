@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0147e00d-1cab-4fe3-8212-7153a040bc3c" name="Changes" comment="add context">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/CalculatorArithmeticButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/CalculatorArithmeticButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/CalculatorButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/CalculatorButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/CalculatorHistory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/CalculatorHistory.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/CalculatorResult.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/CalculatorResult.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/Calculator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/CalculatorArithmeticButtons.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/CalculatorButton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/CalculatorForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/CalculatorHistory.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/CalculatorResult.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,20 +32,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\node\\Etap 6 React\\marcin-grygierek\\hooki\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "F:\\node\\Etap 6 React\\marcin-grygierek\\hooki\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -70,7 +74,8 @@
       <updated>1669579957712</updated>
       <workItem from="1669579964833" duration="593000" />
       <workItem from="1680732671320" duration="1042000" />
-      <workItem from="1680874003731" duration="748000" />
+      <workItem from="1680874003731" duration="3490000" />
+      <workItem from="1682695138023" duration="807000" />
     </task>
     <task id="LOCAL-00001" summary="add context">
       <created>1680874146533</created>
@@ -79,11 +84,57 @@
       <option name="project" value="LOCAL" />
       <updated>1680874146533</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add context">
+      <created>1680874998826</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680874998826</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add context">
+      <created>1680875006348</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680875006348</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add context">
+      <created>1680875014886</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680875014886</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add context">
+      <created>1680875042657</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680875042657</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add context">
+      <created>1680875071373</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680875071374</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add context" />
