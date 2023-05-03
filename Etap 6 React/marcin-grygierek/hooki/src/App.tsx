@@ -1,11 +1,7 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import './App.css';
-import {useEffect, useState} from "react";
-import { AppRerender } from './AppRerender';
-import {AppRef} from "./AppRef";
-import {AppReducer} from "./AppReducer";
-import {AppReducer2} from "./AppReducer2";
-import {Calculator} from "./context/Calculator";
+import {useEffect} from "react";
+import {Calculator} from "./redux-toolkit/Calculator";
 
 interface Props {
   handler: ()=> void;

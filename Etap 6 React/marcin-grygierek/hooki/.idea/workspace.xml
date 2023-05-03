@@ -4,16 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0147e00d-1cab-4fe3-8212-7153a040bc3c" name="Changes" comment="add context">
+    <list default="true" id="0147e00d-1cab-4fe3-8212-7153a040bc3c" name="Changes" comment="Add redux">
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/Calculator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/CalculatorArithmeticButtons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/CalculatorButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/CalculatorForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/CalculatorHistory.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/CalculatorResult.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/features/calculator/calculator-slice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux-toolkit/store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/CalculatorArithmeticButtons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/CalculatorButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/CalculatorHistory.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/Calculator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/CalculatorArithmeticButtons.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/CalculatorButton.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/CalculatorForm.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/CalculatorHistory.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/CalculatorResult.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Calculator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Calculator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/calculator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/calculator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/calculator-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/calculator-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +49,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/node/Etap 6 React/marcin-grygierek/hooki/src/redux-toolkit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "ts.external.directory.path": "F:\\node\\Etap 6 React\\marcin-grygierek\\hooki\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\node\Etap 6 React\marcin-grygierek\hooki\src\redux-toolkit" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -75,7 +93,7 @@
       <workItem from="1669579964833" duration="593000" />
       <workItem from="1680732671320" duration="1042000" />
       <workItem from="1680874003731" duration="3490000" />
-      <workItem from="1682695138023" duration="807000" />
+      <workItem from="1682695138023" duration="21274000" />
     </task>
     <task id="LOCAL-00001" summary="add context">
       <created>1680874146533</created>
@@ -119,7 +137,77 @@
       <option name="project" value="LOCAL" />
       <updated>1680875071374</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update">
+      <created>1682696606021</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682696606021</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update">
+      <created>1682696802450</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682696802450</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add redux">
+      <created>1682718059460</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718059460</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add redux">
+      <created>1682718097558</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718097558</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add redux">
+      <created>1682718120979</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718120979</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add redux">
+      <created>1682718186917</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718186917</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add redux">
+      <created>1682718198360</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718198360</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add redux">
+      <created>1682718226863</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718226863</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add redux">
+      <created>1682718272143</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718272143</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add redux">
+      <created>1682718286828</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682718286828</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +226,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add context" />
-    <option name="LAST_COMMIT_MESSAGE" value="add context" />
+    <MESSAGE value="update" />
+    <MESSAGE value="Add redux" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add redux" />
   </component>
 </project>

@@ -15,11 +15,11 @@ export const setResult = (result: number | string) => ({
   payload: result
 })
 
-export const AddToHistory = (line: string[]) => ({
+export const AddToHistory = (line: string) => ({
   type: CalculatorAction.ADD_TO_HISTORY,
   payload: line
 })
 
 export const ClearHistory = () => ({
-  type: CalculatorAction.SET_FIRST,
+  type: CalculatorAction.CLEAR_HISTORY,
 })
