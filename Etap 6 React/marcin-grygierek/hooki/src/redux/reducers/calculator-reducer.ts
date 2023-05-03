@@ -63,7 +63,7 @@ export default (state = initialState, action: Action) => {
     case CalculatorAction.ADD_TO_HISTORY: {
       return {
         ...state,
-        history: [...state.history].push(action.payload)
+        history: [...state.history, action.payload]
       }
     }
     case CalculatorAction.CLEAR_HISTORY: {
